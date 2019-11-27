@@ -1,0 +1,826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmployeeModelStoreContainer" CdmEntityContainer="EmployeeEntities">
+    <EntitySetMapping Name="Buildings">
+      <EntityTypeMapping TypeName="EmployeeModel.Building">
+        <MappingFragment StoreEntitySet="Buildings">
+          <ScalarProperty Name="cntid" ColumnName="cntid" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Statename" ColumnName="Statename" />
+          <ScalarProperty Name="DisttName" ColumnName="DisttName" />
+          <ScalarProperty Name="Cityname" ColumnName="Cityname" />
+          <ScalarProperty Name="ProjCode" ColumnName="ProjCode" />
+          <ScalarProperty Name="CompType" ColumnName="CompType" />
+          <ScalarProperty Name="ProjName" ColumnName="ProjName" />
+          <ScalarProperty Name="AppDate" ColumnName="AppDate" />
+          <ScalarProperty Name="ProjCost" ColumnName="ProjCost" />
+          <ScalarProperty Name="Houses" ColumnName="Houses" />
+          <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City_Master">
+      <EntityTypeMapping TypeName="EmployeeModel.City_Master">
+        <MappingFragment StoreEntitySet="City_Master">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="Dcode" ColumnName="Dcode" />
+          <ScalarProperty Name="sunDisttCode" ColumnName="sunDisttCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityMasters">
+      <EntityTypeMapping TypeName="EmployeeModel.CityMaster">
+        <MappingFragment StoreEntitySet="CityMaster">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLSS_MASTER">
+      <EntityTypeMapping TypeName="EmployeeModel.CLSS_MASTER">
+        <MappingFragment StoreEntitySet="CLSS_MASTER">
+          <ScalarProperty Name="ClssId" ColumnName="ClssId" />
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Loan_EWS_LIG" ColumnName="Loan_EWS_LIG" />
+          <ScalarProperty Name="Subsidy_EWS_LIG" ColumnName="Subsidy_EWS_LIG" />
+          <ScalarProperty Name="No_Bene_EWS_LIG" ColumnName="No_Bene_EWS_LIG" />
+          <ScalarProperty Name="Loan_MIG" ColumnName="Loan_MIG" />
+          <ScalarProperty Name="Subsidy_MIG" ColumnName="Subsidy_MIG" />
+          <ScalarProperty Name="No_Beneficiary_MIG" ColumnName="No_Beneficiary_MIG" />
+          <ScalarProperty Name="Loan_TOTAL" ColumnName="Loan_TOTAL" />
+          <ScalarProperty Name="Subsidy_Total" ColumnName="Subsidy_Total" />
+          <ScalarProperty Name="NoBeneficiary_Total" ColumnName="NoBeneficiary_Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CountryMasters">
+      <EntityTypeMapping TypeName="EmployeeModel.CountryMaster">
+        <MappingFragment StoreEntitySet="CountryMaster">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designation_Master">
+      <EntityTypeMapping TypeName="EmployeeModel.Designation_Master">
+        <MappingFragment StoreEntitySet="Designation_Master">
+          <ScalarProperty Name="DesigId" ColumnName="DesigId" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distt_Master">
+      <EntityTypeMapping TypeName="EmployeeModel.Distt_Master">
+        <MappingFragment StoreEntitySet="Distt_Master">
+          <ScalarProperty Name="DisttId" ColumnName="DisttId" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Dcode" ColumnName="Dcode" />
+          <ScalarProperty Name="sunDisttCode" ColumnName="sunDisttCode" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DisttMasters">
+      <EntityTypeMapping TypeName="EmployeeModel.DisttMaster">
+        <MappingFragment StoreEntitySet="DisttMaster">
+          <ScalarProperty Name="DisttId" ColumnName="DisttId" />
+          <ScalarProperty Name="DisttName" ColumnName="DisttName" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emps">
+      <EntityTypeMapping TypeName="EmployeeModel.Emp">
+        <MappingFragment StoreEntitySet="Emp">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="FileUpload" ColumnName="FileUpload" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpDatas">
+      <EntityTypeMapping TypeName="EmployeeModel.EmpData">
+        <MappingFragment StoreEntitySet="EmpData">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employes">
+      <EntityTypeMapping TypeName="EmployeeModel.Employe">
+        <MappingFragment StoreEntitySet="Employe">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="sImage" ColumnName="sImage" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Investments">
+      <EntityTypeMapping TypeName="EmployeeModel.Investment">
+        <MappingFragment StoreEntitySet="Investment">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="SrareName" ColumnName="SrareName" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Demand" ColumnName="Demand" />
+          <ScalarProperty Name="HousesSanctioned" ColumnName="HousesSanctioned" />
+          <ScalarProperty Name="CentralShare" ColumnName="CentralShare" />
+          <ScalarProperty Name="StateShare" ColumnName="StateShare" />
+          <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+          <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="Occupied" ColumnName="Occupied" />
+          <ScalarProperty Name="CAApproved" ColumnName="CAApproved" />
+          <ScalarProperty Name="CASanctforRelease" ColumnName="CASanctforRelease" />
+          <ScalarProperty Name="CAssitReleased" ColumnName="CAssitReleased" />
+          <ScalarProperty Name="PendingforRelease" ColumnName="PendingforRelease" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Investment_Details">
+      <EntityTypeMapping TypeName="EmployeeModel.Investment_Details">
+        <MappingFragment StoreEntitySet="Investment_Details">
+          <ScalarProperty Name="InvestmentId" ColumnName="InvestmentId" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="FinancialYear" ColumnName="FinancialYear" />
+          <ScalarProperty Name="CentralShare" ColumnName="CentralShare" />
+          <ScalarProperty Name="StateShare" ColumnName="StateShare" />
+          <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+          <ScalarProperty Name="Beneficiary" ColumnName="Beneficiary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JnNURM_Copy_">
+      <EntityTypeMapping TypeName="EmployeeModel.JnNURM_Copy_">
+        <MappingFragment StoreEntitySet="JnNURM_Copy$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="Project_Code" ColumnName="Project Code" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Scheme" ColumnName="Scheme" />
+          <ScalarProperty Name="Distt" ColumnName="Distt" />
+          <ScalarProperty Name="CityTown" ColumnName="CityTown" />
+          <ScalarProperty Name="State_Code" ColumnName="State Code" />
+          <ScalarProperty Name="DisttCode" ColumnName="DisttCode" />
+          <ScalarProperty Name="SubDisttCode" ColumnName="SubDisttCode" />
+          <ScalarProperty Name="TownCode" ColumnName="TownCode" />
+          <ScalarProperty Name="Project_Title" ColumnName="Project Title" />
+          <ScalarProperty Name="App_Date" ColumnName="App Date" />
+          <ScalarProperty Name="Cancelled_Date" ColumnName="Cancelled Date" />
+          <ScalarProperty Name="O_ProjectCost_" ColumnName="O_ProjectCost " />
+          <ScalarProperty Name="O_CentrallShare" ColumnName="O_CentrallShare" />
+          <ScalarProperty Name="O_DwellingUnit" ColumnName="O_DwellingUnit" />
+          <ScalarProperty Name="ProjCost" ColumnName="ProjCost" />
+          <ScalarProperty Name="Central_Share" ColumnName="Central Share" />
+          <ScalarProperty Name="DwellingUnit" ColumnName="DwellingUnit" />
+          <ScalarProperty Name="Central_Share_Released__Projects_" ColumnName="Central Share Released (Projects)" />
+          <ScalarProperty Name="Central_Share_Adjusted" ColumnName="Central Share Adjusted" />
+          <ScalarProperty Name="Excess_ACA_Released" ColumnName="Excess ACA Released" />
+          <ScalarProperty Name="Central_Share_Refunded_by_State_Govt_" ColumnName="Central Share Refunded by State Govt#" />
+          <ScalarProperty Name="UC_Received" ColumnName="UC Received" />
+          <ScalarProperty Name="Pending_UC" ColumnName="Pending UC" />
+          <ScalarProperty Name="Under_Progress" ColumnName="Under Progress" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="Allotted" ColumnName="Allotted" />
+          <ScalarProperty Name="Occupied" ColumnName="Occupied" />
+          <ScalarProperty Name="Un_Occupied" ColumnName="Un-Occupied" />
+          <ScalarProperty Name="Non_Starter" ColumnName="Non-Starter" />
+          <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+          <ScalarProperty Name="Completed1" ColumnName="Completed1" />
+          <ScalarProperty Name="Occupied1" ColumnName="Occupied1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Cities_Included">
+      <EntityTypeMapping TypeName="EmployeeModel.Master_Cities_Included">
+        <MappingFragment StoreEntitySet="Master_Cities_Included">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Name_of_the_State__UT" ColumnName="Name of the_State/ UT" />
+          <ScalarProperty Name="Cities_included_in_mission" ColumnName="Cities_included_in_mission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PMAY_PROJECTS_Copy_">
+      <EntityTypeMapping TypeName="EmployeeModel.PMAY_PROJECTS_Copy_">
+        <MappingFragment StoreEntitySet="PMAY_PROJECTS Copy$">
+          <ScalarProperty Name="StNo" ColumnName="StNo" />
+          <ScalarProperty Name="S__No_" ColumnName="S# No#" />
+          <ScalarProperty Name="Project_Code" ColumnName="Project Code" />
+          <ScalarProperty Name="Annexure_ID__PMAY_MIS_" ColumnName="Annexure ID_(PMAY_MIS)" />
+          <ScalarProperty Name="Component_" ColumnName="Component\" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State_Code" ColumnName="State Code" />
+          <ScalarProperty Name="Dcode" ColumnName="Dcode" />
+          <ScalarProperty Name="sunDisttCode" ColumnName="sunDisttCode" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project Name" />
+          <ScalarProperty Name="CSMCDate" ColumnName="CSMCDate" />
+          <ScalarProperty Name="CSMCNo_" ColumnName="CSMCNo#" />
+          <ScalarProperty Name="F__Year" ColumnName="F# Year" />
+          <ScalarProperty Name="No_of_Projects" ColumnName="No of Projects" />
+          <ScalarProperty Name="Project__Cost" ColumnName="Project _Cost" />
+          <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central Assistance involved" />
+          <ScalarProperty Name="State_Grant" ColumnName="State Grant" />
+          <ScalarProperty Name="ULB_Share" ColumnName="ULB Share" />
+          <ScalarProperty Name="Beneficiary_Share" ColumnName="Beneficiary Share" />
+          <ScalarProperty Name="Released_through_EBR" ColumnName="Released through EBR" />
+          <ScalarProperty Name="First_Installment_Released" ColumnName="First Installment Released" />
+          <ScalarProperty Name="Second_Installment_Released" ColumnName="Second Installment Released" />
+          <ScalarProperty Name="Central_Assistance_Released" ColumnName="Central Assistance Released" />
+          <ScalarProperty Name="UC__Received" ColumnName="UC _Received" />
+          <ScalarProperty Name="UC__Pending" ColumnName="UC _Pending" />
+          <ScalarProperty Name="Houses_involved" ColumnName="Houses involved" />
+          <ScalarProperty Name="Funds_Disbursed_in_Houses" ColumnName="Funds Disbursed in Houses" />
+          <ScalarProperty Name="Houses_Grounded" ColumnName="Houses Grounded" />
+          <ScalarProperty Name="Houses_Under_Progress" ColumnName="Houses Under Progress" />
+          <ScalarProperty Name="Houses_Completed" ColumnName="Houses Completed" />
+          <ScalarProperty Name="Houses_Allotted" ColumnName="Houses Allotted" />
+          <ScalarProperty Name="Houses_Occupied" ColumnName="Houses Occupied" />
+          <ScalarProperty Name="Houses__yet_to_Grounded" ColumnName="Houses _yet to_Grounded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleMasters">
+      <EntityTypeMapping TypeName="EmployeeModel.RoleMaster">
+        <MappingFragment StoreEntitySet="RoleMaster">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleDesc" ColumnName="RoleDesc" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="DefaultURL" ColumnName="DefaultURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State_Master">
+      <EntityTypeMapping TypeName="EmployeeModel.State_Master">
+        <MappingFragment StoreEntitySet="State_Master">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="States_UT" ColumnName="States_UT" />
+          <ScalarProperty Name="Codes" ColumnName="Codes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StateMasters">
+      <EntityTypeMapping TypeName="EmployeeModel.StateMaster">
+        <MappingFragment StoreEntitySet="StateMaster">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="EmployeeModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCities">
+      <EntityTypeMapping TypeName="EmployeeModel.tblCity">
+        <MappingFragment StoreEntitySet="tblCity">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsSelected" ColumnName="IsSelected" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="EmployeeModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="sDOB" ColumnName="sDOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="DisttId" ColumnName="DisttId" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="FathersName" ColumnName="FathersName" />
+          <ScalarProperty Name="HomeAdd" ColumnName="HomeAdd" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+          <ScalarProperty Name="PhotoUpload" ColumnName="PhotoUpload" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginMasters">
+      <EntityTypeMapping TypeName="EmployeeModel.LoginMaster">
+        <MappingFragment StoreEntitySet="LoginMaster">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LoginType" ColumnName="LoginType" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="PasswordChangeDate" ColumnName="PasswordChangeDate" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuMasters">
+      <EntityTypeMapping TypeName="EmployeeModel.MenuMaster">
+        <MappingFragment StoreEntitySet="MenuMaster">
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="MenuRef" ColumnName="MenuRef" />
+          <ScalarProperty Name="MenuPath" ColumnName="MenuPath" />
+          <ScalarProperty Name="MenuIcon" ColumnName="MenuIcon" />
+          <ScalarProperty Name="SequenceNo" ColumnName="SequenceNo" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMaster_not_useds">
+      <EntityTypeMapping TypeName="EmployeeModel.UserMaster_not_used">
+        <MappingFragment StoreEntitySet="UserMaster not used">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="PIN" ColumnName="PIN" />
+          <ScalarProperty Name="FRN" ColumnName="FRN" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="PAN" ColumnName="PAN" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="TAN" ColumnName="TAN" />
+          <ScalarProperty Name="Service_Tax_No" ColumnName="Service_Tax_No" />
+          <ScalarProperty Name="Authorised_Person" ColumnName="Authorised_Person" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsBlock" ColumnName="IsBlock" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DOC" ColumnName="DOC" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedFor" ColumnName="CreatedFor" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Aadhar" ColumnName="Aadhar" />
+          <ScalarProperty Name="PlanId" ColumnName="PlanId" />
+          <ScalarProperty Name="PlanAmount" ColumnName="PlanAmount" />
+          <ScalarProperty Name="PF_NO" ColumnName="PF_NO" />
+          <ScalarProperty Name="ESI_NO" ColumnName="ESI_NO" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="PrevEmployerName" ColumnName="PrevEmployerName" />
+          <ScalarProperty Name="PrevEmployerAddress" ColumnName="PrevEmployerAddress" />
+          <ScalarProperty Name="PrevEmployerPeriodServed" ColumnName="PrevEmployerPeriodServed" />
+          <ScalarProperty Name="PrevEmployerContactDetails" ColumnName="PrevEmployerContactDetails" />
+          <ScalarProperty Name="PermanentPhoneNo" ColumnName="PermanentPhoneNo" />
+          <ScalarProperty Name="M_NO" ColumnName="M_NO" />
+          <ScalarProperty Name="NRO_NO" ColumnName="NRO_NO" />
+          <ScalarProperty Name="Leaves" ColumnName="Leaves" />
+          <ScalarProperty Name="ArticleshipCompletionDate" ColumnName="ArticleshipCompletionDate" />
+          <ScalarProperty Name="FinalExaminationDue" ColumnName="FinalExaminationDue" />
+          <ScalarProperty Name="NextDue" ColumnName="NextDue" />
+          <ScalarProperty Name="ExaminationCleared" ColumnName="ExaminationCleared" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="BusinessDescription" ColumnName="BusinessDescription" />
+          <ScalarProperty Name="Engagement" ColumnName="Engagement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetDisttDetails" FunctionName="EmployeeModel.Store.GetDisttDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.GetDisttDetails_Result">
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Dcode" ColumnName="Dcode" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStateWiseFinYrData" FunctionName="EmployeeModel.Store.GetStateWiseFinYrData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.GetStateWiseFinYrData_Result">
+          <ScalarProperty Name="IIIQ_15_16" ColumnName="IIIQ_15_16" />
+          <ScalarProperty Name="IV_Q_15_16" ColumnName="IV_Q_15_16" />
+          <ScalarProperty Name="IQ_16_17" ColumnName="IQ_16_17" />
+          <ScalarProperty Name="IIQ_16_17" ColumnName="IIQ_16_17" />
+          <ScalarProperty Name="IIIQ_16_17" ColumnName="IIIQ_16_17" />
+          <ScalarProperty Name="IV_Q_16_17" ColumnName="IV_Q_16_17" />
+          <ScalarProperty Name="I_Q_17_18" ColumnName="I_Q_17_18" />
+          <ScalarProperty Name="II_Q_17_18" ColumnName="II_Q_17_18" />
+          <ScalarProperty Name="III_Q_17_18" ColumnName="III_Q_17_18" />
+          <ScalarProperty Name="IV_Q_17_18" ColumnName="IV_Q_17_18" />
+          <ScalarProperty Name="I_Q_18_19" ColumnName="I_Q_18_19" />
+          <ScalarProperty Name="II_Q_18_19" ColumnName="II_Q_18_19" />
+          <ScalarProperty Name="III_Q_18_19" ColumnName="III_Q_18_19" />
+          <ScalarProperty Name="IV_Q_18_19" ColumnName="IV_Q_18_19" />
+          <ScalarProperty Name="HS15_16" ColumnName="HS15-16" />
+          <ScalarProperty Name="HS_16_17" ColumnName="HS_16_17" />
+          <ScalarProperty Name="HS17_18" ColumnName="HS17-18" />
+          <ScalarProperty Name="HS18_19" ColumnName="HS18-19" />
+          <ScalarProperty Name="HC_14_15" ColumnName="HC_14_15" />
+          <ScalarProperty Name="HC_15_16" ColumnName="HC_15_16" />
+          <ScalarProperty Name="HC_16_17" ColumnName="HC_16_17" />
+          <ScalarProperty Name="HC_17_18" ColumnName="HC_17_18" />
+          <ScalarProperty Name="HC_18_19" ColumnName="HC_18_19" />
+          <ScalarProperty Name="HO_15_16" ColumnName="HO_15_16" />
+          <ScalarProperty Name="HO_16_17" ColumnName="HO_16_17" />
+          <ScalarProperty Name="HO_17_18" ColumnName="HO_17_18" />
+          <ScalarProperty Name="HO_18_19" ColumnName="HO_18_19" />
+          <ScalarProperty Name="HC_20_08_18" ColumnName="HC_20_08_18" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStateWiseHouses" FunctionName="EmployeeModel.Store.GetStateWiseHouses">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.GetStateWiseHouses_Result">
+          <ScalarProperty Name="HS15_16" ColumnName="HS15-16" />
+          <ScalarProperty Name="HS_16_17" ColumnName="HS_16_17" />
+          <ScalarProperty Name="HS17_18" ColumnName="HS17-18" />
+          <ScalarProperty Name="HS18_19" ColumnName="HS18-19" />
+          <ScalarProperty Name="HC_14_15" ColumnName="HC_14_15" />
+          <ScalarProperty Name="HC_15_16" ColumnName="HC_15_16" />
+          <ScalarProperty Name="HC_16_17" ColumnName="HC_16_17" />
+          <ScalarProperty Name="HC_17_18" ColumnName="HC_17_18" />
+          <ScalarProperty Name="HC_18_19" ColumnName="HC_18_19" />
+          <ScalarProperty Name="HO_15_16" ColumnName="HO_15_16" />
+          <ScalarProperty Name="HO_16_17" ColumnName="HO_16_17" />
+          <ScalarProperty Name="HO_17_18" ColumnName="HO_17_18" />
+          <ScalarProperty Name="HO_18_19" ColumnName="HO_18_19" />
+          <ScalarProperty Name="HC_20_08_18" ColumnName="HC_20_08_18" />
+          <ScalarProperty Name="CumSanctioned" ColumnName="CumSanctioned" />
+          <ScalarProperty Name="CASanctioned_15_16" ColumnName="CASanctioned_15_16" />
+          <ScalarProperty Name="CASanctioned_16_17" ColumnName="CASanctioned_16_17" />
+          <ScalarProperty Name="CASanctioned_17_18" ColumnName="CASanctioned_17_18" />
+          <ScalarProperty Name="CASanctioned_18_19" ColumnName="CASanctioned_18_19" />
+          <ScalarProperty Name="CumuCAReleased" ColumnName="CumuCAReleased" />
+          <ScalarProperty Name="CumuCA_Released_15_16" ColumnName="CumuCA_Released_15_16" />
+          <ScalarProperty Name="CumuCA_Released_16_17" ColumnName="CumuCA_Released_16_17" />
+          <ScalarProperty Name="CumuCA_Released_17_18" ColumnName="CumuCA_Released_17_18" />
+          <ScalarProperty Name="CumuCA_Released_18_19" ColumnName="CumuCA_Released_18_19" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HFA_DemandCityWise" FunctionName="EmployeeModel.Store.HFA_DemandCityWise">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.HFA_DemandCityWise_Result">
+          <ScalarProperty Name="ISSR" ColumnName="ISSR" />
+          <ScalarProperty Name="AHP" ColumnName="AHP" />
+          <ScalarProperty Name="BLC" ColumnName="BLC" />
+          <ScalarProperty Name="CLSS" ColumnName="CLSS" />
+          <ScalarProperty Name="demand" ColumnName="demand" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HFA_GetCity" FunctionName="EmployeeModel.Store.HFA_GetCity">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.HFA_GetCity_Result">
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HFA_GetDistt" FunctionName="EmployeeModel.Store.HFA_GetDistt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.HFA_GetDistt_Result">
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Dcode" ColumnName="Dcode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HFA_GetStates" FunctionName="EmployeeModel.Store.HFA_GetStates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.HFA_GetStates_Result">
+          <ScalarProperty Name="States_UT" ColumnName="States_UT" />
+          <ScalarProperty Name="Codes" ColumnName="Codes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HFA_JNNURMCityWise" FunctionName="EmployeeModel.Store.HFA_JNNURMCityWise">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.HFA_JNNURMCityWise_Result">
+          <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+          <ScalarProperty Name="Completed1" ColumnName="Completed1" />
+          <ScalarProperty Name="Occupied1" ColumnName="Occupied1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HFA_Proc_CLSS_CityWise" FunctionName="EmployeeModel.Store.HFA_Proc_CLSS_CityWise">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.HFA_Proc_CLSS_CityWise_Result">
+          <ScalarProperty Name="Loan_Amount" ColumnName="Loan_Amount" />
+          <ScalarProperty Name="SubsidyAmountCredited" ColumnName="SubsidyAmountCredited" />
+          <ScalarProperty Name="NoofBeneficiaries" ColumnName="NoofBeneficiaries" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HFA_sp_PMayData" FunctionName="EmployeeModel.Store.HFA_sp_PMayData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.HFA_sp_PMayData_Result">
+          <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+          <ScalarProperty Name="Houses_Grounded" ColumnName="Houses_Grounded" />
+          <ScalarProperty Name="Houses_Completed" ColumnName="Houses Completed" />
+          <ScalarProperty Name="Houses_Occupied" ColumnName="Houses_Occupied" />
+          <ScalarProperty Name="Investment_in_Project" ColumnName="Investment in Project" />
+          <ScalarProperty Name="Central_Assistance_Committed" ColumnName="Central Assistance Committed" />
+          <ScalarProperty Name="Central_Assistance_Sanctioned" ColumnName="Central Assistance Sanctioned" />
+          <ScalarProperty Name="Second_Installment_Released" ColumnName="Second_Installment_Released" />
+          <ScalarProperty Name="Central_Assistance_Released" ColumnName="Central Assistance Released" />
+          <ScalarProperty Name="Central_Assistance_Liable_for_Release" ColumnName="Central Assistance Liable for Release" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_CLSS" FunctionName="EmployeeModel.Store.Proc_CLSS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.Proc_CLSS_Result">
+          <ScalarProperty Name="No_Bene_EWS_LIG" ColumnName="No_Bene_EWS_LIG" />
+          <ScalarProperty Name="No_Beneficiary_MIG" ColumnName="No_Beneficiary_MIG" />
+          <ScalarProperty Name="NoBeneficiary_Total" ColumnName="NoBeneficiary_Total" />
+          <ScalarProperty Name="Subsidy_EWS_LIG" ColumnName="Subsidy_EWS_LIG" />
+          <ScalarProperty Name="Subsidy_MIG" ColumnName="Subsidy_MIG" />
+          <ScalarProperty Name="Subsidy_Total" ColumnName="Subsidy_Total" />
+          <ScalarProperty Name="Loan_TOTAL" ColumnName="Loan_TOTAL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_CLSS_Param" FunctionName="EmployeeModel.Store.Proc_CLSS_Param">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.Proc_CLSS_Param_Result">
+          <ScalarProperty Name="No_Bene_EWS_LIG" ColumnName="No_Bene_EWS_LIG" />
+          <ScalarProperty Name="No_Beneficiary_MIG" ColumnName="No_Beneficiary_MIG" />
+          <ScalarProperty Name="NoBeneficiary_Total" ColumnName="NoBeneficiary_Total" />
+          <ScalarProperty Name="Subsidy_EWS_LIG" ColumnName="Subsidy_EWS_LIG" />
+          <ScalarProperty Name="Subsidy_MIG" ColumnName="Subsidy_MIG" />
+          <ScalarProperty Name="Subsidy_Total" ColumnName="Subsidy_Total" />
+          <ScalarProperty Name="Loan_TOTAL" ColumnName="Loan_TOTAL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_Component" FunctionName="EmployeeModel.Store.proc_Component">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.proc_Component_Result">
+          <ScalarProperty Name="Component_" ColumnName="Component\" />
+          <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_Component_Param" FunctionName="EmployeeModel.Store.proc_Component_Param">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.proc_Component_Param_Result">
+          <ScalarProperty Name="Component_" ColumnName="Component\" />
+          <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_Component_Pmay" FunctionName="EmployeeModel.Store.proc_Component_Pmay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.proc_Component_Pmay_Result">
+          <ScalarProperty Name="Component" ColumnName="Component" />
+          <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_Component_PmayParam" FunctionName="EmployeeModel.Store.proc_Component_PmayParam">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.proc_Component_PmayParam_Result">
+          <ScalarProperty Name="Component" ColumnName="Component" />
+          <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_Component_SDC" FunctionName="EmployeeModel.Store.proc_Component_SDC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.proc_Component_SDC_Result">
+          <ScalarProperty Name="Component_" ColumnName="Component\" />
+          <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_Inv_Cons_StateWise" FunctionName="EmployeeModel.Store.Proc_Inv_Cons_StateWise">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.Proc_Inv_Cons_StateWise_Result">
+          <ScalarProperty Name="Demand" ColumnName="Demand" />
+          <ScalarProperty Name="HousesSanctioned" ColumnName="HousesSanctioned" />
+          <ScalarProperty Name="CentralShare" ColumnName="CentralShare" />
+          <ScalarProperty Name="StateShare" ColumnName="StateShare" />
+          <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+          <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="Occupied" ColumnName="Occupied" />
+          <ScalarProperty Name="CAApproved" ColumnName="CAApproved" />
+          <ScalarProperty Name="CASanctforRelease" ColumnName="CASanctforRelease" />
+          <ScalarProperty Name="CAssitReleased" ColumnName="CAssitReleased" />
+          <ScalarProperty Name="PendingforRelease" ColumnName="PendingforRelease" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_Inv_StateWise" FunctionName="EmployeeModel.Store.Proc_Inv_StateWise">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.Proc_Inv_StateWise_Result">
+          <ScalarProperty Name="Demand" ColumnName="Demand" />
+          <ScalarProperty Name="HousesSanctioned" ColumnName="HousesSanctioned" />
+          <ScalarProperty Name="CentralShare" ColumnName="CentralShare" />
+          <ScalarProperty Name="StateShare" ColumnName="StateShare" />
+          <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+          <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_Investment_Cons" FunctionName="EmployeeModel.Store.Proc_Investment_Cons">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.Proc_Investment_Cons_Result">
+          <ScalarProperty Name="Demand" ColumnName="Demand" />
+          <ScalarProperty Name="HousesSanctioned" ColumnName="HousesSanctioned" />
+          <ScalarProperty Name="CentralShare" ColumnName="CentralShare" />
+          <ScalarProperty Name="StateShare" ColumnName="StateShare" />
+          <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+          <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="EmployeeModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_Cons_JNNURM_SDC" FunctionName="EmployeeModel.Store.sp_Cons_JNNURM_SDC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_Cons_JNNURM_SDC_Result">
+          <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+          <ScalarProperty Name="Completed1" ColumnName="Completed1" />
+          <ScalarProperty Name="Occupied1" ColumnName="Occupied1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Cons_JNNURM_Values" FunctionName="EmployeeModel.Store.sp_Cons_JNNURM_Values">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_Cons_JNNURM_Values_Result">
+          <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+          <ScalarProperty Name="Completed1" ColumnName="Completed1" />
+          <ScalarProperty Name="Occupied1" ColumnName="Occupied1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Cons_JNNURM_Values_Param" FunctionName="EmployeeModel.Store.sp_Cons_JNNURM_Values_Param">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_Cons_JNNURM_Values_Param_Result">
+          <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+          <ScalarProperty Name="Completed1" ColumnName="Completed1" />
+          <ScalarProperty Name="Occupied1" ColumnName="Occupied1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Cons_Values" FunctionName="EmployeeModel.Store.sp_Cons_Values">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_Cons_Values_Result">
+          <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+          <ScalarProperty Name="Houses_Grounded" ColumnName="Houses_Grounded" />
+          <ScalarProperty Name="Houses_Completed" ColumnName="Houses Completed" />
+          <ScalarProperty Name="Houses_Occupied" ColumnName="Houses_Occupied" />
+          <ScalarProperty Name="Investment_in_Project" ColumnName="Investment in Project" />
+          <ScalarProperty Name="Central_Assistance_Committed" ColumnName="Central Assistance Committed" />
+          <ScalarProperty Name="Central_Assistance_Sanctioned" ColumnName="Central Assistance Sanctioned" />
+          <ScalarProperty Name="Second_Installment_Released" ColumnName="Second_Installment_Released" />
+          <ScalarProperty Name="Central_Assistance_Released" ColumnName="Central Assistance Released" />
+          <ScalarProperty Name="Central_Assistance_Liable_for_Release" ColumnName="Central Assistance Liable for Release" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Cons_Values_Param" FunctionName="EmployeeModel.Store.sp_Cons_Values_Param">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_Cons_Values_Param_Result">
+          <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+          <ScalarProperty Name="Houses_Grounded" ColumnName="Houses_Grounded" />
+          <ScalarProperty Name="Houses_Completed" ColumnName="Houses Completed" />
+          <ScalarProperty Name="Houses_Occupied" ColumnName="Houses_Occupied" />
+          <ScalarProperty Name="Investment_in_Project" ColumnName="Investment in Project" />
+          <ScalarProperty Name="Central_Assistance_Committed" ColumnName="Central Assistance Committed" />
+          <ScalarProperty Name="Central_Assistance_Sanctioned" ColumnName="Central Assistance Sanctioned" />
+          <ScalarProperty Name="Second_Installment_Released" ColumnName="Second_Installment_Released" />
+          <ScalarProperty Name="Central_Assistance_Released" ColumnName="Central Assistance Released" />
+          <ScalarProperty Name="Central_Assistance_Liable_for_Release" ColumnName="Central Assistance Liable for Release" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Cons_Values_SDC" FunctionName="EmployeeModel.Store.sp_Cons_Values_SDC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_Cons_Values_SDC_Result">
+          <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+          <ScalarProperty Name="Houses_Grounded" ColumnName="Houses_Grounded" />
+          <ScalarProperty Name="Houses_Completed" ColumnName="Houses Completed" />
+          <ScalarProperty Name="Houses_Occupied" ColumnName="Houses_Occupied" />
+          <ScalarProperty Name="Investment_in_Project" ColumnName="Investment in Project" />
+          <ScalarProperty Name="Central_Assistance_Committed" ColumnName="Central Assistance Committed" />
+          <ScalarProperty Name="Central_Assistance_Sanctioned" ColumnName="Central Assistance Sanctioned" />
+          <ScalarProperty Name="Second_Installment_Released" ColumnName="Second_Installment_Released" />
+          <ScalarProperty Name="Central_Assistance_Released" ColumnName="Central Assistance Released" />
+          <ScalarProperty Name="Central_Assistance_Liable_for_Release" ColumnName="Central Assistance Liable for Release" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="EmployeeModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="EmployeeModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="EmployeeModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="EmployeeModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="EmployeeModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="EmployeeModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="Test" FunctionName="EmployeeModel.Store.Test">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.Test_Result">
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="sDOB" ColumnName="sDOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="DisttId" ColumnName="DisttId" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="FathersName" ColumnName="FathersName" />
+          <ScalarProperty Name="HomeAdd" ColumnName="HomeAdd" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+          <ScalarProperty Name="PhotoUpload" ColumnName="PhotoUpload" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
