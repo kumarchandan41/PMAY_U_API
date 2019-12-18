@@ -1,0 +1,985 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Buildings">
+    <Key>
+      <PropertyRef Name="cntid" />
+    </Key>
+    <Property Name="cntid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="State" Type="int" />
+    <Property Name="District" Type="int" />
+    <Property Name="City" Type="int" />
+    <Property Name="Statename" Type="nvarchar(max)" />
+    <Property Name="DisttName" Type="nvarchar(max)" />
+    <Property Name="Cityname" Type="nvarchar(max)" />
+    <Property Name="ProjCode" Type="nvarchar(max)" />
+    <Property Name="CompType" Type="nvarchar(max)" />
+    <Property Name="ProjName" Type="nvarchar(max)" />
+    <Property Name="AppDate" Type="datetime" />
+    <Property Name="ProjCost" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Houses" Type="int" />
+    <Property Name="Grounded" Type="int" />
+    <Property Name="Completed" Type="int" />
+  </EntityType>
+  <EntityType Name="City_Master">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="CityCode" Type="float" />
+    <Property Name="Dcode" Type="float" />
+    <Property Name="sunDisttCode" Type="float" />
+  </EntityType>
+  <EntityType Name="CityMaster">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StateID" Type="int" />
+  </EntityType>
+  <EntityType Name="CLSS_MASTER">
+    <Key>
+      <PropertyRef Name="ClssId" />
+    </Key>
+    <Property Name="ClssId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SrNo" Type="float" Nullable="false" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="StateCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Loan_EWS_LIG" Type="float" />
+    <Property Name="Subsidy_EWS_LIG" Type="float" />
+    <Property Name="No_Bene_EWS_LIG" Type="float" />
+    <Property Name="Loan_MIG" Type="float" />
+    <Property Name="Subsidy_MIG" Type="float" />
+    <Property Name="No_Beneficiary_MIG" Type="float" />
+    <Property Name="Loan_TOTAL" Type="float" />
+    <Property Name="Subsidy_Total" Type="float" />
+    <Property Name="NoBeneficiary_Total" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Employee.dbo.ClssCityWise' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ClssCityWise">
+          <Property Name="state_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="State_Code" Type="float" />
+          <Property Name="District_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="District_Code" Type="float" />
+          <Property Name="City_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="City_Code" Type="float" />
+          <Property Name="Loan_Amount" Type="float" />
+          <Property Name="SubsidyAmountCredited" Type="float" />
+          <Property Name="NoofBeneficiaries" Type="float" />
+        </EntityType>-->
+  <EntityType Name="CountryMaster">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryCode" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Employee.dbo.DemandCityWise' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="DemandCityWise">
+          <Property Name="State_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="State_Code" Type="float" />
+          <Property Name="District_Code" Type="float" />
+          <Property Name="District_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="City_Code" Type="float" />
+          <Property Name="City_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="ISSR" Type="float" />
+          <Property Name="AHP" Type="float" />
+          <Property Name="BLC" Type="float" />
+          <Property Name="CLSS" Type="float" />
+          <Property Name="demand" Type="float" />
+        </EntityType>-->
+  <EntityType Name="Designation_Master">
+    <Key>
+      <PropertyRef Name="DesigId" />
+    </Key>
+    <Property Name="DesigId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Designation" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Distt_Master">
+    <Key>
+      <PropertyRef Name="DisttId" />
+    </Key>
+    <Property Name="DisttId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="District" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dcode" Type="float" />
+    <Property Name="sunDisttCode" Type="float" />
+    <Property Name="StateCode" Type="float" />
+  </EntityType>
+  <EntityType Name="DisttMaster">
+    <Key>
+      <PropertyRef Name="DisttId" />
+    </Key>
+    <Property Name="DisttId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DisttName" Type="nvarchar(max)" />
+    <Property Name="CityId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Emp">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nchar" MaxLength="10" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="EmailID" Type="nvarchar(max)" />
+    <Property Name="PinCode" Type="nvarchar(max)" />
+    <Property Name="Gender" Type="nvarchar(max)" />
+    <Property Name="FileUpload" Type="nvarchar(max)" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="StateID" Type="int" />
+  </EntityType>
+  <EntityType Name="EmpData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Employe">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Age" Type="nvarchar(max)" />
+    <Property Name="sImage" Type="nvarchar(max)" />
+    <Property Name="ImagePath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Investment">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="bigint" Nullable="false" />
+    <Property Name="SrareName" Type="nvarchar" MaxLength="255" />
+    <Property Name="StateCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Demand" Type="float" />
+    <Property Name="HousesSanctioned" Type="float" />
+    <Property Name="CentralShare" Type="float" />
+    <Property Name="StateShare" Type="float" />
+    <Property Name="ULBShare" Type="float" />
+    <Property Name="BeneficiaryShare" Type="float" />
+    <Property Name="TotalCost" Type="float" />
+    <Property Name="Grounded" Type="float" />
+    <Property Name="Completed" Type="float" />
+    <Property Name="Occupied" Type="float" />
+    <Property Name="CAApproved" Type="float" />
+    <Property Name="CASanctforRelease" Type="float" />
+    <Property Name="CAssitReleased" Type="float" />
+    <Property Name="PendingforRelease" Type="float" />
+  </EntityType>
+  <EntityType Name="Investment_Details">
+    <Key>
+      <PropertyRef Name="InvestmentId" />
+    </Key>
+    <Property Name="InvestmentId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="State" Type="nvarchar(max)" />
+    <Property Name="StateCode" Type="nvarchar(max)" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="FinancialYear" Type="nvarchar(max)" />
+    <Property Name="CentralShare" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="StateShare" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ULBShare" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Beneficiary" Type="decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Employee.dbo.Investment_New$' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Investment_New$">
+          <Property Name="Sr_No" Type="float" />
+          <Property Name="Staes" Type="nvarchar" MaxLength="255" />
+          <Property Name="Demand" Type="float" />
+          <Property Name="Houses Sanctioned" Type="float" />
+          <Property Name="Central Share" Type="float" />
+          <Property Name="State Share" Type="float" />
+          <Property Name="ULB Share" Type="float" />
+          <Property Name="Beneficiary Share" Type="float" />
+          <Property Name="Total Cost" Type="float" />
+          <Property Name="Grounded" Type="float" />
+          <Property Name="Completed" Type="float" />
+          <Property Name="Occupied" Type="float" />
+          <Property Name="Central Assistance Approved" Type="float" />
+          <Property Name="Central Assistance Sanctioned for Release" Type="float" />
+          <Property Name="Central Assistance Released" Type="float" />
+          <Property Name="Pending for Release" Type="float" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cumulative Achievement _(till 20#08#2018)" Type="float" />
+          <Property Name="Achievement (F#Y# 2015-16)" Type="float" />
+          <Property Name="Achievement (F#Y# 2016-17)" Type="float" />
+          <Property Name="Achievement _(F#Y# 2017-18)" Type="float" />
+          <Property Name="Achievement _(F#Y# 2018-19)" Type="float" />
+          <Property Name="Cumulative Achievement _(till 20#08#2018)1" Type="float" />
+          <Property Name="Achievement _(F#Y# 2014-15)" Type="float" />
+          <Property Name="Achievement _(F#Y# 2015-16)" Type="float" />
+          <Property Name="Achievement _(F#Y# 2016-17)" Type="float" />
+          <Property Name="Achievement _(F#Y# 2017-18)1" Type="float" />
+          <Property Name="Achievement _(F#Y# 2018-19)1" Type="float" />
+          <Property Name="Cumulative Occupied_(till date)" Type="float" />
+          <Property Name="Occupied_(F#Y# 2014-15)" Type="float" />
+          <Property Name="Occupied_(F#Y# 2015-16)" Type="float" />
+          <Property Name="Occupied_(F#Y# 2016-17)" Type="float" />
+          <Property Name="Occupied_(F#Y# 2017-18)" Type="float" />
+          <Property Name="Occupied_(F#Y# 2018-19)" Type="float" />
+          <Property Name="srno" Type="float" />
+          <Property Name="state1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cumulative Sanctioned" Type="float" />
+          <Property Name="CA Sanctioned_(F#Y# 2015-16)" Type="float" />
+          <Property Name="CA _Sanctioned _(F#Y# 2016-17)" Type="float" />
+          <Property Name="CA Sanctioned _(F#Y# 2017-18)" Type="float" />
+          <Property Name="CA Sanctioned _(F#Y# 2018-19)" Type="float" />
+          <Property Name="Cumulative Released" Type="float" />
+          <Property Name="CA _Released_(F#Y# 2015-16)" Type="float" />
+          <Property Name="CA _Released_(F#Y# 2016-17)" Type="float" />
+          <Property Name="CA _Released_(F#Y# 2017-18)" Type="float" />
+          <Property Name="CA _Released_(F#Y# 2018-19)" Type="float" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Employee.dbo.Investment_NewCons' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Investment_NewCons">
+          <Property Name="Sr_No" Type="float" />
+          <Property Name="Staes" Type="nvarchar" MaxLength="255" />
+          <Property Name="Demand" Type="float" />
+          <Property Name="Houses Sanctioned" Type="float" />
+          <Property Name="Central Share" Type="float" />
+          <Property Name="State Share" Type="float" />
+          <Property Name="ULB Share" Type="float" />
+          <Property Name="Beneficiary Share" Type="float" />
+          <Property Name="Total Cost" Type="float" />
+          <Property Name="Grounded" Type="float" />
+          <Property Name="Completed" Type="float" />
+          <Property Name="Occupied" Type="float" />
+          <Property Name="Central Assistance Approved" Type="float" />
+          <Property Name="Central Assistance Sanctioned for Release" Type="float" />
+          <Property Name="Central Assistance Released" Type="float" />
+          <Property Name="Pending for Release" Type="float" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cumulative Achievement _(till 20#08#2018)" Type="float" />
+          <Property Name="Achievement (F#Y# 2015-16)" Type="float" />
+          <Property Name="Achievement (F#Y# 2016-17)" Type="float" />
+          <Property Name="Achievement _(F#Y# 2017-18)" Type="float" />
+          <Property Name="Achievement _(F#Y# 2018-19)" Type="float" />
+          <Property Name="Cumulative Achievement _(till 20#08#2018)1" Type="float" />
+          <Property Name="Achievement _(F#Y# 2014-15)" Type="float" />
+          <Property Name="Achievement _(F#Y# 2015-16)" Type="float" />
+          <Property Name="Achievement _(F#Y# 2016-17)" Type="float" />
+          <Property Name="Achievement _(F#Y# 2017-18)1" Type="float" />
+          <Property Name="Achievement _(F#Y# 2018-19)1" Type="float" />
+          <Property Name="Cumulative Occupied_(till date)" Type="float" />
+          <Property Name="Occupied_(F#Y# 2014-15)" Type="float" />
+          <Property Name="Occupied_(F#Y# 2015-16)" Type="float" />
+          <Property Name="Occupied_(F#Y# 2016-17)" Type="float" />
+          <Property Name="Occupied_(F#Y# 2017-18)" Type="float" />
+          <Property Name="Occupied_(F#Y# 2018-19)" Type="float" />
+          <Property Name="srno" Type="float" />
+          <Property Name="state1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cumulative Sanctioned" Type="float" />
+          <Property Name="CA Sanctioned_(F#Y# 2015-16)" Type="float" />
+          <Property Name="CA _Sanctioned _(F#Y# 2016-17)" Type="float" />
+          <Property Name="CA Sanctioned _(F#Y# 2017-18)" Type="float" />
+          <Property Name="CA Sanctioned _(F#Y# 2018-19)" Type="float" />
+          <Property Name="Cumulative Released" Type="float" />
+          <Property Name="CA _Released_(F#Y# 2015-16)" Type="float" />
+          <Property Name="CA _Released_(F#Y# 2016-17)" Type="float" />
+          <Property Name="CA _Released_(F#Y# 2017-18)" Type="float" />
+          <Property Name="CA _Released_(F#Y# 2018-19)" Type="float" />
+        </EntityType>-->
+  <EntityType Name="JnNURM_Copy$">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SrNo" Type="float" />
+    <Property Name="Project Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="Scheme" Type="nvarchar" MaxLength="255" />
+    <Property Name="Distt" Type="nvarchar" MaxLength="255" />
+    <Property Name="CityTown" Type="nvarchar" MaxLength="255" />
+    <Property Name="State Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="DisttCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="SubDisttCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="TownCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Project Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="App Date" Type="datetime" />
+    <Property Name="Cancelled Date" Type="nvarchar" MaxLength="255" />
+    <Property Name="O_ProjectCost " Type="float" />
+    <Property Name="O_CentrallShare" Type="float" />
+    <Property Name="O_DwellingUnit" Type="float" />
+    <Property Name="ProjCost" Type="float" />
+    <Property Name="Central Share" Type="float" />
+    <Property Name="DwellingUnit" Type="float" />
+    <Property Name="Central Share Released (Projects)" Type="float" />
+    <Property Name="Central Share Adjusted" Type="float" />
+    <Property Name="Excess ACA Released" Type="float" />
+    <Property Name="Central Share Refunded by State Govt#" Type="float" />
+    <Property Name="UC Received" Type="float" />
+    <Property Name="Pending UC" Type="float" />
+    <Property Name="Under Progress" Type="float" />
+    <Property Name="Completed" Type="float" />
+    <Property Name="Allotted" Type="float" />
+    <Property Name="Occupied" Type="float" />
+    <Property Name="Un-Occupied" Type="float" />
+    <Property Name="Non-Starter" Type="float" />
+    <Property Name="Grounded" Type="float" />
+    <Property Name="Completed1" Type="float" />
+    <Property Name="Occupied1" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Employee.dbo.LoginMaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="LoginMaster">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="Password" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LoginType" Type="varchar" MaxLength="15" />
+    <Property Name="LastLoginDate" Type="datetime" />
+    <Property Name="PasswordChangeDate" Type="datetime" />
+    <Property Name="RoleId" Type="varchar" MaxLength="15" />
+    <Property Name="UserType" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Master_Cities_Included">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateCode" Type="nvarchar(max)" />
+    <Property Name="Name of the_State/ UT" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cities_included_in_mission" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Employee.dbo.MenuMaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MenuMaster">
+    <Key>
+      <PropertyRef Name="MenuId" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="MenuId" Type="bigint" Nullable="false" />
+    <Property Name="MenuName" Type="varchar" MaxLength="50" />
+    <Property Name="MenuRef" Type="bigint" />
+    <Property Name="MenuPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="MenuIcon" Type="varchar" MaxLength="100" />
+    <Property Name="SequenceNo" Type="int" />
+    <Property Name="DOC" Type="datetime" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Employee.dbo.Physical_Dashboard' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Physical_Dashboard">
+          <Property Name="SrNo" Type="float" />
+          <Property Name="State1" Type="nvarchar" MaxLength="255" />
+          <Property Name="StateCode" Type="nchar" MaxLength="10" />
+          <Property Name="Demand" Type="float" />
+          <Property Name="Houses Sanctioned" Type="float" />
+          <Property Name="CentralShare" Type="float" />
+          <Property Name="StateShare" Type="float" />
+          <Property Name="ULBShare" Type="float" />
+          <Property Name="BeneficiaryShare" Type="float" />
+          <Property Name="TotalCost" Type="float" />
+          <Property Name="Grounded" Type="float" />
+          <Property Name="Completed" Type="float" />
+          <Property Name="Occupied" Type="float" />
+          <Property Name="CAApproved" Type="float" />
+          <Property Name="[CASanctionedforRelease" Type="float" />
+          <Property Name="CAReleased" Type="float" />
+          <Property Name="PendingforRelease" Type="float" />
+          <Property Name="IIIQ_15_16" Type="float" />
+          <Property Name="IV_Q_15_16" Type="float" />
+          <Property Name="IQ_16_17" Type="float" />
+          <Property Name="IIQ_16_17" Type="float" />
+          <Property Name="IIIQ_16_17" Type="float" />
+          <Property Name="IV_Q_16_17" Type="float" />
+          <Property Name="I_Q_17_18" Type="float" />
+          <Property Name="II_Q_17_18" Type="float" />
+          <Property Name="III_Q_17_18" Type="float" />
+          <Property Name="IV_Q_17_18" Type="float" />
+          <Property Name="I_Q_18_19" Type="float" />
+          <Property Name="II_Q_18_19" Type="float" />
+          <Property Name="III_Q_18_19" Type="float" />
+          <Property Name="IV_Q_18_19" Type="float" />
+          <Property Name="SRNo1" Type="float" />
+          <Property Name="State2" Type="nvarchar" MaxLength="255" />
+          <Property Name="CumSanctioned" Type="float" />
+          <Property Name="CASanctioned_15_16" Type="float" />
+          <Property Name="CASanctioned_16_17" Type="float" />
+          <Property Name="CASanctioned_17_18" Type="float" />
+          <Property Name="CASanctioned_18_19" Type="float" />
+          <Property Name="CumuCAReleased" Type="float" />
+          <Property Name="CumuCA_Released_15_16" Type="float" />
+          <Property Name="CumuCA_Released_16_17" Type="float" />
+          <Property Name="CumuCA_Released_17_18" Type="float" />
+          <Property Name="CumuCA_Released_18_19" Type="float" />
+          <Property Name="k" Type="float" />
+          <Property Name="ll" Type="nvarchar" MaxLength="255" />
+          <Property Name="HS_Cum_20_8_18" Type="float" />
+          <Property Name="HS_15_16" Type="float" />
+          <Property Name="HS_16_17" Type="float" />
+          <Property Name="HS_17_18" Type="float" />
+          <Property Name="HS_18_19" Type="float" />
+          <Property Name="HC_20_08_18" Type="float" />
+          <Property Name="HC_14_15" Type="float" />
+          <Property Name="HC_15_16" Type="float" />
+          <Property Name="HC_16_17" Type="float" />
+          <Property Name="HC_17_18" Type="float" />
+          <Property Name="HC_18_19" Type="float" />
+          <Property Name="HO_Cum" Type="float" />
+          <Property Name="HO_14_15" Type="float" />
+          <Property Name="HO_15_16" Type="float" />
+          <Property Name="HO_16_17" Type="float" />
+          <Property Name="HO_17_18" Type="float" />
+          <Property Name="HO_18_19" Type="float" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Employee.dbo.Physical_Dashboard_old' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Physical_Dashboard_old">
+          <Property Name="SrNo" Type="float" />
+          <Property Name="State1" Type="nvarchar" MaxLength="255" />
+          <Property Name="StateCode" Type="nchar" MaxLength="10" />
+          <Property Name="Demand" Type="float" />
+          <Property Name="Houses Sanctioned" Type="float" />
+          <Property Name="CentralShare" Type="float" />
+          <Property Name="StateShare" Type="float" />
+          <Property Name="ULBShare" Type="float" />
+          <Property Name="BeneficiaryShare" Type="float" />
+          <Property Name="TotalCost" Type="float" />
+          <Property Name="Grounded" Type="float" />
+          <Property Name="Completed" Type="float" />
+          <Property Name="Occupied" Type="float" />
+          <Property Name="CAApproved" Type="float" />
+          <Property Name="[CASanctionedforRelease" Type="float" />
+          <Property Name="CAReleased" Type="float" />
+          <Property Name="PendingforRelease" Type="float" />
+          <Property Name="IIIQ_15_16" Type="float" />
+          <Property Name="IV_Q_15_16" Type="float" />
+          <Property Name="IQ_16_17" Type="float" />
+          <Property Name="IIQ_16_17" Type="float" />
+          <Property Name="IIIQ_16_17" Type="float" />
+          <Property Name="IV_Q_16_17" Type="float" />
+          <Property Name="I_Q_17_18" Type="float" />
+          <Property Name="II_Q_17_18" Type="float" />
+          <Property Name="III_Q_17_18" Type="float" />
+          <Property Name="IV_Q_17_18" Type="float" />
+          <Property Name="I_Q_18_19" Type="float" />
+          <Property Name="II_Q_18_19" Type="float" />
+          <Property Name="III_Q_18_19" Type="float" />
+          <Property Name="IV_Q_18_19" Type="float" />
+          <Property Name="State2" Type="nvarchar" MaxLength="255" />
+          <Property Name="CumSanctioned" Type="float" />
+          <Property Name="CASanctioned_15_16" Type="float" />
+          <Property Name="CASanctioned_16_17" Type="float" />
+          <Property Name="CASanctioned_17_18" Type="float" />
+          <Property Name="CASanctioned_18_19" Type="float" />
+          <Property Name="CumuCAReleased" Type="float" />
+          <Property Name="CumuCA_Released_15_16" Type="float" />
+          <Property Name="CumuCA_Released_16_17" Type="float" />
+          <Property Name="CumuCA_Released_17_18" Type="float" />
+          <Property Name="CumuCA_Released_18_19" Type="float" />
+          <Property Name="k" Type="float" />
+          <Property Name="ll" Type="nvarchar" MaxLength="255" />
+          <Property Name="HS_Cum_20_8_18" Type="float" />
+          <Property Name="HS_15_16" Type="float" />
+          <Property Name="HS_16_17" Type="float" />
+          <Property Name="HS_17_18" Type="float" />
+          <Property Name="HS_18_19" Type="float" />
+          <Property Name="HC_20_08_18" Type="float" />
+          <Property Name="HC_14_15" Type="float" />
+          <Property Name="HC_15_16" Type="float" />
+          <Property Name="HC_16_17" Type="float" />
+          <Property Name="HC_17_18" Type="float" />
+          <Property Name="HC_18_19" Type="float" />
+          <Property Name="HO_Cum" Type="float" />
+          <Property Name="HO_14_15" Type="float" />
+          <Property Name="HO_15_16" Type="float" />
+          <Property Name="HO_16_17" Type="float" />
+          <Property Name="HO_17_18" Type="float" />
+          <Property Name="HO_18_19" Type="float" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Employee.dbo.PMAY_PROJECTS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="PMAY_PROJECTS">
+          <Property Name="S# No#" Type="float" />
+          <Property Name="Project Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="Annexure ID_(PMAY_MIS)" Type="nvarchar" MaxLength="255" />
+          <Property Name="Component\" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="District" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="State Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dcode" Type="nvarchar" MaxLength="255" />
+          <Property Name="sunDisttCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="CityCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Project Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="CSMCDate" Type="datetime" />
+          <Property Name="CSMCNo#" Type="float" />
+          <Property Name="F# Year" Type="float" />
+          <Property Name="No of Projects" Type="float" />
+          <Property Name="Project _Cost" Type="float" />
+          <Property Name="Central Assistance involved" Type="float" />
+          <Property Name="State Grant" Type="float" />
+          <Property Name="ULB Share" Type="float" />
+          <Property Name="Beneficiary Share" Type="float" />
+          <Property Name="Released through EBR" Type="float" />
+          <Property Name="First Installment Released" Type="float" />
+          <Property Name="Second Installment Released" Type="float" />
+          <Property Name="Central Assistance Released" Type="float" />
+          <Property Name="UC _Received" Type="float" />
+          <Property Name="UC _Pending" Type="float" />
+          <Property Name="Houses involved" Type="float" />
+          <Property Name="Funds Disbursed in Houses" Type="float" />
+          <Property Name="Houses Grounded" Type="float" />
+          <Property Name="Houses Under Progress" Type="float" />
+          <Property Name="Houses Completed" Type="float" />
+          <Property Name="Houses Allotted" Type="float" />
+          <Property Name="Houses Occupied" Type="float" />
+          <Property Name="Houses _yet to_Grounded" Type="float" />
+        </EntityType>-->
+  <EntityType Name="PMAY_PROJECTS Copy$">
+    <Key>
+      <PropertyRef Name="StNo" />
+    </Key>
+    <Property Name="StNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="S# No#" Type="float" />
+    <Property Name="Project Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Annexure ID_(PMAY_MIS)" Type="nvarchar" MaxLength="255" />
+    <Property Name="Component\" Type="nvarchar" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="District" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="State Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dcode" Type="nvarchar" MaxLength="255" />
+    <Property Name="sunDisttCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="CityCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Project Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="CSMCDate" Type="datetime" />
+    <Property Name="CSMCNo#" Type="float" />
+    <Property Name="F# Year" Type="float" />
+    <Property Name="No of Projects" Type="float" />
+    <Property Name="Project _Cost" Type="float" />
+    <Property Name="Central Assistance involved" Type="float" />
+    <Property Name="State Grant" Type="float" />
+    <Property Name="ULB Share" Type="float" />
+    <Property Name="Beneficiary Share" Type="float" />
+    <Property Name="Released through EBR" Type="float" />
+    <Property Name="First Installment Released" Type="float" />
+    <Property Name="Second Installment Released" Type="float" />
+    <Property Name="Central Assistance Released" Type="float" />
+    <Property Name="UC _Received" Type="float" />
+    <Property Name="UC _Pending" Type="float" />
+    <Property Name="Houses involved" Type="float" />
+    <Property Name="Funds Disbursed in Houses" Type="float" />
+    <Property Name="Houses Grounded" Type="float" />
+    <Property Name="Houses Under Progress" Type="float" />
+    <Property Name="Houses Completed" Type="float" />
+    <Property Name="Houses Allotted" Type="float" />
+    <Property Name="Houses Occupied" Type="float" />
+    <Property Name="Houses _yet to_Grounded" Type="float" />
+  </EntityType>
+  <EntityType Name="RoleMaster">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" />
+    <Property Name="RoleDesc" Type="varchar" MaxLength="100" />
+    <Property Name="DOC" Type="datetime" />
+    <Property Name="DefaultURL" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="State_Master">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="States_UT" Type="nvarchar" MaxLength="255" />
+    <Property Name="Codes" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="StateMaster">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblCity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsSelected" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar(max)" />
+    <Property Name="EmpName" Type="nvarchar(max)" />
+    <Property Name="MobileNo" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="sDOB" Type="datetime" />
+    <Property Name="Gender" Type="nvarchar(max)" />
+    <Property Name="PanNo" Type="nvarchar(max)" />
+    <Property Name="CountryId" Type="bigint" />
+    <Property Name="StateId" Type="bigint" />
+    <Property Name="CityId" Type="bigint" />
+    <Property Name="DisttId" Type="bigint" />
+    <Property Name="Salary" Type="float" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="ZipCode" Type="nvarchar(max)" />
+    <Property Name="FathersName" Type="nvarchar(max)" />
+    <Property Name="HomeAdd" Type="nvarchar(max)" />
+    <Property Name="HomePhone" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="UserType" Type="nvarchar(max)" />
+    <Property Name="DateAdded" Type="datetime" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="DateOfJoining" Type="datetime" />
+    <Property Name="PhotoUpload" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserMaster not used">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="Mobile" Type="varchar" MaxLength="13" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="DOJ" Type="datetime" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="1000" />
+    <Property Name="PIN" Type="varchar" MaxLength="6" />
+    <Property Name="FRN" Type="varchar" MaxLength="50" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="20" />
+    <Property Name="PAN" Type="varchar" MaxLength="10" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="DistrictId" Type="bigint" />
+    <Property Name="CityId" Type="bigint" />
+    <Property Name="CompanyId" Type="nvarchar" MaxLength="500" />
+    <Property Name="TAN" Type="varchar" MaxLength="20" />
+    <Property Name="Service_Tax_No" Type="nvarchar" MaxLength="20" />
+    <Property Name="Authorised_Person" Type="nvarchar" MaxLength="256" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsBlock" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DOC" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreatedFor" Type="nvarchar" MaxLength="256" />
+    <Property Name="RoleId" Type="varchar" MaxLength="10" />
+    <Property Name="UserType" Type="char" MaxLength="1" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Aadhar" Type="varchar" MaxLength="16" />
+    <Property Name="PlanId" Type="int" />
+    <Property Name="PlanAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="PF_NO" Type="nvarchar" MaxLength="20" />
+    <Property Name="ESI_NO" Type="nvarchar" MaxLength="20" />
+    <Property Name="Designation" Type="varchar" MaxLength="100" />
+    <Property Name="Salary" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="PrevEmployerName" Type="nvarchar" MaxLength="256" />
+    <Property Name="PrevEmployerAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="PrevEmployerPeriodServed" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrevEmployerContactDetails" Type="nvarchar" MaxLength="15" />
+    <Property Name="PermanentPhoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="M_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="NRO_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="Leaves" Type="nvarchar" MaxLength="50" />
+    <Property Name="ArticleshipCompletionDate" Type="datetime" />
+    <Property Name="FinalExaminationDue" Type="nvarchar" MaxLength="50" />
+    <Property Name="NextDue" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExaminationCleared" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="BusinessDescription" Type="nvarchar(max)" />
+    <Property Name="Engagement" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Emp_CountryMaster">
+    <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="0..1" />
+    <End Role="Emp" Type="Self.Emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryMaster">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="Emp">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emp_RoleMaster">
+    <End Role="RoleMaster" Type="Self.RoleMaster" Multiplicity="0..1" />
+    <End Role="Emp" Type="Self.Emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleMaster">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Emp">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emp_StateMaster">
+    <End Role="StateMaster" Type="Self.StateMaster" Multiplicity="0..1" />
+    <End Role="Emp" Type="Self.Emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StateMaster">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Emp">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="GetDisttDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetStateWiseFinYrData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="GetStateWiseHouses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="HFA_DemandCityWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="HFA_GetCity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Dcode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="HFA_GetDistt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="HFA_GetStates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="HFA_JNNURMCityWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="Dcode" Type="char" Mode="In" />
+    <Parameter Name="CityCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="HFA_Proc_CLSS_CityWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="HFA_sp_PMayData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="Proc_CLSS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_CLSS_Param" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_Component" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_Component_Param" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_Component_Pmay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_Component_PmayParam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_Component_SDC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="Dcode" Type="char" Mode="In" />
+    <Parameter Name="CityCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="Proc_Inv_Cons_StateWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="Proc_Inv_StateWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="Proc_Investment_Cons" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_Cons_JNNURM_SDC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="Dcode" Type="char" Mode="In" />
+    <Parameter Name="CityCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_Cons_JNNURM_Values" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Cons_JNNURM_Values_Param" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_Cons_Values" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Cons_Values_Param" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_Cons_Values_SDC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="Dcode" Type="char" Mode="In" />
+    <Parameter Name="CityCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Test" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rowscount" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="EmployeeModelStoreContainer">
+    <EntitySet Name="Buildings" EntityType="Self.Buildings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City_Master" EntityType="Self.City_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CityMaster" EntityType="Self.CityMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLSS_MASTER" EntityType="Self.CLSS_MASTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Designation_Master" EntityType="Self.Designation_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distt_Master" EntityType="Self.Distt_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DisttMaster" EntityType="Self.DisttMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emp" EntityType="Self.Emp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpData" EntityType="Self.EmpData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employe" EntityType="Self.Employe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Investment" EntityType="Self.Investment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Investment_Details" EntityType="Self.Investment_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JnNURM_Copy$" EntityType="Self.JnNURM_Copy$" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Master_Cities_Included" EntityType="Self.Master_Cities_Included" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PMAY_PROJECTS Copy$" EntityType="Self.PMAY_PROJECTS Copy$" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleMaster" EntityType="Self.RoleMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="State_Master" EntityType="Self.State_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StateMaster" EntityType="Self.StateMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCity" EntityType="Self.tblCity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginMaster" EntityType="Self.LoginMaster" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LoginMaster].[UserId] AS [UserId], 
+    [LoginMaster].[Password] AS [Password], 
+    [LoginMaster].[LoginType] AS [LoginType], 
+    [LoginMaster].[LastLoginDate] AS [LastLoginDate], 
+    [LoginMaster].[PasswordChangeDate] AS [PasswordChangeDate], 
+    [LoginMaster].[RoleId] AS [RoleId], 
+    [LoginMaster].[UserType] AS [UserType]
+    FROM [dbo].[LoginMaster] AS [LoginMaster]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MenuMaster" EntityType="Self.MenuMaster" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MenuMaster].[MenuId] AS [MenuId], 
+    [MenuMaster].[MenuName] AS [MenuName], 
+    [MenuMaster].[MenuRef] AS [MenuRef], 
+    [MenuMaster].[MenuPath] AS [MenuPath], 
+    [MenuMaster].[MenuIcon] AS [MenuIcon], 
+    [MenuMaster].[SequenceNo] AS [SequenceNo], 
+    [MenuMaster].[DOC] AS [DOC], 
+    [MenuMaster].[Status] AS [Status]
+    FROM [dbo].[MenuMaster] AS [MenuMaster]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserMaster not used" EntityType="Self.UserMaster not used" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserMaster not used].[UserId] AS [UserId], 
+    [UserMaster not used].[Password] AS [Password], 
+    [UserMaster not used].[Name] AS [Name], 
+    [UserMaster not used].[Email] AS [Email], 
+    [UserMaster not used].[Mobile] AS [Mobile], 
+    [UserMaster not used].[Phone] AS [Phone], 
+    [UserMaster not used].[Gender] AS [Gender], 
+    [UserMaster not used].[DOB] AS [DOB], 
+    [UserMaster not used].[DOJ] AS [DOJ], 
+    [UserMaster not used].[Address1] AS [Address1], 
+    [UserMaster not used].[Address2] AS [Address2], 
+    [UserMaster not used].[PIN] AS [PIN], 
+    [UserMaster not used].[FRN] AS [FRN], 
+    [UserMaster not used].[FAX] AS [FAX], 
+    [UserMaster not used].[PAN] AS [PAN], 
+    [UserMaster not used].[CountryId] AS [CountryId], 
+    [UserMaster not used].[StateId] AS [StateId], 
+    [UserMaster not used].[DistrictId] AS [DistrictId], 
+    [UserMaster not used].[CityId] AS [CityId], 
+    [UserMaster not used].[CompanyId] AS [CompanyId], 
+    [UserMaster not used].[TAN] AS [TAN], 
+    [UserMaster not used].[Service_Tax_No] AS [Service_Tax_No], 
+    [UserMaster not used].[Authorised_Person] AS [Authorised_Person], 
+    [UserMaster not used].[IsActive] AS [IsActive], 
+    [UserMaster not used].[IsBlock] AS [IsBlock], 
+    [UserMaster not used].[IsDeleted] AS [IsDeleted], 
+    [UserMaster not used].[DOC] AS [DOC], 
+    [UserMaster not used].[CreatedBy] AS [CreatedBy], 
+    [UserMaster not used].[CreatedFor] AS [CreatedFor], 
+    [UserMaster not used].[RoleId] AS [RoleId], 
+    [UserMaster not used].[UserType] AS [UserType], 
+    [UserMaster not used].[UpdateDate] AS [UpdateDate], 
+    [UserMaster not used].[Aadhar] AS [Aadhar], 
+    [UserMaster not used].[PlanId] AS [PlanId], 
+    [UserMaster not used].[PlanAmount] AS [PlanAmount], 
+    [UserMaster not used].[PF_NO] AS [PF_NO], 
+    [UserMaster not used].[ESI_NO] AS [ESI_NO], 
+    [UserMaster not used].[Designation] AS [Designation], 
+    [UserMaster not used].[Salary] AS [Salary], 
+    [UserMaster not used].[PrevEmployerName] AS [PrevEmployerName], 
+    [UserMaster not used].[PrevEmployerAddress] AS [PrevEmployerAddress], 
+    [UserMaster not used].[PrevEmployerPeriodServed] AS [PrevEmployerPeriodServed], 
+    [UserMaster not used].[PrevEmployerContactDetails] AS [PrevEmployerContactDetails], 
+    [UserMaster not used].[PermanentPhoneNo] AS [PermanentPhoneNo], 
+    [UserMaster not used].[M_NO] AS [M_NO], 
+    [UserMaster not used].[NRO_NO] AS [NRO_NO], 
+    [UserMaster not used].[Leaves] AS [Leaves], 
+    [UserMaster not used].[ArticleshipCompletionDate] AS [ArticleshipCompletionDate], 
+    [UserMaster not used].[FinalExaminationDue] AS [FinalExaminationDue], 
+    [UserMaster not used].[NextDue] AS [NextDue], 
+    [UserMaster not used].[ExaminationCleared] AS [ExaminationCleared], 
+    [UserMaster not used].[Remarks] AS [Remarks], 
+    [UserMaster not used].[BusinessDescription] AS [BusinessDescription], 
+    [UserMaster not used].[Engagement] AS [Engagement]
+    FROM [dbo].[UserMaster not used] AS [UserMaster not used]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Emp_CountryMaster" Association="Self.FK_Emp_CountryMaster">
+      <End Role="CountryMaster" EntitySet="CountryMaster" />
+      <End Role="Emp" EntitySet="Emp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emp_RoleMaster" Association="Self.FK_Emp_RoleMaster">
+      <End Role="RoleMaster" EntitySet="RoleMaster" />
+      <End Role="Emp" EntitySet="Emp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emp_StateMaster" Association="Self.FK_Emp_StateMaster">
+      <End Role="StateMaster" EntitySet="StateMaster" />
+      <End Role="Emp" EntitySet="Emp" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

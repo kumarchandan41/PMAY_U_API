@@ -1,0 +1,1456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Building">
+    <Key>
+      <PropertyRef Name="cntid" />
+    </Key>
+    <Property Name="cntid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="District" Type="Int32" />
+    <Property Name="City" Type="Int32" />
+    <Property Name="Statename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DisttName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cityname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProjCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProjName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AppDate" Type="DateTime" Precision="3" />
+    <Property Name="ProjCost" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Houses" Type="Int32" />
+    <Property Name="Grounded" Type="Int32" />
+    <Property Name="Completed" Type="Int32" />
+  </EntityType>
+  <EntityType Name="City_Master">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CityCode" Type="Double" />
+    <Property Name="Dcode" Type="Double" />
+    <Property Name="sunDisttCode" Type="Double" />
+  </EntityType>
+  <EntityType Name="CityMaster">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StateID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CLSS_MASTER">
+    <Key>
+      <PropertyRef Name="ClssId" />
+    </Key>
+    <Property Name="ClssId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SrNo" Type="Double" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StateCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Loan_EWS_LIG" Type="Double" />
+    <Property Name="Subsidy_EWS_LIG" Type="Double" />
+    <Property Name="No_Bene_EWS_LIG" Type="Double" />
+    <Property Name="Loan_MIG" Type="Double" />
+    <Property Name="Subsidy_MIG" Type="Double" />
+    <Property Name="No_Beneficiary_MIG" Type="Double" />
+    <Property Name="Loan_TOTAL" Type="Double" />
+    <Property Name="Subsidy_Total" Type="Double" />
+    <Property Name="NoBeneficiary_Total" Type="Double" />
+  </EntityType>
+  <EntityType Name="CountryMaster">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Emps" Relationship="Self.FK_Emp_CountryMaster" FromRole="CountryMaster" ToRole="Emp" />
+  </EntityType>
+  <EntityType Name="Designation_Master">
+    <Key>
+      <PropertyRef Name="DesigId" />
+    </Key>
+    <Property Name="DesigId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Distt_Master">
+    <Key>
+      <PropertyRef Name="DisttId" />
+    </Key>
+    <Property Name="DisttId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="District" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dcode" Type="Double" />
+    <Property Name="sunDisttCode" Type="Double" />
+    <Property Name="StateCode" Type="Double" />
+  </EntityType>
+  <EntityType Name="DisttMaster">
+    <Key>
+      <PropertyRef Name="DisttId" />
+    </Key>
+    <Property Name="DisttId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DisttName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CityId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="Emp">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PinCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileUpload" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="StateID" Type="Int32" />
+    <NavigationProperty Name="CountryMaster" Relationship="Self.FK_Emp_CountryMaster" FromRole="Emp" ToRole="CountryMaster" />
+    <NavigationProperty Name="RoleMaster" Relationship="Self.FK_Emp_RoleMaster" FromRole="Emp" ToRole="RoleMaster" />
+    <NavigationProperty Name="StateMaster" Relationship="Self.FK_Emp_StateMaster" FromRole="Emp" ToRole="StateMaster" />
+  </EntityType>
+  <EntityType Name="EmpData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Employe">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Investment">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="Int64" Nullable="false" />
+    <Property Name="SrareName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StateCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Demand" Type="Double" />
+    <Property Name="HousesSanctioned" Type="Double" />
+    <Property Name="CentralShare" Type="Double" />
+    <Property Name="StateShare" Type="Double" />
+    <Property Name="ULBShare" Type="Double" />
+    <Property Name="BeneficiaryShare" Type="Double" />
+    <Property Name="TotalCost" Type="Double" />
+    <Property Name="Grounded" Type="Double" />
+    <Property Name="Completed" Type="Double" />
+    <Property Name="Occupied" Type="Double" />
+    <Property Name="CAApproved" Type="Double" />
+    <Property Name="CASanctforRelease" Type="Double" />
+    <Property Name="CAssitReleased" Type="Double" />
+    <Property Name="PendingforRelease" Type="Double" />
+  </EntityType>
+  <EntityType Name="Investment_Details">
+    <Key>
+      <PropertyRef Name="InvestmentId" />
+    </Key>
+    <Property Name="InvestmentId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StateCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="FinancialYear" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CentralShare" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="StateShare" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ULBShare" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Beneficiary" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="JnNURM_Copy_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SrNo" Type="Double" />
+    <Property Name="Project_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Scheme" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Distt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CityTown" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="State_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisttCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SubDisttCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TownCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Project_Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="App_Date" Type="DateTime" Precision="3" />
+    <Property Name="Cancelled_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="O_ProjectCost_" Type="Double" />
+    <Property Name="O_CentrallShare" Type="Double" />
+    <Property Name="O_DwellingUnit" Type="Double" />
+    <Property Name="ProjCost" Type="Double" />
+    <Property Name="Central_Share" Type="Double" />
+    <Property Name="DwellingUnit" Type="Double" />
+    <Property Name="Central_Share_Released__Projects_" Type="Double" />
+    <Property Name="Central_Share_Adjusted" Type="Double" />
+    <Property Name="Excess_ACA_Released" Type="Double" />
+    <Property Name="Central_Share_Refunded_by_State_Govt_" Type="Double" />
+    <Property Name="UC_Received" Type="Double" />
+    <Property Name="Pending_UC" Type="Double" />
+    <Property Name="Under_Progress" Type="Double" />
+    <Property Name="Completed" Type="Double" />
+    <Property Name="Allotted" Type="Double" />
+    <Property Name="Occupied" Type="Double" />
+    <Property Name="Un_Occupied" Type="Double" />
+    <Property Name="Non_Starter" Type="Double" />
+    <Property Name="Grounded" Type="Double" />
+    <Property Name="Completed1" Type="Double" />
+    <Property Name="Occupied1" Type="Double" />
+  </EntityType>
+  <EntityType Name="Master_Cities_Included">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name_of_the_State__UT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Cities_included_in_mission" Type="Double" />
+  </EntityType>
+  <EntityType Name="PMAY_PROJECTS_Copy___1">
+    <Key>
+      <PropertyRef Name="StNo" />
+    </Key>
+    <Property Name="StNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="S__No_" Type="Double" />
+    <Property Name="Project_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Annexure_ID__PMAY_MIS_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Component_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="State_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dcode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sunDisttCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CityCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Project_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CSMCDate" Type="DateTime" Precision="3" />
+    <Property Name="CSMCNo_" Type="Double" />
+    <Property Name="F__Year" Type="Double" />
+    <Property Name="No_of_Projects" Type="Double" />
+    <Property Name="Project__Cost" Type="Double" />
+    <Property Name="Central_Assistance_involved" Type="Double" />
+    <Property Name="State_Grant" Type="Double" />
+    <Property Name="ULB_Share" Type="Double" />
+    <Property Name="Beneficiary_Share" Type="Double" />
+    <Property Name="Released_through_EBR" Type="Double" />
+    <Property Name="First_Installment_Released" Type="Double" />
+    <Property Name="Second_Installment_Released" Type="Double" />
+    <Property Name="CASanctionedForRel" Type="Double" />
+    <Property Name="Central_Assistance_Released" Type="Double" />
+    <Property Name="UC__Received" Type="Double" />
+    <Property Name="UC__Pending" Type="Double" />
+    <Property Name="Houses_involved" Type="Double" />
+    <Property Name="Funds_Disbursed_in_Houses" Type="Double" />
+    <Property Name="Houses_Grounded" Type="Double" />
+    <Property Name="Houses_Under_Progress" Type="Double" />
+    <Property Name="Houses_Completed" Type="Double" />
+    <Property Name="Houses_Allotted" Type="Double" />
+    <Property Name="Houses_Occupied" Type="Double" />
+    <Property Name="Houses__yet_to_Grounded" Type="Double" />
+  </EntityType>
+  <EntityType Name="RoleMaster">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DOC" Type="DateTime" Precision="3" />
+    <Property Name="DefaultURL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Emps" Relationship="Self.FK_Emp_RoleMaster" FromRole="RoleMaster" ToRole="Emp" />
+  </EntityType>
+  <EntityType Name="State_Master">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="States_UT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Codes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Division" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="StateMaster">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryID" Type="Int32" />
+    <NavigationProperty Name="Emps" Relationship="Self.FK_Emp_StateMaster" FromRole="StateMaster" ToRole="Emp" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblCity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsSelected" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmpName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sDOB" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PanNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CountryId" Type="Int64" />
+    <Property Name="StateId" Type="Int64" />
+    <Property Name="CityId" Type="Int64" />
+    <Property Name="DisttId" Type="Int64" />
+    <Property Name="Salary" Type="Double" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FathersName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HomeAdd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HomePhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateAdded" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfJoining" Type="DateTime" Precision="3" />
+    <Property Name="PhotoUpload" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ComponentMaster">
+    <Key>
+      <PropertyRef Name="Cid" />
+    </Key>
+    <Property Name="Cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LoginMaster">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="Password" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordChangeDate" Type="DateTime" Precision="3" />
+    <Property Name="RoleId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="UserType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MenuMaster">
+    <Key>
+      <PropertyRef Name="MenuId" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="MenuId" Type="Int64" Nullable="false" />
+    <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MenuRef" Type="Int64" />
+    <Property Name="MenuPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MenuIcon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SequenceNo" Type="Int32" />
+    <Property Name="DOC" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserMaster_not_used">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="DOJ" Type="DateTime" Precision="3" />
+    <Property Name="Address1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="PIN" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="FRN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FAX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="DistrictId" Type="Int64" />
+    <Property Name="CityId" Type="Int64" />
+    <Property Name="CompanyId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TAN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Service_Tax_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Authorised_Person" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsBlock" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DOC" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedFor" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="RoleId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UserType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="Aadhar" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="PlanId" Type="Int32" />
+    <Property Name="PlanAmount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="PF_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ESI_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Designation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Salary" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="PrevEmployerName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PrevEmployerAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PrevEmployerPeriodServed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrevEmployerContactDetails" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentPhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="M_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NRO_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Leaves" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ArticleshipCompletionDate" Type="DateTime" Precision="3" />
+    <Property Name="FinalExaminationDue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NextDue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExaminationCleared" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Engagement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Emp_CountryMaster">
+    <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="0..1" />
+    <End Role="Emp" Type="Self.Emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryMaster">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="Emp">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emp_RoleMaster">
+    <End Role="RoleMaster" Type="Self.RoleMaster" Multiplicity="0..1" />
+    <End Role="Emp" Type="Self.Emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleMaster">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Emp">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emp_StateMaster">
+    <End Role="StateMaster" Type="Self.StateMaster" Multiplicity="0..1" />
+    <End Role="Emp" Type="Self.Emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StateMaster">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Emp">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EmployeeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Buildings" EntityType="Self.Building" />
+    <EntitySet Name="City_Master" EntityType="Self.City_Master" />
+    <EntitySet Name="CityMasters" EntityType="Self.CityMaster" />
+    <EntitySet Name="CLSS_MASTER" EntityType="Self.CLSS_MASTER" />
+    <EntitySet Name="CountryMasters" EntityType="Self.CountryMaster" />
+    <EntitySet Name="Designation_Master" EntityType="Self.Designation_Master" />
+    <EntitySet Name="Distt_Master" EntityType="Self.Distt_Master" />
+    <EntitySet Name="DisttMasters" EntityType="Self.DisttMaster" />
+    <EntitySet Name="Emps" EntityType="Self.Emp" />
+    <EntitySet Name="EmpDatas" EntityType="Self.EmpData" />
+    <EntitySet Name="Employes" EntityType="Self.Employe" />
+    <EntitySet Name="Investments" EntityType="Self.Investment" />
+    <EntitySet Name="Investment_Details" EntityType="Self.Investment_Details" />
+    <EntitySet Name="JnNURM_Copy_" EntityType="Self.JnNURM_Copy_" />
+    <EntitySet Name="Master_Cities_Included" EntityType="Self.Master_Cities_Included" />
+    <EntitySet Name="PMAY_PROJECTS_Copy___1" EntityType="Self.PMAY_PROJECTS_Copy___1" />
+    <EntitySet Name="RoleMasters" EntityType="Self.RoleMaster" />
+    <EntitySet Name="State_Master" EntityType="Self.State_Master" />
+    <EntitySet Name="StateMasters" EntityType="Self.StateMaster" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tblCities" EntityType="Self.tblCity" />
+    <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
+    <EntitySet Name="ComponentMasters" EntityType="Self.ComponentMaster" />
+    <EntitySet Name="LoginMasters" EntityType="Self.LoginMaster" />
+    <EntitySet Name="MenuMasters" EntityType="Self.MenuMaster" />
+    <EntitySet Name="UserMaster_not_useds" EntityType="Self.UserMaster_not_used" />
+    <AssociationSet Name="FK_Emp_CountryMaster" Association="Self.FK_Emp_CountryMaster">
+      <End Role="CountryMaster" EntitySet="CountryMasters" />
+      <End Role="Emp" EntitySet="Emps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emp_RoleMaster" Association="Self.FK_Emp_RoleMaster">
+      <End Role="RoleMaster" EntitySet="RoleMasters" />
+      <End Role="Emp" EntitySet="Emps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emp_StateMaster" Association="Self.FK_Emp_StateMaster">
+      <End Role="StateMaster" EntitySet="StateMasters" />
+      <End Role="Emp" EntitySet="Emps" />
+    </AssociationSet>
+    <FunctionImport Name="GetDisttDetails" ReturnType="Collection(EmployeeModel.GetDisttDetails_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetStateWiseFinYrData" ReturnType="Collection(EmployeeModel.GetStateWiseFinYrData_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetStateWiseHouses" ReturnType="Collection(EmployeeModel.GetStateWiseHouses_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetStateWiseScore" ReturnType="Collection(EmployeeModel.GetStateWiseScore_Result)">
+      <Parameter Name="stateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_AHP_AtAGlance" ReturnType="Collection(EmployeeModel.HFA_AHP_AtAGlance_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_BLCS_AtAGlance" ReturnType="Collection(EmployeeModel.HFA_BLCS_AtAGlance_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_ComponentsData_AtAGlance" ReturnType="Collection(EmployeeModel.HFA_ComponentsData_AtAGlance_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_DemandCityWise" ReturnType="Collection(EmployeeModel.HFA_DemandCityWise_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_FinProgress14_15">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_FinProgress15_16">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_FinProgress16_17">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_FinProgress17_18">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="districtCode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_FinProgress18_19">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="districtCode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_GetCity" ReturnType="Collection(EmployeeModel.HFA_GetCity_Result)">
+      <Parameter Name="Dcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_GetDemandCompWise" ReturnType="Collection(EmployeeModel.HFA_GetDemandCompWise_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_GetDemandCompWiseN">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_GetDistt" ReturnType="Collection(EmployeeModel.HFA_GetDistt_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_GetStates" ReturnType="Collection(EmployeeModel.HFA_GetStates_Result)" />
+    <FunctionImport Name="hfa_Houses" ReturnType="Collection(EmployeeModel.hfa_Houses_Result)" />
+    <FunctionImport Name="HFA_ISSR_AtAGlance" ReturnType="Collection(EmployeeModel.HFA_ISSR_AtAGlance_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_JNNURMCityWise" ReturnType="Collection(EmployeeModel.HFA_JNNURMCityWise_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="Dcode" Mode="In" Type="String" />
+      <Parameter Name="CityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_JNNURN_AtAGlance" ReturnType="Collection(EmployeeModel.HFA_JNNURN_AtAGlance_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_PMay_CompFYrWise14_15">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_PMay_CompFYrWise15_16">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_PMay_CompFYrWise16_17">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_PMay_CompFYrWise17_18">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_PMay_CompFYrWise18_19">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_PMayCompFYr_1415">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_Proc_CLSS_CityWise" ReturnType="Collection(EmployeeModel.HFA_Proc_CLSS_CityWise_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_RAY_AtAGlance" ReturnType="Collection(EmployeeModel.HFA_RAY_AtAGlance_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_CLSS_CompWise" ReturnType="Collection(EmployeeModel.HFA_sp_CLSS_CompWise_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_FinYear_Data" ReturnType="Collection(EmployeeModel.HFA_sp_FinYear_Data_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_FinYear_Datanew" ReturnType="Collection(EmployeeModel.HFA_sp_FinYear_Datanew_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_FinYr_1415" ReturnType="Collection(EmployeeModel.HFA_sp_FinYr_1415_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_FinYr_1516" ReturnType="Collection(EmployeeModel.HFA_sp_FinYr_1516_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_FinYr_1617" ReturnType="Collection(EmployeeModel.HFA_sp_FinYr_1617_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_FinYr_1718" ReturnType="Collection(EmployeeModel.HFA_sp_FinYr_1718_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_FinYr_1819" ReturnType="Collection(EmployeeModel.HFA_sp_FinYr_1819_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PhyFin14_15Data" ReturnType="Collection(EmployeeModel.HFA_sp_PhyFin14_15Data_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PhyFin15_16Data" ReturnType="Collection(EmployeeModel.HFA_sp_PhyFin15_16Data_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PhyFin16_17Data" ReturnType="Collection(EmployeeModel.HFA_sp_PhyFin16_17Data_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PhyFin17_18Data" ReturnType="Collection(EmployeeModel.HFA_sp_PhyFin17_18Data_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PhyFin18_19Data" ReturnType="Collection(EmployeeModel.HFA_sp_PhyFin18_19Data_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PMay_CompWise" ReturnType="Collection(EmployeeModel.HFA_sp_PMay_CompWise_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PMay_CompWiseN">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PMay_CompWiseNew">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PMayCompAll">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PMayData" ReturnType="Collection(EmployeeModel.HFA_sp_PMayData_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PMayData_CompWise" ReturnType="Collection(EmployeeModel.HFA_sp_PMayData_CompWise_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_sp_PMayFinYrData" ReturnType="Collection(EmployeeModel.HFA_sp_PMayFinYrData_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_spPMayCompWiseData" ReturnType="Collection(EmployeeModel.HFA_spPMayCompWiseData_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HFA_spPMayCompWiseDataN" ReturnType="Collection(EmployeeModel.HFA_spPMayCompWiseDataN_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Proc_CLSS" ReturnType="Collection(EmployeeModel.Proc_CLSS_Result)" />
+    <FunctionImport Name="Proc_CLSS_Param" ReturnType="Collection(EmployeeModel.Proc_CLSS_Param_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_Component" ReturnType="Collection(EmployeeModel.proc_Component_Result)" />
+    <FunctionImport Name="proc_Component_Param" ReturnType="Collection(EmployeeModel.proc_Component_Param_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_Component_Pmay" ReturnType="Collection(EmployeeModel.proc_Component_Pmay_Result)" />
+    <FunctionImport Name="proc_Component_PmayParam" ReturnType="Collection(EmployeeModel.proc_Component_PmayParam_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_Component_SDC" ReturnType="Collection(EmployeeModel.proc_Component_SDC_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="Dcode" Mode="In" Type="String" />
+      <Parameter Name="CityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Proc_Inv_Cons_StateWise" ReturnType="Collection(EmployeeModel.Proc_Inv_Cons_StateWise_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Proc_Inv_StateWise" ReturnType="Collection(EmployeeModel.Proc_Inv_StateWise_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Proc_Investment_Cons" ReturnType="Collection(EmployeeModel.Proc_Investment_Cons_Result)" />
+    <FunctionImport Name="SectorWiseReport">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Cid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Cons_JNNURM_SDC" ReturnType="Collection(EmployeeModel.sp_Cons_JNNURM_SDC_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="Dcode" Mode="In" Type="String" />
+      <Parameter Name="CityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Cons_JNNURM_Values" ReturnType="Collection(EmployeeModel.sp_Cons_JNNURM_Values_Result)" />
+    <FunctionImport Name="sp_Cons_JNNURM_Values_Param" ReturnType="Collection(EmployeeModel.sp_Cons_JNNURM_Values_Param_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Cons_Values" ReturnType="Collection(EmployeeModel.sp_Cons_Values_Result)" />
+    <FunctionImport Name="sp_Cons_Values_Param" ReturnType="Collection(EmployeeModel.sp_Cons_Values_Param_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Cons_Values_SDC" ReturnType="Collection(EmployeeModel.sp_Cons_Values_SDC_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="Dcode" Mode="In" Type="String" />
+      <Parameter Name="CityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CSMC_StateWise" ReturnType="Collection(EmployeeModel.sp_CSMC_StateWise_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(EmployeeModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(EmployeeModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="Test" ReturnType="Collection(EmployeeModel.Test_Result)">
+      <Parameter Name="rowscount" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="user_Master" EntityType="EmployeeModel.user_Master" />
+    <EntitySet Name="HFA_Master" EntityType="EmployeeModel.HFA_Master" />
+  </EntityContainer>
+  <ComplexType Name="GetDisttDetails_Result">
+    <Property Type="String" Name="District" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Dcode" Nullable="true" />
+    <Property Type="Double" Name="StateCode" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetStateWiseFinYrData_Result">
+    <Property Type="Double" Name="IIIQ_15_16" Nullable="true" />
+    <Property Type="Double" Name="IV_Q_15_16" Nullable="true" />
+    <Property Type="Double" Name="IQ_16_17" Nullable="true" />
+    <Property Type="Double" Name="IIQ_16_17" Nullable="true" />
+    <Property Type="Double" Name="IIIQ_16_17" Nullable="true" />
+    <Property Type="Double" Name="IV_Q_16_17" Nullable="true" />
+    <Property Type="Double" Name="I_Q_17_18" Nullable="true" />
+    <Property Type="Double" Name="II_Q_17_18" Nullable="true" />
+    <Property Type="Double" Name="III_Q_17_18" Nullable="true" />
+    <Property Type="Double" Name="IV_Q_17_18" Nullable="true" />
+    <Property Type="Double" Name="I_Q_18_19" Nullable="true" />
+    <Property Type="Double" Name="II_Q_18_19" Nullable="true" />
+    <Property Type="Double" Name="III_Q_18_19" Nullable="true" />
+    <Property Type="Double" Name="IV_Q_18_19" Nullable="true" />
+    <Property Type="Double" Name="HS15_16" Nullable="true" />
+    <Property Type="Double" Name="HS_16_17" Nullable="true" />
+    <Property Type="Double" Name="HS17_18" Nullable="true" />
+    <Property Type="Double" Name="HS18_19" Nullable="true" />
+    <Property Type="Double" Name="HC_14_15" Nullable="true" />
+    <Property Type="Double" Name="HC_15_16" Nullable="true" />
+    <Property Type="Double" Name="HC_16_17" Nullable="true" />
+    <Property Type="Double" Name="HC_17_18" Nullable="true" />
+    <Property Type="Double" Name="HC_18_19" Nullable="true" />
+    <Property Type="Double" Name="HO_15_16" Nullable="true" />
+    <Property Type="Double" Name="HO_16_17" Nullable="true" />
+    <Property Type="Double" Name="HO_17_18" Nullable="true" />
+    <Property Type="Double" Name="HO_18_19" Nullable="true" />
+    <Property Type="Double" Name="HC_20_08_18" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+    <Property Type="Double" Name="Demand" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetStateWiseHouses_Result">
+    <Property Type="Double" Name="HS15_16" Nullable="true" />
+    <Property Type="Double" Name="HS_16_17" Nullable="true" />
+    <Property Type="Double" Name="HS17_18" Nullable="true" />
+    <Property Type="Double" Name="HS18_19" Nullable="true" />
+    <Property Type="Double" Name="HC_14_15" Nullable="true" />
+    <Property Type="Double" Name="HC_15_16" Nullable="true" />
+    <Property Type="Double" Name="HC_16_17" Nullable="true" />
+    <Property Type="Double" Name="HC_17_18" Nullable="true" />
+    <Property Type="Double" Name="HC_18_19" Nullable="true" />
+    <Property Type="Double" Name="HO_15_16" Nullable="true" />
+    <Property Type="Double" Name="HO_16_17" Nullable="true" />
+    <Property Type="Double" Name="HO_17_18" Nullable="true" />
+    <Property Type="Double" Name="HO_18_19" Nullable="true" />
+    <Property Type="Double" Name="HC_20_08_18" Nullable="true" />
+    <Property Type="Double" Name="CumSanctioned" Nullable="true" />
+    <Property Type="Double" Name="CASanctioned_15_16" Nullable="true" />
+    <Property Type="Double" Name="CASanctioned_16_17" Nullable="true" />
+    <Property Type="Double" Name="CASanctioned_17_18" Nullable="true" />
+    <Property Type="Double" Name="CASanctioned_18_19" Nullable="true" />
+    <Property Type="Double" Name="CumuCAReleased" Nullable="true" />
+    <Property Type="Double" Name="CumuCA_Released_15_16" Nullable="true" />
+    <Property Type="Double" Name="CumuCA_Released_16_17" Nullable="true" />
+    <Property Type="Double" Name="CumuCA_Released_17_18" Nullable="true" />
+    <Property Type="Double" Name="CumuCA_Released_18_19" Nullable="true" />
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+    <Property Type="Double" Name="Completed" Nullable="true" />
+    <Property Type="Double" Name="Occupied" Nullable="true" />
+    <Property Type="Double" Name="CAApproved" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetStateWiseScore_Result">
+    <Property Type="Int32" Name="StateId" Nullable="true" />
+    <Property Type="String" Name="Codes" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Sanction_vs_Demand" Nullable="true" />
+    <Property Type="Double" Name="Grounding_Sanction" Nullable="true" />
+    <Property Type="Double" Name="Completion_vs_Sanction" Nullable="true" />
+    <Property Type="Double" Name="BLC_Houses_Geotagged" Nullable="true" />
+    <Property Type="Double" Name="Relelase_vs_Sanction" Nullable="true" />
+    <Property Type="Double" Name="MIS_Annexure_uploading" Nullable="true" />
+    <Property Type="Double" Name="Beneficiary_Attachment" Nullable="true" />
+    <Property Type="Int32" Name="Reforms_Achievement" Nullable="true" />
+    <Property Type="Double" Name="JN_Houses_vacant" Nullable="true" />
+    <Property Type="Double" Name="Population_Census_2011" Nullable="true" />
+    <Property Type="Double" Name="TG_12_Housing_Shortage" Nullable="true" />
+    <Property Type="Double" Name="Aadhar_Coverage" Nullable="true" />
+    <Property Type="Double" Name="Cities_included_in_Mission" Nullable="true" />
+    <Property Type="Double" Name="Total_Demand_as_per_Road_map" Nullable="true" />
+    <Property Type="Double" Name="Demand_met" Nullable="true" />
+    <Property Type="Double" Name="Per_Demand_met" Nullable="true" />
+    <Property Type="Double" Name="Total_PMAY_U_Houses_ISSR_AHP_BLC_CLSS" Nullable="true" />
+    <Property Type="Double" Name="Valid_Aadhar_Beneficiaries" Nullable="true" />
+    <Property Type="Double" Name="Bene_Percentage" Nullable="true" />
+    <Property Type="Double" Name="HFAPoA_funds_Released" Nullable="true" />
+    <Property Type="Double" Name="HFAPoA_Received" Nullable="true" />
+    <Property Type="String" Name="HFAPoA_Status" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="ISSR_NOP" Nullable="true" />
+    <Property Type="Double" Name="AHP_NOP" Nullable="true" />
+    <Property Type="Double" Name="BLC_NOP" Nullable="true" />
+    <Property Type="Double" Name="ISSR_Sanct_for_Release" Nullable="true" />
+    <Property Type="Double" Name="AHP_Sanct_for_Release" Nullable="true" />
+    <Property Type="Double" Name="BLC_Sanct_for_Release" Nullable="true" />
+    <Property Type="Double" Name="ISSR_CA_Released" Nullable="true" />
+    <Property Type="Double" Name="AHP_CA_Released" Nullable="true" />
+    <Property Type="Double" Name="BLC_CA_Released" Nullable="true" />
+    <Property Type="Double" Name="ISSR_Balance_for_Release" Nullable="true" />
+    <Property Type="Double" Name="AHP_Balance_for_Release" Nullable="true" />
+    <Property Type="Double" Name="BLC_Balance_for_Release" Nullable="true" />
+    <Property Type="Double" Name="ISSR_Houses_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="AHP_Houses_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="BLC_Houses_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="ISSR_Grounded" Nullable="true" />
+    <Property Type="Double" Name="AHP_Grounded" Nullable="true" />
+    <Property Type="Double" Name="BLC_Grounded" Nullable="true" />
+    <Property Type="Double" Name="ISSR_Completed" Nullable="true" />
+    <Property Type="Double" Name="AHP_Completed" Nullable="true" />
+    <Property Type="Double" Name="BLC_Completed" Nullable="true" />
+    <Property Type="Double" Name="PMAY_Funds_Released" Nullable="true" />
+    <Property Type="Double" Name="PMAY_Ucs_Received" Nullable="true" />
+    <Property Type="Double" Name="PMAY_UC_Pending" Nullable="true" />
+    <Property Type="Double" Name="PMAY_Houses_Occupied" Nullable="true" />
+    <Property Type="String" Name="Reforms" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Reforms_Achieved" Nullable="true" />
+    <Property Type="Double" Name="SLTC_Funds_Released_RsinnCr" Nullable="true" />
+    <Property Type="Double" Name="SLTC_Specialists_Approved" Nullable="true" />
+    <Property Type="Double" Name="SLTC_Specialists_in_Place" Nullable="true" />
+    <Property Type="Double" Name="CLTC_Funds_Released_RsinCr" Nullable="true" />
+    <Property Type="Double" Name="CLTC_Specialists_Approved" Nullable="true" />
+    <Property Type="Double" Name="CLTC_Specialists_in_Place" Nullable="true" />
+    <Property Type="Double" Name="Projects_Approved" Nullable="true" />
+    <Property Type="Double" Name="Projects_uploaded" Nullable="true" />
+    <Property Type="Double" Name="Percent_Projects_uploaded" Nullable="true" />
+    <Property Type="Double" Name="BLC_Houses_Approved" Nullable="true" />
+    <Property Type="Double" Name="BLC_Houses_Grounded" Nullable="true" />
+    <Property Type="Double" Name="BLC_Houses_Geo_Tagged" Nullable="true" />
+    <Property Type="Double" Name="CLSS_MIS_Survey" Nullable="true" />
+    <Property Type="Double" Name="CLSS_Beneficiaries_EWS_LIG_MIG" Nullable="true" />
+    <Property Type="Double" Name="CLSS_Subsidy_EWS_LIG_MIG" Nullable="true" />
+    <Property Type="Double" Name="JN_Houses_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="JN_Houses_Completed" Nullable="true" />
+    <Property Type="Double" Name="JN_Houses_Occupied" Nullable="true" />
+    <Property Type="Double" Name="JN_Houses_In_Progress" Nullable="true" />
+    <Property Type="Double" Name="JN_Houses_Unoccupied" Nullable="true" />
+    <Property Type="Double" Name="JN_Houses_Non_Starter" Nullable="true" />
+    <Property Type="Double" Name="JN_UC_Pending" Nullable="true" />
+    <Property Type="Double" Name="RAY_Houses_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="RAY_Houses_Completed" Nullable="true" />
+    <Property Type="Double" Name="RAY_Houses_Occupied" Nullable="true" />
+    <Property Type="Double" Name="RAY_Houses_In_Progress" Nullable="true" />
+    <Property Type="Double" Name="RAY_Houses_Unoccupied" Nullable="true" />
+    <Property Type="Double" Name="RAY_Houses_Non_Starter" Nullable="true" />
+    <Property Type="Double" Name="RAY_UC_Pending" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_AHP_AtAGlance_Result">
+    <Property Type="String" Name="AHP" Nullable="false" MaxLength="3" />
+    <Property Type="Double" Name="NoOfprojApproved" Nullable="true" />
+    <Property Type="Double" Name="Project_Cost" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="CentralAssisRel" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+    <Property Type="Double" Name="Occupied" Nullable="true" />
+    <Property Type="Double" Name="Completed" Nullable="true" />
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_BLCS_AtAGlance_Result">
+    <Property Type="String" Name="BLCS" Nullable="false" MaxLength="4" />
+    <Property Type="Double" Name="NoOfprojApproved" Nullable="true" />
+    <Property Type="Double" Name="Project_Cost" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="CentralAssisRel" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+    <Property Type="Double" Name="Occupied" Nullable="true" />
+    <Property Type="Double" Name="Completed" Nullable="true" />
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_ComponentsData_AtAGlance_Result">
+    <Property Type="String" Name="Component_" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="NoOfprojApproved" Nullable="true" />
+    <Property Type="Double" Name="Project_Cost" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="CentralAssisRel" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+    <Property Type="Double" Name="Occupied" Nullable="true" />
+    <Property Type="Double" Name="Completed" Nullable="true" />
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_DemandCityWise_Result">
+    <Property Type="Double" Name="ISSR" Nullable="true" />
+    <Property Type="Double" Name="AHP" Nullable="true" />
+    <Property Type="Double" Name="BLC" Nullable="true" />
+    <Property Type="Double" Name="CLSS" Nullable="true" />
+    <Property Type="Double" Name="demand" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_GetCity_Result">
+    <Property Type="String" Name="City" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="CityCode" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_GetDemandCompWise_Result">
+    <Property Type="Double" Name="ISSR" Nullable="true" />
+    <Property Type="Double" Name="AHP" Nullable="true" />
+    <Property Type="Double" Name="BLC" Nullable="true" />
+    <Property Type="Double" Name="CLSS" Nullable="true" />
+    <Property Type="Double" Name="demand" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_GetDistt_Result">
+    <Property Type="String" Name="District" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Dcode" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_GetStates_Result">
+    <Property Type="String" Name="States_UT" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Codes" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="hfa_Houses_Result">
+    <Property Type="Double" Name="State1" Nullable="true" />
+    <Property Type="String" Name="StateCode" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Demand" Nullable="true" />
+    <Property Type="Double" Name="TotalCost" Nullable="true" />
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+    <Property Type="Double" Name="Completed" Nullable="true" />
+    <Property Type="Double" Name="Occupied" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_ISSR_AtAGlance_Result">
+    <Property Type="String" Name="RAY" Nullable="false" MaxLength="3" />
+    <Property Type="Double" Name="NoOfprojApproved" Nullable="true" />
+    <Property Type="Double" Name="Project_Cost" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="CentralAssisRel" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+    <Property Type="Double" Name="Occupied" Nullable="true" />
+    <Property Type="Double" Name="Completed" Nullable="true" />
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_JNNURMCityWise_Result">
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+    <Property Type="Double" Name="Completed1" Nullable="true" />
+    <Property Type="Double" Name="Occupied1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_JNNURN_AtAGlance_Result">
+    <Property Type="Int32" Name="NoOfprojApproved" Nullable="true" />
+    <Property Type="Double" Name="ProjCostApproved" Nullable="true" />
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+    <Property Type="Double" Name="Completed" Nullable="true" />
+    <Property Type="Double" Name="Occupied" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+    <Property Type="Double" Name="CentralAssisRel" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_Proc_CLSS_CityWise_Result">
+    <Property Type="Double" Name="Loan_Amount" Nullable="true" />
+    <Property Type="Double" Name="SubsidyAmountCredited" Nullable="true" />
+    <Property Type="Double" Name="NoofBeneficiaries" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_RAY_AtAGlance_Result">
+    <Property Type="String" Name="RAY" Nullable="false" MaxLength="3" />
+    <Property Type="Double" Name="NoOfprojApproved" Nullable="true" />
+    <Property Type="Double" Name="Project_Cost" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="CentralAssisRel" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+    <Property Type="Double" Name="Occupied" Nullable="true" />
+    <Property Type="Double" Name="Completed" Nullable="true" />
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_CLSS_CompWise_Result">
+    <Property Type="Double" Name="EWS_LIG_Bene" Nullable="true" />
+    <Property Type="Double" Name="EWS_LIG_Loan_Amt" Nullable="true" />
+    <Property Type="Double" Name="EWS_LIG_Subsidy" Nullable="true" />
+    <Property Type="Double" Name="MIG_BeneTotal" Nullable="true" />
+    <Property Type="Double" Name="MIG_Loan_AmtTotal" Nullable="true" />
+    <Property Type="Double" Name="MIG_SubsidyAmtTotal" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_FinYear_Data_Result">
+    <Property Type="Double" Name="CAI" Nullable="true" />
+    <Property Type="Double" Name="CAR" Nullable="true" />
+    <Property Type="String" Name="FINYEAR" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_FinYear_Datanew_Result">
+    <Property Type="Double" Name="CAI" Nullable="true" />
+    <Property Type="Double" Name="CAR" Nullable="true" />
+    <Property Type="String" Name="FINYEAR" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_FinYr_1415_Result">
+    <Property Type="Double" Name="CAI" Nullable="true" />
+    <Property Type="Double" Name="CAR" Nullable="true" />
+    <Property Type="String" Name="FINYEAR" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_FinYr_1516_Result">
+    <Property Type="Double" Name="CAI" Nullable="true" />
+    <Property Type="Double" Name="CAR" Nullable="true" />
+    <Property Type="String" Name="FINYEAR" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_FinYr_1617_Result">
+    <Property Type="Double" Name="CAI" Nullable="true" />
+    <Property Type="Double" Name="CAR" Nullable="true" />
+    <Property Type="String" Name="FINYEAR" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_FinYr_1718_Result">
+    <Property Type="Double" Name="CAI" Nullable="true" />
+    <Property Type="Double" Name="CAR" Nullable="true" />
+    <Property Type="String" Name="FINYEAR" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_FinYr_1819_Result">
+    <Property Type="Double" Name="CAI" Nullable="true" />
+    <Property Type="Double" Name="CAR" Nullable="true" />
+    <Property Type="String" Name="FINYEAR" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_PhyFin14_15Data_Result">
+    <Property Type="Double" Name="HG_14_15" Nullable="true" />
+    <Property Type="Double" Name="HC_14_15" Nullable="true" />
+    <Property Type="Double" Name="HO_14_15" Nullable="true" />
+    <Property Type="Double" Name="HS_14_15" Nullable="true" />
+    <Property Type="String" Name="FINYEAR_14_15" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_PhyFin15_16Data_Result">
+    <Property Type="Double" Name="HG_15_16" Nullable="true" />
+    <Property Type="Double" Name="HC_15_16" Nullable="true" />
+    <Property Type="Double" Name="HO_15_16" Nullable="true" />
+    <Property Type="Double" Name="HS_15_16" Nullable="true" />
+    <Property Type="String" Name="FINYEAR_15_16" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_PhyFin16_17Data_Result">
+    <Property Type="Double" Name="HG_16_17" Nullable="true" />
+    <Property Type="Double" Name="HC_16_17" Nullable="true" />
+    <Property Type="Double" Name="HO_16_17" Nullable="true" />
+    <Property Type="Double" Name="HS_16_17" Nullable="true" />
+    <Property Type="String" Name="FINYEAR_16_17" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_PhyFin17_18Data_Result">
+    <Property Type="Double" Name="HG_17_18" Nullable="true" />
+    <Property Type="Double" Name="HC_17_18" Nullable="true" />
+    <Property Type="Double" Name="HO_17_18" Nullable="true" />
+    <Property Type="Double" Name="HS_17_18" Nullable="true" />
+    <Property Type="String" Name="FINYEAR_17_18" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_PhyFin18_19Data_Result">
+    <Property Type="Double" Name="HS_18_19" Nullable="true" />
+    <Property Type="Double" Name="HG_18_19" Nullable="true" />
+    <Property Type="Double" Name="HC_18_19" Nullable="true" />
+    <Property Type="Double" Name="HO_18_19" Nullable="true" />
+    <Property Type="String" Name="FINYEAR_18_19" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_PMay_CompWise_Result">
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Houses_Grounded" Nullable="true" />
+    <Property Type="Double" Name="Houses_Completed" Nullable="true" />
+    <Property Type="Double" Name="Houses_Occupied" Nullable="true" />
+    <Property Type="Double" Name="Investment_in_Project" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Committed" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Second_Installment_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Liable_for_Release" Nullable="true" />
+    <Property Type="Double" Name="CASanctforRelease" Nullable="true" />
+    <Property Type="Double" Name="CA_Approved" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="StateShare" Nullable="true" />
+    <Property Type="Double" Name="ULBShare" Nullable="true" />
+    <Property Type="Double" Name="BeneficiaryShare" Nullable="true" />
+    <Property Type="Double" Name="UC_Recd" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_PMayData_Result">
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Houses_Grounded" Nullable="true" />
+    <Property Type="Double" Name="Houses_Completed" Nullable="true" />
+    <Property Type="Double" Name="Houses_Occupied" Nullable="true" />
+    <Property Type="Double" Name="Investment_in_Project" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Committed" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Second_Installment_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Liable_for_Release" Nullable="true" />
+    <Property Type="Double" Name="CASanctforRelease" Nullable="true" />
+    <Property Type="Double" Name="CA_Approved" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="StateShare" Nullable="true" />
+    <Property Type="Double" Name="ULBShare" Nullable="true" />
+    <Property Type="Double" Name="BeneficiaryShare" Nullable="true" />
+    <Property Type="Double" Name="UC_Recd" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_PMayData_CompWise_Result">
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Houses_Grounded" Nullable="true" />
+    <Property Type="Double" Name="Houses_Completed" Nullable="true" />
+    <Property Type="Double" Name="Houses_Occupied" Nullable="true" />
+    <Property Type="Double" Name="Investment_in_Project" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Committed" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Second_Installment_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Liable_for_Release" Nullable="true" />
+    <Property Type="Double" Name="CASanctforRelease" Nullable="true" />
+    <Property Type="Double" Name="CA_Approved" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="StateShare" Nullable="true" />
+    <Property Type="Double" Name="ULBShare" Nullable="true" />
+    <Property Type="Double" Name="BeneficiaryShare" Nullable="true" />
+    <Property Type="Double" Name="UC_Recd" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_sp_PMayFinYrData_Result">
+    <Property Type="Double" Name="CASanctioned" Nullable="true" />
+    <Property Type="Double" Name="CAReleased" Nullable="true" />
+    <Property Type="String" Name="QM_FIN_YEAR" Nullable="true" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="HFA_spPMayCompWiseData_Result">
+    <Property Type="String" Name="Component" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HFA_spPMayCompWiseDataN_Result">
+    <Property Type="Int32" Name="ONE" Nullable="false" />
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Proc_CLSS_Result">
+    <Property Type="Double" Name="No_Bene_EWS_LIG" Nullable="true" />
+    <Property Type="Double" Name="No_Beneficiary_MIG" Nullable="true" />
+    <Property Type="Double" Name="NoBeneficiary_Total" Nullable="true" />
+    <Property Type="Double" Name="Subsidy_EWS_LIG" Nullable="true" />
+    <Property Type="Double" Name="Subsidy_MIG" Nullable="true" />
+    <Property Type="Double" Name="Subsidy_Total" Nullable="true" />
+    <Property Type="Double" Name="Loan_TOTAL" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Proc_CLSS_Param_Result">
+    <Property Type="Double" Name="No_Bene_EWS_LIG" Nullable="true" />
+    <Property Type="Double" Name="No_Beneficiary_MIG" Nullable="true" />
+    <Property Type="Double" Name="NoBeneficiary_Total" Nullable="true" />
+    <Property Type="Double" Name="Subsidy_EWS_LIG" Nullable="true" />
+    <Property Type="Double" Name="Subsidy_MIG" Nullable="true" />
+    <Property Type="Double" Name="Subsidy_Total" Nullable="true" />
+    <Property Type="Double" Name="Loan_TOTAL" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_Component_Result">
+    <Property Type="String" Name="Component_" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_Component_Param_Result">
+    <Property Type="String" Name="Component_" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_Component_Pmay_Result">
+    <Property Type="String" Name="Component" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_Component_PmayParam_Result">
+    <Property Type="String" Name="Component" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_Component_SDC_Result">
+    <Property Type="String" Name="Component_" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Proc_Inv_Cons_StateWise_Result">
+    <Property Type="Double" Name="Demand" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="StateShare" Nullable="true" />
+    <Property Type="Double" Name="ULBShare" Nullable="true" />
+    <Property Type="Double" Name="BeneficiaryShare" Nullable="true" />
+    <Property Type="Double" Name="TotalCost" Nullable="true" />
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+    <Property Type="Double" Name="Completed" Nullable="true" />
+    <Property Type="Double" Name="Occupied" Nullable="true" />
+    <Property Type="Double" Name="CAApproved" Nullable="true" />
+    <Property Type="Double" Name="CASanctforRelease" Nullable="true" />
+    <Property Type="Double" Name="CAssitReleased" Nullable="true" />
+    <Property Type="Double" Name="PendingforRelease" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Proc_Inv_StateWise_Result">
+    <Property Type="Double" Name="Demand" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="StateShare" Nullable="true" />
+    <Property Type="Double" Name="ULBShare" Nullable="true" />
+    <Property Type="Double" Name="BeneficiaryShare" Nullable="true" />
+    <Property Type="Double" Name="TotalCost" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Proc_Investment_Cons_Result">
+    <Property Type="Double" Name="Demand" Nullable="true" />
+    <Property Type="Double" Name="HousesSanctioned" Nullable="true" />
+    <Property Type="Double" Name="CentralShare" Nullable="true" />
+    <Property Type="Double" Name="StateShare" Nullable="true" />
+    <Property Type="Double" Name="ULBShare" Nullable="true" />
+    <Property Type="Double" Name="BeneficiaryShare" Nullable="true" />
+    <Property Type="Double" Name="TotalCost" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Cons_JNNURM_SDC_Result">
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+    <Property Type="Double" Name="Completed1" Nullable="true" />
+    <Property Type="Double" Name="Occupied1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Cons_JNNURM_Values_Result">
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+    <Property Type="Double" Name="Completed1" Nullable="true" />
+    <Property Type="Double" Name="Occupied1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Cons_JNNURM_Values_Param_Result">
+    <Property Type="Double" Name="Grounded" Nullable="true" />
+    <Property Type="Double" Name="Completed1" Nullable="true" />
+    <Property Type="Double" Name="Occupied1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Cons_Values_Result">
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Houses_Grounded" Nullable="true" />
+    <Property Type="Double" Name="Houses_Completed" Nullable="true" />
+    <Property Type="Double" Name="Houses_Occupied" Nullable="true" />
+    <Property Type="Double" Name="Investment_in_Project" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Committed" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Second_Installment_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Liable_for_Release" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Cons_Values_Param_Result">
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Houses_Grounded" Nullable="true" />
+    <Property Type="Double" Name="Houses_Completed" Nullable="true" />
+    <Property Type="Double" Name="Houses_Occupied" Nullable="true" />
+    <Property Type="Double" Name="Investment_in_Project" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Committed" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Second_Installment_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Liable_for_Release" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Cons_Values_SDC_Result">
+    <Property Type="Double" Name="Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Houses_Grounded" Nullable="true" />
+    <Property Type="Double" Name="Houses_Completed" Nullable="true" />
+    <Property Type="Double" Name="Houses_Occupied" Nullable="true" />
+    <Property Type="Double" Name="Investment_in_Project" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Committed" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Sanctioned" Nullable="true" />
+    <Property Type="Double" Name="Second_Installment_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Released" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_Liable_for_Release" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_CSMC_StateWise_Result">
+    <Property Type="String" Name="CSMCDate" Nullable="true" MaxLength="30" />
+    <Property Type="Double" Name="CSMCNo" Nullable="true" />
+    <Property Type="String" Name="Component" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="CASanctionedForRel" Nullable="true" />
+    <Property Type="Double" Name="CentralAssistanceReleased" Nullable="true" />
+    <Property Type="Double" Name="Balance" Nullable="true" />
+    <Property Type="Double" Name="Houses_Grounded" Nullable="true" />
+    <Property Type="Double" Name="Houses_Completed" Nullable="true" />
+    <Property Type="Double" Name="HousesOccupied" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Test_Result">
+    <Property Type="Int64" Name="RowId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="EmpName" Nullable="true" />
+    <Property Type="String" Name="MobileNo" Nullable="true" />
+    <Property Type="String" Name="Password" Nullable="true" />
+    <Property Type="DateTime" Name="sDOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Gender" Nullable="true" />
+    <Property Type="String" Name="PanNo" Nullable="true" />
+    <Property Type="Int64" Name="CountryId" Nullable="true" />
+    <Property Type="Int64" Name="StateId" Nullable="true" />
+    <Property Type="Int64" Name="CityId" Nullable="true" />
+    <Property Type="Int64" Name="DisttId" Nullable="true" />
+    <Property Type="Double" Name="Salary" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="String" Name="ZipCode" Nullable="true" />
+    <Property Type="String" Name="FathersName" Nullable="true" />
+    <Property Type="String" Name="HomeAdd" Nullable="true" />
+    <Property Type="String" Name="HomePhone" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" />
+    <Property Type="DateTime" Name="DateAdded" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateUpdated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Remarks" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfJoining" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PhotoUpload" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="user_Master">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordChangeDate" Type="DateTime" Precision="3" />
+    <Property Name="RoleId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HFA_Master">
+    <Key>
+      <PropertyRef Name="HFAid" />
+    </Key>
+    <Property Name="HFAid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
