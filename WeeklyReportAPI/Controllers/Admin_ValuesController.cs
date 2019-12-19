@@ -58,20 +58,7 @@ namespace WeeklyReportAPI.Controllers
             }
         }
 
-        //[HttpGet]
-        //[Route("DeleteSchemeData")]
-        ////delete api for scheme master
-        //public HttpResponseMessage DeleteSchemeData(int id)
-        //{
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        Scheme_Master record = ent.Scheme_Master.Where(x => x.SchemeId == id).FirstOrDefault<Scheme_Master>();
-        //        ent.Scheme_Master.Remove(record);
-        //        ent.SaveChanges();
-        //        return Request.CreateResponse(HttpStatusCode.OK);
-        //    }
-
-        //}
+    
 
         [HttpGet]
         [Route("DeleteSchemeData/{id}")]
@@ -107,19 +94,7 @@ namespace WeeklyReportAPI.Controllers
             return message;
         }
 
-        //[HttpGet]
-        //[Route("GetComponentData")]
-        ////get api for component master
-        //public List<ComponentMaster> GetComponentData([FromUri]string id = null)
-        //{
-        //    List<ComponentMaster> lst = new List<ComponentMaster>();
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        lst = ent.ComponentMasters.AsEnumerable<ComponentMaster>().Where(x => x.SchemeShortName == id).OrderBy(x => x.Cname).ToList();
 
-        //    }
-        //    return lst;
-        //}
 
         [HttpGet]
         [Route("GetComponentData/{id}")]
@@ -154,20 +129,7 @@ namespace WeeklyReportAPI.Controllers
 
         }
 
-        //[HttpGet]
-        //[Route("DeleteSchemeComponentData")]
-        ////delete api for component master
-        //public HttpResponseMessage DeleteSchemeComponentData(int id)
-        //{
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        ComponentMaster record = ent.ComponentMasters.Where(x => x.Cid == id).FirstOrDefault<ComponentMaster>();
-        //        ent.ComponentMasters.Remove(record);
-        //        ent.SaveChanges();
-        //    }
-        //    var message = Request.CreateResponse(HttpStatusCode.OK);
-        //    return message;
-        //}
+
         [HttpGet]
         [Route("DeleteSchemeComponentData/{id}")]
         //delete api for component master
@@ -201,25 +163,7 @@ namespace WeeklyReportAPI.Controllers
             return message;
         }
 
-        //[HttpGet]
-        //[Route("GetStateData")]
-        //public List<State_Master> GetStateData(int pageNo = 2, int pageSize = 50)
-        //{
 
-
-        //    // Get total number of records
-
-        //    List<State_Master> lst = new List<State_Master>();
-
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        int skip = (pageNo - 1) * pageSize;
-        //        int total = ent.State_Master.Count();
-        //        lst = ent.State_Master.AsEnumerable<State_Master>().Take(pageSize).ToList();
-
-        //    }
-        //    return lst;
-        //}
 
         [HttpGet]
         [Route("GetStateData")]
@@ -291,19 +235,7 @@ namespace WeeklyReportAPI.Controllers
             return message;
         }
 
-        //[HttpGet]
-        //[Route("GetDistrictData")]
-        ////get api for district master
-        //public List<Distt_Master> GetDistrictData([FromUri]string id)
-        //{
-        //    List<Distt_Master> lst = new List<Distt_Master>();
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        lst = ent.Distt_Master.AsEnumerable<Distt_Master>().Where(x => x.StateCode == id).OrderBy(x => x.District).ToList();
 
-        //    }
-        //    return lst;
-        //}
 
         [HttpGet]
         [Route("GetDistrictData/{id}")]
@@ -419,20 +351,7 @@ namespace WeeklyReportAPI.Controllers
 
         }
 
-        //[HttpGet]
-        //[Route("DeleteConstituencyData")]
-        ////delete api for constituency master
-        //public HttpResponseMessage DeleteConstituencyData(int id)
-        //{
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        Constituency_Mster record = ent.Constituency_Mster.Where(x => x.ConstituencyId == id).FirstOrDefault<Constituency_Mster>();
-        //        ent.Constituency_Mster.Remove(record);
-        //        ent.SaveChanges();
-        //    }
-        //    var message = Request.CreateResponse(HttpStatusCode.OK);
-        //    return message;
-        //}
+  
         [HttpGet]
         [Route("DeleteConstituencyData/{id}")]
         //delete api for constituency master
@@ -468,28 +387,7 @@ namespace WeeklyReportAPI.Controllers
         }
 
 
-        //[HttpGet]
-        //[Route("GetCityData")]
-        ////get api for city master
-        //public List<City_Master> GetCityData([FromUri]string id = null, [FromUri]string dcode = null)
-        //{
-
-        //    List<City_Master> lst = new List<City_Master>();
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        if (dcode == "null")
-        //        {
-        //            lst = ent.City_Master.AsEnumerable<City_Master>().Where(x => x.StateCode == id || x.Dcode == dcode).ToList();
-        //        }
-        //        else
-        //        {
-        //            lst = ent.City_Master.AsEnumerable<City_Master>().Where(x => x.StateCode == id && x.Dcode == dcode).ToList();
-        //        }
-
-
-        //    }
-        //    return lst;
-        //}
+        
         [HttpGet]
         [Route("GetCityData/{id}/{dcode}")]
         //get api for city master
@@ -501,20 +399,7 @@ namespace WeeklyReportAPI.Controllers
             lst = objEntity.City_Master.Where(x => x.StateCode == id && x.Dcode == dcode).ToList();
             return lst;
         }
-        //[HttpGet]
-        //[Route("GetCityConstituency")]
-        ////get api for city master
-        //public List<City_Master> GetCityConstituency()
-        //{
-        //    List<City_Master> lst = new List<City_Master>();
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-
-        //        lst = ent.City_Master.AsEnumerable<City_Master>().OrderBy(x => x.City).ToList();
-
-        //    }
-        //    return lst;
-        //}
+       
         [HttpGet]
         [Route("GetCityConstituency")]
         //get api for city master
@@ -552,20 +437,7 @@ namespace WeeklyReportAPI.Controllers
 
         }
 
-        //[HttpGet]
-        //[Route("DeleteCityData")]
-        ////delete api for city master
-        //public HttpResponseMessage DeleteCityData(int id)
-        //{
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        City_Master record = ent.City_Master.Where(x => x.CityId == id).FirstOrDefault<City_Master>();
-        //        ent.City_Master.Remove(record);
-        //        ent.SaveChanges();
-        //    }
-        //    var message = Request.CreateResponse(HttpStatusCode.OK);
-        //    return message;
-        //}
+      
         [HttpGet]
         [Route("DeleteCityData/{id}")]
         //delete api for city master
@@ -599,20 +471,7 @@ namespace WeeklyReportAPI.Controllers
             return message;
         }
 
-        //[HttpGet]
-        //[Route("GetStateDistrictId")]
-        //// get district on behalf of state
-        //public List<Distt_Master> GetStateDistrictId([FromUri]string id)
-        //{
-        //    List<Distt_Master> lst = new List<Distt_Master>();
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        lst = ent.Distt_Master.Where(x => x.StateCode == id).OrderBy(x => x.District).ToList();
-        //        // lst.Add(query);
-
-        //    }
-        //    return lst;
-        //}
+       
 
         [HttpGet]
         [Route("GetStateDistrictId/{id}")]
@@ -632,36 +491,7 @@ namespace WeeklyReportAPI.Controllers
         }
 
 
-        //[HttpGet]
-        //[Route("GetDistrictCityId")]
-        //// get city on behalf of district
-        //public List<City_Master> GetDistrictCityId([FromUri]string id)
-        //{
-        //    List<City_Master> lst = new List<City_Master>();
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        lst = ent.City_Master.Where(x => x.Dcode == id).ToList();
-
-        //    }
-        //    return lst;
-        //}
-
-        //[Route("GetDistrictCityId")]
-        //[HttpGet]
-        //public IEnumerable<HFA_GetCity_Result> GetDistrictCityId(string id)
-        //{    //http://localhost:57855/Api/Builder/StateDetails
-        //    IEnumerable<HFA_GetCity_Result> objCity = new List<HFA_GetCity_Result>();
-        //    EmployeeEntities objEntity = new EmployeeEntities();
-        //    try
-        //    {
-        //        objCity = objEntity.HFA_GetCity(id).ToList();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw;
-        //    }
-        //    return objCity.ToList();
-        //}
+      
         [HttpGet]
         [Route("GetDistrictCityId/{id}")]
         // get city on behalf of district
@@ -675,19 +505,71 @@ namespace WeeklyReportAPI.Controllers
             return lst;
         }
 
+        //[HttpGet]
+        //[Route("GetCSMCNumber")]
+        //// get csmcnumber on behalf of city
+        //public List<Projct_Details> GetCSMCNumber([FromUri]string id)
+        //{
+        //    List<Projct_Details> lst = new List<Projct_Details>();
+        //    using (EmployeeEntities ent = new EmployeeEntities())
+        //    {
+        //        lst = ent.Projct_Details.Where(x => x.CityCode == id).ToList();
+
+        //    }
+        //    return lst;
+        //}
+        //// get projecttitle on behalf of csmcnumber
+        //public HttpResponseMessage GetProjectHouses([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null, [FromUri]string scheme = null)
+        //{
+        //    List<Projct_Details> lst = new List<Projct_Details>();
+        //    using (EmployeeEntities ent = new EmployeeEntities())
+        //    {
+        //        var result = (from p in ent.Projct_Details
+        //                      select new
+        //                      {
+        //                          p.TotalSanction,
+        //                          p.StateCode,
+        //                          p.DistrictCode,
+        //                          p.CityCode,
+        //                          p.CSMCNumber,
+        //                          Houses = p.ProjectTitle + "," + p.TotalSanction,
+
+        //                      });
+
+        //        var result1 = result.Where(x => (x.StateCode == id && x.DistrictCode == dcode && x.CityCode == ccode && x.CSMCNumber == scheme)).ToList();
+        //        return Request.CreateResponse(HttpStatusCode.OK, result1);
+
+        //    }
+        //}
+
+        //// get projectCode on behalf of projecttitle
+        //public List<Projct_Details> GetProjectCode([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null, [FromUri]string scheme = null, [FromUri]decimal component = 0)
+        //{
+        //    List<Projct_Details> lst = new List<Projct_Details>();
+        //    using (EmployeeEntities ent = new EmployeeEntities())
+        //    {
+        //        lst = ent.Projct_Details.Where(x => (x.StateCode == id && x.DistrictCode == dcode && x.CityCode == ccode && x.CSMCNumber == scheme && x.TotalSanction == component)).ToList();
+
+        //    }
+        //    return lst;
+        //}
+
         [HttpGet]
-        [Route("GetCSMCNumber")]
-        // get csmcnumber on behalf of city
-        public List<Projct_Details> GetCSMCNumber([FromUri]string id)
+        [Route("GetProjectCode/{id}/{dcode}/{ccode}/{scheme}/{component}")]
+        // get projectCode on behalf of projecttitle
+        public List<Projct_Details> GetProjectCode([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null, [FromUri]string scheme = null, [FromUri]decimal component = 0)
         {
             List<Projct_Details> lst = new List<Projct_Details>();
             using (EmployeeEntities ent = new EmployeeEntities())
             {
-                lst = ent.Projct_Details.Where(x => x.CityCode == id).ToList();
+                lst = ent.Projct_Details.Where(x => (x.StateCode == id && x.DistrictCode == dcode && x.CityCode == ccode && x.CSMCNumber == scheme && x.TotalSanction == component)).ToList();
 
             }
             return lst;
         }
+
+        [HttpGet]
+        [Route("GetProjectHouses/{id}/{dcode}/{ccode}/{scheme}")]
         // get projecttitle on behalf of csmcnumber
         public HttpResponseMessage GetProjectHouses([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null, [FromUri]string scheme = null)
         {
@@ -712,18 +594,20 @@ namespace WeeklyReportAPI.Controllers
             }
         }
 
-        // get projectCode on behalf of projecttitle
-        public List<Projct_Details> GetProjectCode([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null, [FromUri]string scheme = null, [FromUri]decimal component = 0)
+
+        [HttpGet]
+        [Route("GetCSMCNumber/{id}")]
+        // get csmcnumber on behalf of city
+        public List<Projct_Details> GetCSMCNumber([FromUri]string id)
         {
             List<Projct_Details> lst = new List<Projct_Details>();
             using (EmployeeEntities ent = new EmployeeEntities())
             {
-                lst = ent.Projct_Details.Where(x => (x.StateCode == id && x.DistrictCode == dcode && x.CityCode == ccode && x.CSMCNumber == scheme && x.TotalSanction == component)).ToList();
+                lst = ent.Projct_Details.Where(x => x.CityCode == id).ToList();
 
             }
             return lst;
         }
-
 
         [HttpPost]
         [Route("SubmitProjectDetails")]
@@ -761,8 +645,117 @@ namespace WeeklyReportAPI.Controllers
         }
 
 
+        //[HttpGet]
+        //[Route("GetProjectDetailData")]
+        ////get api for project detail
+        //public HttpResponseMessage GetProjectDetailData([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null, [FromUri]string scheme = null, [FromUri]string component = null)
+        //{
+        //    List<Projct_Details> lst = new List<Projct_Details>();
+
+        //    using (EmployeeEntities ent = new EmployeeEntities())
+        //    {
+
+        //        var result = (from p in ent.Projct_Details
+        //                      join o in ent.State_Master on p.StateCode equals o.Codes
+        //                      join m in ent.Distt_Master on p.DistrictCode equals m.Dcode
+        //                      join n in ent.City_Master on p.CityCode equals n.CityCode
+
+        //                      join q in ent.Physical_Progress_Report on p.ProjectCode equals q.ProjectCode
+        //                      into edept
+        //                      from f in edept.DefaultIfEmpty()
+
+        //                      select new
+        //                      {
+        //                          o.States,
+        //                          p.BeneficiaryShare,
+        //                          p.CentralAssistance,
+        //                          m.District,
+        //                          n.City,
+        //                          o.Codes,
+        //                          m.Dcode,
+        //                          n.CityCode,
+        //                          p.CSMCDate,
+        //                          p.CSMCNumber,
+        //                          p.FirstInstallment,
+        //                          p.NewSanction,
+        //                          p.OtherCost,
+        //                          p.ProjectId,
+        //                          p.ProjectAgencies,
+        //                          p.ProjectCode,
+        //                          p.ProjectCost,
+        //                          p.ProjectDuration,
+        //                          p.ProjectStatus,
+        //                          p.ProjectTitle,
+        //                          p.Scheme,
+        //                          p.SchemeComponent,
+        //                          p.StateGrant,
+        //                          p.TotalSanction,
+        //                          p.ULB,
+        //                          p.UpgradeSanction,
+
+        //                          ConstructionCompleted = (f.ConstructionCompleted.ToString() == null) ? "" : f.ConstructionCompleted.ToString(),
+        //                          DrainageSupply = (f.DrainageSupply == null) ? "" : f.DrainageSupply,
+        //                          FinishingStage = (f.FinishingStage == null) ? "" : f.FinishingStage,
+        //                          GroundLevel = (f.GroundLevel == null) ? "" : f.GroundLevel,
+        //                          LinterLevel = (f.LinterLevel == null) ? "" : f.LinterLevel,
+        //                          NonStarterHouse = (f.NonStarterHouse == null) ? "" : f.NonStarterHouse,
+        //                          Pinth = (f.Pinth == null) ? "" : f.Pinth,
+        //                          PowerSupply = (f.PowerSupply == null) ? "" : f.PowerSupply,
+        //                          RoofLevel = (f.RoofLevel == null) ? "" : f.RoofLevel,
+        //                          SuperStructure = (f.SuperStructure == null) ? "" : f.SuperStructure,
+        //                          TotalHouseOccupiedBeneficiary = (f.TotalHouseOccupiedBeneficiary.ToString() == null) ? "" : f.TotalHouseOccupiedBeneficiary.ToString(),
+        //                          TotalProgressHouse = (f.TotalProgressHouse.ToString() == null) ? "" : f.TotalProgressHouse.ToString(),
+        //                          WaterSupply = (f.WaterSupply == null) ? "" : f.WaterSupply,
+        //                          EntryDate = (f.EntryDate.ToString() == null) ? "" : f.EntryDate.ToString(),
+        //                          PhysicalProgressId = (f.PhysicalProgressId.ToString() == null) ? "" : f.PhysicalProgressId.ToString(),
+
+        //                      });
+        //        if (dcode == "null" && ccode == "null" && scheme == "null" && component == "null")
+        //        {
+        //            var result1 = result.Where(x => (x.Codes == id)).ToList();
+        //            return Request.CreateResponse(HttpStatusCode.OK, result1);
+        //        }
+
+        //        else if (ccode == "null" && scheme == "null" && component == "null")
+        //        {
+        //            var result1 = result.Where(x => (x.Codes == id && x.Dcode == dcode)).ToList();
+        //            return Request.CreateResponse(HttpStatusCode.OK, result1);
+        //        }
+        //        else if (ccode == "null" && dcode == "null" && component == "null")
+        //        {
+        //            var result1 = result.Where(x => (x.Codes == id && x.Scheme == scheme)).ToList();
+        //            return Request.CreateResponse(HttpStatusCode.OK, result1);
+        //        }
+        //        else if (ccode == "null" && dcode == "null")
+        //        {
+        //            var result1 = result.Where(x => (x.Codes == id && x.Scheme == scheme && x.SchemeComponent == component)).ToList();
+        //            return Request.CreateResponse(HttpStatusCode.OK, result1);
+        //        }
+        //        else if (scheme == "null" && component == "null")
+        //        {
+        //            var result1 = result.Where(x => (x.Codes == id && x.Dcode == dcode && x.CityCode == ccode)).ToList();
+        //            return Request.CreateResponse(HttpStatusCode.OK, result1);
+        //        }
+        //        else if (component == "null")
+        //        {
+        //            var result1 = result.Where(x => (x.Codes == id && x.Dcode == dcode && x.CityCode == ccode && x.Scheme == scheme)).ToList();
+        //            return Request.CreateResponse(HttpStatusCode.OK, result1);
+        //        }
+        //        else
+        //        {
+        //            var result1 = result.Where(x => (x.Codes == id && x.Dcode == dcode && x.CityCode == ccode && x.Scheme == scheme && x.SchemeComponent == component)).ToList();
+        //            return Request.CreateResponse(HttpStatusCode.OK, result1);
+        //        }
+
+
+        //    }
+
+
+        //}
+
+
         [HttpGet]
-        [Route("GetProjectDetailData")]
+        [Route("GetProjectDetailData/{id}/{dcode}/{ccode}/{scheme}/{component}")]
         //get api for project detail
         public HttpResponseMessage GetProjectDetailData([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null, [FromUri]string scheme = null, [FromUri]string component = null)
         {
@@ -782,7 +775,7 @@ namespace WeeklyReportAPI.Controllers
 
                               select new
                               {
-                                  o.States,
+                                  o.States_UT,
                                   p.BeneficiaryShare,
                                   p.CentralAssistance,
                                   m.District,
@@ -940,8 +933,22 @@ namespace WeeklyReportAPI.Controllers
             return message;
         }
 
+        //[HttpGet]
+        //[Route("GetSchemeComponentId")]
+        //// get component on behalf of scheme
+        //public List<ComponentMaster> GetSchemeComponentId([FromUri]string id)
+        //{
+        //    List<ComponentMaster> lst = new List<ComponentMaster>();
+        //    using (EmployeeEntities ent = new EmployeeEntities())
+        //    {
+        //        lst = ent.ComponentMasters.Where(x => x.SchemeShortName == id).ToList();
+
+        //    }
+        //    return lst;
+        //}
+
         [HttpGet]
-        [Route("GetSchemeComponentId")]
+        [Route("GetSchemeComponentId/{id}")]
         // get component on behalf of scheme
         public List<ComponentMaster> GetSchemeComponentId([FromUri]string id)
         {
@@ -954,9 +961,8 @@ namespace WeeklyReportAPI.Controllers
             return lst;
         }
 
-
         [HttpGet]
-        [Route("GetAgencyId")]
+        [Route("GetAgencyId/{id}")]
         // get agency on behalf of city
         public List<ULB_Agencies_Share> GetAgencyId([FromUri]string id)
         {
@@ -968,6 +974,7 @@ namespace WeeklyReportAPI.Controllers
             }
             return lst;
         }
+
 
         [HttpPost]
         [Route("SubmitAgencyData")]
@@ -1121,8 +1128,10 @@ namespace WeeklyReportAPI.Controllers
             lstBulding = ent.state_district_report_wise(id).ToList();
             return lstBulding;
         }
+
+
         [HttpGet]
-        [Route("GetStateDistrictCityWiseReport")]
+        [Route("GetStateDistrictCityWiseReport/{id}")]
         //get api for city wise
         public List<city_wise_report_Result> GetStateDistrictCityWiseReport(string id)
         {
@@ -1177,7 +1186,7 @@ namespace WeeklyReportAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetReleaseFundFlow")]
+        [Route("GetReleaseFundFlow/{id}/{dcode}/{ccode}/{scheme}/{component}")]
         //get api for release fund flow 
         public HttpResponseMessage GetReleaseFundFlow([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null, [FromUri]string scheme = null, [FromUri]string component = null)
         {
@@ -1228,6 +1237,7 @@ namespace WeeklyReportAPI.Controllers
 
         }
 
+
         [HttpPost]
         [Route("SubmitUCSubmission")]
         //post api for release fund flow 
@@ -1260,7 +1270,7 @@ namespace WeeklyReportAPI.Controllers
 
 
         [HttpGet]
-        [Route("GetUCSubmission")]
+        [Route("GetUCSubmission/{id}/{dcode}/{ccode}/{scheme}")]
         //get api for uc submission
         public HttpResponseMessage GetUCSubmission([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null, [FromUri]string scheme = null)
         {
@@ -1310,7 +1320,7 @@ namespace WeeklyReportAPI.Controllers
         }
 
         [HttpGet]
-        [Route("TotalUCInstallment1")]
+        [Route("TotalUCInstallment1/{id}/{dcode}")]
         //get api for total sum of installment 1 uc 
         public HttpResponseMessage TotalUCInstallment1([FromUri]string id = null, [FromUri]string dcode = null)
 
@@ -1340,7 +1350,7 @@ namespace WeeklyReportAPI.Controllers
         }
 
         [HttpGet]
-        [Route("TotalReleaseInstallment1")]
+        [Route("TotalReleaseInstallment1/{id}/{dcode}")]
         //get api for total sum of installment 1 release
         public HttpResponseMessage TotalReleaseInstallment1([FromUri]string id = null, [FromUri]string dcode = null)
 
@@ -1349,11 +1359,7 @@ namespace WeeklyReportAPI.Controllers
 
             using (EmployeeEntities ent = new EmployeeEntities())
             {
-
-
-
                 var result = (from f in ent.Project_Fund_Release
-
                               where (f.ProjectCode).ToString() == id.ToString() && (f.Installment == dcode)
                               group new { f } by f into empg
                               select new
@@ -1362,10 +1368,7 @@ namespace WeeklyReportAPI.Controllers
                                   ProjectCode = empg.Key.ProjectCode,
                                   CummalativeRelease = empg.Sum(x => x.f.HFAAmount + x.f.TSPAmount + x.f.SCSPAmount),
 
-
                               }).ToList();
-
-
 
                 return Request.CreateResponse(HttpStatusCode.OK, result.Sum(x => x.CummalativeRelease));
 
@@ -1373,7 +1376,7 @@ namespace WeeklyReportAPI.Controllers
         }
 
         [HttpGet]
-        [Route("TotalUCInstallment2")]
+        [Route("TotalUCInstallment2/{id}/{dcode}")]
         //get api for total sum of installment 2 uc 
         public HttpResponseMessage TotalUCInstallment2([FromUri]string id = null, [FromUri]string dcode = null)
 
@@ -1402,8 +1405,9 @@ namespace WeeklyReportAPI.Controllers
             }
         }
 
+
         [HttpGet]
-        [Route("TotalReleaseInstallment2")]
+        [Route("TotalReleaseInstallment2/{id}/{dcode}")]
         //get api for total sum of installment 2 release
         public HttpResponseMessage TotalReleaseInstallment2([FromUri]string id = null, [FromUri]string dcode = null)
 
@@ -1431,8 +1435,39 @@ namespace WeeklyReportAPI.Controllers
             }
         }
 
+        //[HttpGet]
+        //[Route("TotalUCInstallment3")]
+        ////get api for total sum of installment 3 uc 
+        //public HttpResponseMessage TotalUCInstallment3([FromUri]string id = null, [FromUri]string dcode = null)
+
+        //{
+        //    List<Project_Fund_Release> lst = new List<Project_Fund_Release>();
+
+        //    using (EmployeeEntities ent = new EmployeeEntities())
+        //    {
+
+        //        var result = (from p in ent.Project_Fund_Release
+        //                      where (p.ProjectCode).ToString() == id.ToString() && (p.Installment == dcode)
+        //                      join q in ent.Project_UC_Submission on p.ProjectCode equals q.ProjectCode
+        //                      into edept
+        //                      from f in edept.DefaultIfEmpty()
+        //                      where (f.ProjectCode).ToString() == id.ToString() && (f.Installment == dcode)
+        //                      group new { p, f } by p into empg
+        //                      select new
+        //                      {
+
+        //                          ProjectCode = empg.Key.ProjectCode,
+        //                          UCAmount = empg.Sum(x => x.f.UCAmount)
+        //                      }).ToList();
+
+        //        return Request.CreateResponse(HttpStatusCode.OK, result);
+
+        //    }
+        //}
+
+
         [HttpGet]
-        [Route("TotalUCInstallment3")]
+        [Route("TotalUCInstallment3/{id}/{dcode}")]
         //get api for total sum of installment 3 uc 
         public HttpResponseMessage TotalUCInstallment3([FromUri]string id = null, [FromUri]string dcode = null)
 
@@ -1461,8 +1496,9 @@ namespace WeeklyReportAPI.Controllers
             }
         }
 
+
         [HttpGet]
-        [Route("TotalReleaseInstallment3")]
+        [Route("TotalReleaseInstallment3/{id}/{dcode}")]
         //get api for total sum of installment 3 release
         public HttpResponseMessage TotalReleaseInstallment3([FromUri]string id = null, [FromUri]string dcode = null)
 
@@ -1489,6 +1525,42 @@ namespace WeeklyReportAPI.Controllers
 
             }
         }
+
+        //[HttpPost]
+        //[Route("postReleasedOrder")]
+        ////post api for release order
+        //public HttpResponseMessage postReleasedOrder()
+        //{
+        //    string fileName = null;
+        //    var httpRequest = HttpContext.Current.Request;
+        //    var postedFile = httpRequest.Files["Image"];
+        //    fileName = new string(Path.GetFileNameWithoutExtension(postedFile.FileName).ToArray());
+        //    fileName = fileName + Path.GetExtension(postedFile.FileName);
+        //    var filePath = HttpContext.Current.Server.MapPath("~/File/" + fileName);
+        //    postedFile.SaveAs(filePath);
+
+
+
+        //    using (EmployeeEntities ent = new EmployeeEntities())
+        //    {
+        //        Project_Release_Order release = new Project_Release_Order()
+        //        {
+
+        //            Scheme = httpRequest["Scheme"],
+        //            Component = httpRequest["Component"],
+        //            SanctionNo = httpRequest["Sanction"],
+        //            State = httpRequest["state"],
+        //            AmountReleased = Convert.ToDouble(httpRequest["amount"]),
+        //            Date = Convert.ToDateTime(httpRequest["date"]),
+        //            ReleasePDF = fileName,
+        //        };
+        //        ent.Project_Release_Order.Add(release);
+        //        ent.SaveChanges();
+        //    }
+        //    return Request.CreateResponse(HttpStatusCode.OK);
+        //}
+
+
         [HttpPost]
         [Route("postReleasedOrder")]
         //post api for release order
@@ -1524,7 +1596,7 @@ namespace WeeklyReportAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetReleasedOrder")]
+        [Route("GetReleasedOrder/{id}")]
         //get api for release order
         public HttpResponseMessage GetReleasedOrder([FromUri]string id = null)
         {
@@ -1540,7 +1612,7 @@ namespace WeeklyReportAPI.Controllers
 
                               select new
                               {
-                                  o.States,
+                                  o.States_UT,
                                   p.Scheme,
                                   p.State,
                                   p.SanctionNo,
@@ -1567,6 +1639,7 @@ namespace WeeklyReportAPI.Controllers
             }
 
         }
+
         [HttpGet]
         [Route("GetFile")]
         //download file api
@@ -1607,45 +1680,39 @@ namespace WeeklyReportAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetUCOrder")]
+        [Route("GetUCOrder/{id}")]
         //get api for release fund flow 
         public HttpResponseMessage GetUCOrder([FromUri]string id = null)
         {
-
             List<Project_Release_Order> lst = new List<Project_Release_Order>();
-
             using (EmployeeEntities ent = new EmployeeEntities())
             {
-
                 var result = (from p in ent.Project_Release_Order
                               join o in ent.State_Master on p.State equals o.Codes
-
                               join q in ent.Project_UC_Order on p.SanctionNo equals q.SanctionNo
-                             into edept
+                              into edept
                               from g in edept.DefaultIfEmpty()
-
+                              group new { p, o, o.States, g } by p into empg
                               select new
                               {
-
-                                  o.States,
-                                  p.State,
-                                  p.SanctionNo,
-                                  p.Date,
-                                  p.AmountReleased,
-                                  UtilizationNo = (g.UtilizationNo.ToString() == null) ? "" : g.UtilizationNo.ToString(),
-                                  UCPDF = (g.UCPDF.ToString() == null) ? "" : g.UCPDF.ToString(),
-                                  UCDate = (g.UCDate.ToString() == null) ? "" : g.UCDate.ToString(),
-                                  UCAmount = (g.UCAmount.ToString() == null) ? "" : g.UCAmount.ToString()
+                                  States = empg.Key.State,
+                                  SanctionNo = empg.Key.SanctionNo,
+                                  Date = empg.Key.Date,
+                                  AmountReleased = empg.Key.AmountReleased,
+                                  UCPDF = empg.Select(x => x.g.UCPDF.ToString()),
+                                  UCAmount = empg.OrderBy(x => x.g.UCAmount).OrderByDescending(x => x.g.UCOrderID).FirstOrDefault().g.UCAmount,
+                                  States_UT = empg.Select(x => x.o.States_UT),
+                                  UtilizationNo = empg.OrderBy(x => x.g.UtilizationNo).OrderByDescending(x => x.g.UCOrderID).FirstOrDefault().g.UtilizationNo,
+                                  UCDate = empg.OrderByDescending(x => x.g.UCDate).OrderByDescending(x => x.g.UCOrderID).FirstOrDefault().g.UCDate,
 
                               });
 
-                var result1 = result.Where(x => (x.State == id)).ToList();
+                var result1 = result.Where(x => (x.States == id)).ToList();
                 return Request.CreateResponse(HttpStatusCode.OK, result1);
-
-
             }
 
         }
+
 
         [HttpPost]
         [Route("postUCOrder")]
@@ -1682,7 +1749,7 @@ namespace WeeklyReportAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetProjectName")]
+        [Route("GetProjectName/{id}/{dcode}/{ccode}/{scheme}/{component}")]
         // get projectname on behalf of projecttitle
         public List<Projct_Details> GetProjectName([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null, [FromUri]string scheme = null, [FromUri] string component = null)
         {
@@ -1694,7 +1761,7 @@ namespace WeeklyReportAPI.Controllers
             return lst;
         }
 
-        [HttpPost]
+        // [HttpPost]
         //[Route("postProjectBriefDetail")]
         ////post api for project brief detail
         //public HttpResponseMessage postProjectBriefDetail()
@@ -1759,6 +1826,61 @@ namespace WeeklyReportAPI.Controllers
         //    };
         //    return Request.CreateResponse(HttpStatusCode.OK);
         //}
+
+
+        [HttpPost]
+        [Route("postProjectBriefDetail")]
+        //post api for project brief detail
+        public HttpResponseMessage postProjectBriefDetail()
+        {
+            string fileName = null;
+            var httpRequest = HttpContext.Current.Request;
+            var postedFile = httpRequest.Files["Image"];
+            fileName = new string(Path.GetFileNameWithoutExtension(postedFile.FileName).ToArray());
+            fileName = fileName + Path.GetExtension(postedFile.FileName);
+            var filePath = HttpContext.Current.Server.MapPath("~/File/" + fileName);
+            postedFile.SaveAs(filePath);
+            var token = httpRequest.Form.GetValues("Data")[0];
+            string sParams = JsonConvert.SerializeObject(token);
+            var jsonResult = JsonConvert.DeserializeObject(sParams).ToString();
+            var ddd = jsonResult.Replace(@"\", string.Empty);
+            JavaScriptSerializer objJavascript = new JavaScriptSerializer();
+            Project_Brief_Detail list = JsonConvert.DeserializeObject<Project_Brief_Detail>(ddd);
+            var obj = objJavascript.Deserialize<Project_Brief_Detail>(ddd);
+            using (EmployeeEntities ent = new EmployeeEntities())
+            {
+
+                Project_Brief_Detail detail = new Project_Brief_Detail();
+                detail.CityCode = obj.CityCode;
+                detail.Codes = obj.Codes;
+                detail.Component = obj.Component;
+                detail.Dcode = obj.Dcode;
+                detail.Female = obj.Female;
+                detail.General = obj.General;
+                detail.HousingCost = obj.HousingCost;
+                detail.ImplementingAgency = obj.ImplementingAgency;
+                detail.InfaCost = obj.InfaCost;
+                detail.Joint = obj.Joint;
+                detail.Male = obj.Male;
+                detail.Minority = obj.Minority;
+                detail.NodalAgency = obj.NodalAgency;
+                detail.OBC = obj.OBC;
+                detail.OtherCost = obj.OtherCost;
+                detail.OtherEWS = obj.OtherEWS;
+                detail.PDF = obj.PDF;
+                detail.ProjectCode = obj.ProjectCode;
+                detail.SC = obj.SC;
+                detail.Scheme = obj.Scheme;
+                detail.SLSMCDate = obj.SLSMCDate;
+                detail.ST = obj.ST;
+                detail.Transgender = obj.Transgender;
+                detail.WhetherSlum = obj.WhetherSlum;
+                detail.TotalHouses = obj.TotalHouses;
+                ent.Project_Brief_Detail.Add(detail);
+                ent.SaveChanges();
+            };
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
 
         [HttpGet]
         [Route("GetProjectBriefDetail")]
@@ -2417,33 +2539,8 @@ namespace WeeklyReportAPI.Controllers
                 }
             }
         }
-        //[HttpGet]
-        //[Route("GetProjectClassificationMapping")]
-        ////get api for project classification mapping
-        //public HttpResponseMessage GetProjectClassificationMapping([FromUri]string id = null, [FromUri]string dcode = null, [FromUri]string ccode = null)
-        //{
-        //    List<Classification_Project_Mapping> lst = new List<Classification_Project_Mapping>();
-        //    using (EmployeeEntities ent = new EmployeeEntities())
-        //    {
-        //        var result = (from p in ent.Classification_Project_Mapping
-        //                      where p.StateCode == id && p.DistrictCode == dcode && p.CityCode == ccode
-        //                      join s in ent.City_Master on p.CityCode equals s.CityCode
-        //                      join e in ent.Classification_Master on p.DescriptionCode equals e.DescriptionCode
-        //                      join f in ent.Projct_Details on p.ProjectCode equals f.ProjectCode
-        //                      group new { p, e, s, f } by f
-        //                        into empg
-        //                      orderby empg.Max(x => x.s.City)
-        //                      select new
-        //                      {
-        //                          ProjectCode = empg.Key.ProjectCode,
-        //                          ProjectTitle = empg.Key.ProjectTitle,
-        //                          Mapping = empg.Select(x => new { x.e, x.p.Selected, x.p.ProjectClassId })
-        //                      }).ToList();
-        //        return Request.CreateResponse(HttpStatusCode.OK, result.Distinct());
+      
 
-        //    }
-
-        //}
         [HttpGet]
         [Route("GetProjectClassificationMapping/{id}/{dcode}/{ccode}")]
         //get api for project classification mapping

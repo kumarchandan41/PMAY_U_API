@@ -410,7 +410,7 @@ namespace WeeklyReportAPI.Controllers
             {
                 objState = objEntity.HFA_GetStates().ToList();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 throw;
             }

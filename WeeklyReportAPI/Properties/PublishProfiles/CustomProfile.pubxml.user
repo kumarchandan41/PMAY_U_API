@@ -79,10 +79,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/10/2013 11:59:20</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>12/18/2019 17:33:04</publishTime>
+      <publishTime>12/19/2019 16:35:22</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>12/18/2019 17:33:04</publishTime>
+      <publishTime>12/19/2019 16:35:21</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/07/2018 06:33:48</publishTime>
@@ -295,10 +295,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/23/2014 08:27:34</publishTime>
     </File>
     <File Include="bin/WeeklyReportAPI.dll">
-      <publishTime>12/18/2019 17:32:54</publishTime>
+      <publishTime>12/19/2019 16:34:58</publishTime>
     </File>
     <File Include="bin/WeeklyReportAPI.pdb">
-      <publishTime>12/18/2019 17:32:54</publishTime>
+      <publishTime>12/19/2019 16:34:58</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>04/09/2019 17:16:24</publishTime>
@@ -352,7 +352,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/18/2019 08:31:10</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>12/18/2019 17:32:55</publishTime>
+      <publishTime>12/19/2019 16:35:06</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>04/09/2019 17:16:23</publishTime>
@@ -400,7 +400,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/09/2019 17:15:55</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/18/2019 08:34:15</publishTime>
+      <publishTime>12/19/2019 13:30:08</publishTime>
     </File>
   </ItemGroup>
 </Project>
