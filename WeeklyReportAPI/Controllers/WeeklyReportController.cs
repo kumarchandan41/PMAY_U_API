@@ -3432,7 +3432,16 @@ namespace WeeklyReportAPI.Controllers
                         string strDt1 = value.Rows[i][12].ToString().Substring(0,10);
                         string[] strDt = strDt1.ToString().Split('-');
                         string strDate = strDt[1] + "-" + strDt[0] + "-" + strDt[2];
-                        obj.CSMCDate = strDate; 
+                        obj.CSMCDate = strDate;
+                        if(Int32.Parse(strDt[1]) > Int32.Parse(strDt[0]))
+                        {
+                            obj.CSMCDate = strDate;
+                        }
+                        else
+                        {
+                            strDate = strDt[0] + "-" + strDt[1] + "-" + strDt[2];
+                            obj.CSMCDate = strDate;
+                        }
 
                         if (value.Rows[i][13].ToString() == "")
                         {
@@ -3696,6 +3705,16 @@ namespace WeeklyReportAPI.Controllers
                             {
                                 obj.DIVISION = "HFA-4";
                             }
+
+                            if (value.Rows[i][39].ToString() == "")
+                            {
+                                obj.Actual_Completed = 0;
+                            }
+                            else
+                            {
+                                obj.Actual_Completed = Convert.ToDouble(value.Rows[i][39].ToString());
+                            }
+
                         }
 
                         //if (value.Rows[i][39].ToString() == "")
@@ -3715,8 +3734,8 @@ namespace WeeklyReportAPI.Controllers
                         //{
                         //    obj.FundsDisbursed_in_Houses_III = Convert.ToDouble(value.Rows[i][40].ToString());
                         //}
-                        
-    
+
+
 
 
 
@@ -5286,6 +5305,557 @@ namespace WeeklyReportAPI.Controllers
             lstBulding = objEntity.sp_create_Fin_Cons_ISSRDATA(stateCode, dcode, CityCode, Cid, finYear).ToList();
             return lstBulding;
         }
+
+
+        //---------------------------
+
+        //--------------------- new code -------------------- dt 301-12-2019---------------------------------------------------------- 
+        [HttpGet]
+        [Route("sp_Phy_Monitoring_ViewNew")]
+        public FinMonModel sp_Phy_Monitoring_ViewNew(string state_Code, string dcode, string cityCode, string Cid, string FinYear)
+        {
+            FinMonModel lstDivMaster = new FinMonModel();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            lstDivMaster = objEntity.sp_Phy_Monitoring_View_e1(state_Code, dcode, cityCode, Cid, FinYear);
+            return lstDivMaster;
+
+        }
+
+
+        [HttpGet]
+        [Route("sp_Phy_Monitoring_View")]
+        public List<FinMonitorData> sp_Phy_Monitoring_View(string state_Code, string dcode, string cityCode, string Cid, string FinYear)
+        {
+            List<FinMonitorData> lstDivMaster = new List<FinMonitorData>();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            lstDivMaster = objEntity.sp_Phy_Monitoring_View_e(state_Code, dcode, cityCode, Cid, FinYear);
+            return lstDivMaster;
+
+        }
+
+        [HttpPost]
+        [Route("SaveDashboard")]
+        public string SaveDashboard(PMAYU_MainDashboard data)
+        {
+            string message = "";
+            if (data != null)
+            {
+                EmployeeEntities objEntity = new EmployeeEntities();
+
+                objEntity.PMAYU_MainDashboard.Add(data);
+
+
+                int i = objEntity.SaveChanges();
+                if (i > 0)
+                {
+                    message = "data saved succeffully";
+                }
+                else
+                {
+                    message = "Save failed";
+                }
+            }
+            return message;
+        }
+
+        [Route("GetDashBoardData")]
+        [HttpGet]
+        public PMAYU_MainDashboard GetDashBoardData()
+        {
+            PMAYU_MainDashboard objDash = new PMAYU_MainDashboard();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            try
+            {
+                objDash = objEntity.PMAYU_MainDashboard.OrderByDescending(a => a.RowId).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objDash;
+        }
+
+        [HttpGet]
+        [Route("sp_Phy_Critical_View")]
+        public List<PMAYCritical_DATAFinYeraWise> sp_Phy_Critical_View(string stateCode, string dcode, string CityCode, string Component, string finYear)
+        {
+            List<PMAYCritical_DATAFinYeraWise> lstDivMaster = new List<PMAYCritical_DATAFinYeraWise>();
+            EmployeeEntities objEntity = new EmployeeEntities();
+      
+            lstDivMaster = objEntity.sp_Phy_Critical_View_e(stateCode, dcode, CityCode, Component, finYear).ToList();
+            return lstDivMaster;
+        }
+
+
+        [HttpGet]
+        [Route("sp_Phy_Critical_View_")]
+        public List<PMAYCritical_DATAFinYeraWise> sp_Phy_Critical_View1(string stateCode, string dcode, string CityCode, string Component, string finYear)
+        {
+            List<PMAYCritical_DATAFinYeraWise> lstDivMaster = new List<PMAYCritical_DATAFinYeraWise>();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            if (finYear == "0" || string.IsNullOrEmpty(finYear))
+            {
+                finYear = null;
+            }
+            lstDivMaster = objEntity.sp_Phy_Critical_View1_e(stateCode, dcode, CityCode, Component, finYear).ToList();
+            return lstDivMaster;
+        }
+
+
+        [Route("GetFinancialYear")]
+        [HttpGet]
+        public List<string> GetFinancialYear()
+        {
+            IEnumerable<string> objFinYr = new List<string>();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            try
+            {
+                objFinYr = objEntity.PMAY_PROJECTS_Fin.Select(b => b.FinYear).Distinct().OrderBy(a => a).ToList();
+            }
+            catch (Exception ex)
+            {
+                string str = ex.Message;
+                throw;
+            }
+            return objFinYr.ToList();
+        }
+
+        [HttpGet]
+        [Route("sp_PhysicalMonitor_ISSR_Graph")]
+        public List<sp_PhysicalMonitor_ISSR_Graph_Result> sp_PhysicalMonitor_ISSR_Graph(string stateCode, string dcode, string CityCode, string Cid, string finYear)
+        {
+            EmployeeEntities objEntity = new EmployeeEntities();
+            List<sp_PhysicalMonitor_ISSR_Graph_Result> lstBulding = new List<sp_PhysicalMonitor_ISSR_Graph_Result>();
+            lstBulding = objEntity.sp_PhysicalMonitor_ISSR_Graph(stateCode, dcode, CityCode, Cid, finYear).ToList();
+            return lstBulding;
+        }
+
+        [HttpGet]
+        [Route("sp_CRITICAL_GRID_AHP_DATAFinYeraWise")]
+        public List<PMAYCritical_DATAFinYeraWise> sp_AHP_GraphCritical_DATAFinYeraWise_e(string stateCode, string dcode, string CityCode, string finYear)
+        {
+            List<PMAYCritical_DATAFinYeraWise> lstDivMaster = new List<PMAYCritical_DATAFinYeraWise>();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            lstDivMaster = objEntity.sp_AHP_GraphCritical_DATAFinYeraWise_e(stateCode, dcode, CityCode, finYear).ToList();
+            return lstDivMaster;
+        }
+
+        [HttpGet]
+        [Route("sp_create_BLC_GraphCritical_DATA_FinWise")]
+        public List<PMAYCritical_DATAFinYeraWise> sp_create_BLC_GraphCritical_DATA_FinWise(string stateCode, string dcode, string CityCode, string finYear)
+        {
+            List<PMAYCritical_DATAFinYeraWise> lstDivMaster = new List<PMAYCritical_DATAFinYeraWise>();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            lstDivMaster = objEntity.sp_BLC_GraphCritical_DATAFinYeraWise_e(stateCode, dcode, CityCode, finYear).ToList();
+            return lstDivMaster;
+        }
+
+        [HttpGet]
+        [Route("sp_Phy_ShortFall_View")]
+        public List<PMAYShortFallFinYeraWise> sp_Phy_ShortFall_View(string stateCode, string dcode, string CityCode, string Component, string finYear)
+        {// Phy Critical Report
+            List<PMAYShortFallFinYeraWise> lstDivMaster = new List<PMAYShortFallFinYeraWise>();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            if (finYear == "0" || string.IsNullOrEmpty(finYear))
+            {
+                finYear = null;
+            }
+            lstDivMaster = objEntity.sp_Phy_ShortFall_View_e(stateCode, dcode, CityCode, Component, finYear).ToList();
+            return lstDivMaster;
+        }
+
+        //[HttpGet]
+        //[Route("sp_Shortfall_BLC_AHP")]
+        //public List<sp_Shortfall_BLC_AHP_Result> sp_Shortfall_BLC_AHP(string stateCode, string dcode, string CityCode, string Cid, string finYear)
+        //{
+        //    EmployeeEntities objEntity = new EmployeeEntities();
+        //    List<sp_Shortfall_BLC_AHP_Result> lstBulding = new List<sp_Shortfall_BLC_AHP_Result>();
+        //    lstBulding = objEntity.sp_Shortfall_BLC_AHP(stateCode, dcode, CityCode, Cid, finYear).ToList();
+        //    return lstBulding;
+        //}
+
+
+        //-----------------Changes DATED 2 Jan 2019 start-----------------------------------
+        [HttpGet]
+        [Route("GetMasterFn/{stateCode}")]
+        public CommonGet GetMasterFn(string stateCode)
+        {
+            CommonGet commonGet = new CommonGet();
+            List<PMAY_PROJECTS_Fin> objPmay = new List<PMAY_PROJECTS_Fin>();
+            List<CLSS_MAster> objMaster = new List<CLSS_MAster>();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            objPmay = objEntity.PMAY_PROJECTS_Fin.Where(a => a.StateCode == stateCode).ToList();
+
+            objMaster = objEntity.CLSS_MAster.ToList();
+            commonGet.CLSS_MASTERVMS = objMaster;
+            commonGet.PMAY_PROJECTS_FinVM = objPmay;
+            return commonGet;
+        }
+
+
+
+        [Route("GetExcel_Physical_Progress_Report")]
+        [HttpGet]
+        public IEnumerable<Physical_Progress_ReportVM> GetExcel_Physical_Progress_Report()
+        {
+            IEnumerable<Physical_Progress_ReportVM> objExcel = new List<Physical_Progress_ReportVM>();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            try
+            {
+                objExcel = objEntity.Physical_Progress_Report.Select(a => new Physical_Progress_ReportVM
+                {
+                    PhysicalProgressId = a.PhysicalProgressId,
+                    Codes = a.Codes,
+                    Dcode = a.Dcode,
+                    CityCode = a.CityCode.ToString(),
+                    Scheme = a.Scheme.ToString(),
+                    ProjectCode = a.ProjectCode.ToString(),
+                    CentralAssistance = a.CentralAssistance.ToString(),
+                    TotalSanction = a.TotalSanction.ToString(),
+                    GroundLevel = a.GroundLevel.ToString(),
+                    Pinth = a.Pinth.ToString(),
+
+                    LinterLevel = a.LinterLevel,
+                    RoofLevel = a.RoofLevel.ToString(),
+                    SuperStructure = a.SuperStructure.ToString(),
+                    FinishingStage = a.FinishingStage.ToString(),
+                    TotalProgressHouse = a.TotalProgressHouse,
+
+                    ConstructionCompleted = a.ConstructionCompleted,
+                    NonStarterHouse = a.NonStarterHouse.ToString(),
+                    PowerSupply = a.PowerSupply.ToString(),
+                    WaterSupply = a.WaterSupply.ToString(),
+
+                    DrainageSupply = a.DrainageSupply.ToString(),
+                    EntryDate = a.EntryDate,
+                    TotalHouseOccupiedBeneficiary = a.TotalHouseOccupiedBeneficiary,
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objExcel;
+        }
+
+
+        [Route("GetExcel_Projct_Details_Report")]
+        [HttpGet]
+        public IEnumerable<Project_DetailVM> GetExcel_Projct_Details_Report()
+        {
+            IEnumerable<Project_DetailVM> objExcel = new List<Project_DetailVM>();
+            EmployeeEntities objEntity = new EmployeeEntities();
+            try
+            {
+                objExcel = objEntity.Projct_Details.Select(a => new Project_DetailVM
+                {
+                    ProjectId = a.ProjectId,
+                    ProjectCode = a.ProjectCode,
+                    StateCode = a.StateCode,
+                    DistrictCode = a.DistrictCode.ToString(),
+                    CityCode = a.CityCode.ToString(),
+
+                    CSMCDate = a.CSMCDate,
+                    CSMCNumber = a.CSMCNumber.ToString(),
+                    Scheme = a.Scheme.ToString(),
+                    SchemeComponent = a.SchemeComponent.ToString(),
+                    ProjectAgencies = a.ProjectAgencies.ToString(),
+
+                    ProjectStatus = a.ProjectStatus,
+                    ProjectDuration = a.ProjectDuration.ToString(),
+                    ProjectTitle = a.ProjectTitle.ToString(),
+                    ProjectCost = a.ProjectCost,
+                    CentralAssistance = a.CentralAssistance,
+
+                    StateGrant = a.StateGrant,
+                    ULB = a.ULB.ToString(),
+                    BeneficiaryShare = a.BeneficiaryShare.ToString(),
+                    OtherCost = a.OtherCost.ToString(),
+
+                    NewSanction = a.NewSanction.ToString(),
+                    UpgradeSanction = a.UpgradeSanction,
+                    TotalSanction = a.TotalSanction,
+
+                    FirstInstallment = a.FirstInstallment.ToString(),
+                    ActiveFlag = a.ActiveFlag,
+                    CreatedBy = a.CreatedBy,
+                    CreatedOn = a.CreatedOn,
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objExcel;
+        }
+
+
+
+
+        [HttpPost]
+        [Route("UploadProjectDetail_Excel")] // bulk inset PhysicalDashboard  ****
+        public string UploadProjectDetail_Excel()
+        {  //// PhysicalDashboard bulk insert
+            var httpRequest = HttpContext.Current.Request;
+            if (httpRequest.Files.Count > 0)
+            {
+                EmployeeEntities objEntity = new EmployeeEntities();
+                HttpPostedFile file = httpRequest.Files[0];
+                Stream strem = file.InputStream;
+                IExcelDataReader reader = null;
+                if (file.FileName.EndsWith(".xls"))
+                {
+                    reader = ExcelReaderFactory.CreateBinaryReader(strem);
+                }
+                else if (file.FileName.EndsWith(".xlsx"))
+                {
+                    reader = ExcelReaderFactory.CreateOpenXmlReader(strem);
+                }
+                else
+                {
+
+                }
+                DataSet result = reader.AsDataSet();
+                reader.Close();
+
+                var value = result.Tables[0];
+                List<Projct_Details> lst = new List<Projct_Details>();
+
+                try
+                {
+                    for (int i = 1; i < value.Rows.Count; i++)//value.Rows.Count - value.Rows.Count  9310
+                    {
+                        Projct_Details obj = new Projct_Details();
+                        //  obj.SrNo = Convert.ToUInt32(value.Rows[i][0].ToString());
+                        obj.ProjectId = Convert.ToUInt32(value.Rows[i][0].ToString());
+
+                        obj.ProjectCode = value.Rows[i][1].ToString();
+                        obj.StateCode = value.Rows[i][2].ToString();
+
+                        obj.DistrictCode = value.Rows[i][3].ToString();
+                        obj.CityCode = value.Rows[i][4].ToString();
+
+                        //obj.CSMCDate = value.Rows[i][5].ToString();
+
+                        string strDt1 = value.Rows[i][5].ToString().Substring(0, 10);
+                        string[] strDt = strDt1.ToString().Split('-');
+                        string strDate = strDt[1] + "-" + strDt[0] + "-" + strDt[2];
+                        if (Int32.Parse(strDt[1]) > Int32.Parse(strDt[0]))
+                        {
+                            obj.CSMCDate = Convert.ToDateTime(strDate);
+                        }
+                        else
+                        {
+                            strDate = strDt[0] + "-" + strDt[1] + "-" + strDt[2];
+                            obj.CSMCDate = Convert.ToDateTime(strDate);
+                        }
+
+
+                        obj.CSMCNumber = value.Rows[i][6].ToString();
+
+                        obj.Scheme = value.Rows[i][7].ToString();
+                        obj.SchemeComponent = value.Rows[i][8].ToString();
+
+                        obj.ProjectAgencies = value.Rows[i][9].ToString();
+                        obj.ProjectStatus = value.Rows[i][10].ToString();
+
+                        obj.ProjectDuration = value.Rows[i][11].ToString();
+                        obj.ProjectTitle = value.Rows[i][12].ToString();
+                        obj.ProjectCost = Convert.ToDecimal(value.Rows[i][13].ToString());
+                        obj.CentralAssistance = Convert.ToDecimal(value.Rows[i][14].ToString());
+                        obj.StateGrant = value.Rows[i][15].ToString();
+                        obj.ULB = value.Rows[i][16].ToString();
+                        obj.BeneficiaryShare = value.Rows[i][17].ToString();
+                        obj.OtherCost = value.Rows[i][18].ToString();
+                        obj.NewSanction = value.Rows[i][19].ToString();
+                        obj.UpgradeSanction = value.Rows[i][20].ToString();
+                        obj.TotalSanction = Convert.ToDecimal(value.Rows[i][21].ToString());
+
+                        obj.FirstInstallment = value.Rows[i][22].ToString();
+                        obj.ActiveFlag = value.Rows[i][23].ToString();
+                        obj.CreatedBy = "Admin";// value.Rows[i][24].ToString();
+                        obj.CreatedOn = DateTime.Parse("01-01-2020");
+
+                        lst.Add(obj);
+                        objEntity.Projct_Details.Add(obj);
+                    }
+                    objEntity.SaveChanges();
+                }
+                catch (Exception ee)
+                {
+                    String S = ee.Message;
+                }
+                finally { }
+            }
+            return "sussess";
+
+        }
+
+        [HttpPost]
+        [Route("UploadPhyProgressReport_Excel")] // bulk inset PhysicalDashboard  ****
+        public string UploadPhyProgressReport_Excel()
+        {  ////    bulk insert
+            var httpRequest = HttpContext.Current.Request;
+            if (httpRequest.Files.Count > 0)
+            {
+                EmployeeEntities objEntity = new EmployeeEntities();
+                HttpPostedFile file = httpRequest.Files[0];
+                Stream strem = file.InputStream;
+                IExcelDataReader reader = null;
+                if (file.FileName.EndsWith(".xls"))
+                {
+                    reader = ExcelReaderFactory.CreateBinaryReader(strem);
+                }
+                else if (file.FileName.EndsWith(".xlsx"))
+                {
+                    reader = ExcelReaderFactory.CreateOpenXmlReader(strem);
+                }
+                else
+                {
+
+                }
+                DataSet result = reader.AsDataSet();
+                reader.Close();
+
+                var value = result.Tables[0];
+                List<Physical_Progress_Report> lst = new List<Physical_Progress_Report>();
+
+                try
+                {
+                    for (int i = 1; i < value.Rows.Count; i++)//value.Rows.Count - value.Rows.Count  9310
+                    {
+                        Physical_Progress_Report obj = new Physical_Progress_Report();
+                        obj.Codes = value.Rows[i][1].ToString();
+                        obj.Dcode = value.Rows[i][2].ToString();
+                        obj.CityCode = value.Rows[i][3].ToString();
+                        obj.Scheme = value.Rows[i][4].ToString();
+                        obj.ProjectCode = value.Rows[i][5].ToString();
+
+                        obj.CentralAssistance = value.Rows[i][6].ToString();
+                        obj.TotalSanction = value.Rows[i][7].ToString();
+                        obj.GroundLevel = value.Rows[i][8].ToString();
+                        obj.Pinth = value.Rows[i][9].ToString();
+                        obj.LinterLevel = value.Rows[i][10].ToString();
+                        obj.RoofLevel = value.Rows[i][11].ToString();
+
+
+                        obj.SuperStructure = value.Rows[i][12].ToString();
+                        obj.FinishingStage = value.Rows[i][13].ToString();
+                        obj.TotalProgressHouse = decimal.Parse(value.Rows[i][14].ToString());
+                        obj.ConstructionCompleted = decimal.Parse(value.Rows[i][15].ToString());
+
+
+                        obj.NonStarterHouse = value.Rows[i][16].ToString();
+                        obj.PowerSupply = value.Rows[i][17].ToString();
+                        obj.WaterSupply = value.Rows[i][18].ToString();
+                        obj.DrainageSupply = value.Rows[i][19].ToString();
+
+                        if ((value.Rows[i][20].ToString() == "" || value.Rows[i][20].ToString() == "NULL"))
+                        {
+                            obj.EntryDate = null;
+                        }
+                        else
+                        {
+                            string strDt1 = value.Rows[i][20].ToString().Substring(0, 10);
+                            string[] strDt = strDt1.ToString().Split('-');
+                            string strDate = strDt[1] + "-" + strDt[0] + "-" + strDt[2];
+                            if (Int32.Parse(strDt[1]) > Int32.Parse(strDt[0]))
+                            {
+                                obj.EntryDate = Convert.ToDateTime(strDate);
+                            }
+                            else
+                            {
+                                strDate = strDt[0] + "-" + strDt[1] + "-" + strDt[2];
+                                obj.EntryDate = Convert.ToDateTime(strDate);
+                            }
+                        }
+                        obj.TotalHouseOccupiedBeneficiary = Convert.ToDecimal(value.Rows[i][21].ToString());
+                        lst.Add(obj);
+                        objEntity.Physical_Progress_Report.Add(obj);
+                    }
+                    objEntity.SaveChanges();
+                }
+                catch (Exception ee)
+                {
+                    String S = ee.Message;
+                }
+                finally { }
+            }
+            return "sussess";
+
+        }
+
+
+        [HttpGet]
+        [Route("DeletePhysicalProgressReport_Details")]
+        public string DeletePhysicalProgressReport_Details(string excelId)
+        {
+            string message = "";
+            if (excelId != "")
+            {
+                int id = Convert.ToInt32(excelId);
+                EmployeeEntities objEntity = new EmployeeEntities();
+                var data = objEntity.Physical_Progress_Report.Find(id);
+                objEntity.Physical_Progress_Report.Remove(data);
+                int i = objEntity.SaveChanges();
+                if (i > 0)
+                {
+                    message = "Record deleted successfully ";
+                }
+                else
+                {
+                    message = "Deletion Faild";
+                }
+            }
+            return message;
+        }
+        
+         
+
+        [HttpGet]
+        [Route("DeleteTable_PhyProgressReport")]
+        public string DeleteTable_PhyProgressReport()
+        {
+            EmployeeEntities objEntity = new EmployeeEntities();
+            objEntity.Del_PhyProgressReport();
+            objEntity.SaveChanges();
+            return "Table has successfully deleted";
+        }
+        [HttpGet]
+        [Route("Del_ProjectDetail")]
+        public string Del_ProjectDetail()
+        {
+            EmployeeEntities objEntity = new EmployeeEntities();
+            objEntity.Del_ProjectDetail();
+            objEntity.SaveChanges();
+            return "Table has successfully deleted";
+        }
+
+        [HttpGet]
+        [Route("GetAllDataFn/{ProjectCode}")]
+        public AllFnAPI GetAllDataFn(string ProjectCode)
+        {
+            AllFnAPI AllFnAPI = new AllFnAPI();
+            List<Projct_Details> objPmay = new List<Projct_Details>();
+            List<Project_Brief_Detail> objprojBrief = new List<Project_Brief_Detail>();
+            List<Project_Fund_Release> objPfund = new List<Project_Fund_Release>();
+            List<Project_UC_Submission> objUC = new List<Project_UC_Submission>();
+
+            EmployeeEntities objEntity = new EmployeeEntities();
+            objPmay = objEntity.Projct_Details.Where(a => a.ProjectCode == ProjectCode).ToList();
+            objprojBrief = objEntity.Project_Brief_Detail.Where(a => a.ProjectCode == ProjectCode).ToList();
+
+            objPfund = objEntity.Project_Fund_Release.Where(a => a.ProjectCode == ProjectCode).ToList();
+            objUC = objEntity.Project_UC_Submission.Where(a => a.ProjectCode == ProjectCode).ToList();
+
+            AllFnAPI.Project_DetailVM = objPmay;
+            AllFnAPI.Project_Brief_DetailVM = objprojBrief;
+            AllFnAPI.Project_Fund_ReleaseVM = objPfund;
+            AllFnAPI.Project_UC_SubmissionVM = objUC;
+            return AllFnAPI;
+            //http://localhost:58396/Api/Buldings/GetAllDataFn/3564005923804041AP01
+        }
+        //-----------------Changes DATED 2 Jan 2019 END-----------------------------------
     }
 
 }

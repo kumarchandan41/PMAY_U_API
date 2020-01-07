@@ -55,5 +55,7 @@ namespace WeeklyReportAPI.Models
         public string DIVISION { get; set; }
         public Nullable<double> FundsDisbursed_in_Houses_II { get; set; }
         public Nullable<double> FundsDisbursed_in_Houses_III { get; set; }
+        public Nullable<double> Actual_Completed { get; set; }
+        public Nullable<double> Shortfall_Completed { get; set; }
     }
 }

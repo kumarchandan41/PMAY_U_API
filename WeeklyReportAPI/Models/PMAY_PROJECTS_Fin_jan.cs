@@ -12,7 +12,7 @@ namespace WeeklyReportAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PMAY_PROJECTS_Fin_Back
+    public partial class PMAY_PROJECTS_Fin_jan
     {
         public long SrNo { get; set; }
         public string Project_Code { get; set; }

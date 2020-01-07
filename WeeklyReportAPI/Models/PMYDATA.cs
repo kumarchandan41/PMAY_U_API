@@ -660,7 +660,221 @@ namespace WeeklyReportAPI.Models
 
             //return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Dynamic_Physical_CompWiseView @State_Code,@dcode,@cityCode,@Component,@FinYear");
         }
+
+        public static FinMonModel sp_Phy_Monitoring_View_e1(this EmployeeEntities emp, string state_Code, string dcode, string cityCode, string component, string finYear)
+        {
+            FinMonModel obj = new FinMonModel();
+            //SqlParameter[] parameters = {
+            //    new SqlParameter("@State_Code", state_Code),
+            //    new SqlParameter("@dcode", dcode),
+            //    new SqlParameter("@cityCode", cityCode),
+            //    new SqlParameter("@Component", component),
+            //    new SqlParameter("@FinYear", finYear),
+            //     };
+
+
+            var results = emp.MultipleResults("[dbo].sp_Phy_Monitoring_View @State_Code='" + state_Code + "',@dcode='" + dcode + "',@cityCode='" + cityCode + "',@Component='" + component + "',@FinYear='" + finYear + "'")
+                .With<string>()
+                .With<FinData>()
+                .Execute();
+
+            foreach (var item in results)
+            {
+                if (typeof(IEnumerable<FinMonData>).IsAssignableFrom(item.GetType()))
+                {
+                    obj.FinMonData = item.Cast<FinMonData>();
+                }
+
+                if (typeof(IEnumerable<string>).IsAssignableFrom(item.GetType()))
+                {
+                    obj.FinYear = item.Cast<string>();
+                }
+            }
+
+            return obj;
+
+            //return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Dynamic_Physical_CompWiseView @State_Code,@dcode,@cityCode,@Component,@FinYear");
+        }
+
+        public static List<FinMonitorData> sp_Phy_Monitoring_View_e(this EmployeeEntities emp, string stateCode, string dcode, string cityCode, string component, string finYear)
+        {
+            SqlParameter[] parameters = {
+                new SqlParameter("@State_Code", stateCode),
+                new SqlParameter("@dcode", dcode),
+                new SqlParameter("@cityCode", cityCode),
+                new SqlParameter("@Component", component),
+                new SqlParameter("@FinYear", finYear),
+                 };
+            return emp.Database.SqlQuery<FinMonitorData>("sp_Phy_Monitoring_View @State_Code,@dcode,@cityCode,@Component,@FinYear", parameters).ToList();
+        }
+
+
+        public static List<PMAYCritical_DATAFinYeraWise> sp_Phy_Critical_View_e(this EmployeeEntities emp, string stateCode, string dcode, string cityCode, string component, string finYear)
+        {
+            SqlParameter[] parameters = {
+                new SqlParameter("@State_Code", stateCode),
+                new SqlParameter("@dcode", dcode),
+                new SqlParameter("@cityCode", cityCode),
+                new SqlParameter("@Component", component),
+                new SqlParameter("@FinYear", finYear),
+                 };
+            return emp.Database.SqlQuery<PMAYCritical_DATAFinYeraWise>("sp_Phy_Critical_View @State_Code,@dcode,@cityCode,@Component,@FinYear", parameters).ToList();
+        }
+        public static List<PMAYCritical_DATAFinYeraWise> sp_Phy_Critical_View1_e(this EmployeeEntities emp, string stateCode, string dcode, string cityCode, string component, string finYear)
+        {
+            //var finParam = new SqlParameter()
+            //{
+            //    ParameterName = "@FinYear",
+            //    SqlDbType = SqlDbType.VarChar,
+            //    IsNullable = true
+            //};
+            //if (finYear == null) {
+            //    finParam.Value = finYear;
+            //}
+            //else{
+            //    finParam.Value = DBNull.Value;
+            //}
+
+
+            List<SqlParameter> parameters = new List<SqlParameter>{
+                new SqlParameter("@State_Code", stateCode),
+                new SqlParameter("@dcode", dcode),
+                new SqlParameter("@cityCode", cityCode),
+                new SqlParameter("@Component", component),
+
+                 };
+
+            if (finYear != null)
+            {
+                parameters.Add(new SqlParameter("@FinYear", finYear));
+            }
+
+            return emp.Database.SqlQuery<PMAYCritical_DATAFinYeraWise>("sp_Phy_Critical_View_ @State_Code,@dcode,@cityCode,@Component" + (!string.IsNullOrEmpty(finYear) ? ",@FinYear" : string.Empty), parameters.ToArray()).ToList();
+        }
+
+        //---------------------------
+        public static List<PMAYCritical_DATAFinYeraWise> sp_AHP_GraphCritical_DATAFinYeraWise_e(this EmployeeEntities emp, string stateCode, string dcode, string cityCode, string finYear)
+        {
+            SqlParameter[] parameters = {
+                new SqlParameter("@StateCode", stateCode),
+                new SqlParameter("@dcode", dcode),
+                new SqlParameter("@cityCode", cityCode),
+                new SqlParameter("@finYear", finYear),
+                 };
+            return emp.Database.SqlQuery<PMAYCritical_DATAFinYeraWise>("sp_create_AHP_GraphCritical_DATA_FinWise @StateCode,@dcode,@cityCode,@finYear", parameters).ToList();
+        }
+
+        public static List<PMAYCritical_DATAFinYeraWise> sp_BLC_GraphCritical_DATAFinYeraWise_e(this EmployeeEntities emp, string stateCode, string dcode, string cityCode, string finYear)
+        {
+            SqlParameter[] parameters = {
+                new SqlParameter("@StateCode", stateCode),
+                new SqlParameter("@dcode", dcode),
+                new SqlParameter("@cityCode", cityCode),
+                new SqlParameter("@finYear", finYear),
+                 };
+            return emp.Database.SqlQuery<PMAYCritical_DATAFinYeraWise>("sp_create_BLC_GraphCritical_DATA_FinWise   @StateCode,@dcode,@cityCode,@finYear", parameters).ToList();
+        }
+        public static List<PMAYShortFallFinYeraWise> sp_Phy_ShortFall_View_e(this EmployeeEntities emp, string stateCode, string dcode, string cityCode, string component, string finYear)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>{
+                new SqlParameter("@State_Code", stateCode),
+                new SqlParameter("@dcode", dcode),
+                new SqlParameter("@cityCode", cityCode),
+                new SqlParameter("@Component", component),
+
+                 };
+            if (finYear != null)
+            {
+                parameters.Add(new SqlParameter("@FinYear", finYear));
+            }
+            return emp.Database.SqlQuery<PMAYShortFallFinYeraWise>("sp_Phy_ShortFall @State_Code,@dcode,@cityCode,@Component" + (!string.IsNullOrEmpty(finYear) ? ",@FinYear" : string.Empty), parameters.ToArray()).ToList();
+        }
+
     }
+    //--------------------
+
+
+
+
+
+
+
+    public class FinMonModel
+    {
+        public IEnumerable<string> FinYear { get; set; }
+        public IEnumerable<FinMonData> FinMonData { get; set; }
+    }
+    public class FinMonData
+    {
+        public string FinYear { get; set; }
+        public string StateCode { get; set; }
+        public string dcode { get; set; }
+        public string cityCode { get; set; }
+
+        public string Component { get; set; }
+        public double? Sanctioned { get; set; }
+        public double? CAReleased { get; set; }
+        public double? I_to_beRel { get; set; }
+        public double? II_to_beRel { get; set; }
+        public double? III_to_beRel { get; set; }
+        public double? Total_Liability { get; set; }
+        public double? UC_Pending { get; set; }
+
+        public string cid { get; set; }
+        public double? Project_Cost { get; set; }
+        public double? Central_Assistance_involved { get; set; }
+        public double? FirstInstallmentReleased { get; set; }
+        public double? SecondInstallmentReleased { get; set; }
+        public double? ThirdInstallmentReleased { get; set; }
+        public double? UC_Received { get; set; }
+    }
+
+
+    public class FinMonitorData
+    {
+        public string FinYear { get; set; }
+        public string StateCode { get; set; }
+        public string dcode { get; set; }
+        public string cityCode { get; set; }
+
+        public string Component { get; set; }
+        public double? Sanctioned { get; set; }
+        public double? CAReleased { get; set; }
+        public double? I_to_beRel { get; set; }
+        public double? II_to_beRel { get; set; }
+        public double? III_to_beRel { get; set; }
+        public double? Total_Liability { get; set; }
+        public double? UC_Pending { get; set; }
+
+        public string cid { get; set; }
+        public double? Project_Cost { get; set; }
+        public double? Central_Assistance_involved { get; set; }
+        public double? FirstInstallmentReleased { get; set; }
+        public double? SecondInstallmentReleased { get; set; }
+        public double? ThirdInstallmentReleased { get; set; }
+        public double? UC_Received { get; set; }
+    }
+
+
+    public class PMAYShortFallFinYeraWise
+    {
+        public string State_Code { get; set; }
+        public string dcode { get; set; }
+        public string cityCode { get; set; }
+        public string Fin_Year { get; set; }
+        public string FinYear { get; set; }
+        public string Component { get; set; }
+
+        public Nullable<double> Houses_Completed { get; set; }
+        public Nullable<double> Completed { get; set; }
+        public Nullable<double> Actual_Completed { get; set; }
+        public Nullable<double> Shortfall_Completed { get; set; }
+    }
+
+
+
+    //--------------------
+
 
     public class PMAY_Data
     {
@@ -688,6 +902,8 @@ namespace WeeklyReportAPI.Models
         public string State_Code { get; set; }
         public string Division { get; set; }
     }
+
+     
     public class DemandNew
     {
         public string State_Name { get; set; }
@@ -705,6 +921,8 @@ namespace WeeklyReportAPI.Models
         public double DemandN { get; set; }
         public double Division { get; set; }
     }
+
+ 
     public class ComponentWiseSanctioned
     {
         public double? Component { get; set; }
@@ -714,6 +932,9 @@ namespace WeeklyReportAPI.Models
         public string cityCode { get; set; }
         public string cid { get; set; }
     }
+
+ 
+
     public class PMAY_FinancialData
     {
         public double? HG_14_15 { get; set; }
@@ -762,6 +983,10 @@ namespace WeeklyReportAPI.Models
         public string cid { get; set; }
     }
 
+
+ 
+     
+
     public class FinDataModel
     {
         public IEnumerable<string> FinYear { get; set; }
@@ -782,6 +1007,8 @@ namespace WeeklyReportAPI.Models
         public double? ThirdInstallmentReleased { get; set; }
         public double? UC_Received { get; set; }
     }
+
+ 
 
     public class FinancialProgress
     {
@@ -1053,6 +1280,8 @@ namespace WeeklyReportAPI.Models
         public string cityCode { get; set; }
         public string Fin_Year { get; set; }
         public string FinYear { get; set; }
+        public string Component { get; set; }
+
         public Nullable<double> Housesinvolved { get; set; }
         public Nullable<double> Istinstyettobereleased { get; set; }
         public Nullable<double> IIndinstyettobereleased { get; set; }

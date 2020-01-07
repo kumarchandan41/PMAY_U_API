@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="96da33e0ad624958ac7d7647aa7aec5a" Name="Diagram1">
+      <Diagram DiagramId="893b6195cd4f4921abcd432c3d3c1334" Name="Diagram1">
         <EntityTypeShape EntityType="EmployeeModel.ADB_TBL_StateWiseScore_" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.Building" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.City_Master" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
@@ -27,91 +27,98 @@
         <EntityTypeShape EntityType="EmployeeModel.CLSS_MASTER_OLD" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.ClssCityWise" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.ClssCityWiseExcel" Width="1.5" PointX="16.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Combined_States" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.cmaster" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Combined_States" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.ComponentMaster" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Constituency_Mster" Width="1.5" PointX="16.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Constituency_Mster" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.CountryMaster" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.DemandCityWise" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.DemandCityWise_" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.DemandCityWiseExcel" Width="1.5" PointX="18.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Designation_Master" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.DemandCityWise" Width="1.5" PointX="18.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.DemandCityWise_" Width="1.5" PointX="18.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.DemandCityWiseExcel" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Designation_Master" Width="1.5" PointX="7.75" PointY="19.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.Distt_Master" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Distt_Master_July" Width="1.5" PointX="18.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Distt_Master_old" Width="1.5" PointX="7.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.DisttMaster" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Distt_Master_July" Width="1.5" PointX="18.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Distt_Master_old" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.DisttMaster" Width="1.5" PointX="2.75" PointY="20.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.Emp" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.EmpData" Width="1.5" PointX="2.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Employe" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.FinalCity" Width="1.5" PointX="4.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.HFA_Master" Width="1.5" PointX="20.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Investment" Width="1.5" PointX="20.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.EmpData" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Employe" Width="1.5" PointX="4.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.FinalCity" Width="1.5" PointX="20.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.HFA_Master" Width="1.5" PointX="20.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Investment" Width="1.5" PointX="20.75" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.Investment_Details" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Copy_" Width="1.5" PointX="20.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Copy_Excel" Width="1.5" PointX="14.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Master" Width="1.5" PointX="16.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Table" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Master_Cities_Included" Width="1.5" PointX="6.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Physical_Dashboard" Width="1.5" PointX="22.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Physical_Dashboard___" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Copy_" Width="1.5" PointX="14.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Copy_Excel" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Master" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Table" Width="1.5" PointX="6.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Master_Cities_Included" Width="1.5" PointX="22.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Physical_Dashboard" Width="1.5" PointX="22.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Physical_Dashboard___" Width="1.5" PointX="16.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Physical_Dashboard_de_2019" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.Physical_DashboardExcel" Width="1.5" PointX="2.75" PointY="23.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.Physical_Progress_Report" Width="1.5" PointX="8.75" PointY="23.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Copy___1" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin" Width="1.5" PointX="24.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_26July" Width="1.5" PointX="10.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_27062019" Width="1.5" PointX="18.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_Excel" Width="1.5" PointX="24.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_July" Width="1.5" PointX="20.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin11" Width="1.5" PointX="4.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Projct_Details" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Project_Brief_Detail" Width="1.5" PointX="26.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Project_Code_Slum" Width="1.5" PointX="26.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Project_Fund_Release" Width="1.5" PointX="26.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Project_Master" Width="1.5" PointX="26.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Project_Release_Fund_Flow" Width="1.5" PointX="26.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Project_Release_Order" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Project_UC_Order" Width="1.5" PointX="28.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Project_UC_Submission" Width="1.5" PointX="28.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Register_Users" Width="1.5" PointX="28.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.ReturnInv" Width="1.5" PointX="28.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_jan" Width="1.5" PointX="10.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_26July" Width="1.5" PointX="24.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_27062019" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_Dec_2019" Width="1.5" PointX="26.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_Excel" Width="1.5" PointX="26.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_July" Width="1.5" PointX="18.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin11" Width="1.5" PointX="20.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAYU_MainDashboard" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Projct_Details" Width="1.5" PointX="28.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Projct_Details_Jan" Width="1.5" PointX="28.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Project_Brief_Detail" Width="1.5" PointX="28.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Project_Code_Slum" Width="1.5" PointX="28.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Project_Fund_Release" Width="1.5" PointX="12.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Project_Master" Width="1.5" PointX="30.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Project_Release_Fund_Flow" Width="1.5" PointX="30.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Project_Release_Order" Width="1.5" PointX="22.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Project_UC_Order" Width="1.5" PointX="24.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Project_UC_Submission" Width="1.5" PointX="26.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Register_Users" Width="1.5" PointX="4.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.ReturnInv" Width="1.5" PointX="6.75" PointY="31.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.RoleMaster" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Scheme_Component_Master" Width="1.5" PointX="28.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Scheme_Master" Width="1.5" PointX="6.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Scheme_Component_Master" Width="1.5" PointX="32.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Scheme_Master" Width="1.5" PointX="32.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.State_Master" Width="1.5" PointX="3.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.State_Master_July" Width="1.5" PointX="22.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.State_Master_July" Width="1.5" PointX="32.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.StateMaster" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.sysdiagram" Width="1.5" PointX="28.75" PointY="29.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.tblCity" Width="1.5" PointX="30.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.tblIndicator" Width="1.5" PointX="30.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.tblPhysicalCityYearWise" Width="1.5" PointX="30.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.tblPMAYU" Width="1.5" PointX="30.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.tblStateWiseScore" Width="1.5" PointX="12.75" PointY="30.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.tblStateWiseScore_27062019" Width="1.5" PointX="30.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.tblStateWiseScoreExce_1l" Width="1.5" PointX="14.75" PointY="30.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.tblUser" Width="1.5" PointX="32.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Testtable" Width="1.5" PointX="32.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.ULB_Agencies_Share" Width="1.5" PointX="32.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.user_Master" Width="1.5" PointX="32.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.sysdiagram" Width="1.5" PointX="32.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.tblCity" Width="1.5" PointX="32.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.tblIndicator" Width="1.5" PointX="32.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.tblPhysicalCityYearWise" Width="1.5" PointX="32.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.tblPMAYU" Width="1.5" PointX="32.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.tblStateWiseScore" Width="1.5" PointX="32.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.tblStateWiseScore_dec_2019" Width="1.5" PointX="34.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.tblStateWiseScore_27062019" Width="1.5" PointX="12.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.tblStateWiseScoreExce_1l" Width="1.5" PointX="34.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.tblUser" Width="1.5" PointX="22.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Testtable" Width="1.5" PointX="8.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.ULB_Agencies_Share" Width="1.5" PointX="24.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.user_Master" Width="1.5" PointX="26.75" PointY="35.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeeModel.Users_Register" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Visitor_FileUpload" Width="1.5" PointX="32.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.VisitorMaster" Width="1.5" PointX="32.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.a21_aug_tblStateWiseScore" Width="1.5" PointX="22.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.clss_Mainmaster_9Aug2019" Width="1.5" PointX="32.75" PointY="26.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.CLSS_MainMaster_Back" Width="1.5" PointX="28.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.componentMaster_old" Width="1.5" PointX="6.75" PointY="33.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.DemandCityWise_2019_7_1" Width="1.5" PointX="30.75" PointY="33.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.DemandCityWise_Back" Width="1.5" PointX="32.75" PointY="33.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Copy_1" Width="1.5" PointX="34.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Table_Back" Width="1.5" PointX="8.75" PointY="34.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.LoginMaster" Width="1.5" PointX="34.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.MenuMaster" Width="1.5" PointX="34.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Physical_Dashboard_9Aug2019" Width="1.5" PointX="16.75" PointY="34.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.Physical_Dashboard_Back" Width="1.5" PointX="34.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_3dEC" Width="1.5" PointX="18.75" PointY="34.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_Back" Width="1.5" PointX="34.75" PointY="33.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_PmB" Width="1.5" PointX="36.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_PMB1" Width="1.5" PointX="4.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.tblStateWiseScore_Back" Width="1.5" PointX="36.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeeModel.UserMaster_not_used" Width="1.5" PointX="36.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Visitor_FileUpload" Width="1.5" PointX="36.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.VisitorMaster" Width="1.5" PointX="36.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.a21_aug_tblStateWiseScore" Width="1.5" PointX="36.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.clss_Mainmaster_9Aug2019" Width="1.5" PointX="36.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.CLSS_MainMaster_Back" Width="1.5" PointX="36.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.componentMaster_old" Width="1.5" PointX="4.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.DemandCityWise_2019_7_1" Width="1.5" PointX="18.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.DemandCityWise_Back" Width="1.5" PointX="38.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Copy_1" Width="1.5" PointX="38.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.JnNURM_Table_Back" Width="1.5" PointX="6.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.LoginMaster" Width="1.5" PointX="8.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.MenuMaster" Width="1.5" PointX="38.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Physical_Dashboard_9Aug2019" Width="1.5" PointX="14.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.Physical_Dashboard_Back" Width="1.5" PointX="38.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_3dEC" Width="1.5" PointX="38.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_Back" Width="1.5" PointX="0.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_PmB" Width="1.5" PointX="40.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.PMAY_PROJECTS_Fin_PMB1" Width="1.5" PointX="2.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.tblStateWiseScore_Back" Width="1.5" PointX="40.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeModel.UserMaster_not_used" Width="1.5" PointX="24.75" PointY="40.75" IsExpanded="true" />
         <AssociationConnector Association="EmployeeModel.FK_Users_Register_City_Master" ManuallyRouted="false" />
         <AssociationConnector Association="EmployeeModel.FK_Emp_CountryMaster" ManuallyRouted="false" />
         <AssociationConnector Association="EmployeeModel.FK_Users_Register_Distt_Master" ManuallyRouted="false" />

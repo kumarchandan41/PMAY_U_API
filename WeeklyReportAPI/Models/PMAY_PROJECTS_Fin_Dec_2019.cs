@@ -12,7 +12,7 @@ namespace WeeklyReportAPI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PMAY_PROJECTS_Fin_Back
+    public partial class PMAY_PROJECTS_Fin_Dec_2019
     {
         public long SrNo { get; set; }
         public string Project_Code { get; set; }
@@ -55,7 +55,5 @@ namespace WeeklyReportAPI.Models
         public string DIVISION { get; set; }
         public Nullable<double> FundsDisbursed_in_Houses_II { get; set; }
         public Nullable<double> FundsDisbursed_in_Houses_III { get; set; }
-        public Nullable<double> Actual_Completed { get; set; }
-        public Nullable<double> Shortfall_Completed { get; set; }
     }
 }

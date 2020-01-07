@@ -671,6 +671,17 @@ warning 6013: The table/view 'Employee.dbo.CLSS_MainMaster_OLD' does not have a 
     <Property Name="SubsidyAmountCredited" Type="float" />
     <Property Name="NoofBeneficiaries" Type="float" />
   </EntityType>
+  <EntityType Name="cmaster">
+    <Key>
+      <PropertyRef Name="Cid" />
+    </Key>
+    <Property Name="Cid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SrNo" Type="int" />
+    <Property Name="Cname" Type="nvarchar" MaxLength="50" />
+    <Property Name="SchemeComponentName" Type="nvarchar" MaxLength="500" />
+    <Property Name="SchemeShortName" Type="nvarchar" MaxLength="500" />
+    <Property Name="sFlag" Type="bit" />
+  </EntityType>
   <EntityType Name="Combined_States">
     <Key>
       <PropertyRef Name="SrNo" />
@@ -1850,6 +1861,79 @@ warning 6013: The table/view 'Employee.dbo.Physical_Dashboard aabc' does not hav
           <Property Name="HO_19_20" Type="float" />
           <Property Name="F63" Type="float" />
         </EntityType>-->
+  <EntityType Name="Physical_Dashboard de 2019">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="State1" Type="nvarchar" MaxLength="255" />
+    <Property Name="StateCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Demand" Type="float" />
+    <Property Name="Houses_Sanctioned" Type="float" />
+    <Property Name="CentralShare" Type="float" />
+    <Property Name="StateShare" Type="float" />
+    <Property Name="ULBShare" Type="float" />
+    <Property Name="BeneficiaryShare" Type="float" />
+    <Property Name="TotalCost" Type="float" />
+    <Property Name="Grounded" Type="float" />
+    <Property Name="Completed" Type="float" />
+    <Property Name="Occupied" Type="float" />
+    <Property Name="CAApproved" Type="float" />
+    <Property Name="CASanctionedforRelease" Type="float" />
+    <Property Name="CAReleased" Type="float" />
+    <Property Name="PendingforRelease" Type="float" />
+    <Property Name="IIIQ_15_16" Type="float" />
+    <Property Name="IV_Q_15_16" Type="float" />
+    <Property Name="IQ_16_17" Type="float" />
+    <Property Name="IIQ_16_17" Type="float" />
+    <Property Name="IIIQ_16_17" Type="float" />
+    <Property Name="IV_Q_16_17" Type="float" />
+    <Property Name="I_Q_17_18" Type="float" />
+    <Property Name="II_Q_17_18" Type="float" />
+    <Property Name="III_Q_17_18" Type="float" />
+    <Property Name="IV_Q_17_18" Type="float" />
+    <Property Name="I_Q_18_19" Type="float" />
+    <Property Name="II_Q_18_19" Type="float" />
+    <Property Name="III_Q_18_19" Type="float" />
+    <Property Name="IV_Q_18_19" Type="float" />
+    <Property Name="I_Q_19_20" Type="float" />
+    <Property Name="SRNo1" Type="float" />
+    <Property Name="State2" Type="float" />
+    <Property Name="CumSanctioned" Type="float" />
+    <Property Name="CASanctioned_15_16" Type="float" />
+    <Property Name="CASanctioned_16_17" Type="float" />
+    <Property Name="CASanctioned_17_18" Type="float" />
+    <Property Name="CASanctioned_18_19" Type="float" />
+    <Property Name="CASanctioned_19_20" Type="float" />
+    <Property Name="CumuCAReleased" Type="float" />
+    <Property Name="CumuCA_Released_15_16" Type="float" />
+    <Property Name="CumuCA_Released_16_17" Type="float" />
+    <Property Name="CumuCA_Released_17_18" Type="float" />
+    <Property Name="CumuCA_Released_18_19" Type="float" />
+    <Property Name="CumuCA_Released_19_20" Type="float" />
+    <Property Name="HS_Cum_20_8_18" Type="float" />
+    <Property Name="HS_15_16" Type="float" />
+    <Property Name="HS_16_17" Type="float" />
+    <Property Name="HS_17_18" Type="float" />
+    <Property Name="HS_18_19" Type="float" />
+    <Property Name="HS_19_20" Type="float" />
+    <Property Name="HC_20_08_18" Type="float" />
+    <Property Name="HC_14_15" Type="float" />
+    <Property Name="HC_15_16" Type="float" />
+    <Property Name="HC_16_17" Type="float" />
+    <Property Name="HC_17_18" Type="float" />
+    <Property Name="HC_18_19" Type="float" />
+    <Property Name="HC_19_20" Type="float" />
+    <Property Name="HO_Cum" Type="float" />
+    <Property Name="HO_14_15" Type="float" />
+    <Property Name="HO_15_16" Type="float" />
+    <Property Name="HO_16_17" Type="float" />
+    <Property Name="HO_17_18" Type="float" />
+    <Property Name="HO_18_19" Type="float" />
+    <Property Name="HO_19_20" Type="float" />
+    <Property Name="Expenditure" Type="float" />
+    <Property Name="Division" Type="nvarchar" MaxLength="255" />
+  </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Employee.dbo.Physical_Dashboard_9Aug2019' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Physical_Dashboard_9Aug2019">
@@ -2350,6 +2434,56 @@ warning 6013: The table/view 'Employee.dbo.PMAY_PROJECTS Copy$' does not have a 
     <Property Name="DIVISION" Type="nvarchar(max)" />
     <Property Name="FundsDisbursed_in_Houses_II" Type="float" />
     <Property Name="FundsDisbursed_in_Houses_III" Type="float" />
+    <Property Name="Actual_Completed" Type="float" />
+    <Property Name="Shortfall_Completed" Type="float" />
+  </EntityType>
+  <EntityType Name="PMAY_PROJECTS_Fin jan">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Project_Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Annexure_ID" Type="nvarchar" MaxLength="255" />
+    <Property Name="Component" Type="nvarchar" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="District" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="StateCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dcode" Type="nvarchar" MaxLength="255" />
+    <Property Name="sunDisttCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="CityCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Project_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="CSMCDate" Type="nvarchar" MaxLength="255" />
+    <Property Name="CSMCNo" Type="nvarchar" MaxLength="255" />
+    <Property Name="FinYear" Type="nvarchar" MaxLength="255" />
+    <Property Name="NoofProjects" Type="float" />
+    <Property Name="Project_Cost" Type="float" />
+    <Property Name="Central_Assistance_involved" Type="float" />
+    <Property Name="State_Grant" Type="float" />
+    <Property Name="ULBShare" Type="float" />
+    <Property Name="BeneficiaryShare" Type="float" />
+    <Property Name="Released_throug_EBR" Type="float" />
+    <Property Name="CASanctionedForRel" Type="float" />
+    <Property Name="FirstInstallmentReleased" Type="float" />
+    <Property Name="SecondInstallmentReleased" Type="float" />
+    <Property Name="ThirdInstallmentReleased" Type="float" />
+    <Property Name="CentralAssistanceReleased" Type="float" />
+    <Property Name="UC_Received" Type="float" />
+    <Property Name="UC_Pending" Type="float" />
+    <Property Name="Housesinvolved" Type="float" />
+    <Property Name="FundsDisbursed_in_Houses" Type="float" />
+    <Property Name="Houses_Grounded" Type="float" />
+    <Property Name="HousesUnderProgress" Type="float" />
+    <Property Name="Houses_Completed" Type="float" />
+    <Property Name="HousesAllotted" Type="float" />
+    <Property Name="HousesOccupied" Type="float" />
+    <Property Name="Houses_yetto_Grounded" Type="float" />
+    <Property Name="Cid" Type="nvarchar" MaxLength="255" />
+    <Property Name="DIVISION" Type="nvarchar(max)" />
+    <Property Name="FundsDisbursed_in_Houses_II" Type="float" />
+    <Property Name="FundsDisbursed_in_Houses_III" Type="float" />
+    <Property Name="Actual_Completed" Type="float" />
+    <Property Name="Shortfall_Completed" Type="float" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6013: The table/view 'Employee.dbo.PMAY_PROJECTS_Fin_22_05_2019' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
@@ -2533,6 +2667,54 @@ warning 6002: The table/view 'Employee.dbo.PMAY_PROJECTS_Fin_3dEC' does not have
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Employee.dbo.PMAY_PROJECTS_Fin_Back' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="PMAY_PROJECTS_Fin_Back">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Project_Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Annexure_ID" Type="nvarchar" MaxLength="255" />
+    <Property Name="Component" Type="nvarchar" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="District" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="StateCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dcode" Type="nvarchar" MaxLength="255" />
+    <Property Name="sunDisttCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="CityCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Project_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="CSMCDate" Type="nvarchar" MaxLength="255" />
+    <Property Name="CSMCNo" Type="nvarchar" MaxLength="255" />
+    <Property Name="FinYear" Type="nvarchar" MaxLength="255" />
+    <Property Name="NoofProjects" Type="float" />
+    <Property Name="Project_Cost" Type="float" />
+    <Property Name="Central_Assistance_involved" Type="float" />
+    <Property Name="State_Grant" Type="float" />
+    <Property Name="ULBShare" Type="float" />
+    <Property Name="BeneficiaryShare" Type="float" />
+    <Property Name="Released_throug_EBR" Type="float" />
+    <Property Name="CASanctionedForRel" Type="float" />
+    <Property Name="FirstInstallmentReleased" Type="float" />
+    <Property Name="SecondInstallmentReleased" Type="float" />
+    <Property Name="ThirdInstallmentReleased" Type="float" />
+    <Property Name="CentralAssistanceReleased" Type="float" />
+    <Property Name="UC_Received" Type="float" />
+    <Property Name="UC_Pending" Type="float" />
+    <Property Name="Housesinvolved" Type="float" />
+    <Property Name="FundsDisbursed_in_Houses" Type="float" />
+    <Property Name="Houses_Grounded" Type="float" />
+    <Property Name="HousesUnderProgress" Type="float" />
+    <Property Name="Houses_Completed" Type="float" />
+    <Property Name="HousesAllotted" Type="float" />
+    <Property Name="HousesOccupied" Type="float" />
+    <Property Name="Houses_yetto_Grounded" Type="float" />
+    <Property Name="Cid" Type="nvarchar" MaxLength="255" />
+    <Property Name="DIVISION" Type="nvarchar(max)" />
+    <Property Name="FundsDisbursed_in_Houses_II" Type="float" />
+    <Property Name="FundsDisbursed_in_Houses_III" Type="float" />
+    <Property Name="Actual_Completed" Type="float" />
+    <Property Name="Shortfall_Completed" Type="float" />
+  </EntityType>
+  <EntityType Name="PMAY_PROJECTS_Fin_Dec 2019">
     <Key>
       <PropertyRef Name="SrNo" />
     </Key>
@@ -2800,7 +2982,62 @@ warning 6002: The table/view 'Employee.dbo.PMAY_PROJECTS_Fin_PMB1' does not have
     <Property Name="Cid" Type="nvarchar" MaxLength="255" />
     <Property Name="DIVISION" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="PMAYU_MainDashboard">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sanctioned" Type="nchar" MaxLength="10" />
+    <Property Name="Grounded" Type="nchar" MaxLength="10" />
+    <Property Name="Completed" Type="nchar" MaxLength="10" />
+    <Property Name="Occupied" Type="nchar" MaxLength="10" />
+    <Property Name="sCommitted" Type="nchar" MaxLength="10" />
+    <Property Name="Approved" Type="nchar" MaxLength="10" />
+    <Property Name="Released" Type="nchar" MaxLength="10" />
+    <Property Name="Utilized" Type="nchar" MaxLength="10" />
+    <Property Name="Overall" Type="nchar" MaxLength="10" />
+    <Property Name="sPublic" Type="nchar" MaxLength="10" />
+    <Property Name="Private" Type="nchar" MaxLength="10" />
+    <Property Name="PDaysDirect" Type="nchar" MaxLength="10" />
+    <Property Name="PDaysIndirect" Type="nchar" MaxLength="10" />
+    <Property Name="PDaysTotal" Type="nchar" MaxLength="10" />
+    <Property Name="JobsDirect" Type="nchar" MaxLength="10" />
+    <Property Name="JobsIndirect" Type="nchar" MaxLength="10" />
+    <Property Name="JobsTotal" Type="nchar" MaxLength="10" />
+    <Property Name="sActive" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Projct_Details">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectCode" Type="varchar" MaxLength="500" />
+    <Property Name="StateCode" Type="varchar" MaxLength="10" />
+    <Property Name="DistrictCode" Type="varchar" MaxLength="10" />
+    <Property Name="CityCode" Type="varchar" MaxLength="10" />
+    <Property Name="CSMCDate" Type="date" />
+    <Property Name="CSMCNumber" Type="varchar" MaxLength="500" />
+    <Property Name="Scheme" Type="varchar" MaxLength="500" />
+    <Property Name="SchemeComponent" Type="varchar" MaxLength="500" />
+    <Property Name="ProjectAgencies" Type="varchar" MaxLength="500" />
+    <Property Name="ProjectStatus" Type="varchar" MaxLength="500" />
+    <Property Name="ProjectDuration" Type="varchar" MaxLength="500" />
+    <Property Name="ProjectTitle" Type="varchar" MaxLength="500" />
+    <Property Name="ProjectCost" Type="decimal" Precision="25" Scale="2" />
+    <Property Name="CentralAssistance" Type="decimal" Precision="25" Scale="2" />
+    <Property Name="StateGrant" Type="varchar" MaxLength="500" />
+    <Property Name="ULB" Type="varchar" MaxLength="500" />
+    <Property Name="BeneficiaryShare" Type="varchar" MaxLength="500" />
+    <Property Name="OtherCost" Type="varchar" MaxLength="500" />
+    <Property Name="NewSanction" Type="varchar" MaxLength="500" />
+    <Property Name="UpgradeSanction" Type="varchar" MaxLength="500" />
+    <Property Name="TotalSanction" Type="decimal" Precision="25" Scale="0" />
+    <Property Name="FirstInstallment" Type="varchar" MaxLength="500" />
+    <Property Name="ActiveFlag" Type="varchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="500" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Projct_Details_Jan">
     <Key>
       <PropertyRef Name="ProjectId" />
     </Key>
@@ -3661,6 +3898,97 @@ warning 6013: The table/view 'Employee.dbo.tblPMAY_PROJECTS' does not have a pri
     <Property Name="RAY_UC_Pending" Type="float" />
     <Property Name="Division" Type="nvarchar" MaxLength="255" />
   </EntityType>
+  <EntityType Name="tblStateWiseScore dec 2019">
+    <Key>
+      <PropertyRef Name="ScoreId" />
+    </Key>
+    <Property Name="ScoreId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateId" Type="int" Nullable="false" />
+    <Property Name="Codes" Type="nvarchar" MaxLength="255" />
+    <Property Name="StateName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Sanction_vs_Demand" Type="float" />
+    <Property Name="Grounding_Sanction" Type="float" />
+    <Property Name="Completion_vs_Sanction" Type="float" />
+    <Property Name="BLC_Houses_Geotagged" Type="float" />
+    <Property Name="Relelase_vs_Sanction" Type="float" />
+    <Property Name="MIS_Annexure_uploading" Type="float" />
+    <Property Name="Beneficiary_Attachment" Type="float" />
+    <Property Name="Reforms_Achievement" Type="nvarchar" MaxLength="255" />
+    <Property Name="JN_Houses_vacant" Type="float" />
+    <Property Name="Population_Census_2011" Type="float" />
+    <Property Name="TG_12_Housing_Shortage" Type="float" />
+    <Property Name="Aadhar_Coverage" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cities_included_in_Mission" Type="float" />
+    <Property Name="Total_Demand_as_per_Road_map" Type="float" />
+    <Property Name="Demand_met" Type="float" />
+    <Property Name="Per_Demand_met" Type="float" />
+    <Property Name="Total_PMAY_U_Houses_ISSR_AHP_BLC_CLSS" Type="float" />
+    <Property Name="Valid_Aadhar_Beneficiaries" Type="float" />
+    <Property Name="Bene_Percentage" Type="float" />
+    <Property Name="HFAPoA_funds_Released" Type="float" />
+    <Property Name="HFAPoA_Received" Type="float" />
+    <Property Name="HFAPoA_Status" Type="nvarchar" MaxLength="255" />
+    <Property Name="ISSR_NOP" Type="float" />
+    <Property Name="AHP_NOP" Type="float" />
+    <Property Name="BLC_NOP" Type="float" />
+    <Property Name="ISSR_CA_Committed" Type="float" />
+    <Property Name="AHP_CA_Committed" Type="float" />
+    <Property Name="BLC_CA_Committed" Type="float" />
+    <Property Name="ISSR_Sanct_for_Release" Type="float" />
+    <Property Name="AHP_Sanct_for_Release" Type="float" />
+    <Property Name="BLC_Sanct_for_Release" Type="float" />
+    <Property Name="ISSR_CA_Released" Type="float" />
+    <Property Name="AHP_CA_Released" Type="float" />
+    <Property Name="BLC_CA_Released" Type="float" />
+    <Property Name="ISSR_Balance_for_Release" Type="float" />
+    <Property Name="AHP_Balance_for_Release" Type="float" />
+    <Property Name="BLC_Balance_for_Release" Type="float" />
+    <Property Name="ISSR_Houses_Sanctioned" Type="float" />
+    <Property Name="AHP_Houses_Sanctioned" Type="float" />
+    <Property Name="BLC_Houses_Sanctioned" Type="float" />
+    <Property Name="ISSR_Grounded" Type="float" />
+    <Property Name="AHP_Grounded" Type="float" />
+    <Property Name="BLC_Grounded" Type="float" />
+    <Property Name="ISSR_Completed" Type="float" />
+    <Property Name="AHP_Completed" Type="float" />
+    <Property Name="BLC_Completed" Type="float" />
+    <Property Name="PMAY_Funds_Released" Type="float" />
+    <Property Name="PMAY_Ucs_Received" Type="float" />
+    <Property Name="PMAY_UC_Pending" Type="float" />
+    <Property Name="PMAY_Houses_Occupied" Type="float" />
+    <Property Name="Reforms" Type="nvarchar(max)" />
+    <Property Name="Reforms_Achieved" Type="nvarchar(max)" />
+    <Property Name="SLTC_Funds_Released_RsinnCr" Type="float" />
+    <Property Name="SLTC_Specialists_Approved" Type="float" />
+    <Property Name="SLTC_Specialists_in_Place" Type="float" />
+    <Property Name="CLTC_Funds_Released_RsinCr" Type="float" />
+    <Property Name="CLTC_Specialists_Approved" Type="float" />
+    <Property Name="CLTC_Specialists_in_Place" Type="float" />
+    <Property Name="Projects_Approved" Type="float" />
+    <Property Name="Projects_uploaded" Type="float" />
+    <Property Name="Percent_Projects_uploaded" Type="float" />
+    <Property Name="BLC_Houses_Approved" Type="float" />
+    <Property Name="BLC_Houses_Grounded" Type="float" />
+    <Property Name="BLC_Houses_Geo_Tagged" Type="float" />
+    <Property Name="CLSS_MIS_Survey" Type="float" />
+    <Property Name="CLSS_Beneficiaries_EWS_LIG_MIG" Type="float" />
+    <Property Name="CLSS_Subsidy_EWS_LIG_MIG" Type="float" />
+    <Property Name="JN_Houses_Sanctioned" Type="float" />
+    <Property Name="JN_Houses_Completed" Type="float" />
+    <Property Name="JN_Houses_Occupied" Type="float" />
+    <Property Name="JN_Houses_In_Progress" Type="float" />
+    <Property Name="JN_Houses_Unoccupied" Type="float" />
+    <Property Name="JN_Houses_Non_Starter" Type="float" />
+    <Property Name="JN_UC_Pending" Type="float" />
+    <Property Name="RAY_Houses_Sanctioned" Type="float" />
+    <Property Name="RAY_Houses_Completed" Type="float" />
+    <Property Name="RAY_Houses_Occupied" Type="float" />
+    <Property Name="RAY_Houses_In_Progress" Type="float" />
+    <Property Name="RAY_Houses_Unoccupied" Type="float" />
+    <Property Name="RAY_Houses_Non_Starter" Type="float" />
+    <Property Name="RAY_UC_Pending" Type="float" />
+    <Property Name="Division" Type="nvarchar" MaxLength="255" />
+  </EntityType>
   <EntityType Name="tblStateWiseScore_27062019">
     <Key>
       <PropertyRef Name="ScoreId" />
@@ -4323,6 +4651,8 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
   <Function Name="city_wise_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="DistrictCode" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="Del_PhyProgressReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Del_ProjectDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="Excel_ClssProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="fn_FormatWithCommas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
@@ -4339,6 +4669,17 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
   </Function>
   <Function Name="fnDecimalToCurrency1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
     <Parameter Name="value" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="fnSplitString" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="string" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="delimiter" Type="char" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="splitdata" Type="nvarchar(max)" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
   </Function>
   <Function Name="Format" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
     <Parameter Name="num" Type="int" Mode="In" />
@@ -4927,6 +5268,12 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     <Parameter Name="cityCode" Type="char" Mode="In" />
     <Parameter Name="Fin_Year" Type="nvarchar(max)" Mode="In" />
   </Function>
+  <Function Name="sp_create_AHP_GraphCritical_DATA_FinWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="State_Code" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+    <Parameter Name="Fin_Year" Type="nvarchar(max)" Mode="In" />
+  </Function>
   <Function Name="sp_create_AHP_GraphCritical_DATAFinYeraWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="State_Code" Type="char" Mode="In" />
     <Parameter Name="dcode" Type="char" Mode="In" />
@@ -4938,6 +5285,12 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     <Parameter Name="dcode" Type="char" Mode="In" />
     <Parameter Name="cityCode" Type="char" Mode="In" />
     <Parameter Name="Component" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_create_BLC_GraphCritical_DATA_FinWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="State_Code" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+    <Parameter Name="Fin_Year" Type="nvarchar(max)" Mode="In" />
   </Function>
   <Function Name="sp_create_BLCS_DATAFinYeraWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="State_Code" Type="char" Mode="In" />
@@ -4959,6 +5312,13 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     <Parameter Name="FinYear" Type="char" Mode="In" />
   </Function>
   <Function Name="sp_create_Fin_ConsPMAYDATA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="State_Code" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+    <Parameter Name="Component" Type="char" Mode="In" />
+    <Parameter Name="FinYear" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_create_Fin_ConsPMAYDATA_Back" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="State_Code" Type="char" Mode="In" />
     <Parameter Name="dcode" Type="char" Mode="In" />
     <Parameter Name="cityCode" Type="char" Mode="In" />
@@ -5322,6 +5682,41 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     <Parameter Name="dcode" Type="char" Mode="In" />
     <Parameter Name="cityCode" Type="char" Mode="In" />
   </Function>
+  <Function Name="sp_Phy_Critical_View" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="State_Code" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+    <Parameter Name="Component" Type="char" Mode="In" />
+    <Parameter Name="FinYear" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_Phy_Critical_View_" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="State_Code" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+    <Parameter Name="Component" Type="char" Mode="In" />
+    <Parameter Name="FinYear" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_Phy_Monitoring_View" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="State_Code" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+    <Parameter Name="Component" Type="char" Mode="In" />
+    <Parameter Name="FinYear" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_Phy_ShortFall" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="State_Code" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+    <Parameter Name="Component" Type="char" Mode="In" />
+    <Parameter Name="FinYear" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_PhysicalMonitor_ISSR_Graph" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="State_Code" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+    <Parameter Name="Component" Type="char" Mode="In" />
+    <Parameter Name="FinYear" Type="char" Mode="In" />
+  </Function>
   <Function Name="sp_RayThirdInstHouses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="State_Code" Type="char" Mode="In" />
     <Parameter Name="dcode" Type="char" Mode="In" />
@@ -5332,6 +5727,13 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Shortfall_BLC_AHP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="State_Code" Type="char" Mode="In" />
+    <Parameter Name="dcode" Type="char" Mode="In" />
+    <Parameter Name="cityCode" Type="char" Mode="In" />
+    <Parameter Name="Component" Type="char" Mode="In" />
+    <Parameter Name="FinYear" Type="char" Mode="In" />
   </Function>
   <Function Name="sp_State" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -5378,6 +5780,7 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     <EntitySet Name="CLSS_MASTER_OLD" EntityType="Self.CLSS_MASTER_OLD" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ClssCityWise" EntityType="Self.ClssCityWise" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ClssCityWiseExcel" EntityType="Self.ClssCityWiseExcel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cmaster" EntityType="Self.cmaster" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Combined_States" EntityType="Self.Combined_States" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ComponentMaster" EntityType="Self.ComponentMaster" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Constituency_Mster" EntityType="Self.Constituency_Mster" Schema="dbo" store:Type="Tables" />
@@ -5404,16 +5807,21 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     <EntitySet Name="Master_Cities_Included" EntityType="Self.Master_Cities_Included" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Physical_Dashboard" EntityType="Self.Physical_Dashboard" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Physical_Dashboard __" EntityType="Self.Physical_Dashboard __" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Physical_Dashboard de 2019" EntityType="Self.Physical_Dashboard de 2019" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Physical_DashboardExcel" EntityType="Self.Physical_DashboardExcel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Physical_Progress_Report" EntityType="Self.Physical_Progress_Report" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PMAY_PROJECTS Copy$ _1" EntityType="Self.PMAY_PROJECTS Copy$ _1" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PMAY_PROJECTS_Fin" EntityType="Self.PMAY_PROJECTS_Fin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PMAY_PROJECTS_Fin jan" EntityType="Self.PMAY_PROJECTS_Fin jan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PMAY_PROJECTS_Fin_26July" EntityType="Self.PMAY_PROJECTS_Fin_26July" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PMAY_PROJECTS_Fin_27062019" EntityType="Self.PMAY_PROJECTS_Fin_27062019" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PMAY_PROJECTS_Fin_Dec 2019" EntityType="Self.PMAY_PROJECTS_Fin_Dec 2019" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PMAY_PROJECTS_Fin_Excel" EntityType="Self.PMAY_PROJECTS_Fin_Excel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PMAY_PROJECTS_Fin_July" EntityType="Self.PMAY_PROJECTS_Fin_July" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PMAY_PROJECTS_Fin11" EntityType="Self.PMAY_PROJECTS_Fin11" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PMAYU_MainDashboard" EntityType="Self.PMAYU_MainDashboard" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Projct_Details" EntityType="Self.Projct_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projct_Details_Jan" EntityType="Self.Projct_Details_Jan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Project_Brief_Detail" EntityType="Self.Project_Brief_Detail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Project_Code_Slum" EntityType="Self.Project_Code_Slum" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Project_Fund_Release" EntityType="Self.Project_Fund_Release" Schema="dbo" store:Type="Tables" />
@@ -5436,6 +5844,7 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     <EntitySet Name="tblPhysicalCityYearWise" EntityType="Self.tblPhysicalCityYearWise" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblPMAYU" EntityType="Self.tblPMAYU" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblStateWiseScore" EntityType="Self.tblStateWiseScore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblStateWiseScore dec 2019" EntityType="Self.tblStateWiseScore dec 2019" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblStateWiseScore_27062019" EntityType="Self.tblStateWiseScore_27062019" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblStateWiseScoreExce_1l" EntityType="Self.tblStateWiseScoreExce_1l" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
@@ -5969,7 +6378,9 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     [PMAY_PROJECTS_Fin_Back].[Cid] AS [Cid], 
     [PMAY_PROJECTS_Fin_Back].[DIVISION] AS [DIVISION], 
     [PMAY_PROJECTS_Fin_Back].[FundsDisbursed_in_Houses_II] AS [FundsDisbursed_in_Houses_II], 
-    [PMAY_PROJECTS_Fin_Back].[FundsDisbursed_in_Houses_III] AS [FundsDisbursed_in_Houses_III]
+    [PMAY_PROJECTS_Fin_Back].[FundsDisbursed_in_Houses_III] AS [FundsDisbursed_in_Houses_III], 
+    [PMAY_PROJECTS_Fin_Back].[Actual_Completed] AS [Actual_Completed], 
+    [PMAY_PROJECTS_Fin_Back].[Shortfall_Completed] AS [Shortfall_Completed]
     FROM [dbo].[PMAY_PROJECTS_Fin_Back] AS [PMAY_PROJECTS_Fin_Back]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="PMAY_PROJECTS_Fin_PmB" EntityType="Self.PMAY_PROJECTS_Fin_PmB" store:Type="Tables" store:Schema="dbo">

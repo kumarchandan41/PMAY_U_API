@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\10Nov2019\18 Dec 2019\WeeklyReportAPI\WeeklyReportAPI\Models\NBO_BuildingsEntities.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\Models\NBO_BuildingsEntities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

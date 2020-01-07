@@ -270,6 +270,9 @@
     <Compile Include="Models\CLSS_MAster__Oct_17.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\cmaster.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Combined_States.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
@@ -329,6 +332,9 @@
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FinalCity.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnSplitString_Result.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GetAllIndiaStateWiseScore_Result.cs">
@@ -562,10 +568,16 @@
     <Compile Include="Models\Physical_Dashboard_Back.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Physical_Dashboard_de_2019.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Physical_Dashboard___.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Physical_Progress_Report.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PMAYU_MainDashboard.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PMay_AHP_Result.cs">
@@ -598,7 +610,13 @@
     <Compile Include="Models\PMAY_PROJECTS_Fin_Back.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PMAY_PROJECTS_Fin_Dec_2019.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\PMAY_PROJECTS_Fin_Excel.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PMAY_PROJECTS_Fin_jan.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PMAY_PROJECTS_Fin_July.cs">
@@ -648,6 +666,9 @@
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Projct_Details.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Projct_Details_Jan.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Project_Brief_Detail.cs">
@@ -738,6 +759,9 @@
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_create_Finance_Cons_ISSR_DATA_Result.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_create_Fin_ConsPMAYDATA_Back_Result.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_create_Fin_ConsPMAYDATA_Result.cs">
@@ -908,7 +932,13 @@
     <Compile Include="Models\sp_Houses_Status_Result.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_PhysicalMonitor_ISSR_Graph_Result.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_RayThirdInstHouses_Result.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_Shortfall_BLC_AHP_Result.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_State_Result.cs">
@@ -956,6 +986,9 @@
     <Compile Include="Models\tblStateWiseScore_Back.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblStateWiseScore_dec_2019.cs">
+      <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblUser.cs">
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
@@ -984,17 +1017,24 @@
       <DependentUpon>NBO_BuildingsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AllFnAPI.cs" />
     <Compile Include="ViewModel\CityMasterVM.cs" />
     <Compile Include="ViewModel\ClssCityWiseVM.cs" />
     <Compile Include="ViewModel\ClssMasterNewVM.cs" />
     <Compile Include="ViewModel\CLSS_MainMasterlVM.cs" />
     <Compile Include="ViewModel\CLSS_MASTERVM.cs" />
+    <Compile Include="ViewModel\CommonGet.cs" />
     <Compile Include="ViewModel\ConsReportView.cs" />
     <Compile Include="ViewModel\DemandCityWiseVM.cs" />
     <Compile Include="ViewModel\DistrictMasterVM.cs" />
     <Compile Include="ViewModel\JnNURM_TableVM.cs" />
     <Compile Include="ViewModel\Physical_DashboardVM.cs" />
+    <Compile Include="ViewModel\Physical_Progress_ReportVM.cs" />
     <Compile Include="ViewModel\PMAY_PROJECTS_FinVM.cs" />
+    <Compile Include="ViewModel\Project_Brief_DetailVM.cs" />
+    <Compile Include="ViewModel\Project_DetailVM.cs" />
+    <Compile Include="ViewModel\Project_Fund_ReleaseVM.cs" />
+    <Compile Include="ViewModel\Project_UC_SubmissionVM.cs" />
     <Compile Include="ViewModel\Pychart.cs" />
     <Compile Include="ViewModel\RegisterUser.cs" />
     <Compile Include="ViewModel\ReturnStatus.cs" />
@@ -1083,6 +1123,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Upload\Audio\" />
     <Folder Include="Upload\Image\" />
+    <Folder Include="Upload\PDF\" />
     <Folder Include="Upload\Video\" />
   </ItemGroup>
   <ItemGroup>

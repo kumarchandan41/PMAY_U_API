@@ -19,6 +19,9 @@ namespace WeeklyReportAPI.Models
         public Nullable<double> FirstInstallmentReleased { get; set; }
         public Nullable<double> SecondInstallmentReleased { get; set; }
         public Nullable<double> ThirdInstallmentReleased { get; set; }
+        public Nullable<double> CentralAssistanceReleased { get; set; }
         public Nullable<double> UC_Received { get; set; }
+        public Nullable<double> UC_Pending { get; set; }
+        public Nullable<double> Liability14 { get; set; }
     }
 }

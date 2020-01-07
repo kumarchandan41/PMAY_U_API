@@ -289,8 +289,8 @@ E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\bin\Antlr3.Runtime
 E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\bin\System.Diagnostics.DiagnosticSource.xml
 E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\obj\Debug\WeeklyReportAPI.csprojAssemblyReference.cache
 E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\obj\Debug\WeeklyReportAPI.csproj.CoreCompileInputs.cache
 E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\obj\Debug\WeeklyReportAPI.csproj.CopyComplete
 E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\obj\Debug\WeeklyReportAPI.dll
 E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\obj\Debug\WeeklyReportAPI.pdb
+E:\10Nov2019\Laptop\26Nov2019\WeeklyReportAPI\WeeklyReportAPI\obj\Debug\WeeklyReportAPI.csprojAssemblyReference.cache

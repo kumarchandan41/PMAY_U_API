@@ -49,6 +49,7 @@ namespace WeeklyReportAPI.Models
         public virtual DbSet<CLSS_MASTER_OLD> CLSS_MASTER_OLD { get; set; }
         public virtual DbSet<ClssCityWise> ClssCityWises { get; set; }
         public virtual DbSet<ClssCityWiseExcel> ClssCityWiseExcels { get; set; }
+        public virtual DbSet<cmaster> cmasters { get; set; }
         public virtual DbSet<Combined_States> Combined_States { get; set; }
         public virtual DbSet<ComponentMaster> ComponentMasters { get; set; }
         public virtual DbSet<Constituency_Mster> Constituency_Mster { get; set; }
@@ -75,16 +76,21 @@ namespace WeeklyReportAPI.Models
         public virtual DbSet<Master_Cities_Included> Master_Cities_Included { get; set; }
         public virtual DbSet<Physical_Dashboard> Physical_Dashboard { get; set; }
         public virtual DbSet<Physical_Dashboard___> Physical_Dashboard___ { get; set; }
+        public virtual DbSet<Physical_Dashboard_de_2019> Physical_Dashboard_de_2019 { get; set; }
         public virtual DbSet<Physical_DashboardExcel> Physical_DashboardExcel { get; set; }
         public virtual DbSet<Physical_Progress_Report> Physical_Progress_Report { get; set; }
         public virtual DbSet<PMAY_PROJECTS_Copy___1> PMAY_PROJECTS_Copy___1 { get; set; }
         public virtual DbSet<PMAY_PROJECTS_Fin> PMAY_PROJECTS_Fin { get; set; }
+        public virtual DbSet<PMAY_PROJECTS_Fin_jan> PMAY_PROJECTS_Fin_jan { get; set; }
         public virtual DbSet<PMAY_PROJECTS_Fin_26July> PMAY_PROJECTS_Fin_26July { get; set; }
         public virtual DbSet<PMAY_PROJECTS_Fin_27062019> PMAY_PROJECTS_Fin_27062019 { get; set; }
+        public virtual DbSet<PMAY_PROJECTS_Fin_Dec_2019> PMAY_PROJECTS_Fin_Dec_2019 { get; set; }
         public virtual DbSet<PMAY_PROJECTS_Fin_Excel> PMAY_PROJECTS_Fin_Excel { get; set; }
         public virtual DbSet<PMAY_PROJECTS_Fin_July> PMAY_PROJECTS_Fin_July { get; set; }
         public virtual DbSet<PMAY_PROJECTS_Fin11> PMAY_PROJECTS_Fin11 { get; set; }
+        public virtual DbSet<PMAYU_MainDashboard> PMAYU_MainDashboard { get; set; }
         public virtual DbSet<Projct_Details> Projct_Details { get; set; }
+        public virtual DbSet<Projct_Details_Jan> Projct_Details_Jan { get; set; }
         public virtual DbSet<Project_Brief_Detail> Project_Brief_Detail { get; set; }
         public virtual DbSet<Project_Code_Slum> Project_Code_Slum { get; set; }
         public virtual DbSet<Project_Fund_Release> Project_Fund_Release { get; set; }
@@ -107,6 +113,7 @@ namespace WeeklyReportAPI.Models
         public virtual DbSet<tblPhysicalCityYearWise> tblPhysicalCityYearWises { get; set; }
         public virtual DbSet<tblPMAYU> tblPMAYUs { get; set; }
         public virtual DbSet<tblStateWiseScore> tblStateWiseScores { get; set; }
+        public virtual DbSet<tblStateWiseScore_dec_2019> tblStateWiseScore_dec_2019 { get; set; }
         public virtual DbSet<tblStateWiseScore_27062019> tblStateWiseScore_27062019 { get; set; }
         public virtual DbSet<tblStateWiseScoreExce_1l> tblStateWiseScoreExce_1l { get; set; }
         public virtual DbSet<tblUser> tblUsers { get; set; }
@@ -135,6 +142,20 @@ namespace WeeklyReportAPI.Models
         public virtual DbSet<tblStateWiseScore_Back> tblStateWiseScore_Back { get; set; }
         public virtual DbSet<UserMaster_not_used> UserMaster_not_useds { get; set; }
     
+        [DbFunction("EmployeeEntities", "fnSplitString")]
+        public virtual IQueryable<fnSplitString_Result> fnSplitString(string @string, string delimiter)
+        {
+            var stringParameter = @string != null ?
+                new ObjectParameter("string", @string) :
+                new ObjectParameter("string", typeof(string));
+    
+            var delimiterParameter = delimiter != null ?
+                new ObjectParameter("delimiter", delimiter) :
+                new ObjectParameter("delimiter", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fnSplitString_Result>("[EmployeeEntities].[fnSplitString](@string, @delimiter)", stringParameter, delimiterParameter);
+        }
+    
         [DbFunction("EmployeeEntities", "Split")]
         public virtual IQueryable<Split_Result> Split(string line, string splitOn)
         {
@@ -156,6 +177,16 @@ namespace WeeklyReportAPI.Models
                 new ObjectParameter("DistrictCode", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<city_wise_report_Result>("city_wise_report", districtCodeParameter);
+        }
+    
+        public virtual int Del_PhyProgressReport()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Del_PhyProgressReport");
+        }
+    
+        public virtual int Del_ProjectDetail()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Del_ProjectDetail");
         }
     
         public virtual ObjectResult<Excel_ClssProc_Result> Excel_ClssProc()
@@ -2146,6 +2177,27 @@ namespace WeeklyReportAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_create_AHP_DATAFinYeraWise", state_CodeParameter, dcodeParameter, cityCodeParameter, fin_YearParameter);
         }
     
+        public virtual int sp_create_AHP_GraphCritical_DATA_FinWise(string state_Code, string dcode, string cityCode, string fin_Year)
+        {
+            var state_CodeParameter = state_Code != null ?
+                new ObjectParameter("State_Code", state_Code) :
+                new ObjectParameter("State_Code", typeof(string));
+    
+            var dcodeParameter = dcode != null ?
+                new ObjectParameter("dcode", dcode) :
+                new ObjectParameter("dcode", typeof(string));
+    
+            var cityCodeParameter = cityCode != null ?
+                new ObjectParameter("cityCode", cityCode) :
+                new ObjectParameter("cityCode", typeof(string));
+    
+            var fin_YearParameter = fin_Year != null ?
+                new ObjectParameter("Fin_Year", fin_Year) :
+                new ObjectParameter("Fin_Year", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_create_AHP_GraphCritical_DATA_FinWise", state_CodeParameter, dcodeParameter, cityCodeParameter, fin_YearParameter);
+        }
+    
         public virtual int sp_create_AHP_GraphCritical_DATAFinYeraWise(string state_Code, string dcode, string cityCode, string fin_Year)
         {
             var state_CodeParameter = state_Code != null ?
@@ -2186,6 +2238,27 @@ namespace WeeklyReportAPI.Models
                 new ObjectParameter("Component", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_create_BLC_AHP_DATA_Result>("sp_create_BLC_AHP_DATA", state_CodeParameter, dcodeParameter, cityCodeParameter, componentParameter);
+        }
+    
+        public virtual int sp_create_BLC_GraphCritical_DATA_FinWise(string state_Code, string dcode, string cityCode, string fin_Year)
+        {
+            var state_CodeParameter = state_Code != null ?
+                new ObjectParameter("State_Code", state_Code) :
+                new ObjectParameter("State_Code", typeof(string));
+    
+            var dcodeParameter = dcode != null ?
+                new ObjectParameter("dcode", dcode) :
+                new ObjectParameter("dcode", typeof(string));
+    
+            var cityCodeParameter = cityCode != null ?
+                new ObjectParameter("cityCode", cityCode) :
+                new ObjectParameter("cityCode", typeof(string));
+    
+            var fin_YearParameter = fin_Year != null ?
+                new ObjectParameter("Fin_Year", fin_Year) :
+                new ObjectParameter("Fin_Year", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_create_BLC_GraphCritical_DATA_FinWise", state_CodeParameter, dcodeParameter, cityCodeParameter, fin_YearParameter);
         }
     
         public virtual int sp_create_BLCS_DATAFinYeraWise(string state_Code, string dcode, string cityCode, string fin_Year)
@@ -2278,6 +2351,31 @@ namespace WeeklyReportAPI.Models
                 new ObjectParameter("FinYear", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_create_Fin_ConsPMAYDATA_Result>("sp_create_Fin_ConsPMAYDATA", state_CodeParameter, dcodeParameter, cityCodeParameter, componentParameter, finYearParameter);
+        }
+    
+        public virtual ObjectResult<sp_create_Fin_ConsPMAYDATA_Back_Result> sp_create_Fin_ConsPMAYDATA_Back(string state_Code, string dcode, string cityCode, string component, string finYear)
+        {
+            var state_CodeParameter = state_Code != null ?
+                new ObjectParameter("State_Code", state_Code) :
+                new ObjectParameter("State_Code", typeof(string));
+    
+            var dcodeParameter = dcode != null ?
+                new ObjectParameter("dcode", dcode) :
+                new ObjectParameter("dcode", typeof(string));
+    
+            var cityCodeParameter = cityCode != null ?
+                new ObjectParameter("cityCode", cityCode) :
+                new ObjectParameter("cityCode", typeof(string));
+    
+            var componentParameter = component != null ?
+                new ObjectParameter("Component", component) :
+                new ObjectParameter("Component", typeof(string));
+    
+            var finYearParameter = finYear != null ?
+                new ObjectParameter("FinYear", finYear) :
+                new ObjectParameter("FinYear", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_create_Fin_ConsPMAYDATA_Back_Result>("sp_create_Fin_ConsPMAYDATA_Back", state_CodeParameter, dcodeParameter, cityCodeParameter, componentParameter, finYearParameter);
         }
     
         public virtual ObjectResult<sp_create_Finance_Cons_ISSR_DATA_Result> sp_create_Finance_Cons_ISSR_DATA(string state_Code, string dcode, string cityCode, string component, string finYear)
@@ -3516,6 +3614,131 @@ namespace WeeklyReportAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Houses_StatusNew_Result>("sp_Houses_StatusNew", state_CodeParameter, dcodeParameter, cityCodeParameter);
         }
     
+        public virtual int sp_Phy_Critical_View(string state_Code, string dcode, string cityCode, string component, string finYear)
+        {
+            var state_CodeParameter = state_Code != null ?
+                new ObjectParameter("State_Code", state_Code) :
+                new ObjectParameter("State_Code", typeof(string));
+    
+            var dcodeParameter = dcode != null ?
+                new ObjectParameter("dcode", dcode) :
+                new ObjectParameter("dcode", typeof(string));
+    
+            var cityCodeParameter = cityCode != null ?
+                new ObjectParameter("cityCode", cityCode) :
+                new ObjectParameter("cityCode", typeof(string));
+    
+            var componentParameter = component != null ?
+                new ObjectParameter("Component", component) :
+                new ObjectParameter("Component", typeof(string));
+    
+            var finYearParameter = finYear != null ?
+                new ObjectParameter("FinYear", finYear) :
+                new ObjectParameter("FinYear", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Phy_Critical_View", state_CodeParameter, dcodeParameter, cityCodeParameter, componentParameter, finYearParameter);
+        }
+    
+        public virtual int sp_Phy_Critical_View_(string state_Code, string dcode, string cityCode, string component, string finYear)
+        {
+            var state_CodeParameter = state_Code != null ?
+                new ObjectParameter("State_Code", state_Code) :
+                new ObjectParameter("State_Code", typeof(string));
+    
+            var dcodeParameter = dcode != null ?
+                new ObjectParameter("dcode", dcode) :
+                new ObjectParameter("dcode", typeof(string));
+    
+            var cityCodeParameter = cityCode != null ?
+                new ObjectParameter("cityCode", cityCode) :
+                new ObjectParameter("cityCode", typeof(string));
+    
+            var componentParameter = component != null ?
+                new ObjectParameter("Component", component) :
+                new ObjectParameter("Component", typeof(string));
+    
+            var finYearParameter = finYear != null ?
+                new ObjectParameter("FinYear", finYear) :
+                new ObjectParameter("FinYear", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Phy_Critical_View_", state_CodeParameter, dcodeParameter, cityCodeParameter, componentParameter, finYearParameter);
+        }
+    
+        public virtual int sp_Phy_Monitoring_View(string state_Code, string dcode, string cityCode, string component, string finYear)
+        {
+            var state_CodeParameter = state_Code != null ?
+                new ObjectParameter("State_Code", state_Code) :
+                new ObjectParameter("State_Code", typeof(string));
+    
+            var dcodeParameter = dcode != null ?
+                new ObjectParameter("dcode", dcode) :
+                new ObjectParameter("dcode", typeof(string));
+    
+            var cityCodeParameter = cityCode != null ?
+                new ObjectParameter("cityCode", cityCode) :
+                new ObjectParameter("cityCode", typeof(string));
+    
+            var componentParameter = component != null ?
+                new ObjectParameter("Component", component) :
+                new ObjectParameter("Component", typeof(string));
+    
+            var finYearParameter = finYear != null ?
+                new ObjectParameter("FinYear", finYear) :
+                new ObjectParameter("FinYear", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Phy_Monitoring_View", state_CodeParameter, dcodeParameter, cityCodeParameter, componentParameter, finYearParameter);
+        }
+    
+        public virtual int sp_Phy_ShortFall(string state_Code, string dcode, string cityCode, string component, string finYear)
+        {
+            var state_CodeParameter = state_Code != null ?
+                new ObjectParameter("State_Code", state_Code) :
+                new ObjectParameter("State_Code", typeof(string));
+    
+            var dcodeParameter = dcode != null ?
+                new ObjectParameter("dcode", dcode) :
+                new ObjectParameter("dcode", typeof(string));
+    
+            var cityCodeParameter = cityCode != null ?
+                new ObjectParameter("cityCode", cityCode) :
+                new ObjectParameter("cityCode", typeof(string));
+    
+            var componentParameter = component != null ?
+                new ObjectParameter("Component", component) :
+                new ObjectParameter("Component", typeof(string));
+    
+            var finYearParameter = finYear != null ?
+                new ObjectParameter("FinYear", finYear) :
+                new ObjectParameter("FinYear", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Phy_ShortFall", state_CodeParameter, dcodeParameter, cityCodeParameter, componentParameter, finYearParameter);
+        }
+    
+        public virtual ObjectResult<sp_PhysicalMonitor_ISSR_Graph_Result> sp_PhysicalMonitor_ISSR_Graph(string state_Code, string dcode, string cityCode, string component, string finYear)
+        {
+            var state_CodeParameter = state_Code != null ?
+                new ObjectParameter("State_Code", state_Code) :
+                new ObjectParameter("State_Code", typeof(string));
+    
+            var dcodeParameter = dcode != null ?
+                new ObjectParameter("dcode", dcode) :
+                new ObjectParameter("dcode", typeof(string));
+    
+            var cityCodeParameter = cityCode != null ?
+                new ObjectParameter("cityCode", cityCode) :
+                new ObjectParameter("cityCode", typeof(string));
+    
+            var componentParameter = component != null ?
+                new ObjectParameter("Component", component) :
+                new ObjectParameter("Component", typeof(string));
+    
+            var finYearParameter = finYear != null ?
+                new ObjectParameter("FinYear", finYear) :
+                new ObjectParameter("FinYear", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_PhysicalMonitor_ISSR_Graph_Result>("sp_PhysicalMonitor_ISSR_Graph", state_CodeParameter, dcodeParameter, cityCodeParameter, componentParameter, finYearParameter);
+        }
+    
         public virtual ObjectResult<sp_RayThirdInstHouses_Result> sp_RayThirdInstHouses(string state_Code, string dcode, string cityCode, string finYear)
         {
             var state_CodeParameter = state_Code != null ?
@@ -3552,6 +3775,31 @@ namespace WeeklyReportAPI.Models
                 new ObjectParameter("new_diagramname", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual ObjectResult<sp_Shortfall_BLC_AHP_Result> sp_Shortfall_BLC_AHP(string state_Code, string dcode, string cityCode, string component, string finYear)
+        {
+            var state_CodeParameter = state_Code != null ?
+                new ObjectParameter("State_Code", state_Code) :
+                new ObjectParameter("State_Code", typeof(string));
+    
+            var dcodeParameter = dcode != null ?
+                new ObjectParameter("dcode", dcode) :
+                new ObjectParameter("dcode", typeof(string));
+    
+            var cityCodeParameter = cityCode != null ?
+                new ObjectParameter("cityCode", cityCode) :
+                new ObjectParameter("cityCode", typeof(string));
+    
+            var componentParameter = component != null ?
+                new ObjectParameter("Component", component) :
+                new ObjectParameter("Component", typeof(string));
+    
+            var finYearParameter = finYear != null ?
+                new ObjectParameter("FinYear", finYear) :
+                new ObjectParameter("FinYear", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Shortfall_BLC_AHP_Result>("sp_Shortfall_BLC_AHP", state_CodeParameter, dcodeParameter, cityCodeParameter, componentParameter, finYearParameter);
         }
     
         public virtual ObjectResult<sp_State_Result> sp_State()

@@ -676,6 +676,17 @@ warning 6013: The table/view 'Employee.dbo.CLSS_MainMaster_OLD' does not have a 
           <Property Name="SubsidyAmountCredited" Type="float" />
           <Property Name="NoofBeneficiaries" Type="float" />
         </EntityType>
+        <EntityType Name="cmaster">
+          <Key>
+            <PropertyRef Name="Cid" />
+          </Key>
+          <Property Name="Cid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SrNo" Type="int" />
+          <Property Name="Cname" Type="nvarchar" MaxLength="50" />
+          <Property Name="SchemeComponentName" Type="nvarchar" MaxLength="500" />
+          <Property Name="SchemeShortName" Type="nvarchar" MaxLength="500" />
+          <Property Name="sFlag" Type="bit" />
+        </EntityType>
         <EntityType Name="Combined_States">
           <Key>
             <PropertyRef Name="SrNo" />
@@ -1855,6 +1866,79 @@ warning 6013: The table/view 'Employee.dbo.Physical_Dashboard aabc' does not hav
           <Property Name="HO_19_20" Type="float" />
           <Property Name="F63" Type="float" />
         </EntityType>-->
+        <EntityType Name="Physical_Dashboard de 2019">
+          <Key>
+            <PropertyRef Name="SrNo" />
+          </Key>
+          <Property Name="SrNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="State1" Type="nvarchar" MaxLength="255" />
+          <Property Name="StateCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Demand" Type="float" />
+          <Property Name="Houses_Sanctioned" Type="float" />
+          <Property Name="CentralShare" Type="float" />
+          <Property Name="StateShare" Type="float" />
+          <Property Name="ULBShare" Type="float" />
+          <Property Name="BeneficiaryShare" Type="float" />
+          <Property Name="TotalCost" Type="float" />
+          <Property Name="Grounded" Type="float" />
+          <Property Name="Completed" Type="float" />
+          <Property Name="Occupied" Type="float" />
+          <Property Name="CAApproved" Type="float" />
+          <Property Name="CASanctionedforRelease" Type="float" />
+          <Property Name="CAReleased" Type="float" />
+          <Property Name="PendingforRelease" Type="float" />
+          <Property Name="IIIQ_15_16" Type="float" />
+          <Property Name="IV_Q_15_16" Type="float" />
+          <Property Name="IQ_16_17" Type="float" />
+          <Property Name="IIQ_16_17" Type="float" />
+          <Property Name="IIIQ_16_17" Type="float" />
+          <Property Name="IV_Q_16_17" Type="float" />
+          <Property Name="I_Q_17_18" Type="float" />
+          <Property Name="II_Q_17_18" Type="float" />
+          <Property Name="III_Q_17_18" Type="float" />
+          <Property Name="IV_Q_17_18" Type="float" />
+          <Property Name="I_Q_18_19" Type="float" />
+          <Property Name="II_Q_18_19" Type="float" />
+          <Property Name="III_Q_18_19" Type="float" />
+          <Property Name="IV_Q_18_19" Type="float" />
+          <Property Name="I_Q_19_20" Type="float" />
+          <Property Name="SRNo1" Type="float" />
+          <Property Name="State2" Type="float" />
+          <Property Name="CumSanctioned" Type="float" />
+          <Property Name="CASanctioned_15_16" Type="float" />
+          <Property Name="CASanctioned_16_17" Type="float" />
+          <Property Name="CASanctioned_17_18" Type="float" />
+          <Property Name="CASanctioned_18_19" Type="float" />
+          <Property Name="CASanctioned_19_20" Type="float" />
+          <Property Name="CumuCAReleased" Type="float" />
+          <Property Name="CumuCA_Released_15_16" Type="float" />
+          <Property Name="CumuCA_Released_16_17" Type="float" />
+          <Property Name="CumuCA_Released_17_18" Type="float" />
+          <Property Name="CumuCA_Released_18_19" Type="float" />
+          <Property Name="CumuCA_Released_19_20" Type="float" />
+          <Property Name="HS_Cum_20_8_18" Type="float" />
+          <Property Name="HS_15_16" Type="float" />
+          <Property Name="HS_16_17" Type="float" />
+          <Property Name="HS_17_18" Type="float" />
+          <Property Name="HS_18_19" Type="float" />
+          <Property Name="HS_19_20" Type="float" />
+          <Property Name="HC_20_08_18" Type="float" />
+          <Property Name="HC_14_15" Type="float" />
+          <Property Name="HC_15_16" Type="float" />
+          <Property Name="HC_16_17" Type="float" />
+          <Property Name="HC_17_18" Type="float" />
+          <Property Name="HC_18_19" Type="float" />
+          <Property Name="HC_19_20" Type="float" />
+          <Property Name="HO_Cum" Type="float" />
+          <Property Name="HO_14_15" Type="float" />
+          <Property Name="HO_15_16" Type="float" />
+          <Property Name="HO_16_17" Type="float" />
+          <Property Name="HO_17_18" Type="float" />
+          <Property Name="HO_18_19" Type="float" />
+          <Property Name="HO_19_20" Type="float" />
+          <Property Name="Expenditure" Type="float" />
+          <Property Name="Division" Type="nvarchar" MaxLength="255" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Employee.dbo.Physical_Dashboard_9Aug2019' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Physical_Dashboard_9Aug2019">
@@ -2355,6 +2439,56 @@ warning 6013: The table/view 'Employee.dbo.PMAY_PROJECTS Copy$' does not have a 
           <Property Name="DIVISION" Type="nvarchar(max)" />
           <Property Name="FundsDisbursed_in_Houses_II" Type="float" />
           <Property Name="FundsDisbursed_in_Houses_III" Type="float" />
+          <Property Name="Actual_Completed" Type="float" />
+          <Property Name="Shortfall_Completed" Type="float" />
+        </EntityType>
+        <EntityType Name="PMAY_PROJECTS_Fin jan">
+          <Key>
+            <PropertyRef Name="SrNo" />
+          </Key>
+          <Property Name="SrNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Project_Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="Annexure_ID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Component" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="District" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="StateCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dcode" Type="nvarchar" MaxLength="255" />
+          <Property Name="sunDisttCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="CityCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Project_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="CSMCDate" Type="nvarchar" MaxLength="255" />
+          <Property Name="CSMCNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="FinYear" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoofProjects" Type="float" />
+          <Property Name="Project_Cost" Type="float" />
+          <Property Name="Central_Assistance_involved" Type="float" />
+          <Property Name="State_Grant" Type="float" />
+          <Property Name="ULBShare" Type="float" />
+          <Property Name="BeneficiaryShare" Type="float" />
+          <Property Name="Released_throug_EBR" Type="float" />
+          <Property Name="CASanctionedForRel" Type="float" />
+          <Property Name="FirstInstallmentReleased" Type="float" />
+          <Property Name="SecondInstallmentReleased" Type="float" />
+          <Property Name="ThirdInstallmentReleased" Type="float" />
+          <Property Name="CentralAssistanceReleased" Type="float" />
+          <Property Name="UC_Received" Type="float" />
+          <Property Name="UC_Pending" Type="float" />
+          <Property Name="Housesinvolved" Type="float" />
+          <Property Name="FundsDisbursed_in_Houses" Type="float" />
+          <Property Name="Houses_Grounded" Type="float" />
+          <Property Name="HousesUnderProgress" Type="float" />
+          <Property Name="Houses_Completed" Type="float" />
+          <Property Name="HousesAllotted" Type="float" />
+          <Property Name="HousesOccupied" Type="float" />
+          <Property Name="Houses_yetto_Grounded" Type="float" />
+          <Property Name="Cid" Type="nvarchar" MaxLength="255" />
+          <Property Name="DIVISION" Type="nvarchar(max)" />
+          <Property Name="FundsDisbursed_in_Houses_II" Type="float" />
+          <Property Name="FundsDisbursed_in_Houses_III" Type="float" />
+          <Property Name="Actual_Completed" Type="float" />
+          <Property Name="Shortfall_Completed" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6013: The table/view 'Employee.dbo.PMAY_PROJECTS_Fin_22_05_2019' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
@@ -2538,6 +2672,54 @@ warning 6002: The table/view 'Employee.dbo.PMAY_PROJECTS_Fin_3dEC' does not have
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Employee.dbo.PMAY_PROJECTS_Fin_Back' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PMAY_PROJECTS_Fin_Back">
+          <Key>
+            <PropertyRef Name="SrNo" />
+          </Key>
+          <Property Name="SrNo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Project_Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="Annexure_ID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Component" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="District" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="StateCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dcode" Type="nvarchar" MaxLength="255" />
+          <Property Name="sunDisttCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="CityCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Project_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="CSMCDate" Type="nvarchar" MaxLength="255" />
+          <Property Name="CSMCNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="FinYear" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoofProjects" Type="float" />
+          <Property Name="Project_Cost" Type="float" />
+          <Property Name="Central_Assistance_involved" Type="float" />
+          <Property Name="State_Grant" Type="float" />
+          <Property Name="ULBShare" Type="float" />
+          <Property Name="BeneficiaryShare" Type="float" />
+          <Property Name="Released_throug_EBR" Type="float" />
+          <Property Name="CASanctionedForRel" Type="float" />
+          <Property Name="FirstInstallmentReleased" Type="float" />
+          <Property Name="SecondInstallmentReleased" Type="float" />
+          <Property Name="ThirdInstallmentReleased" Type="float" />
+          <Property Name="CentralAssistanceReleased" Type="float" />
+          <Property Name="UC_Received" Type="float" />
+          <Property Name="UC_Pending" Type="float" />
+          <Property Name="Housesinvolved" Type="float" />
+          <Property Name="FundsDisbursed_in_Houses" Type="float" />
+          <Property Name="Houses_Grounded" Type="float" />
+          <Property Name="HousesUnderProgress" Type="float" />
+          <Property Name="Houses_Completed" Type="float" />
+          <Property Name="HousesAllotted" Type="float" />
+          <Property Name="HousesOccupied" Type="float" />
+          <Property Name="Houses_yetto_Grounded" Type="float" />
+          <Property Name="Cid" Type="nvarchar" MaxLength="255" />
+          <Property Name="DIVISION" Type="nvarchar(max)" />
+          <Property Name="FundsDisbursed_in_Houses_II" Type="float" />
+          <Property Name="FundsDisbursed_in_Houses_III" Type="float" />
+          <Property Name="Actual_Completed" Type="float" />
+          <Property Name="Shortfall_Completed" Type="float" />
+        </EntityType>
+        <EntityType Name="PMAY_PROJECTS_Fin_Dec 2019">
           <Key>
             <PropertyRef Name="SrNo" />
           </Key>
@@ -2805,7 +2987,62 @@ warning 6002: The table/view 'Employee.dbo.PMAY_PROJECTS_Fin_PMB1' does not have
           <Property Name="Cid" Type="nvarchar" MaxLength="255" />
           <Property Name="DIVISION" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="PMAYU_MainDashboard">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sanctioned" Type="nchar" MaxLength="10" />
+          <Property Name="Grounded" Type="nchar" MaxLength="10" />
+          <Property Name="Completed" Type="nchar" MaxLength="10" />
+          <Property Name="Occupied" Type="nchar" MaxLength="10" />
+          <Property Name="sCommitted" Type="nchar" MaxLength="10" />
+          <Property Name="Approved" Type="nchar" MaxLength="10" />
+          <Property Name="Released" Type="nchar" MaxLength="10" />
+          <Property Name="Utilized" Type="nchar" MaxLength="10" />
+          <Property Name="Overall" Type="nchar" MaxLength="10" />
+          <Property Name="sPublic" Type="nchar" MaxLength="10" />
+          <Property Name="Private" Type="nchar" MaxLength="10" />
+          <Property Name="PDaysDirect" Type="nchar" MaxLength="10" />
+          <Property Name="PDaysIndirect" Type="nchar" MaxLength="10" />
+          <Property Name="PDaysTotal" Type="nchar" MaxLength="10" />
+          <Property Name="JobsDirect" Type="nchar" MaxLength="10" />
+          <Property Name="JobsIndirect" Type="nchar" MaxLength="10" />
+          <Property Name="JobsTotal" Type="nchar" MaxLength="10" />
+          <Property Name="sActive" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Projct_Details">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectCode" Type="varchar" MaxLength="500" />
+          <Property Name="StateCode" Type="varchar" MaxLength="10" />
+          <Property Name="DistrictCode" Type="varchar" MaxLength="10" />
+          <Property Name="CityCode" Type="varchar" MaxLength="10" />
+          <Property Name="CSMCDate" Type="date" />
+          <Property Name="CSMCNumber" Type="varchar" MaxLength="500" />
+          <Property Name="Scheme" Type="varchar" MaxLength="500" />
+          <Property Name="SchemeComponent" Type="varchar" MaxLength="500" />
+          <Property Name="ProjectAgencies" Type="varchar" MaxLength="500" />
+          <Property Name="ProjectStatus" Type="varchar" MaxLength="500" />
+          <Property Name="ProjectDuration" Type="varchar" MaxLength="500" />
+          <Property Name="ProjectTitle" Type="varchar" MaxLength="500" />
+          <Property Name="ProjectCost" Type="decimal" Precision="25" Scale="2" />
+          <Property Name="CentralAssistance" Type="decimal" Precision="25" Scale="2" />
+          <Property Name="StateGrant" Type="varchar" MaxLength="500" />
+          <Property Name="ULB" Type="varchar" MaxLength="500" />
+          <Property Name="BeneficiaryShare" Type="varchar" MaxLength="500" />
+          <Property Name="OtherCost" Type="varchar" MaxLength="500" />
+          <Property Name="NewSanction" Type="varchar" MaxLength="500" />
+          <Property Name="UpgradeSanction" Type="varchar" MaxLength="500" />
+          <Property Name="TotalSanction" Type="decimal" Precision="25" Scale="0" />
+          <Property Name="FirstInstallment" Type="varchar" MaxLength="500" />
+          <Property Name="ActiveFlag" Type="varchar" MaxLength="500" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="500" />
+          <Property Name="CreatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Projct_Details_Jan">
           <Key>
             <PropertyRef Name="ProjectId" />
           </Key>
@@ -3666,6 +3903,97 @@ warning 6013: The table/view 'Employee.dbo.tblPMAY_PROJECTS' does not have a pri
           <Property Name="RAY_UC_Pending" Type="float" />
           <Property Name="Division" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <EntityType Name="tblStateWiseScore dec 2019">
+          <Key>
+            <PropertyRef Name="ScoreId" />
+          </Key>
+          <Property Name="ScoreId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="Codes" Type="nvarchar" MaxLength="255" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Sanction_vs_Demand" Type="float" />
+          <Property Name="Grounding_Sanction" Type="float" />
+          <Property Name="Completion_vs_Sanction" Type="float" />
+          <Property Name="BLC_Houses_Geotagged" Type="float" />
+          <Property Name="Relelase_vs_Sanction" Type="float" />
+          <Property Name="MIS_Annexure_uploading" Type="float" />
+          <Property Name="Beneficiary_Attachment" Type="float" />
+          <Property Name="Reforms_Achievement" Type="nvarchar" MaxLength="255" />
+          <Property Name="JN_Houses_vacant" Type="float" />
+          <Property Name="Population_Census_2011" Type="float" />
+          <Property Name="TG_12_Housing_Shortage" Type="float" />
+          <Property Name="Aadhar_Coverage" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cities_included_in_Mission" Type="float" />
+          <Property Name="Total_Demand_as_per_Road_map" Type="float" />
+          <Property Name="Demand_met" Type="float" />
+          <Property Name="Per_Demand_met" Type="float" />
+          <Property Name="Total_PMAY_U_Houses_ISSR_AHP_BLC_CLSS" Type="float" />
+          <Property Name="Valid_Aadhar_Beneficiaries" Type="float" />
+          <Property Name="Bene_Percentage" Type="float" />
+          <Property Name="HFAPoA_funds_Released" Type="float" />
+          <Property Name="HFAPoA_Received" Type="float" />
+          <Property Name="HFAPoA_Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="ISSR_NOP" Type="float" />
+          <Property Name="AHP_NOP" Type="float" />
+          <Property Name="BLC_NOP" Type="float" />
+          <Property Name="ISSR_CA_Committed" Type="float" />
+          <Property Name="AHP_CA_Committed" Type="float" />
+          <Property Name="BLC_CA_Committed" Type="float" />
+          <Property Name="ISSR_Sanct_for_Release" Type="float" />
+          <Property Name="AHP_Sanct_for_Release" Type="float" />
+          <Property Name="BLC_Sanct_for_Release" Type="float" />
+          <Property Name="ISSR_CA_Released" Type="float" />
+          <Property Name="AHP_CA_Released" Type="float" />
+          <Property Name="BLC_CA_Released" Type="float" />
+          <Property Name="ISSR_Balance_for_Release" Type="float" />
+          <Property Name="AHP_Balance_for_Release" Type="float" />
+          <Property Name="BLC_Balance_for_Release" Type="float" />
+          <Property Name="ISSR_Houses_Sanctioned" Type="float" />
+          <Property Name="AHP_Houses_Sanctioned" Type="float" />
+          <Property Name="BLC_Houses_Sanctioned" Type="float" />
+          <Property Name="ISSR_Grounded" Type="float" />
+          <Property Name="AHP_Grounded" Type="float" />
+          <Property Name="BLC_Grounded" Type="float" />
+          <Property Name="ISSR_Completed" Type="float" />
+          <Property Name="AHP_Completed" Type="float" />
+          <Property Name="BLC_Completed" Type="float" />
+          <Property Name="PMAY_Funds_Released" Type="float" />
+          <Property Name="PMAY_Ucs_Received" Type="float" />
+          <Property Name="PMAY_UC_Pending" Type="float" />
+          <Property Name="PMAY_Houses_Occupied" Type="float" />
+          <Property Name="Reforms" Type="nvarchar(max)" />
+          <Property Name="Reforms_Achieved" Type="nvarchar(max)" />
+          <Property Name="SLTC_Funds_Released_RsinnCr" Type="float" />
+          <Property Name="SLTC_Specialists_Approved" Type="float" />
+          <Property Name="SLTC_Specialists_in_Place" Type="float" />
+          <Property Name="CLTC_Funds_Released_RsinCr" Type="float" />
+          <Property Name="CLTC_Specialists_Approved" Type="float" />
+          <Property Name="CLTC_Specialists_in_Place" Type="float" />
+          <Property Name="Projects_Approved" Type="float" />
+          <Property Name="Projects_uploaded" Type="float" />
+          <Property Name="Percent_Projects_uploaded" Type="float" />
+          <Property Name="BLC_Houses_Approved" Type="float" />
+          <Property Name="BLC_Houses_Grounded" Type="float" />
+          <Property Name="BLC_Houses_Geo_Tagged" Type="float" />
+          <Property Name="CLSS_MIS_Survey" Type="float" />
+          <Property Name="CLSS_Beneficiaries_EWS_LIG_MIG" Type="float" />
+          <Property Name="CLSS_Subsidy_EWS_LIG_MIG" Type="float" />
+          <Property Name="JN_Houses_Sanctioned" Type="float" />
+          <Property Name="JN_Houses_Completed" Type="float" />
+          <Property Name="JN_Houses_Occupied" Type="float" />
+          <Property Name="JN_Houses_In_Progress" Type="float" />
+          <Property Name="JN_Houses_Unoccupied" Type="float" />
+          <Property Name="JN_Houses_Non_Starter" Type="float" />
+          <Property Name="JN_UC_Pending" Type="float" />
+          <Property Name="RAY_Houses_Sanctioned" Type="float" />
+          <Property Name="RAY_Houses_Completed" Type="float" />
+          <Property Name="RAY_Houses_Occupied" Type="float" />
+          <Property Name="RAY_Houses_In_Progress" Type="float" />
+          <Property Name="RAY_Houses_Unoccupied" Type="float" />
+          <Property Name="RAY_Houses_Non_Starter" Type="float" />
+          <Property Name="RAY_UC_Pending" Type="float" />
+          <Property Name="Division" Type="nvarchar" MaxLength="255" />
+        </EntityType>
         <EntityType Name="tblStateWiseScore_27062019">
           <Key>
             <PropertyRef Name="ScoreId" />
@@ -4328,6 +4656,8 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
         <Function Name="city_wise_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="DistrictCode" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="Del_PhyProgressReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Del_ProjectDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Excel_ClssProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="fn_FormatWithCommas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
@@ -4344,6 +4674,17 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
         </Function>
         <Function Name="fnDecimalToCurrency1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
           <Parameter Name="value" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="fnSplitString" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="string" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="delimiter" Type="char" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="splitdata" Type="nvarchar(max)" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
         </Function>
         <Function Name="Format" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
           <Parameter Name="num" Type="int" Mode="In" />
@@ -4932,6 +5273,12 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Parameter Name="cityCode" Type="char" Mode="In" />
           <Parameter Name="Fin_Year" Type="nvarchar(max)" Mode="In" />
         </Function>
+        <Function Name="sp_create_AHP_GraphCritical_DATA_FinWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="State_Code" Type="char" Mode="In" />
+          <Parameter Name="dcode" Type="char" Mode="In" />
+          <Parameter Name="cityCode" Type="char" Mode="In" />
+          <Parameter Name="Fin_Year" Type="nvarchar(max)" Mode="In" />
+        </Function>
         <Function Name="sp_create_AHP_GraphCritical_DATAFinYeraWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="State_Code" Type="char" Mode="In" />
           <Parameter Name="dcode" Type="char" Mode="In" />
@@ -4943,6 +5290,12 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Parameter Name="dcode" Type="char" Mode="In" />
           <Parameter Name="cityCode" Type="char" Mode="In" />
           <Parameter Name="Component" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_create_BLC_GraphCritical_DATA_FinWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="State_Code" Type="char" Mode="In" />
+          <Parameter Name="dcode" Type="char" Mode="In" />
+          <Parameter Name="cityCode" Type="char" Mode="In" />
+          <Parameter Name="Fin_Year" Type="nvarchar(max)" Mode="In" />
         </Function>
         <Function Name="sp_create_BLCS_DATAFinYeraWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="State_Code" Type="char" Mode="In" />
@@ -4964,6 +5317,13 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Parameter Name="FinYear" Type="char" Mode="In" />
         </Function>
         <Function Name="sp_create_Fin_ConsPMAYDATA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="State_Code" Type="char" Mode="In" />
+          <Parameter Name="dcode" Type="char" Mode="In" />
+          <Parameter Name="cityCode" Type="char" Mode="In" />
+          <Parameter Name="Component" Type="char" Mode="In" />
+          <Parameter Name="FinYear" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_create_Fin_ConsPMAYDATA_Back" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="State_Code" Type="char" Mode="In" />
           <Parameter Name="dcode" Type="char" Mode="In" />
           <Parameter Name="cityCode" Type="char" Mode="In" />
@@ -5327,6 +5687,41 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Parameter Name="dcode" Type="char" Mode="In" />
           <Parameter Name="cityCode" Type="char" Mode="In" />
         </Function>
+        <Function Name="sp_Phy_Critical_View" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="State_Code" Type="char" Mode="In" />
+          <Parameter Name="dcode" Type="char" Mode="In" />
+          <Parameter Name="cityCode" Type="char" Mode="In" />
+          <Parameter Name="Component" Type="char" Mode="In" />
+          <Parameter Name="FinYear" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_Phy_Critical_View_" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="State_Code" Type="char" Mode="In" />
+          <Parameter Name="dcode" Type="char" Mode="In" />
+          <Parameter Name="cityCode" Type="char" Mode="In" />
+          <Parameter Name="Component" Type="char" Mode="In" />
+          <Parameter Name="FinYear" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_Phy_Monitoring_View" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="State_Code" Type="char" Mode="In" />
+          <Parameter Name="dcode" Type="char" Mode="In" />
+          <Parameter Name="cityCode" Type="char" Mode="In" />
+          <Parameter Name="Component" Type="char" Mode="In" />
+          <Parameter Name="FinYear" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_Phy_ShortFall" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="State_Code" Type="char" Mode="In" />
+          <Parameter Name="dcode" Type="char" Mode="In" />
+          <Parameter Name="cityCode" Type="char" Mode="In" />
+          <Parameter Name="Component" Type="char" Mode="In" />
+          <Parameter Name="FinYear" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_PhysicalMonitor_ISSR_Graph" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="State_Code" Type="char" Mode="In" />
+          <Parameter Name="dcode" Type="char" Mode="In" />
+          <Parameter Name="cityCode" Type="char" Mode="In" />
+          <Parameter Name="Component" Type="char" Mode="In" />
+          <Parameter Name="FinYear" Type="char" Mode="In" />
+        </Function>
         <Function Name="sp_RayThirdInstHouses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="State_Code" Type="char" Mode="In" />
           <Parameter Name="dcode" Type="char" Mode="In" />
@@ -5337,6 +5732,13 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Shortfall_BLC_AHP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="State_Code" Type="char" Mode="In" />
+          <Parameter Name="dcode" Type="char" Mode="In" />
+          <Parameter Name="cityCode" Type="char" Mode="In" />
+          <Parameter Name="Component" Type="char" Mode="In" />
+          <Parameter Name="FinYear" Type="char" Mode="In" />
         </Function>
         <Function Name="sp_State" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -5383,6 +5785,7 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <EntitySet Name="CLSS_MASTER_OLD" EntityType="Self.CLSS_MASTER_OLD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClssCityWise" EntityType="Self.ClssCityWise" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClssCityWiseExcel" EntityType="Self.ClssCityWiseExcel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cmaster" EntityType="Self.cmaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Combined_States" EntityType="Self.Combined_States" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ComponentMaster" EntityType="Self.ComponentMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Constituency_Mster" EntityType="Self.Constituency_Mster" Schema="dbo" store:Type="Tables" />
@@ -5409,16 +5812,21 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <EntitySet Name="Master_Cities_Included" EntityType="Self.Master_Cities_Included" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Physical_Dashboard" EntityType="Self.Physical_Dashboard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Physical_Dashboard __" EntityType="Self.Physical_Dashboard __" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Physical_Dashboard de 2019" EntityType="Self.Physical_Dashboard de 2019" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Physical_DashboardExcel" EntityType="Self.Physical_DashboardExcel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Physical_Progress_Report" EntityType="Self.Physical_Progress_Report" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PMAY_PROJECTS Copy$ _1" EntityType="Self.PMAY_PROJECTS Copy$ _1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PMAY_PROJECTS_Fin" EntityType="Self.PMAY_PROJECTS_Fin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PMAY_PROJECTS_Fin jan" EntityType="Self.PMAY_PROJECTS_Fin jan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PMAY_PROJECTS_Fin_26July" EntityType="Self.PMAY_PROJECTS_Fin_26July" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PMAY_PROJECTS_Fin_27062019" EntityType="Self.PMAY_PROJECTS_Fin_27062019" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PMAY_PROJECTS_Fin_Dec 2019" EntityType="Self.PMAY_PROJECTS_Fin_Dec 2019" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PMAY_PROJECTS_Fin_Excel" EntityType="Self.PMAY_PROJECTS_Fin_Excel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PMAY_PROJECTS_Fin_July" EntityType="Self.PMAY_PROJECTS_Fin_July" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PMAY_PROJECTS_Fin11" EntityType="Self.PMAY_PROJECTS_Fin11" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PMAYU_MainDashboard" EntityType="Self.PMAYU_MainDashboard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Projct_Details" EntityType="Self.Projct_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projct_Details_Jan" EntityType="Self.Projct_Details_Jan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Project_Brief_Detail" EntityType="Self.Project_Brief_Detail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Project_Code_Slum" EntityType="Self.Project_Code_Slum" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Project_Fund_Release" EntityType="Self.Project_Fund_Release" Schema="dbo" store:Type="Tables" />
@@ -5441,6 +5849,7 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <EntitySet Name="tblPhysicalCityYearWise" EntityType="Self.tblPhysicalCityYearWise" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblPMAYU" EntityType="Self.tblPMAYU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblStateWiseScore" EntityType="Self.tblStateWiseScore" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStateWiseScore dec 2019" EntityType="Self.tblStateWiseScore dec 2019" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblStateWiseScore_27062019" EntityType="Self.tblStateWiseScore_27062019" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblStateWiseScoreExce_1l" EntityType="Self.tblStateWiseScoreExce_1l" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
@@ -5974,7 +6383,9 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     [PMAY_PROJECTS_Fin_Back].[Cid] AS [Cid], 
     [PMAY_PROJECTS_Fin_Back].[DIVISION] AS [DIVISION], 
     [PMAY_PROJECTS_Fin_Back].[FundsDisbursed_in_Houses_II] AS [FundsDisbursed_in_Houses_II], 
-    [PMAY_PROJECTS_Fin_Back].[FundsDisbursed_in_Houses_III] AS [FundsDisbursed_in_Houses_III]
+    [PMAY_PROJECTS_Fin_Back].[FundsDisbursed_in_Houses_III] AS [FundsDisbursed_in_Houses_III], 
+    [PMAY_PROJECTS_Fin_Back].[Actual_Completed] AS [Actual_Completed], 
+    [PMAY_PROJECTS_Fin_Back].[Shortfall_Completed] AS [Shortfall_Completed]
     FROM [dbo].[PMAY_PROJECTS_Fin_Back] AS [PMAY_PROJECTS_Fin_Back]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="PMAY_PROJECTS_Fin_PmB" EntityType="Self.PMAY_PROJECTS_Fin_PmB" store:Type="Tables" store:Schema="dbo">
@@ -6241,6 +6652,9 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EmployeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="fnSplitString_Result">
+          <Property Name="splitdata" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </ComplexType>
         <ComplexType Name="Split_Result">
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Data" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
@@ -6735,6 +7149,17 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Name="Loan_Amount" Type="Double" />
           <Property Name="SubsidyAmountCredited" Type="Double" />
           <Property Name="NoofBeneficiaries" Type="Double" />
+        </EntityType>
+        <EntityType Name="cmaster">
+          <Key>
+            <PropertyRef Name="Cid" />
+          </Key>
+          <Property Name="Cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SrNo" Type="Int32" />
+          <Property Name="Cname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SchemeComponentName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SchemeShortName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="sFlag" Type="Boolean" />
         </EntityType>
         <EntityType Name="Combined_States">
           <Key>
@@ -7303,6 +7728,79 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Name="Expenditure" Type="Double" />
           <Property Name="Division" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Physical_Dashboard_de_2019">
+          <Key>
+            <PropertyRef Name="SrNo" />
+          </Key>
+          <Property Name="SrNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="State1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StateCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Demand" Type="Double" />
+          <Property Name="Houses_Sanctioned" Type="Double" />
+          <Property Name="CentralShare" Type="Double" />
+          <Property Name="StateShare" Type="Double" />
+          <Property Name="ULBShare" Type="Double" />
+          <Property Name="BeneficiaryShare" Type="Double" />
+          <Property Name="TotalCost" Type="Double" />
+          <Property Name="Grounded" Type="Double" />
+          <Property Name="Completed" Type="Double" />
+          <Property Name="Occupied" Type="Double" />
+          <Property Name="CAApproved" Type="Double" />
+          <Property Name="CASanctionedforRelease" Type="Double" />
+          <Property Name="CAReleased" Type="Double" />
+          <Property Name="PendingforRelease" Type="Double" />
+          <Property Name="IIIQ_15_16" Type="Double" />
+          <Property Name="IV_Q_15_16" Type="Double" />
+          <Property Name="IQ_16_17" Type="Double" />
+          <Property Name="IIQ_16_17" Type="Double" />
+          <Property Name="IIIQ_16_17" Type="Double" />
+          <Property Name="IV_Q_16_17" Type="Double" />
+          <Property Name="I_Q_17_18" Type="Double" />
+          <Property Name="II_Q_17_18" Type="Double" />
+          <Property Name="III_Q_17_18" Type="Double" />
+          <Property Name="IV_Q_17_18" Type="Double" />
+          <Property Name="I_Q_18_19" Type="Double" />
+          <Property Name="II_Q_18_19" Type="Double" />
+          <Property Name="III_Q_18_19" Type="Double" />
+          <Property Name="IV_Q_18_19" Type="Double" />
+          <Property Name="I_Q_19_20" Type="Double" />
+          <Property Name="SRNo1" Type="Double" />
+          <Property Name="State2" Type="Double" />
+          <Property Name="CumSanctioned" Type="Double" />
+          <Property Name="CASanctioned_15_16" Type="Double" />
+          <Property Name="CASanctioned_16_17" Type="Double" />
+          <Property Name="CASanctioned_17_18" Type="Double" />
+          <Property Name="CASanctioned_18_19" Type="Double" />
+          <Property Name="CASanctioned_19_20" Type="Double" />
+          <Property Name="CumuCAReleased" Type="Double" />
+          <Property Name="CumuCA_Released_15_16" Type="Double" />
+          <Property Name="CumuCA_Released_16_17" Type="Double" />
+          <Property Name="CumuCA_Released_17_18" Type="Double" />
+          <Property Name="CumuCA_Released_18_19" Type="Double" />
+          <Property Name="CumuCA_Released_19_20" Type="Double" />
+          <Property Name="HS_Cum_20_8_18" Type="Double" />
+          <Property Name="HS_15_16" Type="Double" />
+          <Property Name="HS_16_17" Type="Double" />
+          <Property Name="HS_17_18" Type="Double" />
+          <Property Name="HS_18_19" Type="Double" />
+          <Property Name="HS_19_20" Type="Double" />
+          <Property Name="HC_20_08_18" Type="Double" />
+          <Property Name="HC_14_15" Type="Double" />
+          <Property Name="HC_15_16" Type="Double" />
+          <Property Name="HC_16_17" Type="Double" />
+          <Property Name="HC_17_18" Type="Double" />
+          <Property Name="HC_18_19" Type="Double" />
+          <Property Name="HC_19_20" Type="Double" />
+          <Property Name="HO_Cum" Type="Double" />
+          <Property Name="HO_14_15" Type="Double" />
+          <Property Name="HO_15_16" Type="Double" />
+          <Property Name="HO_16_17" Type="Double" />
+          <Property Name="HO_17_18" Type="Double" />
+          <Property Name="HO_18_19" Type="Double" />
+          <Property Name="HO_19_20" Type="Double" />
+          <Property Name="Expenditure" Type="Double" />
+          <Property Name="Division" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Physical_DashboardExcel">
           <Key>
             <PropertyRef Name="sId" />
@@ -7494,6 +7992,56 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Name="DIVISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="FundsDisbursed_in_Houses_II" Type="Double" />
           <Property Name="FundsDisbursed_in_Houses_III" Type="Double" />
+          <Property Name="Actual_Completed" Type="Double" />
+          <Property Name="Shortfall_Completed" Type="Double" />
+        </EntityType>
+        <EntityType Name="PMAY_PROJECTS_Fin_jan">
+          <Key>
+            <PropertyRef Name="SrNo" />
+          </Key>
+          <Property Name="SrNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Project_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Annexure_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Component" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StateCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Dcode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sunDisttCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CityCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Project_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CSMCDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CSMCNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FinYear" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoofProjects" Type="Double" />
+          <Property Name="Project_Cost" Type="Double" />
+          <Property Name="Central_Assistance_involved" Type="Double" />
+          <Property Name="State_Grant" Type="Double" />
+          <Property Name="ULBShare" Type="Double" />
+          <Property Name="BeneficiaryShare" Type="Double" />
+          <Property Name="Released_throug_EBR" Type="Double" />
+          <Property Name="CASanctionedForRel" Type="Double" />
+          <Property Name="FirstInstallmentReleased" Type="Double" />
+          <Property Name="SecondInstallmentReleased" Type="Double" />
+          <Property Name="ThirdInstallmentReleased" Type="Double" />
+          <Property Name="CentralAssistanceReleased" Type="Double" />
+          <Property Name="UC_Received" Type="Double" />
+          <Property Name="UC_Pending" Type="Double" />
+          <Property Name="Housesinvolved" Type="Double" />
+          <Property Name="FundsDisbursed_in_Houses" Type="Double" />
+          <Property Name="Houses_Grounded" Type="Double" />
+          <Property Name="HousesUnderProgress" Type="Double" />
+          <Property Name="Houses_Completed" Type="Double" />
+          <Property Name="HousesAllotted" Type="Double" />
+          <Property Name="HousesOccupied" Type="Double" />
+          <Property Name="Houses_yetto_Grounded" Type="Double" />
+          <Property Name="Cid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DIVISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FundsDisbursed_in_Houses_II" Type="Double" />
+          <Property Name="FundsDisbursed_in_Houses_III" Type="Double" />
+          <Property Name="Actual_Completed" Type="Double" />
+          <Property Name="Shortfall_Completed" Type="Double" />
         </EntityType>
         <EntityType Name="PMAY_PROJECTS_Fin_26July">
           <Key>
@@ -7583,6 +8131,52 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Name="HousesOccupied" Type="Double" />
           <Property Name="Houses_yetto_Grounded" Type="Double" />
           <Property Name="Cid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PMAY_PROJECTS_Fin_Dec_2019">
+          <Key>
+            <PropertyRef Name="SrNo" />
+          </Key>
+          <Property Name="SrNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Project_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Annexure_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Component" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StateCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Dcode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sunDisttCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CityCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Project_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CSMCDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CSMCNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FinYear" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoofProjects" Type="Double" />
+          <Property Name="Project_Cost" Type="Double" />
+          <Property Name="Central_Assistance_involved" Type="Double" />
+          <Property Name="State_Grant" Type="Double" />
+          <Property Name="ULBShare" Type="Double" />
+          <Property Name="BeneficiaryShare" Type="Double" />
+          <Property Name="Released_throug_EBR" Type="Double" />
+          <Property Name="CASanctionedForRel" Type="Double" />
+          <Property Name="FirstInstallmentReleased" Type="Double" />
+          <Property Name="SecondInstallmentReleased" Type="Double" />
+          <Property Name="ThirdInstallmentReleased" Type="Double" />
+          <Property Name="CentralAssistanceReleased" Type="Double" />
+          <Property Name="UC_Received" Type="Double" />
+          <Property Name="UC_Pending" Type="Double" />
+          <Property Name="Housesinvolved" Type="Double" />
+          <Property Name="FundsDisbursed_in_Houses" Type="Double" />
+          <Property Name="Houses_Grounded" Type="Double" />
+          <Property Name="HousesUnderProgress" Type="Double" />
+          <Property Name="Houses_Completed" Type="Double" />
+          <Property Name="HousesAllotted" Type="Double" />
+          <Property Name="HousesOccupied" Type="Double" />
+          <Property Name="Houses_yetto_Grounded" Type="Double" />
+          <Property Name="Cid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DIVISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FundsDisbursed_in_Houses_II" Type="Double" />
+          <Property Name="FundsDisbursed_in_Houses_III" Type="Double" />
         </EntityType>
         <EntityType Name="PMAY_PROJECTS_Fin_Excel">
           <Key>
@@ -7714,7 +8308,62 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Name="Cid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="DIVISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="PMAYU_MainDashboard">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sanctioned" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Grounded" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Completed" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Occupied" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="sCommitted" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Approved" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Released" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Utilized" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Overall" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="sPublic" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Private" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PDaysDirect" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PDaysIndirect" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PDaysTotal" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="JobsDirect" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="JobsIndirect" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="JobsTotal" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="sActive" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Projct_Details">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectCode" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="StateCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DistrictCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CityCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CSMCDate" Type="DateTime" Precision="0" />
+          <Property Name="CSMCNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Scheme" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SchemeComponent" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectAgencies" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectStatus" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectDuration" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectCost" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="CentralAssistance" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="StateGrant" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ULB" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="BeneficiaryShare" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OtherCost" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="NewSanction" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="UpgradeSanction" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TotalSanction" Type="Decimal" Precision="25" Scale="0" />
+          <Property Name="FirstInstallment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ActiveFlag" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Projct_Details_Jan">
           <Key>
             <PropertyRef Name="ProjectId" />
           </Key>
@@ -8291,6 +8940,97 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Name="HO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tblStateWiseScore">
+          <Key>
+            <PropertyRef Name="ScoreId" />
+          </Key>
+          <Property Name="ScoreId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <Property Name="Codes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StateName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sanction_vs_Demand" Type="Double" />
+          <Property Name="Grounding_Sanction" Type="Double" />
+          <Property Name="Completion_vs_Sanction" Type="Double" />
+          <Property Name="BLC_Houses_Geotagged" Type="Double" />
+          <Property Name="Relelase_vs_Sanction" Type="Double" />
+          <Property Name="MIS_Annexure_uploading" Type="Double" />
+          <Property Name="Beneficiary_Attachment" Type="Double" />
+          <Property Name="Reforms_Achievement" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="JN_Houses_vacant" Type="Double" />
+          <Property Name="Population_Census_2011" Type="Double" />
+          <Property Name="TG_12_Housing_Shortage" Type="Double" />
+          <Property Name="Aadhar_Coverage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Cities_included_in_Mission" Type="Double" />
+          <Property Name="Total_Demand_as_per_Road_map" Type="Double" />
+          <Property Name="Demand_met" Type="Double" />
+          <Property Name="Per_Demand_met" Type="Double" />
+          <Property Name="Total_PMAY_U_Houses_ISSR_AHP_BLC_CLSS" Type="Double" />
+          <Property Name="Valid_Aadhar_Beneficiaries" Type="Double" />
+          <Property Name="Bene_Percentage" Type="Double" />
+          <Property Name="HFAPoA_funds_Released" Type="Double" />
+          <Property Name="HFAPoA_Received" Type="Double" />
+          <Property Name="HFAPoA_Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ISSR_NOP" Type="Double" />
+          <Property Name="AHP_NOP" Type="Double" />
+          <Property Name="BLC_NOP" Type="Double" />
+          <Property Name="ISSR_CA_Committed" Type="Double" />
+          <Property Name="AHP_CA_Committed" Type="Double" />
+          <Property Name="BLC_CA_Committed" Type="Double" />
+          <Property Name="ISSR_Sanct_for_Release" Type="Double" />
+          <Property Name="AHP_Sanct_for_Release" Type="Double" />
+          <Property Name="BLC_Sanct_for_Release" Type="Double" />
+          <Property Name="ISSR_CA_Released" Type="Double" />
+          <Property Name="AHP_CA_Released" Type="Double" />
+          <Property Name="BLC_CA_Released" Type="Double" />
+          <Property Name="ISSR_Balance_for_Release" Type="Double" />
+          <Property Name="AHP_Balance_for_Release" Type="Double" />
+          <Property Name="BLC_Balance_for_Release" Type="Double" />
+          <Property Name="ISSR_Houses_Sanctioned" Type="Double" />
+          <Property Name="AHP_Houses_Sanctioned" Type="Double" />
+          <Property Name="BLC_Houses_Sanctioned" Type="Double" />
+          <Property Name="ISSR_Grounded" Type="Double" />
+          <Property Name="AHP_Grounded" Type="Double" />
+          <Property Name="BLC_Grounded" Type="Double" />
+          <Property Name="ISSR_Completed" Type="Double" />
+          <Property Name="AHP_Completed" Type="Double" />
+          <Property Name="BLC_Completed" Type="Double" />
+          <Property Name="PMAY_Funds_Released" Type="Double" />
+          <Property Name="PMAY_Ucs_Received" Type="Double" />
+          <Property Name="PMAY_UC_Pending" Type="Double" />
+          <Property Name="PMAY_Houses_Occupied" Type="Double" />
+          <Property Name="Reforms" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Reforms_Achieved" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SLTC_Funds_Released_RsinnCr" Type="Double" />
+          <Property Name="SLTC_Specialists_Approved" Type="Double" />
+          <Property Name="SLTC_Specialists_in_Place" Type="Double" />
+          <Property Name="CLTC_Funds_Released_RsinCr" Type="Double" />
+          <Property Name="CLTC_Specialists_Approved" Type="Double" />
+          <Property Name="CLTC_Specialists_in_Place" Type="Double" />
+          <Property Name="Projects_Approved" Type="Double" />
+          <Property Name="Projects_uploaded" Type="Double" />
+          <Property Name="Percent_Projects_uploaded" Type="Double" />
+          <Property Name="BLC_Houses_Approved" Type="Double" />
+          <Property Name="BLC_Houses_Grounded" Type="Double" />
+          <Property Name="BLC_Houses_Geo_Tagged" Type="Double" />
+          <Property Name="CLSS_MIS_Survey" Type="Double" />
+          <Property Name="CLSS_Beneficiaries_EWS_LIG_MIG" Type="Double" />
+          <Property Name="CLSS_Subsidy_EWS_LIG_MIG" Type="Double" />
+          <Property Name="JN_Houses_Sanctioned" Type="Double" />
+          <Property Name="JN_Houses_Completed" Type="Double" />
+          <Property Name="JN_Houses_Occupied" Type="Double" />
+          <Property Name="JN_Houses_In_Progress" Type="Double" />
+          <Property Name="JN_Houses_Unoccupied" Type="Double" />
+          <Property Name="JN_Houses_Non_Starter" Type="Double" />
+          <Property Name="JN_UC_Pending" Type="Double" />
+          <Property Name="RAY_Houses_Sanctioned" Type="Double" />
+          <Property Name="RAY_Houses_Completed" Type="Double" />
+          <Property Name="RAY_Houses_Occupied" Type="Double" />
+          <Property Name="RAY_Houses_In_Progress" Type="Double" />
+          <Property Name="RAY_Houses_Unoccupied" Type="Double" />
+          <Property Name="RAY_Houses_Non_Starter" Type="Double" />
+          <Property Name="RAY_UC_Pending" Type="Double" />
+          <Property Name="Division" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblStateWiseScore_dec_2019">
           <Key>
             <PropertyRef Name="ScoreId" />
           </Key>
@@ -9225,6 +9965,8 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Name="DIVISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="FundsDisbursed_in_Houses_II" Type="Double" />
           <Property Name="FundsDisbursed_in_Houses_III" Type="Double" />
+          <Property Name="Actual_Completed" Type="Double" />
+          <Property Name="Shortfall_Completed" Type="Double" />
         </EntityType>
         <EntityType Name="PMAY_PROJECTS_Fin_PmB">
           <Key>
@@ -9568,6 +10310,7 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <EntitySet Name="CLSS_MASTER_OLD" EntityType="Self.CLSS_MASTER_OLD" />
           <EntitySet Name="ClssCityWises" EntityType="Self.ClssCityWise" />
           <EntitySet Name="ClssCityWiseExcels" EntityType="Self.ClssCityWiseExcel" />
+          <EntitySet Name="cmasters" EntityType="Self.cmaster" />
           <EntitySet Name="Combined_States" EntityType="Self.Combined_States" />
           <EntitySet Name="ComponentMasters" EntityType="Self.ComponentMaster" />
           <EntitySet Name="Constituency_Mster" EntityType="Self.Constituency_Mster" />
@@ -9594,16 +10337,21 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <EntitySet Name="Master_Cities_Included" EntityType="Self.Master_Cities_Included" />
           <EntitySet Name="Physical_Dashboard" EntityType="Self.Physical_Dashboard" />
           <EntitySet Name="Physical_Dashboard___" EntityType="Self.Physical_Dashboard___" />
+          <EntitySet Name="Physical_Dashboard_de_2019" EntityType="Self.Physical_Dashboard_de_2019" />
           <EntitySet Name="Physical_DashboardExcel" EntityType="Self.Physical_DashboardExcel" />
           <EntitySet Name="Physical_Progress_Report" EntityType="Self.Physical_Progress_Report" />
           <EntitySet Name="PMAY_PROJECTS_Copy___1" EntityType="Self.PMAY_PROJECTS_Copy___1" />
           <EntitySet Name="PMAY_PROJECTS_Fin" EntityType="Self.PMAY_PROJECTS_Fin" />
+          <EntitySet Name="PMAY_PROJECTS_Fin_jan" EntityType="Self.PMAY_PROJECTS_Fin_jan" />
           <EntitySet Name="PMAY_PROJECTS_Fin_26July" EntityType="Self.PMAY_PROJECTS_Fin_26July" />
           <EntitySet Name="PMAY_PROJECTS_Fin_27062019" EntityType="Self.PMAY_PROJECTS_Fin_27062019" />
+          <EntitySet Name="PMAY_PROJECTS_Fin_Dec_2019" EntityType="Self.PMAY_PROJECTS_Fin_Dec_2019" />
           <EntitySet Name="PMAY_PROJECTS_Fin_Excel" EntityType="Self.PMAY_PROJECTS_Fin_Excel" />
           <EntitySet Name="PMAY_PROJECTS_Fin_July" EntityType="Self.PMAY_PROJECTS_Fin_July" />
           <EntitySet Name="PMAY_PROJECTS_Fin11" EntityType="Self.PMAY_PROJECTS_Fin11" />
+          <EntitySet Name="PMAYU_MainDashboard" EntityType="Self.PMAYU_MainDashboard" />
           <EntitySet Name="Projct_Details" EntityType="Self.Projct_Details" />
+          <EntitySet Name="Projct_Details_Jan" EntityType="Self.Projct_Details_Jan" />
           <EntitySet Name="Project_Brief_Detail" EntityType="Self.Project_Brief_Detail" />
           <EntitySet Name="Project_Code_Slum" EntityType="Self.Project_Code_Slum" />
           <EntitySet Name="Project_Fund_Release" EntityType="Self.Project_Fund_Release" />
@@ -9626,6 +10374,7 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <EntitySet Name="tblPhysicalCityYearWises" EntityType="Self.tblPhysicalCityYearWise" />
           <EntitySet Name="tblPMAYUs" EntityType="Self.tblPMAYU" />
           <EntitySet Name="tblStateWiseScores" EntityType="Self.tblStateWiseScore" />
+          <EntitySet Name="tblStateWiseScore_dec_2019" EntityType="Self.tblStateWiseScore_dec_2019" />
           <EntitySet Name="tblStateWiseScore_27062019" EntityType="Self.tblStateWiseScore_27062019" />
           <EntitySet Name="tblStateWiseScoreExce_1l" EntityType="Self.tblStateWiseScoreExce_1l" />
           <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
@@ -9681,6 +10430,10 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
             <End Role="State_Master" EntitySet="State_Master" />
             <End Role="Users_Register" EntitySet="Users_Register" />
           </AssociationSet>
+          <FunctionImport Name="fnSplitString" IsComposable="true" ReturnType="Collection(EmployeeModel.fnSplitString_Result)">
+            <Parameter Name="string" Mode="In" Type="String" />
+            <Parameter Name="delimiter" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="Split" IsComposable="true" ReturnType="Collection(EmployeeModel.Split_Result)">
             <Parameter Name="Line" Mode="In" Type="String" />
             <Parameter Name="SplitOn" Mode="In" Type="String" />
@@ -9688,6 +10441,8 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <FunctionImport Name="city_wise_report" ReturnType="Collection(EmployeeModel.city_wise_report_Result)">
             <Parameter Name="DistrictCode" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="Del_PhyProgressReport" />
+          <FunctionImport Name="Del_ProjectDetail" />
           <FunctionImport Name="Excel_ClssProc" ReturnType="Collection(EmployeeModel.Excel_ClssProc_Result)" />
           <FunctionImport Name="Get_Clss_Master" ReturnType="Collection(EmployeeModel.Get_Clss_Master_Result)">
             <Parameter Name="State_Code" Mode="In" Type="String" />
@@ -10262,6 +11017,12 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
             <Parameter Name="cityCode" Mode="In" Type="String" />
             <Parameter Name="Fin_Year" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_create_AHP_GraphCritical_DATA_FinWise">
+            <Parameter Name="State_Code" Mode="In" Type="String" />
+            <Parameter Name="dcode" Mode="In" Type="String" />
+            <Parameter Name="cityCode" Mode="In" Type="String" />
+            <Parameter Name="Fin_Year" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="sp_create_AHP_GraphCritical_DATAFinYeraWise">
             <Parameter Name="State_Code" Mode="In" Type="String" />
             <Parameter Name="dcode" Mode="In" Type="String" />
@@ -10273,6 +11034,12 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
             <Parameter Name="dcode" Mode="In" Type="String" />
             <Parameter Name="cityCode" Mode="In" Type="String" />
             <Parameter Name="Component" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_create_BLC_GraphCritical_DATA_FinWise">
+            <Parameter Name="State_Code" Mode="In" Type="String" />
+            <Parameter Name="dcode" Mode="In" Type="String" />
+            <Parameter Name="cityCode" Mode="In" Type="String" />
+            <Parameter Name="Fin_Year" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_create_BLCS_DATAFinYeraWise">
             <Parameter Name="State_Code" Mode="In" Type="String" />
@@ -10294,6 +11061,13 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
             <Parameter Name="FinYear" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_create_Fin_ConsPMAYDATA" ReturnType="Collection(EmployeeModel.sp_create_Fin_ConsPMAYDATA_Result)">
+            <Parameter Name="State_Code" Mode="In" Type="String" />
+            <Parameter Name="dcode" Mode="In" Type="String" />
+            <Parameter Name="cityCode" Mode="In" Type="String" />
+            <Parameter Name="Component" Mode="In" Type="String" />
+            <Parameter Name="FinYear" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_create_Fin_ConsPMAYDATA_Back" ReturnType="Collection(EmployeeModel.sp_create_Fin_ConsPMAYDATA_Back_Result)">
             <Parameter Name="State_Code" Mode="In" Type="String" />
             <Parameter Name="dcode" Mode="In" Type="String" />
             <Parameter Name="cityCode" Mode="In" Type="String" />
@@ -10657,6 +11431,41 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
             <Parameter Name="dcode" Mode="In" Type="String" />
             <Parameter Name="cityCode" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_Phy_Critical_View">
+            <Parameter Name="State_Code" Mode="In" Type="String" />
+            <Parameter Name="dcode" Mode="In" Type="String" />
+            <Parameter Name="cityCode" Mode="In" Type="String" />
+            <Parameter Name="Component" Mode="In" Type="String" />
+            <Parameter Name="FinYear" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Phy_Critical_View_">
+            <Parameter Name="State_Code" Mode="In" Type="String" />
+            <Parameter Name="dcode" Mode="In" Type="String" />
+            <Parameter Name="cityCode" Mode="In" Type="String" />
+            <Parameter Name="Component" Mode="In" Type="String" />
+            <Parameter Name="FinYear" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Phy_Monitoring_View">
+            <Parameter Name="State_Code" Mode="In" Type="String" />
+            <Parameter Name="dcode" Mode="In" Type="String" />
+            <Parameter Name="cityCode" Mode="In" Type="String" />
+            <Parameter Name="Component" Mode="In" Type="String" />
+            <Parameter Name="FinYear" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Phy_ShortFall">
+            <Parameter Name="State_Code" Mode="In" Type="String" />
+            <Parameter Name="dcode" Mode="In" Type="String" />
+            <Parameter Name="cityCode" Mode="In" Type="String" />
+            <Parameter Name="Component" Mode="In" Type="String" />
+            <Parameter Name="FinYear" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_PhysicalMonitor_ISSR_Graph" ReturnType="Collection(EmployeeModel.sp_PhysicalMonitor_ISSR_Graph_Result)">
+            <Parameter Name="State_Code" Mode="In" Type="String" />
+            <Parameter Name="dcode" Mode="In" Type="String" />
+            <Parameter Name="cityCode" Mode="In" Type="String" />
+            <Parameter Name="Component" Mode="In" Type="String" />
+            <Parameter Name="FinYear" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="sp_RayThirdInstHouses" ReturnType="Collection(EmployeeModel.sp_RayThirdInstHouses_Result)">
             <Parameter Name="State_Code" Mode="In" Type="String" />
             <Parameter Name="dcode" Mode="In" Type="String" />
@@ -10667,6 +11476,13 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Shortfall_BLC_AHP" ReturnType="Collection(EmployeeModel.sp_Shortfall_BLC_AHP_Result)">
+            <Parameter Name="State_Code" Mode="In" Type="String" />
+            <Parameter Name="dcode" Mode="In" Type="String" />
+            <Parameter Name="cityCode" Mode="In" Type="String" />
+            <Parameter Name="Component" Mode="In" Type="String" />
+            <Parameter Name="FinYear" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_State" ReturnType="Collection(EmployeeModel.sp_State_Result)" />
           <FunctionImport Name="sp_upgraddiagrams" />
@@ -11536,10 +12352,12 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
           <Property Type="Double" Name="Project_Cost" Nullable="true" />
           <Property Type="Double" Name="Central_Assistance_involved" Nullable="true" />
+          <Property Type="Double" Name="CentralAssistanceReleased" Nullable="true" />
           <Property Type="Double" Name="FirstInstallmentReleased" Nullable="true" />
           <Property Type="Double" Name="SecondInstallmentReleased" Nullable="true" />
           <Property Type="Double" Name="ThirdInstallmentReleased" Nullable="true" />
           <Property Type="Double" Name="UC_Received" Nullable="true" />
+          <Property Type="Double" Name="UC_Pending" Nullable="true" />
         </ComplexType>
         <ComplexType Name="Proc_GetFinancialPMAY_Data_Result">
           <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
@@ -11548,7 +12366,10 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Type="Double" Name="FirstInstallmentReleased" Nullable="true" />
           <Property Type="Double" Name="SecondInstallmentReleased" Nullable="true" />
           <Property Type="Double" Name="ThirdInstallmentReleased" Nullable="true" />
+          <Property Type="Double" Name="CentralAssistanceReleased" Nullable="true" />
           <Property Type="Double" Name="UC_Received" Nullable="true" />
+          <Property Type="Double" Name="UC_Pending" Nullable="true" />
+          <Property Type="Double" Name="Liability14" Nullable="true" />
         </ComplexType>
         <ComplexType Name="Proc_Inv_Cons_StateWise_Result">
           <Property Type="Double" Name="Demand" Nullable="true" />
@@ -11741,6 +12562,18 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Type="Double" Name="UC_Received" Nullable="true" />
         </ComplexType>
         <ComplexType Name="sp_create_Fin_ConsPMAYDATA_Result">
+          <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
+          <Property Type="Double" Name="Project_Cost" Nullable="true" />
+          <Property Type="Double" Name="Central_Assistance_involved" Nullable="true" />
+          <Property Type="Double" Name="FirstInstallmentReleased" Nullable="true" />
+          <Property Type="Double" Name="Liability14" Nullable="true" />
+          <Property Type="Double" Name="SecondInstallmentReleased" Nullable="true" />
+          <Property Type="Double" Name="ThirdInstallmentReleased" Nullable="true" />
+          <Property Type="Double" Name="UC_Pending" Nullable="true" />
+          <Property Type="Double" Name="UC_Received" Nullable="true" />
+          <Property Type="Double" Name="CentralAssistanceReleased" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_create_Fin_ConsPMAYDATA_Back_Result">
           <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
           <Property Type="Double" Name="Project_Cost" Nullable="true" />
           <Property Type="Double" Name="Central_Assistance_involved" Nullable="true" />
@@ -12246,9 +13079,29 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <Property Type="String" Name="Completed" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="Occupied" Nullable="true" MaxLength="20" />
         </ComplexType>
+        <ComplexType Name="sp_PhysicalMonitor_ISSR_Graph_Result">
+          <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
+          <Property Type="Double" Name="Project_Cost" Nullable="true" />
+          <Property Type="Double" Name="Central_Assistance_involved" Nullable="true" />
+          <Property Type="Double" Name="CentralAssistanceReleased" Nullable="true" />
+          <Property Type="Double" Name="FirstInstallmentReleased" Nullable="true" />
+          <Property Type="Double" Name="SecondInstallmentReleased" Nullable="true" />
+          <Property Type="Double" Name="ThirdInstallmentReleased" Nullable="true" />
+          <Property Type="Double" Name="Liability14" Nullable="true" />
+          <Property Type="Double" Name="UC_Pending" Nullable="true" />
+          <Property Type="Double" Name="UC_Received" Nullable="true" />
+        </ComplexType>
         <ComplexType Name="sp_RayThirdInstHouses_Result">
           <Property Type="Double" Name="Housesinvolved" Nullable="true" />
           <Property Type="Double" Name="ThirdInstallmentReleased" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_Shortfall_BLC_AHP_Result">
+          <Property Type="String" Name="SrNo" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="Component" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
+          <Property Type="Double" Name="Completed" Nullable="true" />
+          <Property Type="Double" Name="Actual_Completed" Nullable="true" />
+          <Property Type="Double" Name="Shortfall_Completed" Nullable="true" />
         </ComplexType>
         <ComplexType Name="sp_State_Result">
           <Property Type="Int32" Name="StateId" Nullable="false" />
@@ -12843,6 +13696,18 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="cmasters">
+            <EntityTypeMapping TypeName="EmployeeModel.cmaster">
+              <MappingFragment StoreEntitySet="cmaster">
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+                <ScalarProperty Name="Cname" ColumnName="Cname" />
+                <ScalarProperty Name="SchemeComponentName" ColumnName="SchemeComponentName" />
+                <ScalarProperty Name="SchemeShortName" ColumnName="SchemeShortName" />
+                <ScalarProperty Name="sFlag" ColumnName="sFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Combined_States">
             <EntityTypeMapping TypeName="EmployeeModel.Combined_States">
               <MappingFragment StoreEntitySet="Combined_States">
@@ -13431,6 +14296,80 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Physical_Dashboard_de_2019">
+            <EntityTypeMapping TypeName="EmployeeModel.Physical_Dashboard_de_2019">
+              <MappingFragment StoreEntitySet="Physical_Dashboard de 2019">
+                <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+                <ScalarProperty Name="State1" ColumnName="State1" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="Demand" ColumnName="Demand" />
+                <ScalarProperty Name="Houses_Sanctioned" ColumnName="Houses_Sanctioned" />
+                <ScalarProperty Name="CentralShare" ColumnName="CentralShare" />
+                <ScalarProperty Name="StateShare" ColumnName="StateShare" />
+                <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+                <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+                <ScalarProperty Name="Completed" ColumnName="Completed" />
+                <ScalarProperty Name="Occupied" ColumnName="Occupied" />
+                <ScalarProperty Name="CAApproved" ColumnName="CAApproved" />
+                <ScalarProperty Name="CASanctionedforRelease" ColumnName="CASanctionedforRelease" />
+                <ScalarProperty Name="CAReleased" ColumnName="CAReleased" />
+                <ScalarProperty Name="PendingforRelease" ColumnName="PendingforRelease" />
+                <ScalarProperty Name="IIIQ_15_16" ColumnName="IIIQ_15_16" />
+                <ScalarProperty Name="IV_Q_15_16" ColumnName="IV_Q_15_16" />
+                <ScalarProperty Name="IQ_16_17" ColumnName="IQ_16_17" />
+                <ScalarProperty Name="IIQ_16_17" ColumnName="IIQ_16_17" />
+                <ScalarProperty Name="IIIQ_16_17" ColumnName="IIIQ_16_17" />
+                <ScalarProperty Name="IV_Q_16_17" ColumnName="IV_Q_16_17" />
+                <ScalarProperty Name="I_Q_17_18" ColumnName="I_Q_17_18" />
+                <ScalarProperty Name="II_Q_17_18" ColumnName="II_Q_17_18" />
+                <ScalarProperty Name="III_Q_17_18" ColumnName="III_Q_17_18" />
+                <ScalarProperty Name="IV_Q_17_18" ColumnName="IV_Q_17_18" />
+                <ScalarProperty Name="I_Q_18_19" ColumnName="I_Q_18_19" />
+                <ScalarProperty Name="II_Q_18_19" ColumnName="II_Q_18_19" />
+                <ScalarProperty Name="III_Q_18_19" ColumnName="III_Q_18_19" />
+                <ScalarProperty Name="IV_Q_18_19" ColumnName="IV_Q_18_19" />
+                <ScalarProperty Name="I_Q_19_20" ColumnName="I_Q_19_20" />
+                <ScalarProperty Name="SRNo1" ColumnName="SRNo1" />
+                <ScalarProperty Name="State2" ColumnName="State2" />
+                <ScalarProperty Name="CumSanctioned" ColumnName="CumSanctioned" />
+                <ScalarProperty Name="CASanctioned_15_16" ColumnName="CASanctioned_15_16" />
+                <ScalarProperty Name="CASanctioned_16_17" ColumnName="CASanctioned_16_17" />
+                <ScalarProperty Name="CASanctioned_17_18" ColumnName="CASanctioned_17_18" />
+                <ScalarProperty Name="CASanctioned_18_19" ColumnName="CASanctioned_18_19" />
+                <ScalarProperty Name="CASanctioned_19_20" ColumnName="CASanctioned_19_20" />
+                <ScalarProperty Name="CumuCAReleased" ColumnName="CumuCAReleased" />
+                <ScalarProperty Name="CumuCA_Released_15_16" ColumnName="CumuCA_Released_15_16" />
+                <ScalarProperty Name="CumuCA_Released_16_17" ColumnName="CumuCA_Released_16_17" />
+                <ScalarProperty Name="CumuCA_Released_17_18" ColumnName="CumuCA_Released_17_18" />
+                <ScalarProperty Name="CumuCA_Released_18_19" ColumnName="CumuCA_Released_18_19" />
+                <ScalarProperty Name="CumuCA_Released_19_20" ColumnName="CumuCA_Released_19_20" />
+                <ScalarProperty Name="HS_Cum_20_8_18" ColumnName="HS_Cum_20_8_18" />
+                <ScalarProperty Name="HS_15_16" ColumnName="HS_15_16" />
+                <ScalarProperty Name="HS_16_17" ColumnName="HS_16_17" />
+                <ScalarProperty Name="HS_17_18" ColumnName="HS_17_18" />
+                <ScalarProperty Name="HS_18_19" ColumnName="HS_18_19" />
+                <ScalarProperty Name="HS_19_20" ColumnName="HS_19_20" />
+                <ScalarProperty Name="HC_20_08_18" ColumnName="HC_20_08_18" />
+                <ScalarProperty Name="HC_14_15" ColumnName="HC_14_15" />
+                <ScalarProperty Name="HC_15_16" ColumnName="HC_15_16" />
+                <ScalarProperty Name="HC_16_17" ColumnName="HC_16_17" />
+                <ScalarProperty Name="HC_17_18" ColumnName="HC_17_18" />
+                <ScalarProperty Name="HC_18_19" ColumnName="HC_18_19" />
+                <ScalarProperty Name="HC_19_20" ColumnName="HC_19_20" />
+                <ScalarProperty Name="HO_Cum" ColumnName="HO_Cum" />
+                <ScalarProperty Name="HO_14_15" ColumnName="HO_14_15" />
+                <ScalarProperty Name="HO_15_16" ColumnName="HO_15_16" />
+                <ScalarProperty Name="HO_16_17" ColumnName="HO_16_17" />
+                <ScalarProperty Name="HO_17_18" ColumnName="HO_17_18" />
+                <ScalarProperty Name="HO_18_19" ColumnName="HO_18_19" />
+                <ScalarProperty Name="HO_19_20" ColumnName="HO_19_20" />
+                <ScalarProperty Name="Expenditure" ColumnName="Expenditure" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Physical_DashboardExcel">
             <EntityTypeMapping TypeName="EmployeeModel.Physical_DashboardExcel">
               <MappingFragment StoreEntitySet="Physical_DashboardExcel">
@@ -13624,6 +14563,57 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
                 <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
                 <ScalarProperty Name="FundsDisbursed_in_Houses_II" ColumnName="FundsDisbursed_in_Houses_II" />
                 <ScalarProperty Name="FundsDisbursed_in_Houses_III" ColumnName="FundsDisbursed_in_Houses_III" />
+                <ScalarProperty Name="Actual_Completed" ColumnName="Actual_Completed" />
+                <ScalarProperty Name="Shortfall_Completed" ColumnName="Shortfall_Completed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PMAY_PROJECTS_Fin_jan">
+            <EntityTypeMapping TypeName="EmployeeModel.PMAY_PROJECTS_Fin_jan">
+              <MappingFragment StoreEntitySet="PMAY_PROJECTS_Fin jan">
+                <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+                <ScalarProperty Name="Project_Code" ColumnName="Project_Code" />
+                <ScalarProperty Name="Annexure_ID" ColumnName="Annexure_ID" />
+                <ScalarProperty Name="Component" ColumnName="Component" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="Dcode" ColumnName="Dcode" />
+                <ScalarProperty Name="sunDisttCode" ColumnName="sunDisttCode" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+                <ScalarProperty Name="CSMCDate" ColumnName="CSMCDate" />
+                <ScalarProperty Name="CSMCNo" ColumnName="CSMCNo" />
+                <ScalarProperty Name="FinYear" ColumnName="FinYear" />
+                <ScalarProperty Name="NoofProjects" ColumnName="NoofProjects" />
+                <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
+                <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
+                <ScalarProperty Name="State_Grant" ColumnName="State_Grant" />
+                <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+                <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+                <ScalarProperty Name="Released_throug_EBR" ColumnName="Released_throug_EBR" />
+                <ScalarProperty Name="CASanctionedForRel" ColumnName="CASanctionedForRel" />
+                <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
+                <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
+                <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
+                <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
+                <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+                <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
+                <ScalarProperty Name="Housesinvolved" ColumnName="Housesinvolved" />
+                <ScalarProperty Name="FundsDisbursed_in_Houses" ColumnName="FundsDisbursed_in_Houses" />
+                <ScalarProperty Name="Houses_Grounded" ColumnName="Houses_Grounded" />
+                <ScalarProperty Name="HousesUnderProgress" ColumnName="HousesUnderProgress" />
+                <ScalarProperty Name="Houses_Completed" ColumnName="Houses_Completed" />
+                <ScalarProperty Name="HousesAllotted" ColumnName="HousesAllotted" />
+                <ScalarProperty Name="HousesOccupied" ColumnName="HousesOccupied" />
+                <ScalarProperty Name="Houses_yetto_Grounded" ColumnName="Houses_yetto_Grounded" />
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+                <ScalarProperty Name="FundsDisbursed_in_Houses_II" ColumnName="FundsDisbursed_in_Houses_II" />
+                <ScalarProperty Name="FundsDisbursed_in_Houses_III" ColumnName="FundsDisbursed_in_Houses_III" />
+                <ScalarProperty Name="Actual_Completed" ColumnName="Actual_Completed" />
+                <ScalarProperty Name="Shortfall_Completed" ColumnName="Shortfall_Completed" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -13715,6 +14705,53 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
                 <ScalarProperty Name="HousesOccupied" ColumnName="HousesOccupied" />
                 <ScalarProperty Name="Houses_yetto_Grounded" ColumnName="Houses_yetto_Grounded" />
                 <ScalarProperty Name="Cid" ColumnName="Cid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PMAY_PROJECTS_Fin_Dec_2019">
+            <EntityTypeMapping TypeName="EmployeeModel.PMAY_PROJECTS_Fin_Dec_2019">
+              <MappingFragment StoreEntitySet="PMAY_PROJECTS_Fin_Dec 2019">
+                <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+                <ScalarProperty Name="Project_Code" ColumnName="Project_Code" />
+                <ScalarProperty Name="Annexure_ID" ColumnName="Annexure_ID" />
+                <ScalarProperty Name="Component" ColumnName="Component" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="Dcode" ColumnName="Dcode" />
+                <ScalarProperty Name="sunDisttCode" ColumnName="sunDisttCode" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+                <ScalarProperty Name="CSMCDate" ColumnName="CSMCDate" />
+                <ScalarProperty Name="CSMCNo" ColumnName="CSMCNo" />
+                <ScalarProperty Name="FinYear" ColumnName="FinYear" />
+                <ScalarProperty Name="NoofProjects" ColumnName="NoofProjects" />
+                <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
+                <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
+                <ScalarProperty Name="State_Grant" ColumnName="State_Grant" />
+                <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+                <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+                <ScalarProperty Name="Released_throug_EBR" ColumnName="Released_throug_EBR" />
+                <ScalarProperty Name="CASanctionedForRel" ColumnName="CASanctionedForRel" />
+                <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
+                <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
+                <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
+                <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
+                <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+                <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
+                <ScalarProperty Name="Housesinvolved" ColumnName="Housesinvolved" />
+                <ScalarProperty Name="FundsDisbursed_in_Houses" ColumnName="FundsDisbursed_in_Houses" />
+                <ScalarProperty Name="Houses_Grounded" ColumnName="Houses_Grounded" />
+                <ScalarProperty Name="HousesUnderProgress" ColumnName="HousesUnderProgress" />
+                <ScalarProperty Name="Houses_Completed" ColumnName="Houses_Completed" />
+                <ScalarProperty Name="HousesAllotted" ColumnName="HousesAllotted" />
+                <ScalarProperty Name="HousesOccupied" ColumnName="HousesOccupied" />
+                <ScalarProperty Name="Houses_yetto_Grounded" ColumnName="Houses_yetto_Grounded" />
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+                <ScalarProperty Name="FundsDisbursed_in_Houses_II" ColumnName="FundsDisbursed_in_Houses_II" />
+                <ScalarProperty Name="FundsDisbursed_in_Houses_III" ColumnName="FundsDisbursed_in_Houses_III" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -13851,9 +14888,66 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PMAYU_MainDashboard">
+            <EntityTypeMapping TypeName="EmployeeModel.PMAYU_MainDashboard">
+              <MappingFragment StoreEntitySet="PMAYU_MainDashboard">
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+                <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+                <ScalarProperty Name="Completed" ColumnName="Completed" />
+                <ScalarProperty Name="Occupied" ColumnName="Occupied" />
+                <ScalarProperty Name="sCommitted" ColumnName="sCommitted" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Released" ColumnName="Released" />
+                <ScalarProperty Name="Utilized" ColumnName="Utilized" />
+                <ScalarProperty Name="Overall" ColumnName="Overall" />
+                <ScalarProperty Name="sPublic" ColumnName="sPublic" />
+                <ScalarProperty Name="Private" ColumnName="Private" />
+                <ScalarProperty Name="PDaysDirect" ColumnName="PDaysDirect" />
+                <ScalarProperty Name="PDaysIndirect" ColumnName="PDaysIndirect" />
+                <ScalarProperty Name="PDaysTotal" ColumnName="PDaysTotal" />
+                <ScalarProperty Name="JobsDirect" ColumnName="JobsDirect" />
+                <ScalarProperty Name="JobsIndirect" ColumnName="JobsIndirect" />
+                <ScalarProperty Name="JobsTotal" ColumnName="JobsTotal" />
+                <ScalarProperty Name="sActive" ColumnName="sActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Projct_Details">
             <EntityTypeMapping TypeName="EmployeeModel.Projct_Details">
               <MappingFragment StoreEntitySet="Projct_Details">
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="CSMCDate" ColumnName="CSMCDate" />
+                <ScalarProperty Name="CSMCNumber" ColumnName="CSMCNumber" />
+                <ScalarProperty Name="Scheme" ColumnName="Scheme" />
+                <ScalarProperty Name="SchemeComponent" ColumnName="SchemeComponent" />
+                <ScalarProperty Name="ProjectAgencies" ColumnName="ProjectAgencies" />
+                <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+                <ScalarProperty Name="ProjectDuration" ColumnName="ProjectDuration" />
+                <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+                <ScalarProperty Name="ProjectCost" ColumnName="ProjectCost" />
+                <ScalarProperty Name="CentralAssistance" ColumnName="CentralAssistance" />
+                <ScalarProperty Name="StateGrant" ColumnName="StateGrant" />
+                <ScalarProperty Name="ULB" ColumnName="ULB" />
+                <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+                <ScalarProperty Name="OtherCost" ColumnName="OtherCost" />
+                <ScalarProperty Name="NewSanction" ColumnName="NewSanction" />
+                <ScalarProperty Name="UpgradeSanction" ColumnName="UpgradeSanction" />
+                <ScalarProperty Name="TotalSanction" ColumnName="TotalSanction" />
+                <ScalarProperty Name="FirstInstallment" ColumnName="FirstInstallment" />
+                <ScalarProperty Name="ActiveFlag" ColumnName="ActiveFlag" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projct_Details_Jan">
+            <EntityTypeMapping TypeName="EmployeeModel.Projct_Details_Jan">
+              <MappingFragment StoreEntitySet="Projct_Details_Jan">
                 <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
                 <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
                 <ScalarProperty Name="StateCode" ColumnName="StateCode" />
@@ -14448,6 +15542,98 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <EntitySetMapping Name="tblStateWiseScores">
             <EntityTypeMapping TypeName="EmployeeModel.tblStateWiseScore">
               <MappingFragment StoreEntitySet="tblStateWiseScore">
+                <ScalarProperty Name="ScoreId" ColumnName="ScoreId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Codes" ColumnName="Codes" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="Sanction_vs_Demand" ColumnName="Sanction_vs_Demand" />
+                <ScalarProperty Name="Grounding_Sanction" ColumnName="Grounding_Sanction" />
+                <ScalarProperty Name="Completion_vs_Sanction" ColumnName="Completion_vs_Sanction" />
+                <ScalarProperty Name="BLC_Houses_Geotagged" ColumnName="BLC_Houses_Geotagged" />
+                <ScalarProperty Name="Relelase_vs_Sanction" ColumnName="Relelase_vs_Sanction" />
+                <ScalarProperty Name="MIS_Annexure_uploading" ColumnName="MIS_Annexure_uploading" />
+                <ScalarProperty Name="Beneficiary_Attachment" ColumnName="Beneficiary_Attachment" />
+                <ScalarProperty Name="Reforms_Achievement" ColumnName="Reforms_Achievement" />
+                <ScalarProperty Name="JN_Houses_vacant" ColumnName="JN_Houses_vacant" />
+                <ScalarProperty Name="Population_Census_2011" ColumnName="Population_Census_2011" />
+                <ScalarProperty Name="TG_12_Housing_Shortage" ColumnName="TG_12_Housing_Shortage" />
+                <ScalarProperty Name="Aadhar_Coverage" ColumnName="Aadhar_Coverage" />
+                <ScalarProperty Name="Cities_included_in_Mission" ColumnName="Cities_included_in_Mission" />
+                <ScalarProperty Name="Total_Demand_as_per_Road_map" ColumnName="Total_Demand_as_per_Road_map" />
+                <ScalarProperty Name="Demand_met" ColumnName="Demand_met" />
+                <ScalarProperty Name="Per_Demand_met" ColumnName="Per_Demand_met" />
+                <ScalarProperty Name="Total_PMAY_U_Houses_ISSR_AHP_BLC_CLSS" ColumnName="Total_PMAY_U_Houses_ISSR_AHP_BLC_CLSS" />
+                <ScalarProperty Name="Valid_Aadhar_Beneficiaries" ColumnName="Valid_Aadhar_Beneficiaries" />
+                <ScalarProperty Name="Bene_Percentage" ColumnName="Bene_Percentage" />
+                <ScalarProperty Name="HFAPoA_funds_Released" ColumnName="HFAPoA_funds_Released" />
+                <ScalarProperty Name="HFAPoA_Received" ColumnName="HFAPoA_Received" />
+                <ScalarProperty Name="HFAPoA_Status" ColumnName="HFAPoA_Status" />
+                <ScalarProperty Name="ISSR_NOP" ColumnName="ISSR_NOP" />
+                <ScalarProperty Name="AHP_NOP" ColumnName="AHP_NOP" />
+                <ScalarProperty Name="BLC_NOP" ColumnName="BLC_NOP" />
+                <ScalarProperty Name="ISSR_CA_Committed" ColumnName="ISSR_CA_Committed" />
+                <ScalarProperty Name="AHP_CA_Committed" ColumnName="AHP_CA_Committed" />
+                <ScalarProperty Name="BLC_CA_Committed" ColumnName="BLC_CA_Committed" />
+                <ScalarProperty Name="ISSR_Sanct_for_Release" ColumnName="ISSR_Sanct_for_Release" />
+                <ScalarProperty Name="AHP_Sanct_for_Release" ColumnName="AHP_Sanct_for_Release" />
+                <ScalarProperty Name="BLC_Sanct_for_Release" ColumnName="BLC_Sanct_for_Release" />
+                <ScalarProperty Name="ISSR_CA_Released" ColumnName="ISSR_CA_Released" />
+                <ScalarProperty Name="AHP_CA_Released" ColumnName="AHP_CA_Released" />
+                <ScalarProperty Name="BLC_CA_Released" ColumnName="BLC_CA_Released" />
+                <ScalarProperty Name="ISSR_Balance_for_Release" ColumnName="ISSR_Balance_for_Release" />
+                <ScalarProperty Name="AHP_Balance_for_Release" ColumnName="AHP_Balance_for_Release" />
+                <ScalarProperty Name="BLC_Balance_for_Release" ColumnName="BLC_Balance_for_Release" />
+                <ScalarProperty Name="ISSR_Houses_Sanctioned" ColumnName="ISSR_Houses_Sanctioned" />
+                <ScalarProperty Name="AHP_Houses_Sanctioned" ColumnName="AHP_Houses_Sanctioned" />
+                <ScalarProperty Name="BLC_Houses_Sanctioned" ColumnName="BLC_Houses_Sanctioned" />
+                <ScalarProperty Name="ISSR_Grounded" ColumnName="ISSR_Grounded" />
+                <ScalarProperty Name="AHP_Grounded" ColumnName="AHP_Grounded" />
+                <ScalarProperty Name="BLC_Grounded" ColumnName="BLC_Grounded" />
+                <ScalarProperty Name="ISSR_Completed" ColumnName="ISSR_Completed" />
+                <ScalarProperty Name="AHP_Completed" ColumnName="AHP_Completed" />
+                <ScalarProperty Name="BLC_Completed" ColumnName="BLC_Completed" />
+                <ScalarProperty Name="PMAY_Funds_Released" ColumnName="PMAY_Funds_Released" />
+                <ScalarProperty Name="PMAY_Ucs_Received" ColumnName="PMAY_Ucs_Received" />
+                <ScalarProperty Name="PMAY_UC_Pending" ColumnName="PMAY_UC_Pending" />
+                <ScalarProperty Name="PMAY_Houses_Occupied" ColumnName="PMAY_Houses_Occupied" />
+                <ScalarProperty Name="Reforms" ColumnName="Reforms" />
+                <ScalarProperty Name="Reforms_Achieved" ColumnName="Reforms_Achieved" />
+                <ScalarProperty Name="SLTC_Funds_Released_RsinnCr" ColumnName="SLTC_Funds_Released_RsinnCr" />
+                <ScalarProperty Name="SLTC_Specialists_Approved" ColumnName="SLTC_Specialists_Approved" />
+                <ScalarProperty Name="SLTC_Specialists_in_Place" ColumnName="SLTC_Specialists_in_Place" />
+                <ScalarProperty Name="CLTC_Funds_Released_RsinCr" ColumnName="CLTC_Funds_Released_RsinCr" />
+                <ScalarProperty Name="CLTC_Specialists_Approved" ColumnName="CLTC_Specialists_Approved" />
+                <ScalarProperty Name="CLTC_Specialists_in_Place" ColumnName="CLTC_Specialists_in_Place" />
+                <ScalarProperty Name="Projects_Approved" ColumnName="Projects_Approved" />
+                <ScalarProperty Name="Projects_uploaded" ColumnName="Projects_uploaded" />
+                <ScalarProperty Name="Percent_Projects_uploaded" ColumnName="Percent_Projects_uploaded" />
+                <ScalarProperty Name="BLC_Houses_Approved" ColumnName="BLC_Houses_Approved" />
+                <ScalarProperty Name="BLC_Houses_Grounded" ColumnName="BLC_Houses_Grounded" />
+                <ScalarProperty Name="BLC_Houses_Geo_Tagged" ColumnName="BLC_Houses_Geo_Tagged" />
+                <ScalarProperty Name="CLSS_MIS_Survey" ColumnName="CLSS_MIS_Survey" />
+                <ScalarProperty Name="CLSS_Beneficiaries_EWS_LIG_MIG" ColumnName="CLSS_Beneficiaries_EWS_LIG_MIG" />
+                <ScalarProperty Name="CLSS_Subsidy_EWS_LIG_MIG" ColumnName="CLSS_Subsidy_EWS_LIG_MIG" />
+                <ScalarProperty Name="JN_Houses_Sanctioned" ColumnName="JN_Houses_Sanctioned" />
+                <ScalarProperty Name="JN_Houses_Completed" ColumnName="JN_Houses_Completed" />
+                <ScalarProperty Name="JN_Houses_Occupied" ColumnName="JN_Houses_Occupied" />
+                <ScalarProperty Name="JN_Houses_In_Progress" ColumnName="JN_Houses_In_Progress" />
+                <ScalarProperty Name="JN_Houses_Unoccupied" ColumnName="JN_Houses_Unoccupied" />
+                <ScalarProperty Name="JN_Houses_Non_Starter" ColumnName="JN_Houses_Non_Starter" />
+                <ScalarProperty Name="JN_UC_Pending" ColumnName="JN_UC_Pending" />
+                <ScalarProperty Name="RAY_Houses_Sanctioned" ColumnName="RAY_Houses_Sanctioned" />
+                <ScalarProperty Name="RAY_Houses_Completed" ColumnName="RAY_Houses_Completed" />
+                <ScalarProperty Name="RAY_Houses_Occupied" ColumnName="RAY_Houses_Occupied" />
+                <ScalarProperty Name="RAY_Houses_In_Progress" ColumnName="RAY_Houses_In_Progress" />
+                <ScalarProperty Name="RAY_Houses_Unoccupied" ColumnName="RAY_Houses_Unoccupied" />
+                <ScalarProperty Name="RAY_Houses_Non_Starter" ColumnName="RAY_Houses_Non_Starter" />
+                <ScalarProperty Name="RAY_UC_Pending" ColumnName="RAY_UC_Pending" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStateWiseScore_dec_2019">
+            <EntityTypeMapping TypeName="EmployeeModel.tblStateWiseScore_dec_2019">
+              <MappingFragment StoreEntitySet="tblStateWiseScore dec 2019">
                 <ScalarProperty Name="ScoreId" ColumnName="ScoreId" />
                 <ScalarProperty Name="StateId" ColumnName="StateId" />
                 <ScalarProperty Name="Codes" ColumnName="Codes" />
@@ -15396,6 +16582,8 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
                 <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
                 <ScalarProperty Name="FundsDisbursed_in_Houses_II" ColumnName="FundsDisbursed_in_Houses_II" />
                 <ScalarProperty Name="FundsDisbursed_in_Houses_III" ColumnName="FundsDisbursed_in_Houses_III" />
+                <ScalarProperty Name="Actual_Completed" ColumnName="Actual_Completed" />
+                <ScalarProperty Name="Shortfall_Completed" ColumnName="Shortfall_Completed" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -15637,6 +16825,13 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionName="EmployeeModel.Store.fnSplitString" FunctionImportName="fnSplitString">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmployeeModel.fnSplitString_Result">
+                <ScalarProperty Name="splitdata" ColumnName="splitdata" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionName="EmployeeModel.Store.Split" FunctionImportName="Split">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EmployeeModel.Split_Result">
@@ -15666,6 +16861,8 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Del_PhyProgressReport" FunctionName="EmployeeModel.Store.Del_PhyProgressReport" />
+          <FunctionImportMapping FunctionImportName="Del_ProjectDetail" FunctionName="EmployeeModel.Store.Del_ProjectDetail" />
           <FunctionImportMapping FunctionImportName="Excel_ClssProc" FunctionName="EmployeeModel.Store.Excel_ClssProc">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EmployeeModel.Excel_ClssProc_Result">
@@ -16816,10 +18013,12 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
                 <ScalarProperty Name="FinYear" ColumnName="FinYear" />
                 <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
                 <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
+                <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
                 <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
                 <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
                 <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
                 <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+                <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -16832,7 +18031,10 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
                 <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
                 <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
                 <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
+                <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
                 <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+                <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
+                <ScalarProperty Name="Liability14" ColumnName="Liability14" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -17072,6 +18274,7 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_create_AHP_DATAFinYeraWise" FunctionName="EmployeeModel.Store.sp_create_AHP_DATAFinYeraWise" />
+          <FunctionImportMapping FunctionImportName="sp_create_AHP_GraphCritical_DATA_FinWise" FunctionName="EmployeeModel.Store.sp_create_AHP_GraphCritical_DATA_FinWise" />
           <FunctionImportMapping FunctionImportName="sp_create_AHP_GraphCritical_DATAFinYeraWise" FunctionName="EmployeeModel.Store.sp_create_AHP_GraphCritical_DATAFinYeraWise" />
           <FunctionImportMapping FunctionImportName="sp_create_BLC_AHP_DATA" FunctionName="EmployeeModel.Store.sp_create_BLC_AHP_DATA">
             <ResultMapping>
@@ -17088,6 +18291,7 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_create_BLC_GraphCritical_DATA_FinWise" FunctionName="EmployeeModel.Store.sp_create_BLC_GraphCritical_DATA_FinWise" />
           <FunctionImportMapping FunctionImportName="sp_create_BLCS_DATAFinYeraWise" FunctionName="EmployeeModel.Store.sp_create_BLCS_DATAFinYeraWise" />
           <FunctionImportMapping FunctionImportName="sp_create_BLCS_GraphCritical_DATAFinYeraWise" FunctionName="EmployeeModel.Store.sp_create_BLCS_GraphCritical_DATAFinYeraWise" />
           <FunctionImportMapping FunctionImportName="sp_create_Fin_Cons_ISSRDATA" FunctionName="EmployeeModel.Store.sp_create_Fin_Cons_ISSRDATA">
@@ -17107,6 +18311,22 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
           <FunctionImportMapping FunctionImportName="sp_create_Fin_ConsPMAYDATA" FunctionName="EmployeeModel.Store.sp_create_Fin_ConsPMAYDATA">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EmployeeModel.sp_create_Fin_ConsPMAYDATA_Result">
+                <ScalarProperty Name="FinYear" ColumnName="FinYear" />
+                <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
+                <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
+                <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
+                <ScalarProperty Name="Liability14" ColumnName="Liability14" />
+                <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
+                <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
+                <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
+                <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+                <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_create_Fin_ConsPMAYDATA_Back" FunctionName="EmployeeModel.Store.sp_create_Fin_ConsPMAYDATA_Back">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmployeeModel.sp_create_Fin_ConsPMAYDATA_Back_Result">
                 <ScalarProperty Name="FinYear" ColumnName="FinYear" />
                 <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
                 <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
@@ -17850,6 +19070,26 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Phy_Critical_View" FunctionName="EmployeeModel.Store.sp_Phy_Critical_View" />
+          <FunctionImportMapping FunctionImportName="sp_Phy_Critical_View_" FunctionName="EmployeeModel.Store.sp_Phy_Critical_View_" />
+          <FunctionImportMapping FunctionImportName="sp_Phy_Monitoring_View" FunctionName="EmployeeModel.Store.sp_Phy_Monitoring_View" />
+          <FunctionImportMapping FunctionImportName="sp_Phy_ShortFall" FunctionName="EmployeeModel.Store.sp_Phy_ShortFall" />
+          <FunctionImportMapping FunctionImportName="sp_PhysicalMonitor_ISSR_Graph" FunctionName="EmployeeModel.Store.sp_PhysicalMonitor_ISSR_Graph">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmployeeModel.sp_PhysicalMonitor_ISSR_Graph_Result">
+                <ScalarProperty Name="FinYear" ColumnName="FinYear" />
+                <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
+                <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
+                <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
+                <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
+                <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
+                <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
+                <ScalarProperty Name="Liability14" ColumnName="Liability14" />
+                <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
+                <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_RayThirdInstHouses" FunctionName="EmployeeModel.Store.sp_RayThirdInstHouses">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EmployeeModel.sp_RayThirdInstHouses_Result">
@@ -17859,6 +19099,18 @@ warning 6002: The table/view 'Employee.dbo.UserMaster not used' does not have a 
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="EmployeeModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_Shortfall_BLC_AHP" FunctionName="EmployeeModel.Store.sp_Shortfall_BLC_AHP">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmployeeModel.sp_Shortfall_BLC_AHP_Result">
+                <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+                <ScalarProperty Name="Component" ColumnName="Component" />
+                <ScalarProperty Name="FinYear" ColumnName="FinYear" />
+                <ScalarProperty Name="Completed" ColumnName="Completed" />
+                <ScalarProperty Name="Actual_Completed" ColumnName="Actual_Completed" />
+                <ScalarProperty Name="Shortfall_Completed" ColumnName="Shortfall_Completed" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_State" FunctionName="EmployeeModel.Store.sp_State">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EmployeeModel.sp_State_Result">

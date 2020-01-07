@@ -513,6 +513,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="cmasters">
+      <EntityTypeMapping TypeName="EmployeeModel.cmaster">
+        <MappingFragment StoreEntitySet="cmaster">
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="Cname" ColumnName="Cname" />
+          <ScalarProperty Name="SchemeComponentName" ColumnName="SchemeComponentName" />
+          <ScalarProperty Name="SchemeShortName" ColumnName="SchemeShortName" />
+          <ScalarProperty Name="sFlag" ColumnName="sFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Combined_States">
       <EntityTypeMapping TypeName="EmployeeModel.Combined_States">
         <MappingFragment StoreEntitySet="Combined_States">
@@ -1101,6 +1113,80 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Physical_Dashboard_de_2019">
+      <EntityTypeMapping TypeName="EmployeeModel.Physical_Dashboard_de_2019">
+        <MappingFragment StoreEntitySet="Physical_Dashboard de 2019">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="State1" ColumnName="State1" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Demand" ColumnName="Demand" />
+          <ScalarProperty Name="Houses_Sanctioned" ColumnName="Houses_Sanctioned" />
+          <ScalarProperty Name="CentralShare" ColumnName="CentralShare" />
+          <ScalarProperty Name="StateShare" ColumnName="StateShare" />
+          <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+          <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="Occupied" ColumnName="Occupied" />
+          <ScalarProperty Name="CAApproved" ColumnName="CAApproved" />
+          <ScalarProperty Name="CASanctionedforRelease" ColumnName="CASanctionedforRelease" />
+          <ScalarProperty Name="CAReleased" ColumnName="CAReleased" />
+          <ScalarProperty Name="PendingforRelease" ColumnName="PendingforRelease" />
+          <ScalarProperty Name="IIIQ_15_16" ColumnName="IIIQ_15_16" />
+          <ScalarProperty Name="IV_Q_15_16" ColumnName="IV_Q_15_16" />
+          <ScalarProperty Name="IQ_16_17" ColumnName="IQ_16_17" />
+          <ScalarProperty Name="IIQ_16_17" ColumnName="IIQ_16_17" />
+          <ScalarProperty Name="IIIQ_16_17" ColumnName="IIIQ_16_17" />
+          <ScalarProperty Name="IV_Q_16_17" ColumnName="IV_Q_16_17" />
+          <ScalarProperty Name="I_Q_17_18" ColumnName="I_Q_17_18" />
+          <ScalarProperty Name="II_Q_17_18" ColumnName="II_Q_17_18" />
+          <ScalarProperty Name="III_Q_17_18" ColumnName="III_Q_17_18" />
+          <ScalarProperty Name="IV_Q_17_18" ColumnName="IV_Q_17_18" />
+          <ScalarProperty Name="I_Q_18_19" ColumnName="I_Q_18_19" />
+          <ScalarProperty Name="II_Q_18_19" ColumnName="II_Q_18_19" />
+          <ScalarProperty Name="III_Q_18_19" ColumnName="III_Q_18_19" />
+          <ScalarProperty Name="IV_Q_18_19" ColumnName="IV_Q_18_19" />
+          <ScalarProperty Name="I_Q_19_20" ColumnName="I_Q_19_20" />
+          <ScalarProperty Name="SRNo1" ColumnName="SRNo1" />
+          <ScalarProperty Name="State2" ColumnName="State2" />
+          <ScalarProperty Name="CumSanctioned" ColumnName="CumSanctioned" />
+          <ScalarProperty Name="CASanctioned_15_16" ColumnName="CASanctioned_15_16" />
+          <ScalarProperty Name="CASanctioned_16_17" ColumnName="CASanctioned_16_17" />
+          <ScalarProperty Name="CASanctioned_17_18" ColumnName="CASanctioned_17_18" />
+          <ScalarProperty Name="CASanctioned_18_19" ColumnName="CASanctioned_18_19" />
+          <ScalarProperty Name="CASanctioned_19_20" ColumnName="CASanctioned_19_20" />
+          <ScalarProperty Name="CumuCAReleased" ColumnName="CumuCAReleased" />
+          <ScalarProperty Name="CumuCA_Released_15_16" ColumnName="CumuCA_Released_15_16" />
+          <ScalarProperty Name="CumuCA_Released_16_17" ColumnName="CumuCA_Released_16_17" />
+          <ScalarProperty Name="CumuCA_Released_17_18" ColumnName="CumuCA_Released_17_18" />
+          <ScalarProperty Name="CumuCA_Released_18_19" ColumnName="CumuCA_Released_18_19" />
+          <ScalarProperty Name="CumuCA_Released_19_20" ColumnName="CumuCA_Released_19_20" />
+          <ScalarProperty Name="HS_Cum_20_8_18" ColumnName="HS_Cum_20_8_18" />
+          <ScalarProperty Name="HS_15_16" ColumnName="HS_15_16" />
+          <ScalarProperty Name="HS_16_17" ColumnName="HS_16_17" />
+          <ScalarProperty Name="HS_17_18" ColumnName="HS_17_18" />
+          <ScalarProperty Name="HS_18_19" ColumnName="HS_18_19" />
+          <ScalarProperty Name="HS_19_20" ColumnName="HS_19_20" />
+          <ScalarProperty Name="HC_20_08_18" ColumnName="HC_20_08_18" />
+          <ScalarProperty Name="HC_14_15" ColumnName="HC_14_15" />
+          <ScalarProperty Name="HC_15_16" ColumnName="HC_15_16" />
+          <ScalarProperty Name="HC_16_17" ColumnName="HC_16_17" />
+          <ScalarProperty Name="HC_17_18" ColumnName="HC_17_18" />
+          <ScalarProperty Name="HC_18_19" ColumnName="HC_18_19" />
+          <ScalarProperty Name="HC_19_20" ColumnName="HC_19_20" />
+          <ScalarProperty Name="HO_Cum" ColumnName="HO_Cum" />
+          <ScalarProperty Name="HO_14_15" ColumnName="HO_14_15" />
+          <ScalarProperty Name="HO_15_16" ColumnName="HO_15_16" />
+          <ScalarProperty Name="HO_16_17" ColumnName="HO_16_17" />
+          <ScalarProperty Name="HO_17_18" ColumnName="HO_17_18" />
+          <ScalarProperty Name="HO_18_19" ColumnName="HO_18_19" />
+          <ScalarProperty Name="HO_19_20" ColumnName="HO_19_20" />
+          <ScalarProperty Name="Expenditure" ColumnName="Expenditure" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Physical_DashboardExcel">
       <EntityTypeMapping TypeName="EmployeeModel.Physical_DashboardExcel">
         <MappingFragment StoreEntitySet="Physical_DashboardExcel">
@@ -1294,6 +1380,57 @@
           <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
           <ScalarProperty Name="FundsDisbursed_in_Houses_II" ColumnName="FundsDisbursed_in_Houses_II" />
           <ScalarProperty Name="FundsDisbursed_in_Houses_III" ColumnName="FundsDisbursed_in_Houses_III" />
+          <ScalarProperty Name="Actual_Completed" ColumnName="Actual_Completed" />
+          <ScalarProperty Name="Shortfall_Completed" ColumnName="Shortfall_Completed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PMAY_PROJECTS_Fin_jan">
+      <EntityTypeMapping TypeName="EmployeeModel.PMAY_PROJECTS_Fin_jan">
+        <MappingFragment StoreEntitySet="PMAY_PROJECTS_Fin jan">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="Project_Code" ColumnName="Project_Code" />
+          <ScalarProperty Name="Annexure_ID" ColumnName="Annexure_ID" />
+          <ScalarProperty Name="Component" ColumnName="Component" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Dcode" ColumnName="Dcode" />
+          <ScalarProperty Name="sunDisttCode" ColumnName="sunDisttCode" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="CSMCDate" ColumnName="CSMCDate" />
+          <ScalarProperty Name="CSMCNo" ColumnName="CSMCNo" />
+          <ScalarProperty Name="FinYear" ColumnName="FinYear" />
+          <ScalarProperty Name="NoofProjects" ColumnName="NoofProjects" />
+          <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
+          <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
+          <ScalarProperty Name="State_Grant" ColumnName="State_Grant" />
+          <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+          <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+          <ScalarProperty Name="Released_throug_EBR" ColumnName="Released_throug_EBR" />
+          <ScalarProperty Name="CASanctionedForRel" ColumnName="CASanctionedForRel" />
+          <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
+          <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
+          <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
+          <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
+          <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+          <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
+          <ScalarProperty Name="Housesinvolved" ColumnName="Housesinvolved" />
+          <ScalarProperty Name="FundsDisbursed_in_Houses" ColumnName="FundsDisbursed_in_Houses" />
+          <ScalarProperty Name="Houses_Grounded" ColumnName="Houses_Grounded" />
+          <ScalarProperty Name="HousesUnderProgress" ColumnName="HousesUnderProgress" />
+          <ScalarProperty Name="Houses_Completed" ColumnName="Houses_Completed" />
+          <ScalarProperty Name="HousesAllotted" ColumnName="HousesAllotted" />
+          <ScalarProperty Name="HousesOccupied" ColumnName="HousesOccupied" />
+          <ScalarProperty Name="Houses_yetto_Grounded" ColumnName="Houses_yetto_Grounded" />
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+          <ScalarProperty Name="FundsDisbursed_in_Houses_II" ColumnName="FundsDisbursed_in_Houses_II" />
+          <ScalarProperty Name="FundsDisbursed_in_Houses_III" ColumnName="FundsDisbursed_in_Houses_III" />
+          <ScalarProperty Name="Actual_Completed" ColumnName="Actual_Completed" />
+          <ScalarProperty Name="Shortfall_Completed" ColumnName="Shortfall_Completed" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1385,6 +1522,53 @@
           <ScalarProperty Name="HousesOccupied" ColumnName="HousesOccupied" />
           <ScalarProperty Name="Houses_yetto_Grounded" ColumnName="Houses_yetto_Grounded" />
           <ScalarProperty Name="Cid" ColumnName="Cid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PMAY_PROJECTS_Fin_Dec_2019">
+      <EntityTypeMapping TypeName="EmployeeModel.PMAY_PROJECTS_Fin_Dec_2019">
+        <MappingFragment StoreEntitySet="PMAY_PROJECTS_Fin_Dec 2019">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="Project_Code" ColumnName="Project_Code" />
+          <ScalarProperty Name="Annexure_ID" ColumnName="Annexure_ID" />
+          <ScalarProperty Name="Component" ColumnName="Component" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Dcode" ColumnName="Dcode" />
+          <ScalarProperty Name="sunDisttCode" ColumnName="sunDisttCode" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="CSMCDate" ColumnName="CSMCDate" />
+          <ScalarProperty Name="CSMCNo" ColumnName="CSMCNo" />
+          <ScalarProperty Name="FinYear" ColumnName="FinYear" />
+          <ScalarProperty Name="NoofProjects" ColumnName="NoofProjects" />
+          <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
+          <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
+          <ScalarProperty Name="State_Grant" ColumnName="State_Grant" />
+          <ScalarProperty Name="ULBShare" ColumnName="ULBShare" />
+          <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+          <ScalarProperty Name="Released_throug_EBR" ColumnName="Released_throug_EBR" />
+          <ScalarProperty Name="CASanctionedForRel" ColumnName="CASanctionedForRel" />
+          <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
+          <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
+          <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
+          <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
+          <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+          <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
+          <ScalarProperty Name="Housesinvolved" ColumnName="Housesinvolved" />
+          <ScalarProperty Name="FundsDisbursed_in_Houses" ColumnName="FundsDisbursed_in_Houses" />
+          <ScalarProperty Name="Houses_Grounded" ColumnName="Houses_Grounded" />
+          <ScalarProperty Name="HousesUnderProgress" ColumnName="HousesUnderProgress" />
+          <ScalarProperty Name="Houses_Completed" ColumnName="Houses_Completed" />
+          <ScalarProperty Name="HousesAllotted" ColumnName="HousesAllotted" />
+          <ScalarProperty Name="HousesOccupied" ColumnName="HousesOccupied" />
+          <ScalarProperty Name="Houses_yetto_Grounded" ColumnName="Houses_yetto_Grounded" />
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+          <ScalarProperty Name="FundsDisbursed_in_Houses_II" ColumnName="FundsDisbursed_in_Houses_II" />
+          <ScalarProperty Name="FundsDisbursed_in_Houses_III" ColumnName="FundsDisbursed_in_Houses_III" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1521,9 +1705,66 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PMAYU_MainDashboard">
+      <EntityTypeMapping TypeName="EmployeeModel.PMAYU_MainDashboard">
+        <MappingFragment StoreEntitySet="PMAYU_MainDashboard">
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="Sanctioned" ColumnName="Sanctioned" />
+          <ScalarProperty Name="Grounded" ColumnName="Grounded" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="Occupied" ColumnName="Occupied" />
+          <ScalarProperty Name="sCommitted" ColumnName="sCommitted" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="Released" ColumnName="Released" />
+          <ScalarProperty Name="Utilized" ColumnName="Utilized" />
+          <ScalarProperty Name="Overall" ColumnName="Overall" />
+          <ScalarProperty Name="sPublic" ColumnName="sPublic" />
+          <ScalarProperty Name="Private" ColumnName="Private" />
+          <ScalarProperty Name="PDaysDirect" ColumnName="PDaysDirect" />
+          <ScalarProperty Name="PDaysIndirect" ColumnName="PDaysIndirect" />
+          <ScalarProperty Name="PDaysTotal" ColumnName="PDaysTotal" />
+          <ScalarProperty Name="JobsDirect" ColumnName="JobsDirect" />
+          <ScalarProperty Name="JobsIndirect" ColumnName="JobsIndirect" />
+          <ScalarProperty Name="JobsTotal" ColumnName="JobsTotal" />
+          <ScalarProperty Name="sActive" ColumnName="sActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Projct_Details">
       <EntityTypeMapping TypeName="EmployeeModel.Projct_Details">
         <MappingFragment StoreEntitySet="Projct_Details">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="CSMCDate" ColumnName="CSMCDate" />
+          <ScalarProperty Name="CSMCNumber" ColumnName="CSMCNumber" />
+          <ScalarProperty Name="Scheme" ColumnName="Scheme" />
+          <ScalarProperty Name="SchemeComponent" ColumnName="SchemeComponent" />
+          <ScalarProperty Name="ProjectAgencies" ColumnName="ProjectAgencies" />
+          <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+          <ScalarProperty Name="ProjectDuration" ColumnName="ProjectDuration" />
+          <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+          <ScalarProperty Name="ProjectCost" ColumnName="ProjectCost" />
+          <ScalarProperty Name="CentralAssistance" ColumnName="CentralAssistance" />
+          <ScalarProperty Name="StateGrant" ColumnName="StateGrant" />
+          <ScalarProperty Name="ULB" ColumnName="ULB" />
+          <ScalarProperty Name="BeneficiaryShare" ColumnName="BeneficiaryShare" />
+          <ScalarProperty Name="OtherCost" ColumnName="OtherCost" />
+          <ScalarProperty Name="NewSanction" ColumnName="NewSanction" />
+          <ScalarProperty Name="UpgradeSanction" ColumnName="UpgradeSanction" />
+          <ScalarProperty Name="TotalSanction" ColumnName="TotalSanction" />
+          <ScalarProperty Name="FirstInstallment" ColumnName="FirstInstallment" />
+          <ScalarProperty Name="ActiveFlag" ColumnName="ActiveFlag" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projct_Details_Jan">
+      <EntityTypeMapping TypeName="EmployeeModel.Projct_Details_Jan">
+        <MappingFragment StoreEntitySet="Projct_Details_Jan">
           <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
           <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
           <ScalarProperty Name="StateCode" ColumnName="StateCode" />
@@ -2118,6 +2359,98 @@
     <EntitySetMapping Name="tblStateWiseScores">
       <EntityTypeMapping TypeName="EmployeeModel.tblStateWiseScore">
         <MappingFragment StoreEntitySet="tblStateWiseScore">
+          <ScalarProperty Name="ScoreId" ColumnName="ScoreId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Codes" ColumnName="Codes" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="Sanction_vs_Demand" ColumnName="Sanction_vs_Demand" />
+          <ScalarProperty Name="Grounding_Sanction" ColumnName="Grounding_Sanction" />
+          <ScalarProperty Name="Completion_vs_Sanction" ColumnName="Completion_vs_Sanction" />
+          <ScalarProperty Name="BLC_Houses_Geotagged" ColumnName="BLC_Houses_Geotagged" />
+          <ScalarProperty Name="Relelase_vs_Sanction" ColumnName="Relelase_vs_Sanction" />
+          <ScalarProperty Name="MIS_Annexure_uploading" ColumnName="MIS_Annexure_uploading" />
+          <ScalarProperty Name="Beneficiary_Attachment" ColumnName="Beneficiary_Attachment" />
+          <ScalarProperty Name="Reforms_Achievement" ColumnName="Reforms_Achievement" />
+          <ScalarProperty Name="JN_Houses_vacant" ColumnName="JN_Houses_vacant" />
+          <ScalarProperty Name="Population_Census_2011" ColumnName="Population_Census_2011" />
+          <ScalarProperty Name="TG_12_Housing_Shortage" ColumnName="TG_12_Housing_Shortage" />
+          <ScalarProperty Name="Aadhar_Coverage" ColumnName="Aadhar_Coverage" />
+          <ScalarProperty Name="Cities_included_in_Mission" ColumnName="Cities_included_in_Mission" />
+          <ScalarProperty Name="Total_Demand_as_per_Road_map" ColumnName="Total_Demand_as_per_Road_map" />
+          <ScalarProperty Name="Demand_met" ColumnName="Demand_met" />
+          <ScalarProperty Name="Per_Demand_met" ColumnName="Per_Demand_met" />
+          <ScalarProperty Name="Total_PMAY_U_Houses_ISSR_AHP_BLC_CLSS" ColumnName="Total_PMAY_U_Houses_ISSR_AHP_BLC_CLSS" />
+          <ScalarProperty Name="Valid_Aadhar_Beneficiaries" ColumnName="Valid_Aadhar_Beneficiaries" />
+          <ScalarProperty Name="Bene_Percentage" ColumnName="Bene_Percentage" />
+          <ScalarProperty Name="HFAPoA_funds_Released" ColumnName="HFAPoA_funds_Released" />
+          <ScalarProperty Name="HFAPoA_Received" ColumnName="HFAPoA_Received" />
+          <ScalarProperty Name="HFAPoA_Status" ColumnName="HFAPoA_Status" />
+          <ScalarProperty Name="ISSR_NOP" ColumnName="ISSR_NOP" />
+          <ScalarProperty Name="AHP_NOP" ColumnName="AHP_NOP" />
+          <ScalarProperty Name="BLC_NOP" ColumnName="BLC_NOP" />
+          <ScalarProperty Name="ISSR_CA_Committed" ColumnName="ISSR_CA_Committed" />
+          <ScalarProperty Name="AHP_CA_Committed" ColumnName="AHP_CA_Committed" />
+          <ScalarProperty Name="BLC_CA_Committed" ColumnName="BLC_CA_Committed" />
+          <ScalarProperty Name="ISSR_Sanct_for_Release" ColumnName="ISSR_Sanct_for_Release" />
+          <ScalarProperty Name="AHP_Sanct_for_Release" ColumnName="AHP_Sanct_for_Release" />
+          <ScalarProperty Name="BLC_Sanct_for_Release" ColumnName="BLC_Sanct_for_Release" />
+          <ScalarProperty Name="ISSR_CA_Released" ColumnName="ISSR_CA_Released" />
+          <ScalarProperty Name="AHP_CA_Released" ColumnName="AHP_CA_Released" />
+          <ScalarProperty Name="BLC_CA_Released" ColumnName="BLC_CA_Released" />
+          <ScalarProperty Name="ISSR_Balance_for_Release" ColumnName="ISSR_Balance_for_Release" />
+          <ScalarProperty Name="AHP_Balance_for_Release" ColumnName="AHP_Balance_for_Release" />
+          <ScalarProperty Name="BLC_Balance_for_Release" ColumnName="BLC_Balance_for_Release" />
+          <ScalarProperty Name="ISSR_Houses_Sanctioned" ColumnName="ISSR_Houses_Sanctioned" />
+          <ScalarProperty Name="AHP_Houses_Sanctioned" ColumnName="AHP_Houses_Sanctioned" />
+          <ScalarProperty Name="BLC_Houses_Sanctioned" ColumnName="BLC_Houses_Sanctioned" />
+          <ScalarProperty Name="ISSR_Grounded" ColumnName="ISSR_Grounded" />
+          <ScalarProperty Name="AHP_Grounded" ColumnName="AHP_Grounded" />
+          <ScalarProperty Name="BLC_Grounded" ColumnName="BLC_Grounded" />
+          <ScalarProperty Name="ISSR_Completed" ColumnName="ISSR_Completed" />
+          <ScalarProperty Name="AHP_Completed" ColumnName="AHP_Completed" />
+          <ScalarProperty Name="BLC_Completed" ColumnName="BLC_Completed" />
+          <ScalarProperty Name="PMAY_Funds_Released" ColumnName="PMAY_Funds_Released" />
+          <ScalarProperty Name="PMAY_Ucs_Received" ColumnName="PMAY_Ucs_Received" />
+          <ScalarProperty Name="PMAY_UC_Pending" ColumnName="PMAY_UC_Pending" />
+          <ScalarProperty Name="PMAY_Houses_Occupied" ColumnName="PMAY_Houses_Occupied" />
+          <ScalarProperty Name="Reforms" ColumnName="Reforms" />
+          <ScalarProperty Name="Reforms_Achieved" ColumnName="Reforms_Achieved" />
+          <ScalarProperty Name="SLTC_Funds_Released_RsinnCr" ColumnName="SLTC_Funds_Released_RsinnCr" />
+          <ScalarProperty Name="SLTC_Specialists_Approved" ColumnName="SLTC_Specialists_Approved" />
+          <ScalarProperty Name="SLTC_Specialists_in_Place" ColumnName="SLTC_Specialists_in_Place" />
+          <ScalarProperty Name="CLTC_Funds_Released_RsinCr" ColumnName="CLTC_Funds_Released_RsinCr" />
+          <ScalarProperty Name="CLTC_Specialists_Approved" ColumnName="CLTC_Specialists_Approved" />
+          <ScalarProperty Name="CLTC_Specialists_in_Place" ColumnName="CLTC_Specialists_in_Place" />
+          <ScalarProperty Name="Projects_Approved" ColumnName="Projects_Approved" />
+          <ScalarProperty Name="Projects_uploaded" ColumnName="Projects_uploaded" />
+          <ScalarProperty Name="Percent_Projects_uploaded" ColumnName="Percent_Projects_uploaded" />
+          <ScalarProperty Name="BLC_Houses_Approved" ColumnName="BLC_Houses_Approved" />
+          <ScalarProperty Name="BLC_Houses_Grounded" ColumnName="BLC_Houses_Grounded" />
+          <ScalarProperty Name="BLC_Houses_Geo_Tagged" ColumnName="BLC_Houses_Geo_Tagged" />
+          <ScalarProperty Name="CLSS_MIS_Survey" ColumnName="CLSS_MIS_Survey" />
+          <ScalarProperty Name="CLSS_Beneficiaries_EWS_LIG_MIG" ColumnName="CLSS_Beneficiaries_EWS_LIG_MIG" />
+          <ScalarProperty Name="CLSS_Subsidy_EWS_LIG_MIG" ColumnName="CLSS_Subsidy_EWS_LIG_MIG" />
+          <ScalarProperty Name="JN_Houses_Sanctioned" ColumnName="JN_Houses_Sanctioned" />
+          <ScalarProperty Name="JN_Houses_Completed" ColumnName="JN_Houses_Completed" />
+          <ScalarProperty Name="JN_Houses_Occupied" ColumnName="JN_Houses_Occupied" />
+          <ScalarProperty Name="JN_Houses_In_Progress" ColumnName="JN_Houses_In_Progress" />
+          <ScalarProperty Name="JN_Houses_Unoccupied" ColumnName="JN_Houses_Unoccupied" />
+          <ScalarProperty Name="JN_Houses_Non_Starter" ColumnName="JN_Houses_Non_Starter" />
+          <ScalarProperty Name="JN_UC_Pending" ColumnName="JN_UC_Pending" />
+          <ScalarProperty Name="RAY_Houses_Sanctioned" ColumnName="RAY_Houses_Sanctioned" />
+          <ScalarProperty Name="RAY_Houses_Completed" ColumnName="RAY_Houses_Completed" />
+          <ScalarProperty Name="RAY_Houses_Occupied" ColumnName="RAY_Houses_Occupied" />
+          <ScalarProperty Name="RAY_Houses_In_Progress" ColumnName="RAY_Houses_In_Progress" />
+          <ScalarProperty Name="RAY_Houses_Unoccupied" ColumnName="RAY_Houses_Unoccupied" />
+          <ScalarProperty Name="RAY_Houses_Non_Starter" ColumnName="RAY_Houses_Non_Starter" />
+          <ScalarProperty Name="RAY_UC_Pending" ColumnName="RAY_UC_Pending" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStateWiseScore_dec_2019">
+      <EntityTypeMapping TypeName="EmployeeModel.tblStateWiseScore_dec_2019">
+        <MappingFragment StoreEntitySet="tblStateWiseScore dec 2019">
           <ScalarProperty Name="ScoreId" ColumnName="ScoreId" />
           <ScalarProperty Name="StateId" ColumnName="StateId" />
           <ScalarProperty Name="Codes" ColumnName="Codes" />
@@ -3066,6 +3399,8 @@
           <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
           <ScalarProperty Name="FundsDisbursed_in_Houses_II" ColumnName="FundsDisbursed_in_Houses_II" />
           <ScalarProperty Name="FundsDisbursed_in_Houses_III" ColumnName="FundsDisbursed_in_Houses_III" />
+          <ScalarProperty Name="Actual_Completed" ColumnName="Actual_Completed" />
+          <ScalarProperty Name="Shortfall_Completed" ColumnName="Shortfall_Completed" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -3307,6 +3642,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionName="EmployeeModel.Store.fnSplitString" FunctionImportName="fnSplitString">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.fnSplitString_Result">
+          <ScalarProperty Name="splitdata" ColumnName="splitdata" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionName="EmployeeModel.Store.Split" FunctionImportName="Split">
       <ResultMapping>
         <ComplexTypeMapping TypeName="EmployeeModel.Split_Result">
@@ -3336,6 +3678,8 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Del_PhyProgressReport" FunctionName="EmployeeModel.Store.Del_PhyProgressReport" />
+    <FunctionImportMapping FunctionImportName="Del_ProjectDetail" FunctionName="EmployeeModel.Store.Del_ProjectDetail" />
     <FunctionImportMapping FunctionImportName="Excel_ClssProc" FunctionName="EmployeeModel.Store.Excel_ClssProc">
       <ResultMapping>
         <ComplexTypeMapping TypeName="EmployeeModel.Excel_ClssProc_Result">
@@ -4486,10 +4830,12 @@
           <ScalarProperty Name="FinYear" ColumnName="FinYear" />
           <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
           <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
+          <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
           <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
           <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
           <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
           <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+          <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -4502,7 +4848,10 @@
           <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
           <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
           <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
+          <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
           <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+          <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
+          <ScalarProperty Name="Liability14" ColumnName="Liability14" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -4742,6 +5091,7 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_create_AHP_DATAFinYeraWise" FunctionName="EmployeeModel.Store.sp_create_AHP_DATAFinYeraWise" />
+    <FunctionImportMapping FunctionImportName="sp_create_AHP_GraphCritical_DATA_FinWise" FunctionName="EmployeeModel.Store.sp_create_AHP_GraphCritical_DATA_FinWise" />
     <FunctionImportMapping FunctionImportName="sp_create_AHP_GraphCritical_DATAFinYeraWise" FunctionName="EmployeeModel.Store.sp_create_AHP_GraphCritical_DATAFinYeraWise" />
     <FunctionImportMapping FunctionImportName="sp_create_BLC_AHP_DATA" FunctionName="EmployeeModel.Store.sp_create_BLC_AHP_DATA">
       <ResultMapping>
@@ -4758,6 +5108,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_create_BLC_GraphCritical_DATA_FinWise" FunctionName="EmployeeModel.Store.sp_create_BLC_GraphCritical_DATA_FinWise" />
     <FunctionImportMapping FunctionImportName="sp_create_BLCS_DATAFinYeraWise" FunctionName="EmployeeModel.Store.sp_create_BLCS_DATAFinYeraWise" />
     <FunctionImportMapping FunctionImportName="sp_create_BLCS_GraphCritical_DATAFinYeraWise" FunctionName="EmployeeModel.Store.sp_create_BLCS_GraphCritical_DATAFinYeraWise" />
     <FunctionImportMapping FunctionImportName="sp_create_Fin_Cons_ISSRDATA" FunctionName="EmployeeModel.Store.sp_create_Fin_Cons_ISSRDATA">
@@ -4777,6 +5128,22 @@
     <FunctionImportMapping FunctionImportName="sp_create_Fin_ConsPMAYDATA" FunctionName="EmployeeModel.Store.sp_create_Fin_ConsPMAYDATA">
       <ResultMapping>
         <ComplexTypeMapping TypeName="EmployeeModel.sp_create_Fin_ConsPMAYDATA_Result">
+          <ScalarProperty Name="FinYear" ColumnName="FinYear" />
+          <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
+          <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
+          <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
+          <ScalarProperty Name="Liability14" ColumnName="Liability14" />
+          <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
+          <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
+          <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
+          <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+          <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_create_Fin_ConsPMAYDATA_Back" FunctionName="EmployeeModel.Store.sp_create_Fin_ConsPMAYDATA_Back">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_create_Fin_ConsPMAYDATA_Back_Result">
           <ScalarProperty Name="FinYear" ColumnName="FinYear" />
           <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
           <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
@@ -5520,6 +5887,26 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Phy_Critical_View" FunctionName="EmployeeModel.Store.sp_Phy_Critical_View" />
+    <FunctionImportMapping FunctionImportName="sp_Phy_Critical_View_" FunctionName="EmployeeModel.Store.sp_Phy_Critical_View_" />
+    <FunctionImportMapping FunctionImportName="sp_Phy_Monitoring_View" FunctionName="EmployeeModel.Store.sp_Phy_Monitoring_View" />
+    <FunctionImportMapping FunctionImportName="sp_Phy_ShortFall" FunctionName="EmployeeModel.Store.sp_Phy_ShortFall" />
+    <FunctionImportMapping FunctionImportName="sp_PhysicalMonitor_ISSR_Graph" FunctionName="EmployeeModel.Store.sp_PhysicalMonitor_ISSR_Graph">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_PhysicalMonitor_ISSR_Graph_Result">
+          <ScalarProperty Name="FinYear" ColumnName="FinYear" />
+          <ScalarProperty Name="Project_Cost" ColumnName="Project_Cost" />
+          <ScalarProperty Name="Central_Assistance_involved" ColumnName="Central_Assistance_involved" />
+          <ScalarProperty Name="CentralAssistanceReleased" ColumnName="CentralAssistanceReleased" />
+          <ScalarProperty Name="FirstInstallmentReleased" ColumnName="FirstInstallmentReleased" />
+          <ScalarProperty Name="SecondInstallmentReleased" ColumnName="SecondInstallmentReleased" />
+          <ScalarProperty Name="ThirdInstallmentReleased" ColumnName="ThirdInstallmentReleased" />
+          <ScalarProperty Name="Liability14" ColumnName="Liability14" />
+          <ScalarProperty Name="UC_Pending" ColumnName="UC_Pending" />
+          <ScalarProperty Name="UC_Received" ColumnName="UC_Received" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_RayThirdInstHouses" FunctionName="EmployeeModel.Store.sp_RayThirdInstHouses">
       <ResultMapping>
         <ComplexTypeMapping TypeName="EmployeeModel.sp_RayThirdInstHouses_Result">
@@ -5529,6 +5916,18 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="EmployeeModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_Shortfall_BLC_AHP" FunctionName="EmployeeModel.Store.sp_Shortfall_BLC_AHP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.sp_Shortfall_BLC_AHP_Result">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="Component" ColumnName="Component" />
+          <ScalarProperty Name="FinYear" ColumnName="FinYear" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="Actual_Completed" ColumnName="Actual_Completed" />
+          <ScalarProperty Name="Shortfall_Completed" ColumnName="Shortfall_Completed" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_State" FunctionName="EmployeeModel.Store.sp_State">
       <ResultMapping>
         <ComplexTypeMapping TypeName="EmployeeModel.sp_State_Result">

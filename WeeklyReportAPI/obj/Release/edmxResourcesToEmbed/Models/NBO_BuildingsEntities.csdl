@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="EmployeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="fnSplitString_Result">
+    <Property Name="splitdata" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </ComplexType>
   <ComplexType Name="Split_Result">
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="Data" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
@@ -494,6 +497,17 @@
     <Property Name="Loan_Amount" Type="Double" />
     <Property Name="SubsidyAmountCredited" Type="Double" />
     <Property Name="NoofBeneficiaries" Type="Double" />
+  </EntityType>
+  <EntityType Name="cmaster">
+    <Key>
+      <PropertyRef Name="Cid" />
+    </Key>
+    <Property Name="Cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SrNo" Type="Int32" />
+    <Property Name="Cname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SchemeComponentName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SchemeShortName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="sFlag" Type="Boolean" />
   </EntityType>
   <EntityType Name="Combined_States">
     <Key>
@@ -1062,6 +1076,79 @@
     <Property Name="Expenditure" Type="Double" />
     <Property Name="Division" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="Physical_Dashboard_de_2019">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StateCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Demand" Type="Double" />
+    <Property Name="Houses_Sanctioned" Type="Double" />
+    <Property Name="CentralShare" Type="Double" />
+    <Property Name="StateShare" Type="Double" />
+    <Property Name="ULBShare" Type="Double" />
+    <Property Name="BeneficiaryShare" Type="Double" />
+    <Property Name="TotalCost" Type="Double" />
+    <Property Name="Grounded" Type="Double" />
+    <Property Name="Completed" Type="Double" />
+    <Property Name="Occupied" Type="Double" />
+    <Property Name="CAApproved" Type="Double" />
+    <Property Name="CASanctionedforRelease" Type="Double" />
+    <Property Name="CAReleased" Type="Double" />
+    <Property Name="PendingforRelease" Type="Double" />
+    <Property Name="IIIQ_15_16" Type="Double" />
+    <Property Name="IV_Q_15_16" Type="Double" />
+    <Property Name="IQ_16_17" Type="Double" />
+    <Property Name="IIQ_16_17" Type="Double" />
+    <Property Name="IIIQ_16_17" Type="Double" />
+    <Property Name="IV_Q_16_17" Type="Double" />
+    <Property Name="I_Q_17_18" Type="Double" />
+    <Property Name="II_Q_17_18" Type="Double" />
+    <Property Name="III_Q_17_18" Type="Double" />
+    <Property Name="IV_Q_17_18" Type="Double" />
+    <Property Name="I_Q_18_19" Type="Double" />
+    <Property Name="II_Q_18_19" Type="Double" />
+    <Property Name="III_Q_18_19" Type="Double" />
+    <Property Name="IV_Q_18_19" Type="Double" />
+    <Property Name="I_Q_19_20" Type="Double" />
+    <Property Name="SRNo1" Type="Double" />
+    <Property Name="State2" Type="Double" />
+    <Property Name="CumSanctioned" Type="Double" />
+    <Property Name="CASanctioned_15_16" Type="Double" />
+    <Property Name="CASanctioned_16_17" Type="Double" />
+    <Property Name="CASanctioned_17_18" Type="Double" />
+    <Property Name="CASanctioned_18_19" Type="Double" />
+    <Property Name="CASanctioned_19_20" Type="Double" />
+    <Property Name="CumuCAReleased" Type="Double" />
+    <Property Name="CumuCA_Released_15_16" Type="Double" />
+    <Property Name="CumuCA_Released_16_17" Type="Double" />
+    <Property Name="CumuCA_Released_17_18" Type="Double" />
+    <Property Name="CumuCA_Released_18_19" Type="Double" />
+    <Property Name="CumuCA_Released_19_20" Type="Double" />
+    <Property Name="HS_Cum_20_8_18" Type="Double" />
+    <Property Name="HS_15_16" Type="Double" />
+    <Property Name="HS_16_17" Type="Double" />
+    <Property Name="HS_17_18" Type="Double" />
+    <Property Name="HS_18_19" Type="Double" />
+    <Property Name="HS_19_20" Type="Double" />
+    <Property Name="HC_20_08_18" Type="Double" />
+    <Property Name="HC_14_15" Type="Double" />
+    <Property Name="HC_15_16" Type="Double" />
+    <Property Name="HC_16_17" Type="Double" />
+    <Property Name="HC_17_18" Type="Double" />
+    <Property Name="HC_18_19" Type="Double" />
+    <Property Name="HC_19_20" Type="Double" />
+    <Property Name="HO_Cum" Type="Double" />
+    <Property Name="HO_14_15" Type="Double" />
+    <Property Name="HO_15_16" Type="Double" />
+    <Property Name="HO_16_17" Type="Double" />
+    <Property Name="HO_17_18" Type="Double" />
+    <Property Name="HO_18_19" Type="Double" />
+    <Property Name="HO_19_20" Type="Double" />
+    <Property Name="Expenditure" Type="Double" />
+    <Property Name="Division" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="Physical_DashboardExcel">
     <Key>
       <PropertyRef Name="sId" />
@@ -1253,6 +1340,56 @@
     <Property Name="DIVISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="FundsDisbursed_in_Houses_II" Type="Double" />
     <Property Name="FundsDisbursed_in_Houses_III" Type="Double" />
+    <Property Name="Actual_Completed" Type="Double" />
+    <Property Name="Shortfall_Completed" Type="Double" />
+  </EntityType>
+  <EntityType Name="PMAY_PROJECTS_Fin_jan">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Project_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Annexure_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Component" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StateCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dcode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sunDisttCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CityCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Project_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CSMCDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CSMCNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FinYear" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NoofProjects" Type="Double" />
+    <Property Name="Project_Cost" Type="Double" />
+    <Property Name="Central_Assistance_involved" Type="Double" />
+    <Property Name="State_Grant" Type="Double" />
+    <Property Name="ULBShare" Type="Double" />
+    <Property Name="BeneficiaryShare" Type="Double" />
+    <Property Name="Released_throug_EBR" Type="Double" />
+    <Property Name="CASanctionedForRel" Type="Double" />
+    <Property Name="FirstInstallmentReleased" Type="Double" />
+    <Property Name="SecondInstallmentReleased" Type="Double" />
+    <Property Name="ThirdInstallmentReleased" Type="Double" />
+    <Property Name="CentralAssistanceReleased" Type="Double" />
+    <Property Name="UC_Received" Type="Double" />
+    <Property Name="UC_Pending" Type="Double" />
+    <Property Name="Housesinvolved" Type="Double" />
+    <Property Name="FundsDisbursed_in_Houses" Type="Double" />
+    <Property Name="Houses_Grounded" Type="Double" />
+    <Property Name="HousesUnderProgress" Type="Double" />
+    <Property Name="Houses_Completed" Type="Double" />
+    <Property Name="HousesAllotted" Type="Double" />
+    <Property Name="HousesOccupied" Type="Double" />
+    <Property Name="Houses_yetto_Grounded" Type="Double" />
+    <Property Name="Cid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DIVISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FundsDisbursed_in_Houses_II" Type="Double" />
+    <Property Name="FundsDisbursed_in_Houses_III" Type="Double" />
+    <Property Name="Actual_Completed" Type="Double" />
+    <Property Name="Shortfall_Completed" Type="Double" />
   </EntityType>
   <EntityType Name="PMAY_PROJECTS_Fin_26July">
     <Key>
@@ -1342,6 +1479,52 @@
     <Property Name="HousesOccupied" Type="Double" />
     <Property Name="Houses_yetto_Grounded" Type="Double" />
     <Property Name="Cid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PMAY_PROJECTS_Fin_Dec_2019">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Project_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Annexure_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Component" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StateCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dcode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sunDisttCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CityCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Project_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CSMCDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CSMCNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FinYear" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NoofProjects" Type="Double" />
+    <Property Name="Project_Cost" Type="Double" />
+    <Property Name="Central_Assistance_involved" Type="Double" />
+    <Property Name="State_Grant" Type="Double" />
+    <Property Name="ULBShare" Type="Double" />
+    <Property Name="BeneficiaryShare" Type="Double" />
+    <Property Name="Released_throug_EBR" Type="Double" />
+    <Property Name="CASanctionedForRel" Type="Double" />
+    <Property Name="FirstInstallmentReleased" Type="Double" />
+    <Property Name="SecondInstallmentReleased" Type="Double" />
+    <Property Name="ThirdInstallmentReleased" Type="Double" />
+    <Property Name="CentralAssistanceReleased" Type="Double" />
+    <Property Name="UC_Received" Type="Double" />
+    <Property Name="UC_Pending" Type="Double" />
+    <Property Name="Housesinvolved" Type="Double" />
+    <Property Name="FundsDisbursed_in_Houses" Type="Double" />
+    <Property Name="Houses_Grounded" Type="Double" />
+    <Property Name="HousesUnderProgress" Type="Double" />
+    <Property Name="Houses_Completed" Type="Double" />
+    <Property Name="HousesAllotted" Type="Double" />
+    <Property Name="HousesOccupied" Type="Double" />
+    <Property Name="Houses_yetto_Grounded" Type="Double" />
+    <Property Name="Cid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DIVISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FundsDisbursed_in_Houses_II" Type="Double" />
+    <Property Name="FundsDisbursed_in_Houses_III" Type="Double" />
   </EntityType>
   <EntityType Name="PMAY_PROJECTS_Fin_Excel">
     <Key>
@@ -1473,7 +1656,62 @@
     <Property Name="Cid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="DIVISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="PMAYU_MainDashboard">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sanctioned" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Grounded" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Completed" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Occupied" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sCommitted" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Approved" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Released" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Utilized" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Overall" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sPublic" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Private" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PDaysDirect" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PDaysIndirect" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PDaysTotal" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="JobsDirect" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="JobsIndirect" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="JobsTotal" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sActive" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="Projct_Details">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectCode" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StateCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CityCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CSMCDate" Type="DateTime" Precision="0" />
+    <Property Name="CSMCNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Scheme" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SchemeComponent" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectAgencies" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectStatus" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectDuration" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectCost" Type="Decimal" Precision="25" Scale="2" />
+    <Property Name="CentralAssistance" Type="Decimal" Precision="25" Scale="2" />
+    <Property Name="StateGrant" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ULB" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="BeneficiaryShare" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OtherCost" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NewSanction" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UpgradeSanction" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TotalSanction" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="FirstInstallment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveFlag" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Projct_Details_Jan">
     <Key>
       <PropertyRef Name="ProjectId" />
     </Key>
@@ -2050,6 +2288,97 @@
     <Property Name="HO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tblStateWiseScore">
+    <Key>
+      <PropertyRef Name="ScoreId" />
+    </Key>
+    <Property Name="ScoreId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateId" Type="Int32" Nullable="false" />
+    <Property Name="Codes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StateName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Sanction_vs_Demand" Type="Double" />
+    <Property Name="Grounding_Sanction" Type="Double" />
+    <Property Name="Completion_vs_Sanction" Type="Double" />
+    <Property Name="BLC_Houses_Geotagged" Type="Double" />
+    <Property Name="Relelase_vs_Sanction" Type="Double" />
+    <Property Name="MIS_Annexure_uploading" Type="Double" />
+    <Property Name="Beneficiary_Attachment" Type="Double" />
+    <Property Name="Reforms_Achievement" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="JN_Houses_vacant" Type="Double" />
+    <Property Name="Population_Census_2011" Type="Double" />
+    <Property Name="TG_12_Housing_Shortage" Type="Double" />
+    <Property Name="Aadhar_Coverage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Cities_included_in_Mission" Type="Double" />
+    <Property Name="Total_Demand_as_per_Road_map" Type="Double" />
+    <Property Name="Demand_met" Type="Double" />
+    <Property Name="Per_Demand_met" Type="Double" />
+    <Property Name="Total_PMAY_U_Houses_ISSR_AHP_BLC_CLSS" Type="Double" />
+    <Property Name="Valid_Aadhar_Beneficiaries" Type="Double" />
+    <Property Name="Bene_Percentage" Type="Double" />
+    <Property Name="HFAPoA_funds_Released" Type="Double" />
+    <Property Name="HFAPoA_Received" Type="Double" />
+    <Property Name="HFAPoA_Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ISSR_NOP" Type="Double" />
+    <Property Name="AHP_NOP" Type="Double" />
+    <Property Name="BLC_NOP" Type="Double" />
+    <Property Name="ISSR_CA_Committed" Type="Double" />
+    <Property Name="AHP_CA_Committed" Type="Double" />
+    <Property Name="BLC_CA_Committed" Type="Double" />
+    <Property Name="ISSR_Sanct_for_Release" Type="Double" />
+    <Property Name="AHP_Sanct_for_Release" Type="Double" />
+    <Property Name="BLC_Sanct_for_Release" Type="Double" />
+    <Property Name="ISSR_CA_Released" Type="Double" />
+    <Property Name="AHP_CA_Released" Type="Double" />
+    <Property Name="BLC_CA_Released" Type="Double" />
+    <Property Name="ISSR_Balance_for_Release" Type="Double" />
+    <Property Name="AHP_Balance_for_Release" Type="Double" />
+    <Property Name="BLC_Balance_for_Release" Type="Double" />
+    <Property Name="ISSR_Houses_Sanctioned" Type="Double" />
+    <Property Name="AHP_Houses_Sanctioned" Type="Double" />
+    <Property Name="BLC_Houses_Sanctioned" Type="Double" />
+    <Property Name="ISSR_Grounded" Type="Double" />
+    <Property Name="AHP_Grounded" Type="Double" />
+    <Property Name="BLC_Grounded" Type="Double" />
+    <Property Name="ISSR_Completed" Type="Double" />
+    <Property Name="AHP_Completed" Type="Double" />
+    <Property Name="BLC_Completed" Type="Double" />
+    <Property Name="PMAY_Funds_Released" Type="Double" />
+    <Property Name="PMAY_Ucs_Received" Type="Double" />
+    <Property Name="PMAY_UC_Pending" Type="Double" />
+    <Property Name="PMAY_Houses_Occupied" Type="Double" />
+    <Property Name="Reforms" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reforms_Achieved" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SLTC_Funds_Released_RsinnCr" Type="Double" />
+    <Property Name="SLTC_Specialists_Approved" Type="Double" />
+    <Property Name="SLTC_Specialists_in_Place" Type="Double" />
+    <Property Name="CLTC_Funds_Released_RsinCr" Type="Double" />
+    <Property Name="CLTC_Specialists_Approved" Type="Double" />
+    <Property Name="CLTC_Specialists_in_Place" Type="Double" />
+    <Property Name="Projects_Approved" Type="Double" />
+    <Property Name="Projects_uploaded" Type="Double" />
+    <Property Name="Percent_Projects_uploaded" Type="Double" />
+    <Property Name="BLC_Houses_Approved" Type="Double" />
+    <Property Name="BLC_Houses_Grounded" Type="Double" />
+    <Property Name="BLC_Houses_Geo_Tagged" Type="Double" />
+    <Property Name="CLSS_MIS_Survey" Type="Double" />
+    <Property Name="CLSS_Beneficiaries_EWS_LIG_MIG" Type="Double" />
+    <Property Name="CLSS_Subsidy_EWS_LIG_MIG" Type="Double" />
+    <Property Name="JN_Houses_Sanctioned" Type="Double" />
+    <Property Name="JN_Houses_Completed" Type="Double" />
+    <Property Name="JN_Houses_Occupied" Type="Double" />
+    <Property Name="JN_Houses_In_Progress" Type="Double" />
+    <Property Name="JN_Houses_Unoccupied" Type="Double" />
+    <Property Name="JN_Houses_Non_Starter" Type="Double" />
+    <Property Name="JN_UC_Pending" Type="Double" />
+    <Property Name="RAY_Houses_Sanctioned" Type="Double" />
+    <Property Name="RAY_Houses_Completed" Type="Double" />
+    <Property Name="RAY_Houses_Occupied" Type="Double" />
+    <Property Name="RAY_Houses_In_Progress" Type="Double" />
+    <Property Name="RAY_Houses_Unoccupied" Type="Double" />
+    <Property Name="RAY_Houses_Non_Starter" Type="Double" />
+    <Property Name="RAY_UC_Pending" Type="Double" />
+    <Property Name="Division" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblStateWiseScore_dec_2019">
     <Key>
       <PropertyRef Name="ScoreId" />
     </Key>
@@ -2984,6 +3313,8 @@
     <Property Name="DIVISION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="FundsDisbursed_in_Houses_II" Type="Double" />
     <Property Name="FundsDisbursed_in_Houses_III" Type="Double" />
+    <Property Name="Actual_Completed" Type="Double" />
+    <Property Name="Shortfall_Completed" Type="Double" />
   </EntityType>
   <EntityType Name="PMAY_PROJECTS_Fin_PmB">
     <Key>
@@ -3327,6 +3658,7 @@
     <EntitySet Name="CLSS_MASTER_OLD" EntityType="Self.CLSS_MASTER_OLD" />
     <EntitySet Name="ClssCityWises" EntityType="Self.ClssCityWise" />
     <EntitySet Name="ClssCityWiseExcels" EntityType="Self.ClssCityWiseExcel" />
+    <EntitySet Name="cmasters" EntityType="Self.cmaster" />
     <EntitySet Name="Combined_States" EntityType="Self.Combined_States" />
     <EntitySet Name="ComponentMasters" EntityType="Self.ComponentMaster" />
     <EntitySet Name="Constituency_Mster" EntityType="Self.Constituency_Mster" />
@@ -3353,16 +3685,21 @@
     <EntitySet Name="Master_Cities_Included" EntityType="Self.Master_Cities_Included" />
     <EntitySet Name="Physical_Dashboard" EntityType="Self.Physical_Dashboard" />
     <EntitySet Name="Physical_Dashboard___" EntityType="Self.Physical_Dashboard___" />
+    <EntitySet Name="Physical_Dashboard_de_2019" EntityType="Self.Physical_Dashboard_de_2019" />
     <EntitySet Name="Physical_DashboardExcel" EntityType="Self.Physical_DashboardExcel" />
     <EntitySet Name="Physical_Progress_Report" EntityType="Self.Physical_Progress_Report" />
     <EntitySet Name="PMAY_PROJECTS_Copy___1" EntityType="Self.PMAY_PROJECTS_Copy___1" />
     <EntitySet Name="PMAY_PROJECTS_Fin" EntityType="Self.PMAY_PROJECTS_Fin" />
+    <EntitySet Name="PMAY_PROJECTS_Fin_jan" EntityType="Self.PMAY_PROJECTS_Fin_jan" />
     <EntitySet Name="PMAY_PROJECTS_Fin_26July" EntityType="Self.PMAY_PROJECTS_Fin_26July" />
     <EntitySet Name="PMAY_PROJECTS_Fin_27062019" EntityType="Self.PMAY_PROJECTS_Fin_27062019" />
+    <EntitySet Name="PMAY_PROJECTS_Fin_Dec_2019" EntityType="Self.PMAY_PROJECTS_Fin_Dec_2019" />
     <EntitySet Name="PMAY_PROJECTS_Fin_Excel" EntityType="Self.PMAY_PROJECTS_Fin_Excel" />
     <EntitySet Name="PMAY_PROJECTS_Fin_July" EntityType="Self.PMAY_PROJECTS_Fin_July" />
     <EntitySet Name="PMAY_PROJECTS_Fin11" EntityType="Self.PMAY_PROJECTS_Fin11" />
+    <EntitySet Name="PMAYU_MainDashboard" EntityType="Self.PMAYU_MainDashboard" />
     <EntitySet Name="Projct_Details" EntityType="Self.Projct_Details" />
+    <EntitySet Name="Projct_Details_Jan" EntityType="Self.Projct_Details_Jan" />
     <EntitySet Name="Project_Brief_Detail" EntityType="Self.Project_Brief_Detail" />
     <EntitySet Name="Project_Code_Slum" EntityType="Self.Project_Code_Slum" />
     <EntitySet Name="Project_Fund_Release" EntityType="Self.Project_Fund_Release" />
@@ -3385,6 +3722,7 @@
     <EntitySet Name="tblPhysicalCityYearWises" EntityType="Self.tblPhysicalCityYearWise" />
     <EntitySet Name="tblPMAYUs" EntityType="Self.tblPMAYU" />
     <EntitySet Name="tblStateWiseScores" EntityType="Self.tblStateWiseScore" />
+    <EntitySet Name="tblStateWiseScore_dec_2019" EntityType="Self.tblStateWiseScore_dec_2019" />
     <EntitySet Name="tblStateWiseScore_27062019" EntityType="Self.tblStateWiseScore_27062019" />
     <EntitySet Name="tblStateWiseScoreExce_1l" EntityType="Self.tblStateWiseScoreExce_1l" />
     <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
@@ -3440,6 +3778,10 @@
       <End Role="State_Master" EntitySet="State_Master" />
       <End Role="Users_Register" EntitySet="Users_Register" />
     </AssociationSet>
+    <FunctionImport Name="fnSplitString" IsComposable="true" ReturnType="Collection(EmployeeModel.fnSplitString_Result)">
+      <Parameter Name="string" Mode="In" Type="String" />
+      <Parameter Name="delimiter" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="Split" IsComposable="true" ReturnType="Collection(EmployeeModel.Split_Result)">
       <Parameter Name="Line" Mode="In" Type="String" />
       <Parameter Name="SplitOn" Mode="In" Type="String" />
@@ -3447,6 +3789,8 @@
     <FunctionImport Name="city_wise_report" ReturnType="Collection(EmployeeModel.city_wise_report_Result)">
       <Parameter Name="DistrictCode" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="Del_PhyProgressReport" />
+    <FunctionImport Name="Del_ProjectDetail" />
     <FunctionImport Name="Excel_ClssProc" ReturnType="Collection(EmployeeModel.Excel_ClssProc_Result)" />
     <FunctionImport Name="Get_Clss_Master" ReturnType="Collection(EmployeeModel.Get_Clss_Master_Result)">
       <Parameter Name="State_Code" Mode="In" Type="String" />
@@ -4021,6 +4365,12 @@
       <Parameter Name="cityCode" Mode="In" Type="String" />
       <Parameter Name="Fin_Year" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_create_AHP_GraphCritical_DATA_FinWise">
+      <Parameter Name="State_Code" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Fin_Year" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="sp_create_AHP_GraphCritical_DATAFinYeraWise">
       <Parameter Name="State_Code" Mode="In" Type="String" />
       <Parameter Name="dcode" Mode="In" Type="String" />
@@ -4032,6 +4382,12 @@
       <Parameter Name="dcode" Mode="In" Type="String" />
       <Parameter Name="cityCode" Mode="In" Type="String" />
       <Parameter Name="Component" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_create_BLC_GraphCritical_DATA_FinWise">
+      <Parameter Name="State_Code" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Fin_Year" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_create_BLCS_DATAFinYeraWise">
       <Parameter Name="State_Code" Mode="In" Type="String" />
@@ -4053,6 +4409,13 @@
       <Parameter Name="FinYear" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_create_Fin_ConsPMAYDATA" ReturnType="Collection(EmployeeModel.sp_create_Fin_ConsPMAYDATA_Result)">
+      <Parameter Name="State_Code" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Component" Mode="In" Type="String" />
+      <Parameter Name="FinYear" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_create_Fin_ConsPMAYDATA_Back" ReturnType="Collection(EmployeeModel.sp_create_Fin_ConsPMAYDATA_Back_Result)">
       <Parameter Name="State_Code" Mode="In" Type="String" />
       <Parameter Name="dcode" Mode="In" Type="String" />
       <Parameter Name="cityCode" Mode="In" Type="String" />
@@ -4416,6 +4779,41 @@
       <Parameter Name="dcode" Mode="In" Type="String" />
       <Parameter Name="cityCode" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_Phy_Critical_View">
+      <Parameter Name="State_Code" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Component" Mode="In" Type="String" />
+      <Parameter Name="FinYear" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Phy_Critical_View_">
+      <Parameter Name="State_Code" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Component" Mode="In" Type="String" />
+      <Parameter Name="FinYear" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Phy_Monitoring_View">
+      <Parameter Name="State_Code" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Component" Mode="In" Type="String" />
+      <Parameter Name="FinYear" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Phy_ShortFall">
+      <Parameter Name="State_Code" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Component" Mode="In" Type="String" />
+      <Parameter Name="FinYear" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_PhysicalMonitor_ISSR_Graph" ReturnType="Collection(EmployeeModel.sp_PhysicalMonitor_ISSR_Graph_Result)">
+      <Parameter Name="State_Code" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Component" Mode="In" Type="String" />
+      <Parameter Name="FinYear" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="sp_RayThirdInstHouses" ReturnType="Collection(EmployeeModel.sp_RayThirdInstHouses_Result)">
       <Parameter Name="State_Code" Mode="In" Type="String" />
       <Parameter Name="dcode" Mode="In" Type="String" />
@@ -4426,6 +4824,13 @@
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Shortfall_BLC_AHP" ReturnType="Collection(EmployeeModel.sp_Shortfall_BLC_AHP_Result)">
+      <Parameter Name="State_Code" Mode="In" Type="String" />
+      <Parameter Name="dcode" Mode="In" Type="String" />
+      <Parameter Name="cityCode" Mode="In" Type="String" />
+      <Parameter Name="Component" Mode="In" Type="String" />
+      <Parameter Name="FinYear" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_State" ReturnType="Collection(EmployeeModel.sp_State_Result)" />
     <FunctionImport Name="sp_upgraddiagrams" />
@@ -5295,10 +5700,12 @@
     <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
     <Property Type="Double" Name="Project_Cost" Nullable="true" />
     <Property Type="Double" Name="Central_Assistance_involved" Nullable="true" />
+    <Property Type="Double" Name="CentralAssistanceReleased" Nullable="true" />
     <Property Type="Double" Name="FirstInstallmentReleased" Nullable="true" />
     <Property Type="Double" Name="SecondInstallmentReleased" Nullable="true" />
     <Property Type="Double" Name="ThirdInstallmentReleased" Nullable="true" />
     <Property Type="Double" Name="UC_Received" Nullable="true" />
+    <Property Type="Double" Name="UC_Pending" Nullable="true" />
   </ComplexType>
   <ComplexType Name="Proc_GetFinancialPMAY_Data_Result">
     <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
@@ -5307,7 +5714,10 @@
     <Property Type="Double" Name="FirstInstallmentReleased" Nullable="true" />
     <Property Type="Double" Name="SecondInstallmentReleased" Nullable="true" />
     <Property Type="Double" Name="ThirdInstallmentReleased" Nullable="true" />
+    <Property Type="Double" Name="CentralAssistanceReleased" Nullable="true" />
     <Property Type="Double" Name="UC_Received" Nullable="true" />
+    <Property Type="Double" Name="UC_Pending" Nullable="true" />
+    <Property Type="Double" Name="Liability14" Nullable="true" />
   </ComplexType>
   <ComplexType Name="Proc_Inv_Cons_StateWise_Result">
     <Property Type="Double" Name="Demand" Nullable="true" />
@@ -5500,6 +5910,18 @@
     <Property Type="Double" Name="UC_Received" Nullable="true" />
   </ComplexType>
   <ComplexType Name="sp_create_Fin_ConsPMAYDATA_Result">
+    <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Project_Cost" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_involved" Nullable="true" />
+    <Property Type="Double" Name="FirstInstallmentReleased" Nullable="true" />
+    <Property Type="Double" Name="Liability14" Nullable="true" />
+    <Property Type="Double" Name="SecondInstallmentReleased" Nullable="true" />
+    <Property Type="Double" Name="ThirdInstallmentReleased" Nullable="true" />
+    <Property Type="Double" Name="UC_Pending" Nullable="true" />
+    <Property Type="Double" Name="UC_Received" Nullable="true" />
+    <Property Type="Double" Name="CentralAssistanceReleased" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_create_Fin_ConsPMAYDATA_Back_Result">
     <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
     <Property Type="Double" Name="Project_Cost" Nullable="true" />
     <Property Type="Double" Name="Central_Assistance_involved" Nullable="true" />
@@ -6005,9 +6427,29 @@
     <Property Type="String" Name="Completed" Nullable="true" MaxLength="20" />
     <Property Type="String" Name="Occupied" Nullable="true" MaxLength="20" />
   </ComplexType>
+  <ComplexType Name="sp_PhysicalMonitor_ISSR_Graph_Result">
+    <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Project_Cost" Nullable="true" />
+    <Property Type="Double" Name="Central_Assistance_involved" Nullable="true" />
+    <Property Type="Double" Name="CentralAssistanceReleased" Nullable="true" />
+    <Property Type="Double" Name="FirstInstallmentReleased" Nullable="true" />
+    <Property Type="Double" Name="SecondInstallmentReleased" Nullable="true" />
+    <Property Type="Double" Name="ThirdInstallmentReleased" Nullable="true" />
+    <Property Type="Double" Name="Liability14" Nullable="true" />
+    <Property Type="Double" Name="UC_Pending" Nullable="true" />
+    <Property Type="Double" Name="UC_Received" Nullable="true" />
+  </ComplexType>
   <ComplexType Name="sp_RayThirdInstHouses_Result">
     <Property Type="Double" Name="Housesinvolved" Nullable="true" />
     <Property Type="Double" Name="ThirdInstallmentReleased" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Shortfall_BLC_AHP_Result">
+    <Property Type="String" Name="SrNo" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Component" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="FinYear" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Completed" Nullable="true" />
+    <Property Type="Double" Name="Actual_Completed" Nullable="true" />
+    <Property Type="Double" Name="Shortfall_Completed" Nullable="true" />
   </ComplexType>
   <ComplexType Name="sp_State_Result">
     <Property Type="Int32" Name="StateId" Nullable="false" />

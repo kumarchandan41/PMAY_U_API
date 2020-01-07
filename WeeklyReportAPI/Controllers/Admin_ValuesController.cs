@@ -1641,23 +1641,23 @@ namespace WeeklyReportAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetFile")]
+        [Route("GetFile/{pdf}")]
         //download file api
-        public HttpResponseMessage GetFile(string id)
+        public HttpResponseMessage GetFile(string pdf)
         {
 
             //Create HTTP Response.
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
 
             //Set the File Path.
-            string filePath = HttpContext.Current.Server.MapPath("~/File/") + id + ".pdf";
+            string filePath = HttpContext.Current.Server.MapPath("~/File/") + pdf + ".pdf";
 
             //Check whether File exists.
             if (!File.Exists(filePath))
             {
                 //Throw 404 (Not Found) exception if File not found.
                 response.StatusCode = HttpStatusCode.NotFound;
-                response.ReasonPhrase = string.Format("File not found: {0} .", id);
+                response.ReasonPhrase = string.Format("File not found: {0} .", pdf);
                 throw new HttpResponseException(response);
             }
 
@@ -1672,10 +1672,10 @@ namespace WeeklyReportAPI.Controllers
 
             //Set the Content Disposition Header Value and FileName.
             response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
-            response.Content.Headers.ContentDisposition.FileName = id + ".pdf";
+            response.Content.Headers.ContentDisposition.FileName = pdf + ".pdf";
 
             //Set the File Content Type.
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue(MimeMapping.GetMimeMapping(id + ".pdf"));
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue(MimeMapping.GetMimeMapping(pdf + ".pdf"));
             return response;
         }
 
